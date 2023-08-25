@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 class Home extends BaseController
 {
-    public function index(): string
+    public function index()
     {
         return view('login');
     }
@@ -14,13 +14,23 @@ class Home extends BaseController
         return view('dashboard');
     }
 
-    public function roles(): string
+    public function daftar_role(): string
     {
-        return view('roles');
+        return view('daftar_role');
     }
 
-    public function pengguna(): string
+    public function daftar_pengguna(): string
     {
-        return view('pengguna');
+        return view('daftar_pengguna');
+    }
+
+    public function daftar_sertifikat(): string
+    {
+        return view('daftar_sertifikat');
+    }
+
+    public function daftar_karyawan(): string
+    {
+        return view('daftar_karyawan');
     }
 }

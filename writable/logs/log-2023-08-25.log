@@ -1,0 +1,56 @@
+CRITICAL - 2023-08-25 08:41:40 --> include(sidebar): Failed to open stream: No such file or directory
+in APPPATH\Views\dashboard.php on line 67.
+ 1 APPPATH\Views\dashboard.php(67): CodeIgniter\Debug\Exceptions->errorHandler(2, 'include(sidebar): Failed to open stream: No such file or directory', 'D:\\SKYWORX\\new\\APK_Goodyear\\p1\\GoodYear\\app\\Views\\dashboard.php', 67)
+ 2 APPPATH\Views\dashboard.php(67): include()
+ 3 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\new\\APK_Goodyear\\p1\\GoodYear\\app\\Views\\dashboard.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('dashboard', [], true)
+ 6 APPPATH\Controllers\Home.php(14): view('dashboard')
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Home->dashboard()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\new\\APK_Goodyear\\p1\\GoodYear\\public\\index.php')
+CRITICAL - 2023-08-25 08:52:09 --> Invalid file: "daftar_role.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('daftar_role.php')
+ 2 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('daftar_role', [], true)
+ 3 APPPATH\Controllers\Home.php(19): view('daftar_role')
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Home->daftar_role()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\new\\APK_Goodyear\\p1\\GoodYear\\public\\index.php')
+CRITICAL - 2023-08-25 08:52:43 --> Invalid file: "daftar_role.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('daftar_role.php')
+ 2 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('daftar_role', [], true)
+ 3 APPPATH\Controllers\Home.php(19): view('daftar_role')
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Home->daftar_role()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\new\\APK_Goodyear\\p1\\GoodYear\\public\\index.php')
+CRITICAL - 2023-08-25 09:01:00 --> include(../kumpulanlink/linkatas.php): Failed to open stream: No such file or directory
+in APPPATH\Views\daftar_role.php on line 15.
+ 1 APPPATH\Views\daftar_role.php(15): CodeIgniter\Debug\Exceptions->errorHandler(2, 'include(../kumpulanlink/linkatas.php): Failed to open stream: No such file or directory', 'D:\\SKYWORX\\new\\APK_Goodyear\\p1\\GoodYear\\app\\Views\\daftar_role.php', 15)
+ 2 APPPATH\Views\daftar_role.php(15): include()
+ 3 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\new\\APK_Goodyear\\p1\\GoodYear\\app\\Views\\daftar_role.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('daftar_role', [], true)
+ 6 APPPATH\Controllers\Home.php(19): view('daftar_role')
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Home->daftar_role()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\new\\APK_Goodyear\\p1\\GoodYear\\public\\index.php')
+CRITICAL - 2023-08-25 09:09:52 --> Invalid file: "daftar_sertifikat.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('daftar_sertifikat.php')
+ 2 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('daftar_sertifikat', [], true)
+ 3 APPPATH\Controllers\Home.php(29): view('daftar_sertifikat')
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Home->daftar_sertifikat()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\new\\APK_Goodyear\\p1\\GoodYear\\public\\index.php')
