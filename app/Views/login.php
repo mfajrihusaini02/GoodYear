@@ -73,7 +73,8 @@
             <!-- /Logo -->
             <h4 class="mb-1 pt-2">Welcome to Goodyear Indonesia!</h4>
             <p class="mb-4">Please sign-in to your account and start the adventure</p>
-            <div class="mb-3">
+            <form action="dashboard" method="post">
+              <div class="mb-3">
                 <label for="email" class="form-label">Username</label>
                 <input type="text" class="form-control" id="email" name="email-username" placeholder="Enter your username" autofocus />
               </div>
@@ -89,6 +90,7 @@
               <div class="mb-3">
                 <button class="btn btn-primary d-grid w-100" type="submit" >Sign in</button>
               </div>
+            </form>
           </div>
         </div>
         <!-- /Register -->
