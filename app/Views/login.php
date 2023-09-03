@@ -1,3 +1,7 @@
+<?php
+  include 'Connection.php';
+?>
+
 <!DOCTYPE html>
 
 <html lang="en" class="light-style customizer-hide" dir="ltr" data-theme="theme-default" data-assets-path="assets/" data-template="vertical-menu-template">
@@ -73,7 +77,7 @@
             <!-- /Logo -->
             <h4 class="mb-1 pt-2">Welcome to Goodyear Indonesia!</h4>
             <p class="mb-4">Please sign-in to your account and start the adventure</p>
-            <form action="dashboard" method="post">
+            <form id="formAuthentication" action="dashboard" method="post">
               <div class="mb-3">
                 <label for="email" class="form-label">Username</label>
                 <input type="text" class="form-control" id="email" name="email-username" placeholder="Enter your username" autofocus />
