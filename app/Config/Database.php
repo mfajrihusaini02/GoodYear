@@ -28,7 +28,7 @@ class Database extends Config
         'DSN'      => '',
         'hostname' => 'localhost',
         'username' => 'postgres',
-        'password' => 'tvu443xx22',
+        'password' => '123456',
         'database' => 'db-goodyear',
         'DBDriver' => 'Postgre',
         'DBPrefix' => '',

@@ -30,12 +30,12 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index', ['filter' => 'login']);
-$routes->post('/dashboard', 'Home::dashboard', ['filter' => 'login']);
-$routes->get('/dashboard', 'Home::dashboard', ['filter' => 'login']);
+$routes->post('/dashboard', 'Home::dashboard');
+$routes->get('/dashboard', 'Home::dashboard');
 $routes->get('/daftar_role', 'Home::daftar_role');
 $routes->get('/daftar_pengguna', 'Home::daftar_pengguna');
 $routes->get('/daftar_sertifikat', 'Home::daftar_sertifikat');
-$routes->get('/daftar_karyawan', 'Home::daftar_karyawan');
+$routes->get('/daftar_karyawan', 'DaftarKaryawanController::index');
 
 /*
  * --------------------------------------------------------------------
