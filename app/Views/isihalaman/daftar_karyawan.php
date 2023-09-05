@@ -5,12 +5,10 @@
         </div>
 
         <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12" align="right">
-            <form method="GET" action="tambah_karyawan" enctype="multipart/form-data">
-                <button type="submit" class="btn btn-primary btn-sm btn-icon-split mt-2">
-                    <span class="icon text-white-50"><i class="fas fa-plus"></i></span>
-                    <span class="text p-1">Tambah Karyawan</span>
-                </button>
-            </form>
+            <a href="../tambah_karyawan" class="btn btn-primary btn-sm btn-icon-split mt-2">
+                <span class="icon text-white-50"><i class="fas fa-plus"></i></span>
+                <span class="text p-1">Tambah Karyawan</span>
+            </a>
         </div>
     </div>
 
