@@ -32,14 +32,18 @@ $routes->set404Override();
 $routes->get('/', 'Home::index', ['filter' => 'login']);
 $routes->post('/dashboard', 'Home::dashboard');
 $routes->get('/dashboard', 'Home::dashboard');
+//Daftar Table
 $routes->get('/daftar_role', 'DaftarRoleController::index');
 $routes->get('/daftar_pengguna', 'DaftarPenggunaController::index');
 $routes->get('/daftar_sertifikat', 'DaftarSertifikatController::index');
 $routes->get('/daftar_karyawan', 'DaftarKaryawanController::index');
+//Daftar Add
 $routes->get('/tambah_pengguna', 'TambahPenggunaController::index');
-$routes->get('/tambah_role', 'TambahRoleController::index');
 $routes->get('/tambah_karyawan', 'TambahKaryawanController::index');
 $routes->get('/tambah_sertifikat', 'TambahSertifikatController::index');
+$routes->get('/tambah_role', 'DaftarRoleController::tambah_role');
+//Daftar Save
+$routes->post('/tambah_role/save_role', 'DaftarRoleController::save_role');
 
 /*
  * --------------------------------------------------------------------

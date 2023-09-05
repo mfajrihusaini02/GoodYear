@@ -6,6 +6,7 @@ use CodeIgniter\Model;
 
 class DaftarRoleModel extends Model
 {
+    protected $table = 'role';
     public function getRole()
     {
         // return $this->db->table('karyawan')

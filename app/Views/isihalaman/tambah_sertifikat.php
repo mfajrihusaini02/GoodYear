@@ -5,12 +5,10 @@
         </div>
 
         <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12" align="right">
-            <form method="GET" action="daftar_sertifikat" enctype="multipart/form-data">
-                <button type="submit" class="btn btn-primary btn-sm btn-icon-split mt-2">
-                    <span class="icon text-white-50"><i class="fas fa-list"></i></span>
-                    <span class="text p-1">List</span>
-                </button>
-            </form>
+            <a href="../daftar_sertifikat" class="btn btn-primary btn-sm btn-icon-split mt-2">
+                <span class="icon text-white-50"><i class="fas fa-list"></i></span>
+                <span class="text p-1">List</span>
+            </a>
         </div>
     </div>
 
