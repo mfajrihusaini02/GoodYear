@@ -30,4 +30,28 @@
       ]
     });
   });
+  $(document).ready(function() {
+    $('#datatabelSertifikat').DataTable({
+      "lengthMenu": [
+        [25, 50, 75, 100, -1],
+        [25, 50, 75, 100, "All"]
+      ]
+    });
+  });
+  $(document).ready(function() {
+    $('#datatabelRole').DataTable({
+      "lengthMenu": [
+        [25, 50, 75, 100, -1],
+        [25, 50, 75, 100, "All"]
+      ]
+    });
+  });
+  $(document).ready(function() {
+    $('#datatabelPengguna').DataTable({
+      "lengthMenu": [
+        [25, 50, 75, 100, -1],
+        [25, 50, 75, 100, "All"]
+      ]
+    });
+  });
 </script>

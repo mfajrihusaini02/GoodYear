@@ -1,0 +1,65 @@
+INFO - 2023-09-05 07:57:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-05 07:57:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-05 08:04:42 --> Invalid file: "tambah_role.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('tambah_role.php')
+ 2 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('tambah_role', [], true)
+ 3 APPPATH\Controllers\TambahRoleController.php(20): view('tambah_role', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TambahRoleController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TambahRoleController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+CRITICAL - 2023-09-05 08:05:14 --> Invalid file: "tambah_role.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('tambah_role.php')
+ 2 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('tambah_role', [], true)
+ 3 APPPATH\Controllers\TambahRoleController.php(20): view('tambah_role', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TambahRoleController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TambahRoleController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+CRITICAL - 2023-09-05 08:06:37 --> Invalid file: "tambah_role.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('tambah_role.php')
+ 2 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('tambah_role', [], true)
+ 3 APPPATH\Controllers\TambahRoleController.php(20): view('tambah_role', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TambahRoleController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TambahRoleController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+CRITICAL - 2023-09-05 08:08:11 --> include(isihalaman/tambah_role.php): Failed to open stream: No such file or directory
+in APPPATH\Views\tambah_role.php on line 36.
+ 1 APPPATH\Views\tambah_role.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'include(isihalaman/tambah_role.php): Failed to open stream: No such file or directory', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\tambah_role.php', 36)
+ 2 APPPATH\Views\tambah_role.php(36): include()
+ 3 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\tambah_role.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('tambah_role', [], true)
+ 6 APPPATH\Controllers\TambahRoleController.php(20): view('tambah_role', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TambahRoleController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TambahRoleController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+CRITICAL - 2023-09-05 08:17:49 --> You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 883.
+ 1 SYSTEMPATH\Model.php(642): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(828): CodeIgniter\Model->builder()
+ 3 APPPATH\Controllers\TambahKaryawanController.php(19): CodeIgniter\Model->__call('getTambahPengguna', [])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TambahKaryawanController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TambahKaryawanController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+CRITICAL - 2023-09-05 08:19:19 --> You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 883.
+ 1 SYSTEMPATH\Model.php(642): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(828): CodeIgniter\Model->builder()
+ 3 APPPATH\Controllers\TambahKaryawanController.php(19): CodeIgniter\Model->__call('getTambahPengguna', [])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TambahKaryawanController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TambahKaryawanController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')

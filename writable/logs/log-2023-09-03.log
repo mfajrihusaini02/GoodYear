@@ -1075,3 +1075,108 @@ in APPPATH\Views\isihalaman\daftar_karyawan.php on line 39.
  9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
 10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
 11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-03 12:36:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-03 12:36:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-03 12:52:34 --> Undefined variable $role
+in APPPATH\Views\isihalaman\daftar_pengguna.php on line 30.
+ 1 APPPATH\Views\isihalaman\daftar_pengguna.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $role', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\daftar_pengguna.php', 30)
+ 2 APPPATH\Views\daftar_pengguna.php(36): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\daftar_pengguna.php')
+ 3 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\daftar_pengguna.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('daftar_pengguna', [], true)
+ 6 APPPATH\Controllers\DaftarPenggunaController.php(20): view('daftar_pengguna', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarPenggunaController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarPenggunaController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+CRITICAL - 2023-09-03 13:00:23 --> Invalid file: "tambah_pengguna.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('tambah_pengguna.php')
+ 2 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('tambah_pengguna', [], true)
+ 3 APPPATH\Controllers\TambahPenggunaController.php(20): view('tambah_pengguna', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TambahPenggunaController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TambahPenggunaController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+CRITICAL - 2023-09-03 13:00:31 --> Invalid file: "tambah_pengguna.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('tambah_pengguna.php')
+ 2 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('tambah_pengguna', [], true)
+ 3 APPPATH\Controllers\TambahPenggunaController.php(20): view('tambah_pengguna', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TambahPenggunaController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TambahPenggunaController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+CRITICAL - 2023-09-03 13:00:59 --> Invalid file: "tambah_pengguna.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('tambah_pengguna.php')
+ 2 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('tambah_pengguna', [], true)
+ 3 APPPATH\Controllers\TambahPenggunaController.php(20): view('tambah_pengguna', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TambahPenggunaController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TambahPenggunaController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-03 13:22:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-03 13:22:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-03 13:22:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-09-03 13:22:41 --> ErrorException: pg_query(): Query failed: ERROR:  relation &quot;users&quot; does not exist
+LINE 2: FROM &quot;users&quot;
+             ^ in D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\Postgre\Connection.php:187
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'D:\\SKYWORX\\Proj...', 187)
+#1 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\Postgre\Connection.php(187): pg_query(Object(PgSql\Connection), 'SELECT *\nFROM "...')
+#2 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseConnection.php(692): CodeIgniter\Database\Postgre\Connection->execute('SELECT *\nFROM "...')
+#3 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM "...')
+#4 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 D:\SKYWORX\Project\good-year-new\GoodYear\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\SKYWORX\Project\good-year-new\GoodYear\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#7 D:\SKYWORX\Project\good-year-new\GoodYear\vendor\myth\auth\src\Authentication\LocalAuthenticator.php(140): CodeIgniter\BaseModel->first()
+#8 D:\SKYWORX\Project\good-year-new\GoodYear\vendor\myth\auth\src\Authentication\LocalAuthenticator.php(19): Myth\Auth\Authentication\LocalAuthenticator->validate(Array, true)
+#9 D:\SKYWORX\Project\good-year-new\GoodYear\vendor\myth\auth\src\Controllers\AuthController.php(87): Myth\Auth\Authentication\LocalAuthenticator->attempt(Array, false)
+#10 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(932): Myth\Auth\Controllers\AuthController->attemptLogin()
+#11 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+#12 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 D:\SKYWORX\Project\good-year-new\GoodYear\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#14 D:\SKYWORX\Project\good-year-new\GoodYear\system\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Proj...')
+#15 {main}
+CRITICAL - 2023-09-03 13:22:41 --> pg_query(): Query failed: ERROR:  relation &quot;users&quot; does not exist
+LINE 2: FROM &quot;users&quot;
+             ^
+in SYSTEMPATH\Database\Postgre\Connection.php on line 187.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  relation &quot;users&quot; does not exist
+LINE 2: FROM &quot;users&quot;
+             ^', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\system\\Database\\Postgre\\Connection.php', 187)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(187): pg_query(Object(PgSql\Connection), 'SELECT *
+FROM "users"
+WHERE "email" = \'arshaljamiko@gmail.com\'
+AND "users"."deleted_at" IS NULL
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\Postgre\Connection->execute('SELECT *
+FROM "users"
+WHERE "email" = \'arshaljamiko@gmail.com\'
+AND "users"."deleted_at" IS NULL
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "users"
+WHERE "email" = \'arshaljamiko@gmail.com\'
+AND "users"."deleted_at" IS NULL
+ LIMIT 1')
+ 5 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "users"
+WHERE "email" = :email:
+AND "users"."deleted_at" IS NULL
+ LIMIT 1', [...], false)
+ 6 SYSTEMPATH\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+ 7 SYSTEMPATH\BaseModel.php(656): CodeIgniter\Model->doFirst()
+ 8 VENDORPATH\myth\auth\src\Authentication\LocalAuthenticator.php(140): CodeIgniter\BaseModel->first()
+ 9 VENDORPATH\myth\auth\src\Authentication\LocalAuthenticator.php(19): Myth\Auth\Authentication\LocalAuthenticator->validate([...], true)
+10 VENDORPATH\myth\auth\src\Controllers\AuthController.php(87): Myth\Auth\Authentication\LocalAuthenticator->attempt([...], false)
+11 SYSTEMPATH\CodeIgniter.php(932): Myth\Auth\Controllers\AuthController->attemptLogin()
+12 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+13 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
