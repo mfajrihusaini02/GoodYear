@@ -6,6 +6,20 @@ use CodeIgniter\Model;
 
 class DaftarKaryawanModel extends Model
 {
+    protected $table = 'karyawan';
+    protected $primaryKey = 'id_karyawan';
+    protected $useAutoIncrement = true;
+    protected $allowedFields = [
+        'id_karyawan',
+        'nik',
+        'nama_karyawan',
+        'jabatan',
+        'divisi',
+        'alamat',
+        'qr_code',
+        'foto'
+    ];
+    
     public function getKaryawan()
     {
         // return $this->db->table('karyawan')

@@ -33,26 +33,35 @@ $routes->get('/', 'Home::dashboard', ['filter' => 'login']);
 $routes->post('/dashboard', 'Home::dashboard', ['filter' => 'login']);
 $routes->get('/dashboard', 'Home::dashboard', ['filter' => 'login']);
 //Daftar Table
-$routes->get('/daftar_role', 'DaftarRoleController::index');
-$routes->get('/daftar_pengguna', 'DaftarPenggunaController::index');
-$routes->get('/daftar_sertifikat', 'DaftarSertifikatController::index');
-$routes->get('/daftar_karyawan', 'DaftarKaryawanController::index');
+$routes->get('/daftar_role', 'DaftarRoleController::index', ['filter' => 'login']);
+$routes->get('/daftar_pengguna', 'DaftarPenggunaController::index', ['filter' => 'login']);
+$routes->get('/daftar_sertifikat', 'DaftarSertifikatController::index', ['filter' => 'login']);
+$routes->get('/daftar_karyawan', 'DaftarKaryawanController::index', ['filter' => 'login']);
 //Daftar Add
-$routes->get('/tambah_role', 'DaftarRoleController::tambah_role');
-$routes->get('/tambah_pengguna', 'DaftarPenggunaController::tambah_pengguna');
-$routes->get('/tambah_sertifikat', 'DaftarSertifikatController::tambah_sertifikat');
-$routes->get('/tambah_karyawan', 'DaftarKaryawanController::tambah_karyawan');
+$routes->get('/tambah_role', 'DaftarRoleController::tambah_role', ['filter' => 'login']);
+$routes->get('/tambah_pengguna', 'DaftarPenggunaController::tambah_pengguna', ['filter' => 'login']);
+$routes->get('/tambah_sertifikat', 'DaftarSertifikatController::tambah_sertifikat', ['filter' => 'login']);
+$routes->get('/tambah_karyawan', 'DaftarKaryawanController::tambah_karyawan', ['filter' => 'login']);
 //Daftar Save
-$routes->post('/simpan_role', 'DaftarRoleController::simpan_role');
-$routes->post('/simpan_pengguna', 'DaftarPenggunaController::simpan_pengguna');
-$routes->post('/simpan_sertifikat', 'DaftarSertifikatController::simpan_sertifikat');
-$routes->post('/simpan_karyawan', 'DaftarKaryawanController::simpan_karyawan');
+$routes->post('/simpan_role', 'DaftarRoleController::simpan_role', ['filter' => 'login']);
+$routes->post('/simpan_pengguna', 'DaftarPenggunaController::simpan_pengguna', ['filter' => 'login']);
+$routes->post('/simpan_sertifikat', 'DaftarSertifikatController::simpan_sertifikat', ['filter' => 'login']);
+$routes->post('/simpan_karyawan', 'DaftarKaryawanController::simpan_karyawan', ['filter' => 'login']);
 // Daftar Edit
-$routes->get('/edit_role/(:num)', 'DaftarRoleController::edit_role/$1');
+$routes->get('/edit_role/(:num)', 'DaftarRoleController::edit_role/$1', ['filter' => 'login']);
+$routes->get('/edit_pengguna/(:num)', 'DaftarPenggunaController::edit_pengguna/$1', ['filter' => 'login']);
+$routes->get('/edit_sertifikat/(:num)', 'DaftarSertifikatController::edit_sertifikat/$1', ['filter' => 'login']);
+$routes->get('/edit_karyawan/(:num)', 'DaftarKaryawanController::edit_karyawan/$1', ['filter' => 'login']);
 // Daftar Update
-$routes->put('/update_role/(:num)', 'DaftarRoleController::update_role/$1');
+$routes->put('/update_role/(:num)', 'DaftarRoleController::update_role/$1', ['filter' => 'login']);
+$routes->put('/update_pengguna/(:num)', 'DaftarPenggunaController::update_pengguna/$1', ['filter' => 'login']);
+$routes->put('/update_sertifikat/(:num)', 'DaftarSertifikatController::update_sertifikat/$1', ['filter' => 'login']);
+$routes->put('/update_karyawan/(:num)', 'DaftarKaryawanController::update_karyawan/$1', ['filter' => 'login']);
 // Daftar Delete
-$routes->get('/delete_role/(:num)', 'DaftarRoleController::delete_role/$1');
+$routes->get('/delete_role/(:num)', 'DaftarRoleController::delete_role/$1', ['filter' => 'login']);
+$routes->get('/delete_pengguna/(:num)', 'DaftarPenggunaController::delete_pengguna/$1', ['filter' => 'login']);
+$routes->get('/delete_sertifikat/(:num)', 'DaftarSertifikatController::delete_sertifikat/$1', ['filter' => 'login']);
+$routes->get('/delete_karyawan/(:num)', 'DaftarKaryawanController::delete_karyawan/$1', ['filter' => 'login']);
 
 /*
  * --------------------------------------------------------------------
