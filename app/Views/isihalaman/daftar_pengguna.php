@@ -30,6 +30,7 @@
                         <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">NAMA PENGGUNA</th>
                         <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">USERNAME</th>
                         <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">ROLE</th>
+                        <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">PASSWORD</th>
                         <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">STATUS</th>
                         <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">AKSI</th>
                     </tr>
@@ -37,18 +38,21 @@
 
                 <tbody>
                     <?php $nomor = 1; ?>
-                    <?php foreach ($pengguna as $value) : ?>
+                    <?php foreach ($users as $value) : ?>
                         <tr style="vertical-align: middle; text-align: center; text-shadow: none;">
                             <td style="margin: 5px; padding: 3px; text-align: center;"><?= $nomor++; ?></td>
-                            <td style="margin: 5px; padding: 3px; text-align: justify;"><?= $value["nama_pengguna"]; ?></td>
+                            <td style="margin: 5px; padding: 3px; text-align: justify;"><?= $value["nama_karyawan"]; ?></td>
                             <td style="margin: 5px; padding: 3px; text-align: justify;"><?= $value["username"]; ?></td>
                             <td style="margin: 5px; padding: 3px; text-align: center;"><?= $value["nama_role"]; ?></td>
-                            <td style="margin: 5px; padding: 3px; text-align: center;"><?= $value["status"]; ?></td>
+                            <td style="margin: 5px; padding: 3px; text-align: center;"><?= $value["password"]; ?></td>
                             <td style="margin: 5px; padding: 3px; text-align: center;">
-                                <a href="<?= base_url('edit_pengguna/'.$value['id_pengguna']) ?>" class="btn btn-outline-secondary">
+                                <?= ($value['active'] == 1) ? 'Aktif' : 'Tidak Aktif' ?>
+                            </td>
+                            <td style="margin: 5px; padding: 3px; text-align: center;">
+                                <a href="<?= base_url('edit_pengguna/'.$value['id']) ?>" class="btn btn-outline-secondary">
                                     <span class='icon'><i class='fas fa-edit'></i></span>
                                 </a>
-                                <a href="#" data-href="<?= base_url('delete_pengguna/'.$value['id_pengguna']) ?>" onclick="confirmToDelete(this)" class="btn btn-outline-danger">
+                                <a href="#" data-href="<?= base_url('delete_pengguna/'.$value['id']) ?>" onclick="confirmToDelete(this)" class="btn btn-outline-danger">
                                     <span class='icon'><i class='fas fa-trash'></i></span>
                                 </a>
                             </td>

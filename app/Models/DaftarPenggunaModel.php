@@ -6,13 +6,43 @@ use CodeIgniter\Model;
 
 class DaftarPenggunaModel extends Model
 {
+    protected $table = 'users';
+    protected $primaryKey = 'id';
+    protected $useAutoIncrement = true;
+    protected $allowedFields = [
+        'id',
+        'nik',
+        'id_role',
+        'email',
+        'username',
+        'password',
+        'password_hash',
+        'active',
+        'force_pass_reset',
+        'created_at',
+        'update_at',
+        'deleted_at'
+    ];
     public function getPengguna()
     {
-        return $this->db->table('pengguna')
-            ->join('role', 'role.id_role=pengguna.id_role')
+        return $this->db->table('users')
+            ->join('role', 'role.id_role=users.id_role')
+            ->join('karyawan', 'karyawan.nik=users.nik')
             ->get()->getResultArray();
 
         // return $this->db->table('karyawan')
         // ->get()->getResultArray();
+    }
+
+    function getLevel()
+    {
+        $query = $this->db->query('SELECT * FROM role');
+        return $query->getResultArray();
+    }
+
+    function getKaryawan()
+    {
+        $query = $this->db->query('SELECT * FROM karyawan');
+        return $query->getResultArray();
     }
 }

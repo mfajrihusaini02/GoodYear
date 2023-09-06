@@ -28,7 +28,7 @@
                     <div class="mb-3">
                         <label for="Jabatan" class="form-label">Jabatan</label>
                         <select name="jabatan" id="jabatan" class="form-select" aria-describedby="Jabatan" required>
-                            <option value="<?= $karyawan['jabatan']; ?>" selected><?= $karyawan['jabatan']; ?></option>
+                            <?= $karyawan['jabatan']; ?>
                             <option value="" disabled >Pilih</option>
                             <OPtion value="Direktur">Direktur</OPtion>
                         </select>
@@ -36,7 +36,7 @@
                     <div class="mb-3">
                         <label for="Devisi" class="form-label">Devisi</label>
                         <select name="divisi" id="divisi" class="form-select" aria-describedby="Devisi" required>
-                            <option value="<?= $karyawan['divisi']; ?>" selected><?= $karyawan['divisi']; ?></option>
+                            <?= $karyawan['divisi']; ?>
                             <option value="" disabled>Pilih</option>
                             <option value="Gudang">Gudang</option>
                         </select>
