@@ -1,7 +1,7 @@
 <div class="card shadow">
     <div class="row card-header bg-gray p-2 m-0">
         <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
-            <h4 class="text-white mt-2">Tambah Role</h4>
+            <h4 class="text-white mt-2">Edit Role</h4>
         </div>
 
         <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12" align="right">
@@ -15,17 +15,18 @@
     <div class="card-body mb-3 mt-3">
         <div class="row">
             <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
-                <form method="POST" enctype="multipart/form-data" action="<?= base_url('simpan_role') ?>">
+                <form method="POST" enctype="multipart/form-data" action="<?= base_url('update_role/'.$role['id_role']); ?>">
+                    <input type="hidden" name="_method" value="PUT">
                     <div class="mb-3">
                         <label for="nama_role" class="form-label">Nama Role</label>
-                        <input type="text" class="form-control" id="nama_role" name="nama_role" aria-describedby="nama_role" autofocus required placeholder="Silahkan masukan nama role">
+                        <input type="text" class="form-control" id="nama_role" name="nama_role" value="<?= $role['nama_role']; ?>" aria-describedby="nama_role" autofocus required placeholder="Silahkan masukan nama role">
                     </div>
                     <div class="mb-3">
                         <label for="level" class="form-label">Level</label>
-                        <input type="text" class="form-control" id="level" name="level" aria-describedby="level" required placeholder="Silahkan masukan level">
+                        <input type="text" class="form-control" id="level" name="level" value="<?= $role['level']; ?>" aria-describedby="level" required placeholder="Silahkan masukan level">
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="submit" class="btn btn-primary">Update</button>
                 </form>
             </div>
         </div>

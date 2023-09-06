@@ -43,7 +43,16 @@ $routes->get('/tambah_pengguna', 'DaftarPenggunaController::tambah_pengguna');
 $routes->get('/tambah_sertifikat', 'DaftarSertifikatController::tambah_sertifikat');
 $routes->get('/tambah_karyawan', 'DaftarKaryawanController::tambah_karyawan');
 //Daftar Save
-$routes->post('/tambah_role/save_role', 'DaftarRoleController::save_role');
+$routes->post('/simpan_role', 'DaftarRoleController::simpan_role');
+$routes->post('/simpan_pengguna', 'DaftarPenggunaController::simpan_pengguna');
+$routes->post('/simpan_sertifikat', 'DaftarSertifikatController::simpan_sertifikat');
+$routes->post('/simpan_karyawan', 'DaftarKaryawanController::simpan_karyawan');
+// Daftar Edit
+$routes->get('/edit_role/(:num)', 'DaftarRoleController::edit_role/$1');
+// Daftar Update
+$routes->put('/update_role/(:num)', 'DaftarRoleController::update_role/$1');
+// Daftar Delete
+$routes->get('/delete_role/(:num)', 'DaftarRoleController::delete_role/$1');
 
 /*
  * --------------------------------------------------------------------
