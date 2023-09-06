@@ -19,4 +19,12 @@ class DaftarKaryawanController extends BaseController
         $data['karyawan'] = $model->getKaryawan();
         return view('daftar_karyawan', $data);
     }
+
+    public function tambah_karyawan()
+    {
+        $data = [
+            'title' => 'Form Tambah Karyawan'
+        ];
+        return view('tambah_karyawan', $data);
+    }
 }

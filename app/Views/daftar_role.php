@@ -57,6 +57,13 @@
   <!-- Core JS -->
   <!-- build:js assets/vendor/js/core.js -->
   <?php include 'kumpulanscript/linkbawah.php' ?>
+  
+  <script>
+    function confirmToDelete(el) {
+      $("#delete-button").attr("href", el.dataset.href);
+      $("#confirm-dialog").modal('show');
+    }
+  </script>
 </body>
 
 </html>

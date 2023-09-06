@@ -19,11 +19,11 @@
                     <?= csrf_field(); ?>
                     <div class="mb-3">
                         <label for="nama_role" class="form-label">Nama Role</label>
-                        <input type="text" class="form-control" id="namarole" name="namarole" aria-describedby="nama_role" autofocus>
+                        <input type="text" class="form-control" id="nama_role" name="nama_role" aria-describedby="nama_role" autofocus>
                     </div>
                     <div class="mb-3">
                         <label for="level" class="form-label">Level</label>
-                        <select name="level_role" id="level_role" class="form-select" aria-describedby="level">
+                        <select name="level" id="level" class="form-select" aria-describedby="level">
                             <option value="">Pilih</option>
                             <option value="Administrator">Administrator</option>
                             <option value="Manager Operational">Manager Operational</option>

@@ -19,4 +19,12 @@ class DaftarSertifikatController extends BaseController
         $data['sertifikat'] = $model->getSertifikat();
         return view('daftar_sertifikat', $data);
     }
+
+    public function tambah_sertifikat()
+    {
+        $data = [
+            'title' => 'Form Tambah Sertifikat'
+        ];
+        return view('tambah_sertifikat', $data);
+    }
 }
