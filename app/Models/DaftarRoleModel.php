@@ -6,7 +6,15 @@ use CodeIgniter\Model;
 
 class DaftarRoleModel extends Model
 {
+    protected $table = 'role';
+    protected $primaryKey = 'id_role';
     protected $useAutoIncrement = true;
+    protected $allowedFields = [
+        'id_role',
+        'nama_role',
+        'level'
+    ];
+
     public function getRole()
     {
         // return $this->db->table('karyawan')

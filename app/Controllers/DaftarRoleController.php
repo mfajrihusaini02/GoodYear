@@ -28,37 +28,39 @@ class DaftarRoleController extends BaseController
         return view('tambah_role', $data);
     }
 
-    public function save_role()
+    public function simpan_role()
     {
-        $this->roleModel->save_role([
-            'nama_role' => $this->request->getVar('nama_role'),
-            'level' => $this->request->getVar('level')
-        ]);
-        return redirect()->to('daftar_role');
+        $simpanModel = new DaftarRoleModel();
+        $data = [
+            'nama_role' => $this->request->getPost('nama_role'),
+            'level' => $this->request->getPost('level')
+        ];
+        $simpanModel->save($data);
+        return redirect()->back()->with('status', 'Role Berhasil Disimpan');
     }
 
-    public function edit_role($id_role)
+    public function edit_role($id_role = null)
     {
-        // ambil artikel yang akan diedit
-        $news = new DaftarRoleModel();
-        $data['news'] = $news->where('id_role', $id_role)->first();
-        
-        // lakukan validasi data artikel
-        $validation =  \Config\Services::validation();
-        $validation->setRules([
-            'id_role' => 'required'
-        ]);
-        $isDataValid = $validation->withRequest($this->request)->run();
-        // jika data vlid, maka simpan ke database
-        if($isDataValid){
-            $news->update($id_role, [
-                "nama_role" => $this->request->getPost('nama_role'),
-                "level" => $this->request->getPost('level')
-            ]);
-            return redirect('daftar_role');
-        }
+        $editModel = new DaftarRoleModel();
+        $data['role'] = $editModel->find($id_role);
+        return view('edit_role', $data);
+    }
 
-        // tampilkan form edit
-        echo view('edit_role', $data);
+    public function update_role($id_role = null)
+    {
+        $updateModel = new DaftarRoleModel();
+        $data = [
+            'nama_role' => $this->request->getPost('nama_role'),
+            'level' => $this->request->getPost('level')
+        ];
+        $updateModel->update($id_role, $data);
+        return redirect()->to(base_url('daftar_role'))->with('status', 'Role Berhasil Diupdate');
+    }
+
+    public function delete_role($id_role = null)
+    {
+        $deleteModel = new DaftarRoleModel();
+        $deleteModel->delete($id_role);
+        return redirect()->back()->with('status', 'Role Berhasil Didelete');
     }
 }

@@ -42,3 +42,301 @@ in APPPATH\Views\isihalaman\daftar_role.php on line 35.
  9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
 10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
 11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+CRITICAL - 2023-09-06 07:52:29 --> Too few arguments to function App\Controllers\DaftarRoleController::edit_role(), 0 passed in D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php on line 932 and exactly 1 expected
+in APPPATH\Controllers\DaftarRoleController.php on line 40.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarRoleController->edit_role()
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarRoleController))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+CRITICAL - 2023-09-06 07:53:36 --> Class "/edit_role/" not found
+in APPPATH\Config\Routes.php on line 47.
+ 1 SYSTEMPATH\Router\RouteCollection.php(267): require()
+ 2 SYSTEMPATH\CodeIgniter.php(800): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 3 SYSTEMPATH\CodeIgniter.php(447): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+CRITICAL - 2023-09-06 07:56:05 --> Class "/edit_role/" not found
+in APPPATH\Config\Routes.php on line 47.
+ 1 SYSTEMPATH\Router\RouteCollection.php(267): require()
+ 2 SYSTEMPATH\CodeIgniter.php(800): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 3 SYSTEMPATH\CodeIgniter.php(447): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+CRITICAL - 2023-09-06 07:56:06 --> Class "/edit_role/" not found
+in APPPATH\Config\Routes.php on line 47.
+ 1 SYSTEMPATH\Router\RouteCollection.php(267): require()
+ 2 SYSTEMPATH\CodeIgniter.php(800): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 3 SYSTEMPATH\CodeIgniter.php(447): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+CRITICAL - 2023-09-06 07:56:59 --> Too few arguments to function App\Controllers\DaftarRoleController::edit_role(), 0 passed in D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php on line 932 and exactly 1 expected
+in APPPATH\Controllers\DaftarRoleController.php on line 40.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarRoleController->edit_role()
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarRoleController))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+CRITICAL - 2023-09-06 07:57:46 --> Too few arguments to function App\Controllers\DaftarRoleController::edit_role(), 0 passed in D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php on line 932 and exactly 1 expected
+in APPPATH\Controllers\DaftarRoleController.php on line 40.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarRoleController->edit_role()
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarRoleController))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+CRITICAL - 2023-09-06 08:02:26 --> Invalid file: "daftar_role/create.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('daftar_role/create.php')
+ 2 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('daftar_role/create', [], true)
+ 3 APPPATH\Controllers\DaftarRoleController.php(28): view('daftar_role/create', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarRoleController->create()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarRoleController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+CRITICAL - 2023-09-06 08:02:42 --> Invalid file: "daftar_role/create.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('daftar_role/create.php')
+ 2 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('daftar_role/create', [], true)
+ 3 APPPATH\Controllers\DaftarRoleController.php(28): view('daftar_role/create', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarRoleController->create()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarRoleController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+CRITICAL - 2023-09-06 08:02:47 --> Invalid file: "daftar_role/create.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('daftar_role/create.php')
+ 2 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('daftar_role/create', [], true)
+ 3 APPPATH\Controllers\DaftarRoleController.php(28): view('daftar_role/create', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarRoleController->create()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarRoleController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+CRITICAL - 2023-09-06 08:03:35 --> Invalid file: "daftar_role/tambah_role.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('daftar_role/tambah_role.php')
+ 2 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('daftar_role/tambah_role', [], true)
+ 3 APPPATH\Controllers\DaftarRoleController.php(28): view('daftar_role/tambah_role', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarRoleController->tambah_role()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarRoleController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+CRITICAL - 2023-09-06 08:04:26 --> Invalid file: "daftar_role/tambah_role.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('daftar_role/tambah_role.php')
+ 2 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('daftar_role/tambah_role', [], true)
+ 3 APPPATH\Controllers\DaftarRoleController.php(28): view('daftar_role/tambah_role', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarRoleController->tambah_role()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarRoleController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+CRITICAL - 2023-09-06 08:04:34 --> Invalid file: "daftar_role/tambah_role.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('daftar_role/tambah_role.php')
+ 2 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('daftar_role/tambah_role', [], true)
+ 3 APPPATH\Controllers\DaftarRoleController.php(28): view('daftar_role/tambah_role', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarRoleController->tambah_role()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarRoleController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+CRITICAL - 2023-09-06 08:11:37 --> You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 883.
+ 1 SYSTEMPATH\Model.php(642): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(828): CodeIgniter\Model->builder()
+ 3 APPPATH\Controllers\DaftarRoleController.php(33): CodeIgniter\Model->__call('save_role', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarRoleController->save_role()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarRoleController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+ERROR - 2023-09-06 08:19:31 --> ErrorException: pg_query(): Query failed: ERROR:  duplicate key value violates unique constraint &quot;role_pkey&quot;
+DETAIL:  Key (id_role)=(1) already exists. in D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\Postgre\Connection.php:187
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'D:\\SKYWORX\\Proj...', 187)
+#1 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\Postgre\Connection.php(187): pg_query(Object(PgSql\Connection), 'INSERT INTO "ro...')
+#2 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseConnection.php(692): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "ro...')
+#3 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "ro...')
+#4 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO "ro...', Array, false)
+#5 D:\SKYWORX\Project\good-year-new\GoodYear\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#6 D:\SKYWORX\Project\good-year-new\GoodYear\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#7 D:\SKYWORX\Project\good-year-new\GoodYear\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, false)
+#8 D:\SKYWORX\Project\good-year-new\GoodYear\system\BaseModel.php(692): CodeIgniter\Model->insert(Array, false)
+#9 D:\SKYWORX\Project\good-year-new\GoodYear\app\Controllers\DaftarRoleController.php(38): CodeIgniter\BaseModel->save(Array)
+#10 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(932): App\Controllers\DaftarRoleController->simpan_role()
+#11 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarRoleController))
+#12 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 D:\SKYWORX\Project\good-year-new\GoodYear\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#14 D:\SKYWORX\Project\good-year-new\GoodYear\system\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Proj...')
+#15 {main}
+CRITICAL - 2023-09-06 08:19:31 --> pg_query(): Query failed: ERROR:  duplicate key value violates unique constraint &quot;role_pkey&quot;
+DETAIL:  Key (id_role)=(1) already exists.
+in SYSTEMPATH\Database\Postgre\Connection.php on line 187.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  duplicate key value violates unique constraint &quot;role_pkey&quot;
+DETAIL:  Key (id_role)=(1) already exists.', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\system\\Database\\Postgre\\Connection.php', 187)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(187): pg_query(Object(PgSql\Connection), 'INSERT INTO "role" ("nama_role", "level") VALUES (\'admin\', \'admin\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "role" ("nama_role", "level") VALUES (\'admin\', \'admin\')')
+ 4 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "role" ("nama_role", "level") VALUES (\'admin\', \'admin\')')
+ 5 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO "role" ("nama_role", "level") VALUES (:nama_role:, :level:)', [...], false)
+ 6 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 7 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 8 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], false)
+ 9 SYSTEMPATH\BaseModel.php(692): CodeIgniter\Model->insert([...], false)
+10 APPPATH\Controllers\DaftarRoleController.php(38): CodeIgniter\BaseModel->save([...])
+11 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarRoleController->simpan_role()
+12 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarRoleController))
+13 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+ERROR - 2023-09-06 08:20:00 --> ErrorException: pg_query(): Query failed: ERROR:  duplicate key value violates unique constraint &quot;role_pkey&quot;
+DETAIL:  Key (id_role)=(2) already exists. in D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\Postgre\Connection.php:187
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'D:\\SKYWORX\\Proj...', 187)
+#1 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\Postgre\Connection.php(187): pg_query(Object(PgSql\Connection), 'INSERT INTO "ro...')
+#2 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseConnection.php(692): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "ro...')
+#3 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "ro...')
+#4 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO "ro...', Array, false)
+#5 D:\SKYWORX\Project\good-year-new\GoodYear\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#6 D:\SKYWORX\Project\good-year-new\GoodYear\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#7 D:\SKYWORX\Project\good-year-new\GoodYear\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, false)
+#8 D:\SKYWORX\Project\good-year-new\GoodYear\system\BaseModel.php(692): CodeIgniter\Model->insert(Array, false)
+#9 D:\SKYWORX\Project\good-year-new\GoodYear\app\Controllers\DaftarRoleController.php(38): CodeIgniter\BaseModel->save(Array)
+#10 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(932): App\Controllers\DaftarRoleController->simpan_role()
+#11 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarRoleController))
+#12 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 D:\SKYWORX\Project\good-year-new\GoodYear\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#14 D:\SKYWORX\Project\good-year-new\GoodYear\system\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Proj...')
+#15 {main}
+CRITICAL - 2023-09-06 08:20:00 --> pg_query(): Query failed: ERROR:  duplicate key value violates unique constraint &quot;role_pkey&quot;
+DETAIL:  Key (id_role)=(2) already exists.
+in SYSTEMPATH\Database\Postgre\Connection.php on line 187.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  duplicate key value violates unique constraint &quot;role_pkey&quot;
+DETAIL:  Key (id_role)=(2) already exists.', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\system\\Database\\Postgre\\Connection.php', 187)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(187): pg_query(Object(PgSql\Connection), 'INSERT INTO "role" ("nama_role", "level") VALUES (\'admin\', \'admin\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "role" ("nama_role", "level") VALUES (\'admin\', \'admin\')')
+ 4 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "role" ("nama_role", "level") VALUES (\'admin\', \'admin\')')
+ 5 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO "role" ("nama_role", "level") VALUES (:nama_role:, :level:)', [...], false)
+ 6 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 7 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 8 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], false)
+ 9 SYSTEMPATH\BaseModel.php(692): CodeIgniter\Model->insert([...], false)
+10 APPPATH\Controllers\DaftarRoleController.php(38): CodeIgniter\BaseModel->save([...])
+11 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarRoleController->simpan_role()
+12 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarRoleController))
+13 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+CRITICAL - 2023-09-06 08:20:46 --> There is no primary key defined when trying to make insert.
+in SYSTEMPATH\Model.php on line 294.
+ 1 SYSTEMPATH\Model.php(294): CodeIgniter\Database\Exceptions\DataException::forEmptyPrimaryKey('insert')
+ 2 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 3 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], false)
+ 4 SYSTEMPATH\BaseModel.php(692): CodeIgniter\Model->insert([...], false)
+ 5 APPPATH\Controllers\DaftarRoleController.php(38): CodeIgniter\BaseModel->save([...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarRoleController->simpan_role()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarRoleController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-06 08:21:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-06 08:21:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-06 08:49:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-06 08:55:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-06 08:55:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-06 08:56:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-06 08:56:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-06 08:56:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-06 08:56:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-06 08:56:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-06 08:57:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-06 08:58:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-06 08:58:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-06 09:00:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-06 09:00:19 --> The route for "/daftar_role" cannot be found.
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 60.
+ 1 SYSTEMPATH\HTTP\RedirectResponse.php(60): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('/daftar_role')
+ 2 SYSTEMPATH\Common.php(876): CodeIgniter\HTTP\RedirectResponse->route(false)
+ 3 APPPATH\Controllers\DaftarRoleController.php(39): redirect('/daftar_role')
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarRoleController->simpan_role()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarRoleController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-06 09:00:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-06 09:00:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-06 09:01:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-06 09:01:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-06 09:01:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-06 09:01:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-06 09:01:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-06 09:01:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-06 09:02:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-06 09:02:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-06 09:02:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-06 09:02:55 --> The route for "../daftar_role" cannot be found.
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 60.
+ 1 SYSTEMPATH\HTTP\RedirectResponse.php(60): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('../daftar_role')
+ 2 SYSTEMPATH\Common.php(876): CodeIgniter\HTTP\RedirectResponse->route(false)
+ 3 APPPATH\Controllers\DaftarRoleController.php(39): redirect('../daftar_role')
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarRoleController->simpan_role()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarRoleController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-06 09:03:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-06 09:03:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-06 09:03:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-06 09:03:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-06 09:09:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-06 09:35:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-06 09:35:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-06 09:36:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-06 09:36:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-06 09:36:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-06 09:36:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-06 09:37:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-06 09:37:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-06 09:39:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-06 09:39:21 --> foreach() argument must be of type array|object, null given
+in APPPATH\Views\isihalaman\daftar_role.php on line 38.
+ 1 APPPATH\Views\isihalaman\daftar_role.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, null given', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\daftar_role.php', 38)
+ 2 APPPATH\Views\daftar_role.php(36): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\daftar_role.php')
+ 3 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\daftar_role.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('daftar_role', [], true)
+ 6 APPPATH\Controllers\DaftarRoleController.php(20): view('daftar_role', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarRoleController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarRoleController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-06 09:39:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-06 09:39:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-06 09:39:41 --> You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 883.
+ 1 SYSTEMPATH\Model.php(642): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(297): CodeIgniter\Model->builder()
+ 3 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(692): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\DaftarRoleController.php(38): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarRoleController->simpan_role()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarRoleController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-06 09:40:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-06 09:40:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-06 09:49:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-06 09:49:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-06 09:49:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-06 09:49:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-06 09:49:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-06 09:49:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
