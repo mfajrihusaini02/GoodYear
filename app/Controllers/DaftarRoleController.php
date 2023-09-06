@@ -36,7 +36,7 @@ class DaftarRoleController extends BaseController
             'level' => $this->request->getPost('level')
         ];
         $simpanModel->save($data);
-        return redirect()->back()->with('status', 'Role Berhasil Disimpan');
+        return redirect()->to(base_url('daftar_role'))->with('status', 'Role Berhasil Disimpan');
     }
 
     public function edit_role($id_role = null)

@@ -15,37 +15,46 @@
     <div class="card-body mb-3 mt-3">
         <div class="row">
             <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
-                <form method="POST" enctype="multipart/form-data">
+                <form method="POST" enctype="multipart/form-data" action="<?= base_url('update_karyawan/'.$karyawan['id_karyawan']); ?>">
+                    <input type="hidden" name="_method" value="PUT">
                     <div class="mb-3">
                         <label for="NikKaryawan" class="form-label">NIK</label>
-                        <input type="text" class="form-control" id="NikKaryawan" aria-describedby="NikKaryawan">
+                        <input type="text" class="form-control" id="nik" name="nik" maxlength="16" minlength="16" value="<?= $karyawan['nik']; ?>" aria-describedby="NikKaryawan" autofocus placeholder="Silahkan masukan NIK karyawan" required>
                     </div>
                     <div class="mb-3">
                         <label for="NamaKaryawan" class="form-label">Nama Karyawan</label>
-                        <input type="text" class="form-control" id="NamaKaryawan" aria-describedby="NamaKaryawan">
+                        <input type="text" class="form-control" id="nama_karyawan" name="nama_karyawan" maxlength="100" value="<?= $karyawan['nama_karyawan']; ?>" aria-describedby="NamaKaryawan" placeholder="Silahkan masukan nama karyawan" required>
                     </div>
                     <div class="mb-3">
                         <label for="Jabatan" class="form-label">Jabatan</label>
-                        <select name="Jabatan" id="Jabatan" class="form-select" aria-describedby="Jabatan">
-                            <option value="">Pilih</option>
+                        <select name="jabatan" id="jabatan" class="form-select" aria-describedby="Jabatan" required>
+                            <option value="<?= $karyawan['jabatan']; ?>" selected><?= $karyawan['jabatan']; ?></option>
+                            <option value="" disabled >Pilih</option>
+                            <OPtion value="Direktur">Direktur</OPtion>
                         </select>
                     </div>
                     <div class="mb-3">
                         <label for="Devisi" class="form-label">Devisi</label>
-                        <select name="Devisi" id="Devisi" class="form-select" aria-describedby="Devisi">
-                            <option value="">Pilih</option>
+                        <select name="divisi" id="divisi" class="form-select" aria-describedby="Devisi" required>
+                            <option value="<?= $karyawan['divisi']; ?>" selected><?= $karyawan['divisi']; ?></option>
+                            <option value="" disabled>Pilih</option>
+                            <option value="Gudang">Gudang</option>
                         </select>
                     </div>
                     <div class="mb-3">
                         <label for="Alamat" class="form-label">Alamat</label>
-                        <textarea name="Alamat" id="Alamat" cols="20" rows="3" class="form-control" aria-describedby="Alamat"></textarea>
+                        <textarea name="alamat" id="alamat" cols="20" rows="3" class="form-control" maxlength="100" value="<?= $karyawan['alamat']; ?>" aria-describedby="Alamat" placeholder="Silahkan masukan alamat karyawan" required><?= $karyawan['alamat']; ?></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="QRCode" class="form-label">QR Code</label>
+                        <input type="text" class="form-control" id="qr_code" name="qr_code" aria-describedby="QRCode" maxlength="100" value="<?= $karyawan['qr_code']; ?>" placeholder="Silahkan masukan QR Code" required>
                     </div>
                     <div class="mb-3">
                         <label for="Foto" class="form-label">Foto</label>
-                        <input type="file" class="form-control" id="Foto" aria-describedby="Foto">
+                        <input type="file" class="form-control" id="foto" name="foto" aria-describedby="Foto" value="<?= $karyawan['foto']; ?>" placeholder="Silahkan upload foto karyawan">
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Update</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
                 </form>
             </div>
         </div>

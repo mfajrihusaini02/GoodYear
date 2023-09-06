@@ -6,6 +6,18 @@ use CodeIgniter\Model;
 
 class DaftarSertifikatModel extends Model
 {
+    protected $table = 'sertifikat';
+    protected $primaryKey = 'id_sertifikat';
+    protected $useAutoIncrement = true;
+    protected $allowedFields = [
+        'id_sertifikat',
+        'id_karyawan',
+        'kode_sertifikat',
+        'nama_sertifikat',
+        'tanggal_ambil',
+        'tanggal_ekspire'
+    ];
+
     public function getSertifikat()
     {
         // return $this->db->table('karyawan')

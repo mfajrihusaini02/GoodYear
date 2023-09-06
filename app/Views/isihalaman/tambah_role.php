@@ -18,11 +18,11 @@
                 <form method="POST" enctype="multipart/form-data" action="<?= base_url('simpan_role') ?>">
                     <div class="mb-3">
                         <label for="nama_role" class="form-label">Nama Role</label>
-                        <input type="text" class="form-control" id="nama_role" name="nama_role" aria-describedby="nama_role" autofocus required placeholder="Silahkan masukan nama role">
+                        <input type="text" class="form-control" id="nama_role" name="nama_role" maxlength="100" aria-describedby="nama_role" autofocus required placeholder="Silahkan masukan nama role">
                     </div>
                     <div class="mb-3">
                         <label for="level" class="form-label">Level</label>
-                        <input type="text" class="form-control" id="level" name="level" aria-describedby="level" required placeholder="Silahkan masukan level">
+                        <input type="text" class="form-control" id="level" name="level" maxlength="100" aria-describedby="level" required placeholder="Silahkan masukan level">
                     </div>
 
                     <button type="submit" class="btn btn-primary">Save</button>
