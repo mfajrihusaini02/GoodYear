@@ -34,10 +34,10 @@
                             <td style="margin: 5px; padding: 3px; text-align: justify;"><?= $value["nama_sertifikat"]; ?></td>
                             <td style="margin: 5px; padding: 3px; text-align: center;"><?= $value["tanggal_ekspire"]; ?></td>
                             <td style="margin: 5px; padding: 3px; text-align: center;">
-                                <a class="btn btn-outline-secondary" href="#">
+                                <a href="<?= base_url('edit_sertifikat/' . $value['id_sertifikat'] . '') ?>" class="btn btn-outline-secondary">
                                     <span class='icon'><i class='fas fa-edit'></i></span>
                                 </a>
-                                <a class="btn btn-outline-secondary" href="#">
+                                <a href="#" data-href="<?= base_url('delete_sertifikat/' . $value['id_sertifikat'] . '') ?>" onclick="confirmToDelete(this)" class="btn btn-outline-danger">
                                     <span class='icon'><i class='fas fa-trash'></i></span>
                                 </a>
                             </td>
@@ -45,6 +45,21 @@
                     <?php endforeach ?>
                 </tbody>
             </table>
+
+            <div id="confirm-dialog" class="modal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <h2 class="h2">Are you sure?</h2>
+                            <p>The data will be deleted and lost forever</p>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#" role="button" id="delete-button" class="btn btn-danger">Delete</a>
+                            <button class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

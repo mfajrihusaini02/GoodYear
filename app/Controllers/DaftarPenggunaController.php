@@ -19,4 +19,12 @@ class DaftarPenggunaController extends BaseController
         $data['pengguna'] = $model->getPengguna();
         return view('daftar_pengguna', $data);
     }
+
+    public function tambah_pengguna()
+    {
+        $data = [
+            'title' => 'Form Tambah Pengguna'
+        ];
+        return view('tambah_pengguna', $data);
+    }
 }

@@ -233,3 +233,37 @@ in SYSTEMPATH\Model.php on line 838.
  4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
  6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-05 14:51:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-05 14:51:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-05 14:51:34 --> Call to undefined method App\Models\DaftarRoleModel::save_role
+in SYSTEMPATH\Model.php on line 838.
+ 1 APPPATH\Controllers\DaftarRoleController.php(33): CodeIgniter\Model->__call('save_role', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarRoleController->save_role()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarRoleController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+CRITICAL - 2023-09-05 14:53:33 --> Call to undefined method App\Models\DaftarRoleModel::save_role
+in SYSTEMPATH\Model.php on line 838.
+ 1 APPPATH\Controllers\DaftarRoleController.php(33): CodeIgniter\Model->__call('save_role', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarRoleController->save_role()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarRoleController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+CRITICAL - 2023-09-05 14:53:45 --> Call to undefined method App\Models\DaftarRoleModel::save_role
+in SYSTEMPATH\Model.php on line 838.
+ 1 APPPATH\Controllers\DaftarRoleController.php(33): CodeIgniter\Model->__call('save_role', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarRoleController->save_role()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarRoleController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+CRITICAL - 2023-09-05 14:54:05 --> Call to undefined method App\Models\DaftarRoleModel::save_role
+in SYSTEMPATH\Model.php on line 838.
+ 1 APPPATH\Controllers\DaftarRoleController.php(33): CodeIgniter\Model->__call('save_role', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarRoleController->save_role()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarRoleController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')

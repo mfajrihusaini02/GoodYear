@@ -38,10 +38,10 @@ $routes->get('/daftar_pengguna', 'DaftarPenggunaController::index');
 $routes->get('/daftar_sertifikat', 'DaftarSertifikatController::index');
 $routes->get('/daftar_karyawan', 'DaftarKaryawanController::index');
 //Daftar Add
-$routes->get('/tambah_pengguna', 'TambahPenggunaController::index');
-$routes->get('/tambah_karyawan', 'TambahKaryawanController::index');
-$routes->get('/tambah_sertifikat', 'TambahSertifikatController::index');
 $routes->get('/tambah_role', 'DaftarRoleController::tambah_role');
+$routes->get('/tambah_pengguna', 'DaftarPenggunaController::tambah_pengguna');
+$routes->get('/tambah_sertifikat', 'DaftarSertifikatController::tambah_sertifikat');
+$routes->get('/tambah_karyawan', 'DaftarKaryawanController::tambah_karyawan');
 //Daftar Save
 $routes->post('/tambah_role/save_role', 'DaftarRoleController::save_role');
 
