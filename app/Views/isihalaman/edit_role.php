@@ -19,11 +19,11 @@
                     <input type="hidden" name="_method" value="PUT">
                     <div class="mb-3">
                         <label for="nama_role" class="form-label">Nama Role</label>
-                        <input type="text" class="form-control" id="nama_role" name="nama_role" maxlength="100" value="<?= $role['nama_role']; ?>" aria-describedby="nama_role" autofocus required placeholder="Silahkan masukan nama role">
+                        <input type="text" class="form-control" id="nama_role" name="nama_role" maxlength="50" value="<?= $role['nama_role']; ?>" aria-describedby="nama_role" autofocus required placeholder="Silahkan masukan nama role">
                     </div>
                     <div class="mb-3">
                         <label for="level" class="form-label">Level</label>
-                        <input type="text" class="form-control" id="level" name="level" maxlength="100" value="<?= $role['level']; ?>" aria-describedby="level" required placeholder="Silahkan masukan level">
+                        <input type="text" class="form-control" id="level" name="level" maxlength="50" value="<?= $role['level']; ?>" aria-describedby="level" required placeholder="Silahkan masukan level">
                     </div>
 
                     <button type="submit" class="btn btn-primary">Update</button>

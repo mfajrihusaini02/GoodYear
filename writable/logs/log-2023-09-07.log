@@ -1,0 +1,765 @@
+INFO - 2023-09-07 02:26:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 02:26:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 02:26:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 02:26:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 02:26:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 02:26:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 02:26:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 02:26:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 02:27:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 02:27:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 02:30:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 02:30:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 02:31:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 02:31:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 02:31:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 02:31:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 02:31:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 02:31:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 02:31:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 02:31:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 02:31:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 02:31:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 02:31:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 02:31:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 02:31:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 02:37:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 02:37:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 02:37:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 02:37:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 02:37:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 02:37:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 02:37:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 02:39:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 02:39:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 02:41:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 03:02:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 03:03:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 03:04:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 03:04:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 03:04:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 03:06:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 03:06:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 03:06:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 03:06:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 03:06:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-07 03:06:54 --> Invalid file: "../edit_role.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('../edit_role.php')
+ 2 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('../edit_role', [], true)
+ 3 APPPATH\Controllers\DaftarRoleController.php(46): view('../edit_role', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarRoleController->edit_role('2')
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarRoleController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-07 03:06:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 03:10:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 03:10:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 03:10:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 03:10:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-07 03:10:37 --> Undefined array key "nama_karyawan"
+in APPPATH\Views\isihalaman\edit_pengguna.php on line 24.
+ 1 APPPATH\Views\isihalaman\edit_pengguna.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_karyawan"', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\edit_pengguna.php', 24)
+ 2 APPPATH\Views\edit_pengguna.php(36): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\edit_pengguna.php')
+ 3 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\edit_pengguna.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('edit_pengguna', [], true)
+ 6 APPPATH\Controllers\DaftarPenggunaController.php(58): view('edit_pengguna', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarPenggunaController->edit_pengguna('1')
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarPenggunaController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-07 03:10:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 03:10:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 03:10:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 03:11:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 03:11:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 03:11:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 03:12:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 03:12:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 03:12:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 03:12:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 03:20:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 03:21:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 03:21:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 03:22:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 03:34:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 03:34:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 03:34:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 03:34:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 03:34:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 03:35:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 03:35:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:32:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:33:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:33:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:34:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:34:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:34:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:34:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:34:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:35:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:35:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:35:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:35:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:36:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:36:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-07 04:36:38 --> Undefined array key "nama_karyawan"
+in APPPATH\Views\isihalaman\edit_pengguna.php on line 24.
+ 1 APPPATH\Views\isihalaman\edit_pengguna.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_karyawan"', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\edit_pengguna.php', 24)
+ 2 APPPATH\Views\edit_pengguna.php(36): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\edit_pengguna.php')
+ 3 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\edit_pengguna.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('edit_pengguna', [], true)
+ 6 APPPATH\Controllers\DaftarPenggunaController.php(58): view('edit_pengguna', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarPenggunaController->edit_pengguna('1')
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarPenggunaController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-07 04:36:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:36:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:37:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:37:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:37:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:37:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:38:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:38:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:38:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:39:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:41:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:41:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:41:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:41:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:42:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:42:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:42:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:43:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:43:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:43:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:43:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:43:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:43:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:44:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:44:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:44:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:45:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:45:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:45:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:45:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:46:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:46:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 04:47:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 05:22:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 05:22:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 05:22:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 05:23:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 05:23:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-07 05:23:53 --> Unable to generate image: please check if the GD extension is enabled and configured correctly
+in VENDORPATH\endroid\qr-code\src\Writer\AbstractGdWriter.php on line 26.
+ 1 VENDORPATH\endroid\qr-code\src\Writer\PngWriter.php(25): Endroid\QrCode\Writer\AbstractGdWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label), [...])
+ 2 APPPATH\Controllers\DaftarKaryawanController.php(69): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label))
+ 3 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->simpan_karyawan()
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-07 05:25:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-07 05:25:32 --> Unable to generate image: please check if the GD extension is enabled and configured correctly
+in VENDORPATH\endroid\qr-code\src\Writer\AbstractGdWriter.php on line 26.
+ 1 VENDORPATH\endroid\qr-code\src\Writer\PngWriter.php(25): Endroid\QrCode\Writer\AbstractGdWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label), [...])
+ 2 APPPATH\Controllers\DaftarKaryawanController.php(68): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label))
+ 3 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->simpan_karyawan()
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-07 05:29:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-07 05:29:23 --> Unable to generate image: please check if the GD extension is enabled and configured correctly
+in VENDORPATH\endroid\qr-code\src\Writer\AbstractGdWriter.php on line 26.
+ 1 VENDORPATH\endroid\qr-code\src\Writer\PngWriter.php(25): Endroid\QrCode\Writer\AbstractGdWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label), [...])
+ 2 APPPATH\Controllers\DaftarKaryawanController.php(67): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label))
+ 3 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->simpan_karyawan()
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-07 05:34:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-07 05:34:07 --> Unable to generate image: please check if the GD extension is enabled and configured correctly
+in VENDORPATH\endroid\qr-code\src\Writer\AbstractGdWriter.php on line 26.
+ 1 VENDORPATH\endroid\qr-code\src\Writer\PngWriter.php(25): Endroid\QrCode\Writer\AbstractGdWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label), [...])
+ 2 APPPATH\Controllers\DaftarKaryawanController.php(67): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label))
+ 3 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->simpan_karyawan()
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-07 05:34:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 05:34:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 05:36:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-07 05:36:53 --> Attempt to read property "qrcode" on array
+in APPPATH\Views\isihalaman\daftar_karyawan.php on line 52.
+ 1 APPPATH\Views\isihalaman\daftar_karyawan.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "qrcode" on array', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\daftar_karyawan.php', 52)
+ 2 APPPATH\Views\daftar_karyawan.php(36): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\daftar_karyawan.php')
+ 3 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\daftar_karyawan.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('daftar_karyawan', [], true)
+ 6 APPPATH\Controllers\DaftarKaryawanController.php(28): view('daftar_karyawan', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-07 05:37:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-07 05:37:45 --> Attempt to read property "qr_code" on array
+in APPPATH\Views\isihalaman\daftar_karyawan.php on line 52.
+ 1 APPPATH\Views\isihalaman\daftar_karyawan.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "qr_code" on array', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\daftar_karyawan.php', 52)
+ 2 APPPATH\Views\daftar_karyawan.php(36): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\daftar_karyawan.php')
+ 3 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\daftar_karyawan.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('daftar_karyawan', [], true)
+ 6 APPPATH\Controllers\DaftarKaryawanController.php(28): view('daftar_karyawan', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-07 05:39:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-07 05:39:44 --> Undefined variable $data
+in APPPATH\Views\isihalaman\daftar_karyawan.php on line 52.
+ 1 APPPATH\Views\isihalaman\daftar_karyawan.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\daftar_karyawan.php', 52)
+ 2 APPPATH\Views\daftar_karyawan.php(36): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\daftar_karyawan.php')
+ 3 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\daftar_karyawan.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('daftar_karyawan', [], true)
+ 6 APPPATH\Controllers\DaftarKaryawanController.php(28): view('daftar_karyawan', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-07 05:40:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-07 05:40:50 --> Undefined variable $simpanModel
+in APPPATH\Views\isihalaman\daftar_karyawan.php on line 52.
+ 1 APPPATH\Views\isihalaman\daftar_karyawan.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $simpanModel', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\daftar_karyawan.php', 52)
+ 2 APPPATH\Views\daftar_karyawan.php(36): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\daftar_karyawan.php')
+ 3 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\daftar_karyawan.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('daftar_karyawan', [], true)
+ 6 APPPATH\Controllers\DaftarKaryawanController.php(28): view('daftar_karyawan', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-07 05:42:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-07 05:42:18 --> Undefined variable $simpanModel
+in APPPATH\Views\isihalaman\daftar_karyawan.php on line 52.
+ 1 APPPATH\Views\isihalaman\daftar_karyawan.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $simpanModel', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\daftar_karyawan.php', 52)
+ 2 APPPATH\Views\daftar_karyawan.php(36): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\daftar_karyawan.php')
+ 3 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\daftar_karyawan.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('daftar_karyawan', [], true)
+ 6 APPPATH\Controllers\DaftarKaryawanController.php(28): view('daftar_karyawan', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-07 05:42:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-07 05:42:31 --> Undefined variable $simpanModel
+in APPPATH\Views\isihalaman\daftar_karyawan.php on line 52.
+ 1 APPPATH\Views\isihalaman\daftar_karyawan.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $simpanModel', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\daftar_karyawan.php', 52)
+ 2 APPPATH\Views\daftar_karyawan.php(36): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\daftar_karyawan.php')
+ 3 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\daftar_karyawan.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('daftar_karyawan', [], true)
+ 6 APPPATH\Controllers\DaftarKaryawanController.php(28): view('daftar_karyawan', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-07 05:42:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-07 05:42:32 --> Undefined variable $simpanModel
+in APPPATH\Views\isihalaman\daftar_karyawan.php on line 52.
+ 1 APPPATH\Views\isihalaman\daftar_karyawan.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $simpanModel', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\daftar_karyawan.php', 52)
+ 2 APPPATH\Views\daftar_karyawan.php(36): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\daftar_karyawan.php')
+ 3 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\daftar_karyawan.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('daftar_karyawan', [], true)
+ 6 APPPATH\Controllers\DaftarKaryawanController.php(28): view('daftar_karyawan', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-07 05:42:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-07 05:42:52 --> Undefined variable $simpanModel
+in APPPATH\Views\isihalaman\daftar_karyawan.php on line 52.
+ 1 APPPATH\Views\isihalaman\daftar_karyawan.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $simpanModel', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\daftar_karyawan.php', 52)
+ 2 APPPATH\Views\daftar_karyawan.php(36): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\daftar_karyawan.php')
+ 3 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\daftar_karyawan.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('daftar_karyawan', [], true)
+ 6 APPPATH\Controllers\DaftarKaryawanController.php(28): view('daftar_karyawan', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-07 05:42:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-07 05:42:59 --> Attempt to read property "qr_code" on array
+in APPPATH\Views\isihalaman\daftar_karyawan.php on line 52.
+ 1 APPPATH\Views\isihalaman\daftar_karyawan.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "qr_code" on array', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\daftar_karyawan.php', 52)
+ 2 APPPATH\Views\daftar_karyawan.php(36): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\daftar_karyawan.php')
+ 3 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\daftar_karyawan.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('daftar_karyawan', [], true)
+ 6 APPPATH\Controllers\DaftarKaryawanController.php(28): view('daftar_karyawan', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-07 05:43:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 05:53:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-07 05:53:29 --> Attempt to read property "qr_code" on array
+in APPPATH\Views\isihalaman\daftar_karyawan.php on line 52.
+ 1 APPPATH\Views\isihalaman\daftar_karyawan.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "qr_code" on array', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\daftar_karyawan.php', 52)
+ 2 APPPATH\Views\daftar_karyawan.php(36): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\daftar_karyawan.php')
+ 3 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\daftar_karyawan.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('daftar_karyawan', [], true)
+ 6 APPPATH\Controllers\DaftarKaryawanController.php(28): view('daftar_karyawan', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-07 05:54:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-07 05:54:16 --> Undefined variable $dataUri
+in APPPATH\Views\isihalaman\daftar_karyawan.php on line 52.
+ 1 APPPATH\Views\isihalaman\daftar_karyawan.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $dataUri', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\daftar_karyawan.php', 52)
+ 2 APPPATH\Views\daftar_karyawan.php(36): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\daftar_karyawan.php')
+ 3 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\daftar_karyawan.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('daftar_karyawan', [], true)
+ 6 APPPATH\Controllers\DaftarKaryawanController.php(28): view('daftar_karyawan', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-07 05:56:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 05:56:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-07 05:56:38 --> Undefined variable $dataUri
+in APPPATH\Views\isihalaman\daftar_karyawan.php on line 52.
+ 1 APPPATH\Views\isihalaman\daftar_karyawan.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $dataUri', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\daftar_karyawan.php', 52)
+ 2 APPPATH\Views\daftar_karyawan.php(36): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\daftar_karyawan.php')
+ 3 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\daftar_karyawan.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('daftar_karyawan', [], true)
+ 6 APPPATH\Controllers\DaftarKaryawanController.php(28): view('daftar_karyawan', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-07 05:56:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:01:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:02:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-07 06:02:02 --> Undefined variable $dataUri
+in APPPATH\Views\isihalaman\daftar_karyawan.php on line 52.
+ 1 APPPATH\Views\isihalaman\daftar_karyawan.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $dataUri', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\daftar_karyawan.php', 52)
+ 2 APPPATH\Views\daftar_karyawan.php(36): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\daftar_karyawan.php')
+ 3 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\daftar_karyawan.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('daftar_karyawan', [], true)
+ 6 APPPATH\Controllers\DaftarKaryawanController.php(28): view('daftar_karyawan', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-07 06:02:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-07 06:02:16 --> Undefined variable $dataUri
+in APPPATH\Views\isihalaman\daftar_karyawan.php on line 52.
+ 1 APPPATH\Views\isihalaman\daftar_karyawan.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $dataUri', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\daftar_karyawan.php', 52)
+ 2 APPPATH\Views\daftar_karyawan.php(36): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\daftar_karyawan.php')
+ 3 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\daftar_karyawan.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('daftar_karyawan', [], true)
+ 6 APPPATH\Controllers\DaftarKaryawanController.php(27): view('daftar_karyawan', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-07 06:03:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-07 06:03:50 --> Undefined variable $karyawanModel
+in APPPATH\Views\isihalaman\daftar_karyawan.php on line 52.
+ 1 APPPATH\Views\isihalaman\daftar_karyawan.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $karyawanModel', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\daftar_karyawan.php', 52)
+ 2 APPPATH\Views\daftar_karyawan.php(36): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\daftar_karyawan.php')
+ 3 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\daftar_karyawan.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('daftar_karyawan', [], true)
+ 6 APPPATH\Controllers\DaftarKaryawanController.php(27): view('daftar_karyawan', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-07 06:04:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-07 06:04:19 --> Undefined variable $karyawanModel
+in APPPATH\Views\isihalaman\daftar_karyawan.php on line 43.
+ 1 APPPATH\Views\isihalaman\daftar_karyawan.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $karyawanModel', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\daftar_karyawan.php', 43)
+ 2 APPPATH\Views\daftar_karyawan.php(36): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\daftar_karyawan.php')
+ 3 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\daftar_karyawan.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('daftar_karyawan', [], true)
+ 6 APPPATH\Controllers\DaftarKaryawanController.php(27): view('daftar_karyawan', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-07 06:04:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-07 06:04:51 --> Attempt to read property "qr_code" on array
+in APPPATH\Views\isihalaman\daftar_karyawan.php on line 52.
+ 1 APPPATH\Views\isihalaman\daftar_karyawan.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "qr_code" on array', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\daftar_karyawan.php', 52)
+ 2 APPPATH\Views\daftar_karyawan.php(36): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\daftar_karyawan.php')
+ 3 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\daftar_karyawan.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('daftar_karyawan', [], true)
+ 6 APPPATH\Controllers\DaftarKaryawanController.php(27): view('daftar_karyawan', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-07 06:05:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-07 06:05:38 --> Attempt to read property "qr_code" on array
+in APPPATH\Views\isihalaman\daftar_karyawan.php on line 52.
+ 1 APPPATH\Views\isihalaman\daftar_karyawan.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "qr_code" on array', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\daftar_karyawan.php', 52)
+ 2 APPPATH\Views\daftar_karyawan.php(36): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\daftar_karyawan.php')
+ 3 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\daftar_karyawan.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('daftar_karyawan', [], true)
+ 6 APPPATH\Controllers\DaftarKaryawanController.php(27): view('daftar_karyawan', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-07 06:05:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-07 06:05:41 --> Attempt to read property "qr_code" on array
+in APPPATH\Views\isihalaman\daftar_karyawan.php on line 52.
+ 1 APPPATH\Views\isihalaman\daftar_karyawan.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "qr_code" on array', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\daftar_karyawan.php', 52)
+ 2 APPPATH\Views\daftar_karyawan.php(36): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\daftar_karyawan.php')
+ 3 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\daftar_karyawan.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('daftar_karyawan', [], true)
+ 6 APPPATH\Controllers\DaftarKaryawanController.php(27): view('daftar_karyawan', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-07 06:19:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-07 06:19:06 --> Attempt to read property "qr_code" on array
+in APPPATH\Views\isihalaman\daftar_karyawan.php on line 52.
+ 1 APPPATH\Views\isihalaman\daftar_karyawan.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "qr_code" on array', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\daftar_karyawan.php', 52)
+ 2 APPPATH\Views\daftar_karyawan.php(36): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\daftar_karyawan.php')
+ 3 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\daftar_karyawan.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('daftar_karyawan', [], true)
+ 6 APPPATH\Controllers\DaftarKaryawanController.php(27): view('daftar_karyawan', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-07 06:19:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:19:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:20:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-07 06:20:23 --> Too few arguments to function App\Controllers\DaftarKaryawanController::lihat_karyawan(), 0 passed in D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php on line 932 and exactly 1 expected
+in APPPATH\Controllers\DaftarKaryawanController.php on line 85.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->lihat_karyawan()
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-07 06:20:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-07 06:20:49 --> Too few arguments to function App\Controllers\DaftarKaryawanController::lihat_karyawan(), 0 passed in D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php on line 932 and exactly 1 expected
+in APPPATH\Controllers\DaftarKaryawanController.php on line 85.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->lihat_karyawan()
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-07 06:21:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:21:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:21:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:21:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:21:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:21:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:22:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:24:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:24:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:24:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:27:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:29:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-07 06:29:00 --> Trying to access array offset on value of type null
+in APPPATH\Views\isihalaman\lihat_karyawan.php on line 18.
+ 1 APPPATH\Views\isihalaman\lihat_karyawan.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\lihat_karyawan.php', 18)
+ 2 APPPATH\Views\lihat_karyawan.php(36): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\lihat_karyawan.php')
+ 3 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\lihat_karyawan.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('lihat_karyawan', [], true)
+ 6 APPPATH\Controllers\DaftarKaryawanController.php(88): view('lihat_karyawan', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->lihat_karyawan()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-07 06:29:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-09-07 06:29:53 --> ErrorException: pg_query(): Query failed: ERROR:  column &quot;id&quot; does not exist
+LINE 3: WHERE &quot;id&quot; IS NULL
+              ^ in D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\Postgre\Connection.php:187
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'D:\\SKYWORX\\Proj...', 187)
+#1 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\Postgre\Connection.php(187): pg_query(Object(PgSql\Connection), 'SELECT *\nFROM "...')
+#2 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseConnection.php(692): CodeIgniter\Database\Postgre\Connection->execute('SELECT *\nFROM "...')
+#3 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM "...')
+#4 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 D:\SKYWORX\Project\good-year-new\GoodYear\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\SKYWORX\Project\good-year-new\GoodYear\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#7 D:\SKYWORX\Project\good-year-new\GoodYear\app\Controllers\DaftarKaryawanController.php(87): CodeIgniter\BaseModel->first()
+#8 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->lihat_karyawan()
+#9 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+#10 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\SKYWORX\Project\good-year-new\GoodYear\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 D:\SKYWORX\Project\good-year-new\GoodYear\system\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Proj...')
+#13 {main}
+CRITICAL - 2023-09-07 06:29:53 --> pg_query(): Query failed: ERROR:  column &quot;id&quot; does not exist
+LINE 3: WHERE &quot;id&quot; IS NULL
+              ^
+in SYSTEMPATH\Database\Postgre\Connection.php on line 187.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  column &quot;id&quot; does not exist
+LINE 3: WHERE &quot;id&quot; IS NULL
+              ^', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\system\\Database\\Postgre\\Connection.php', 187)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(187): pg_query(Object(PgSql\Connection), 'SELECT *
+FROM "karyawan"
+WHERE "id" IS NULL
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\Postgre\Connection->execute('SELECT *
+FROM "karyawan"
+WHERE "id" IS NULL
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "karyawan"
+WHERE "id" IS NULL
+ LIMIT 1')
+ 5 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "karyawan"
+WHERE "id" IS NULL
+ LIMIT 1', [], false)
+ 6 SYSTEMPATH\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+ 7 SYSTEMPATH\BaseModel.php(656): CodeIgniter\Model->doFirst()
+ 8 APPPATH\Controllers\DaftarKaryawanController.php(87): CodeIgniter\BaseModel->first()
+ 9 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->lihat_karyawan()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+11 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-07 06:30:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-07 06:30:13 --> Too few arguments to function App\Controllers\DaftarKaryawanController::lihat_karyawan(), 0 passed in D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php on line 932 and exactly 1 expected
+in APPPATH\Controllers\DaftarKaryawanController.php on line 85.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->lihat_karyawan()
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-07 06:31:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-07 06:31:55 --> Undefined array key "qr_code"
+in APPPATH\Views\isihalaman\lihat_karyawan.php on line 18.
+ 1 APPPATH\Views\isihalaman\lihat_karyawan.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "qr_code"', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\lihat_karyawan.php', 18)
+ 2 APPPATH\Views\lihat_karyawan.php(36): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\lihat_karyawan.php')
+ 3 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\lihat_karyawan.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('lihat_karyawan', [], true)
+ 6 APPPATH\Controllers\DaftarKaryawanController.php(89): view('lihat_karyawan', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->lihat_karyawan()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-07 06:32:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-07 06:32:13 --> Undefined array key "id"
+in APPPATH\Views\isihalaman\lihat_karyawan.php on line 18.
+ 1 APPPATH\Views\isihalaman\lihat_karyawan.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\lihat_karyawan.php', 18)
+ 2 APPPATH\Views\lihat_karyawan.php(36): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\lihat_karyawan.php')
+ 3 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\lihat_karyawan.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('lihat_karyawan', [], true)
+ 6 APPPATH\Controllers\DaftarKaryawanController.php(89): view('lihat_karyawan', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->lihat_karyawan()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-07 06:33:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-07 06:33:00 --> Undefined variable $role
+in APPPATH\Views\isihalaman\lihat_karyawan.php on line 18.
+ 1 APPPATH\Views\isihalaman\lihat_karyawan.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $role', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\lihat_karyawan.php', 18)
+ 2 APPPATH\Views\lihat_karyawan.php(36): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\lihat_karyawan.php')
+ 3 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\lihat_karyawan.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('lihat_karyawan', [], true)
+ 6 APPPATH\Controllers\DaftarKaryawanController.php(89): view('lihat_karyawan', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->lihat_karyawan()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-07 06:33:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-07 06:33:05 --> Undefined array key "nik"
+in APPPATH\Views\isihalaman\lihat_karyawan.php on line 18.
+ 1 APPPATH\Views\isihalaman\lihat_karyawan.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nik"', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\lihat_karyawan.php', 18)
+ 2 APPPATH\Views\lihat_karyawan.php(36): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\lihat_karyawan.php')
+ 3 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\lihat_karyawan.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('lihat_karyawan', [], true)
+ 6 APPPATH\Controllers\DaftarKaryawanController.php(89): view('lihat_karyawan', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->lihat_karyawan()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-07 06:33:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-07 06:33:40 --> Undefined array key "nik"
+in APPPATH\Views\isihalaman\lihat_karyawan.php on line 19.
+ 1 APPPATH\Views\isihalaman\lihat_karyawan.php(19): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nik"', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\lihat_karyawan.php', 19)
+ 2 APPPATH\Views\lihat_karyawan.php(36): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\lihat_karyawan.php')
+ 3 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\lihat_karyawan.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('lihat_karyawan', [], true)
+ 6 APPPATH\Controllers\DaftarKaryawanController.php(89): view('lihat_karyawan', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->lihat_karyawan()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-07 06:34:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-07 06:34:21 --> Undefined array key "nik"
+in APPPATH\Views\isihalaman\lihat_karyawan.php on line 19.
+ 1 APPPATH\Views\isihalaman\lihat_karyawan.php(19): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nik"', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\lihat_karyawan.php', 19)
+ 2 APPPATH\Views\lihat_karyawan.php(36): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\lihat_karyawan.php')
+ 3 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\lihat_karyawan.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('lihat_karyawan', [], true)
+ 6 APPPATH\Controllers\DaftarKaryawanController.php(89): view('lihat_karyawan', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->lihat_karyawan()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-07 06:35:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-07 06:35:58 --> Undefined array key "nik"
+in APPPATH\Views\isihalaman\lihat_karyawan.php on line 19.
+ 1 APPPATH\Views\isihalaman\lihat_karyawan.php(19): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nik"', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\lihat_karyawan.php', 19)
+ 2 APPPATH\Views\lihat_karyawan.php(36): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\lihat_karyawan.php')
+ 3 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\lihat_karyawan.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('lihat_karyawan', [], true)
+ 6 APPPATH\Controllers\DaftarKaryawanController.php(89): view('lihat_karyawan', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->lihat_karyawan()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-07 06:37:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-07 06:37:03 --> Undefined array key "nama_role"
+in APPPATH\Views\isihalaman\lihat_karyawan.php on line 20.
+ 1 APPPATH\Views\isihalaman\lihat_karyawan.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_role"', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\lihat_karyawan.php', 20)
+ 2 APPPATH\Views\lihat_karyawan.php(36): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\lihat_karyawan.php')
+ 3 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\lihat_karyawan.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('lihat_karyawan', [], true)
+ 6 APPPATH\Controllers\DaftarKaryawanController.php(89): view('lihat_karyawan', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->lihat_karyawan()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-07 06:37:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-07 06:37:22 --> Undefined array key "nik"
+in APPPATH\Views\isihalaman\lihat_karyawan.php on line 20.
+ 1 APPPATH\Views\isihalaman\lihat_karyawan.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nik"', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\lihat_karyawan.php', 20)
+ 2 APPPATH\Views\lihat_karyawan.php(36): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\lihat_karyawan.php')
+ 3 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\lihat_karyawan.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('lihat_karyawan', [], true)
+ 6 APPPATH\Controllers\DaftarKaryawanController.php(89): view('lihat_karyawan', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->lihat_karyawan()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-07 06:37:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:37:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-07 06:37:57 --> Undefined array key "id"
+in APPPATH\Views\isihalaman\lihat_karyawan.php on line 19.
+ 1 APPPATH\Views\isihalaman\lihat_karyawan.php(19): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\lihat_karyawan.php', 19)
+ 2 APPPATH\Views\lihat_karyawan.php(36): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\isihalaman\\lihat_karyawan.php')
+ 3 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\lihat_karyawan.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('lihat_karyawan', [], true)
+ 6 APPPATH\Controllers\DaftarKaryawanController.php(89): view('lihat_karyawan', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->lihat_karyawan('13')
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-07 06:38:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:38:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:40:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:40:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:41:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:42:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:42:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:43:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:43:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:43:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:43:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:44:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:44:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:44:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:45:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:45:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:45:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:45:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:46:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:46:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:46:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:47:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:47:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:48:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:48:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:48:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:48:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:48:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:50:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:50:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:50:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:50:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:51:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:51:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:51:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:51:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:51:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:52:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-07 06:52:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

@@ -42,10 +42,10 @@
                         <label for="Alamat" class="form-label">Alamat</label>
                         <textarea name="alamat" id="alamat" cols="20" rows="3" class="form-control" maxlength="100" aria-describedby="Alamat" placeholder="Silahkan masukan alamat karyawan" required></textarea>
                     </div>
-                    <div class="mb-3">
+                    <!-- <div class="mb-3">
                         <label for="QRCode" class="form-label">QR Code</label>
                         <input type="text" class="form-control" id="qr_code" name="qr_code" aria-describedby="QRCode" maxlength="100" placeholder="Silahkan masukan QR Code" required>
-                    </div>
+                    </div> -->
                     <div class="mb-3">
                         <label for="Foto" class="form-label">Foto</label>
                         <input type="file" class="form-control" id="foto" name="foto" aria-describedby="Foto" placeholder="Silahkan upload foto karyawan">

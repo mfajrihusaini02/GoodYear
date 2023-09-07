@@ -21,6 +21,7 @@
                     <div class="mb-3">
                         <label for="nik">Nama Karyawan</label>
                         <select name="nik" class="form-select" id="nik">
+                            <?= $users['nama_karyawan']; ?>
                             <option value="" disabled selected>-Pilih-</option>
                             <?php foreach ($karyawan as $value) { ?>
                                 <option value="<?= $value['nik']; ?>"><?= $value['nama_karyawan']; ?></option>"
@@ -29,15 +30,16 @@
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" value="<?= $users['email']; ?>" aria-describedby="email" placeholder="Silahkan masukan email pengguna" maxlength="100" required>
+                        <input type="email" class="form-control" id="email" name="email" value="<?= $users['email']; ?>" aria-describedby="email" placeholder="Silahkan masukan email pengguna" maxlength="50" required>
                     </div>
                     <div class="mb-3">
                         <label for="username" class="form-label">Username</label>
-                        <input type="text" class="form-control" id="username" name="username" value="<?= $users['username']; ?>" aria-describedby="username" placeholder="Silahkan masukan username pengguna" maxlength="100" required>
+                        <input type="text" class="form-control" id="username" name="username" value="<?= $users['username']; ?>" aria-describedby="username" placeholder="Silahkan masukan username pengguna" maxlength="50" required>
                     </div>
                     <div class="mb-3">
                         <label for="id_role">Level</label>
                         <select name="id_role" class="form-select" id="id_role">
+                            
                             <option value="" disabled selected>-Pilih-</option>
                             <?php foreach ($level as $value) { ?>
                                 <option value="<?= $value['id_role']; ?>"><?= $value['nama_role']; ?></option>"
@@ -49,7 +51,7 @@
                             <label class="form-label" for="password">Password</label>
                         </div>
                         <div class="input-group input-group-merge">
-                            <input type="password" id="password_hash" class="form-control" name="password_hash" value="<?= $users['password']; ?>" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" />
+                            <input type="password" id="password_hash" class="form-control" maxlength="50" name="password_hash" value="<?= $users['password']; ?>" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" />
                             <span class="input-group-text cursor-pointer"><i class="ti ti-eye-off"></i></span>
                         </div>
                     </div>

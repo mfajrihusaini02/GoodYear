@@ -28,11 +28,11 @@
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" aria-describedby="email" placeholder="Silahkan masukan email pengguna" maxlength="100" required>
+                        <input type="email" class="form-control" id="email" name="email" aria-describedby="email" placeholder="Silahkan masukan email pengguna" maxlength="50" required>
                     </div>
                     <div class="mb-3">
                         <label for="username" class="form-label">Username</label>
-                        <input type="text" class="form-control" id="username" name="username" aria-describedby="username" placeholder="Silahkan masukan username pengguna" maxlength="100" required>
+                        <input type="text" class="form-control" id="username" name="username" aria-describedby="username" placeholder="Silahkan masukan username pengguna" maxlength="50" required>
                     </div>
                     <div class="mb-3">
                         <label for="id_role">Level</label>
@@ -48,7 +48,7 @@
                             <label class="form-label" for="password">Password</label>
                         </div>
                         <div class="input-group input-group-merge">
-                            <input type="password" id="password_hash" class="form-control" name="password_hash" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" required/>
+                            <input type="password" id="password_hash" maxlength="50" class="form-control" name="password_hash" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" required/>
                             <span class="input-group-text cursor-pointer"><i class="ti ti-eye-off"></i></span>
                         </div>
                     </div>

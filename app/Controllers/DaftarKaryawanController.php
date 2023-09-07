@@ -3,6 +3,14 @@
 namespace App\Controllers;
 
 use App\Models\DaftarKaryawanModel;
+use Endroid\QrCode\Color\Color;
+use Endroid\QrCode\Encoding\Encoding;
+use Endroid\QrCode\ErrorCorrectionLevel\ErrorCorrectionLevelLow;
+use Endroid\QrCode\QrCode;
+use Endroid\QrCode\Label\Label;
+use Endroid\QrCode\Logo\Logo;
+use Endroid\QrCode\RoundBlockSizeMode\RoundBlockSizeModeMargin;
+use Endroid\QrCode\Writer\PngWriter;
 
 class DaftarKaryawanController extends BaseController
 {
@@ -10,13 +18,12 @@ class DaftarKaryawanController extends BaseController
 
     public function __construct()
     {
-        $this->karyawanModel = new DaftarKaryawanModel();    
+        $this->karyawanModel = new DaftarKaryawanModel();
     }
 
     public function index()
     {
-        $model = new DaftarKaryawanModel();
-        $data['karyawan'] = $model->getKaryawan();
+        $data['karyawanModel'] = $this->karyawanModel->findAll();
         return view('daftar_karyawan', $data);
     }
 
@@ -30,18 +37,56 @@ class DaftarKaryawanController extends BaseController
 
     public function simpan_karyawan()
     {
-        $simpanModel = new DaftarKaryawanModel();
+        $karyawan   = new DaftarKaryawanModel();
+        $writer     = new PngWriter();
+        $id         = time();
+        $nik        = $this->request->getVar('nik');
+        $nama       = $this->request->getVar('nama_karyawan');
+        $jabatan    = $this->request->getVar('jabatan');
+        $divisi     = $this->request->getVar('divisi');
+        $alamat     = $this->request->getVar('alamat');
+        $foto       = $this->request->getVar('foto');
+
+
+        $qrCode = QrCode::create(base_url('lihat_karyawan/' . $id))
+            ->setEncoding(new Encoding('UTF-8'))
+            ->setErrorCorrectionLevel(new ErrorCorrectionLevelLow())
+            ->setSize(300)
+            ->setMargin(10)
+            ->setRoundBlockSizeMode(new RoundBlockSizeModeMargin())
+            ->setForegroundColor(new Color(0, 0, 0))
+            ->setBackgroundColor(new Color(255, 255, 255));
+
+        $logo = Logo::create('logo.png')
+            ->setResizeToWidth(50);
+
+        $label = Label::create($nama)
+            ->setTextColor(new Color(255, 0, 0));
+
+        $result = $writer->write($qrCode, $logo, $label);
+
+        $dataUri = $result->getDataUri();
+
         $data = [
-            'nik' => $this->request->getPost('nik'),
-            'nama_karyawan' => $this->request->getPost('nama_karyawan'),
-            'jabatan' => $this->request->getPost('jabatan'),
-            'divisi' => $this->request->getPost('divisi'),
-            'alamat' => $this->request->getPost('alamat'),
-            'qr_code' => $this->request->getPost('qr_code'),
-            'foto' => $this->request->getPost('foto')
+            'nik' => $nik,
+            'nama_karyawan' => $nama,
+            'jabatan' => $jabatan,
+            'divisi' => $divisi,
+            'alamat' => $alamat,
+            'qr_code' => $dataUri,
+            'foto' => $foto
         ];
-        $simpanModel->save($data);
+
+
+        $this->karyawanModel->save($data);
         return redirect()->to(base_url('daftar_karyawan'))->with('status', 'Data Karyawan Berhasil Disimpan');
+    }
+
+    public function lihat_karyawan($id = null)
+    {
+        $lihatModel = new DaftarKaryawanModel();
+        $data['detail_karyawan'] = $lihatModel->find($id);
+        return view('lihat_karyawan', $data);
     }
 
     public function edit_karyawan($id_karyawan = null)

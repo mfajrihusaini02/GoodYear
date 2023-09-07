@@ -40,7 +40,7 @@
 
                 <tbody>
                     <?php $nomor = 1; ?>
-                    <?php foreach ($karyawan as $value) : ?>
+                    <?php foreach ($karyawanModel as $value) : ?>
                         <tr style="vertical-align: middle; text-align: center; text-shadow: none;">
                             <td style="margin: 5px; padding: 3px; text-align: center;"><?= $nomor++; ?></td>
                             <td style="margin: 5px; padding: 3px; text-align: justify;"><?= $value["nik"]; ?></td>
@@ -48,7 +48,9 @@
                             <td style="margin: 5px; padding: 3px; text-align: center;"><?= $value["jabatan"]; ?></td>
                             <td style="margin: 5px; padding: 3px; text-align: center;"><?= $value["divisi"]; ?></td>
                             <td style="margin: 5px; padding: 3px; text-align: center;"><?= $value["alamat"]; ?></td>
-                            <td style="margin: 5px; padding: 3px; text-align: center;"><?= $value["qr_code"]; ?></td>
+                            <td style="margin: 5px; padding: 3px; text-align: center;">
+                                <img src="<?= $value["qr_code"]; ?>" alt="" width="100px;">
+                            </td>
                             <td style="margin: 5px; padding: 3px; text-align: center;"><?= $value["foto"]; ?></td>
                             <td style="margin: 5px; padding: 3px; text-align: center;">
                                 <a href="<?= base_url('edit_karyawan/'.$value['id_karyawan']) ?>" class="btn btn-outline-secondary">
@@ -56,6 +58,9 @@
                                 </a>
                                 <a href="#" data-href="<?= base_url('delete_karyawan/'.$value['id_karyawan']) ?>" onclick="confirmToDelete(this)" class="btn btn-outline-danger">
                                     <span class='icon'><i class='fas fa-trash'></i></span>
+                                </a>
+                                <a href="<?= base_url('lihat_karyawan/'.$value['id_karyawan']) ?>" class="btn btn-outline-info">
+                                    <span class='icon'><i class='fas fa-eye'></i></span>
                                 </a>
                             </td>
                         </tr>

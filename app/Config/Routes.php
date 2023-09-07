@@ -62,6 +62,8 @@ $routes->get('/delete_role/(:num)', 'DaftarRoleController::delete_role/$1', ['fi
 $routes->get('/delete_pengguna/(:num)', 'DaftarPenggunaController::delete_pengguna/$1', ['filter' => 'login']);
 $routes->get('/delete_sertifikat/(:num)', 'DaftarSertifikatController::delete_sertifikat/$1', ['filter' => 'login']);
 $routes->get('/delete_karyawan/(:num)', 'DaftarKaryawanController::delete_karyawan/$1', ['filter' => 'login']);
+// Lihat Karyawan
+$routes->get('/lihat_karyawan/(:num)', 'DaftarKaryawanController::lihat_karyawan/$1', ['filter' => 'login']);
 
 /*
  * --------------------------------------------------------------------
