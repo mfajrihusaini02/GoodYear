@@ -58,7 +58,7 @@ class DaftarKaryawanController extends BaseController
             ->setBackgroundColor(new Color(255, 255, 255));
 
         $logo = Logo::create('logo.png')
-            ->setResizeToWidth(50);
+            ->setResizeToWidth(250);
 
         $label = Label::create($nama)
             ->setTextColor(new Color(255, 0, 0));
