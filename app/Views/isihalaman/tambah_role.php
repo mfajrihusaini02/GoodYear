@@ -15,14 +15,21 @@
     <div class="card-body mb-3 mt-3">
         <div class="row">
             <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
-                <form method="POST" enctype="multipart/form-data" action="<?= base_url('simpan_role') ?>">
+                <form method="POST" action="simpan_role">
+                    <?= csrf_field(); ?>
                     <div class="mb-3">
                         <label for="nama_role" class="form-label">Nama Role</label>
-                        <input type="text" class="form-control" id="nama_role" name="nama_role" maxlength="50" aria-describedby="nama_role" autofocus required placeholder="Silahkan masukan nama role">
+                        <input type="text" class="form-control <?php if(session('validation.nama_role')) : ?> is-invalid <?php endif ?>" id="nama_role" name="nama_role" autofocus placeholder="Silahkan masukan nama role">
+                        <div class="invalid-feedback">
+                            <?= session('validation.nama_role'); ?>
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label for="level" class="form-label">Level</label>
-                        <input type="text" class="form-control" id="level" name="level" maxlength="50" aria-describedby="level" required placeholder="Silahkan masukan level">
+                        <input type="text" class="form-control <?php if(session('validation.level')) : ?> is-invalid <?php endif ?>" id="level" name="level" placeholder="Silahkan masukan level">
+                        <div class="invalid-feedback">
+                            <?= session('validation.level'); ?>
+                        </div>
                     </div>
 
                     <button type="submit" class="btn btn-primary">Save</button>

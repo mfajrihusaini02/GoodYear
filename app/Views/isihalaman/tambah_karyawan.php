@@ -15,40 +15,59 @@
     <div class="card-body mb-3 mt-3">
         <div class="row">
             <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
-                <form method="POST" enctype="multipart/form-data" action="<?= base_url('simpan_karyawan') ?>">
+                <form method="POST" enctype="multipart/form-data" action="simpan_karyawan">
+                    <?= csrf_field(); ?>
                     <div class="mb-3">
                         <label for="NikKaryawan" class="form-label">NIK</label>
-                        <input type="text" class="form-control" id="nik" name="nik" maxlength="16" minlength="16" aria-describedby="NikKaryawan" autofocus placeholder="Silahkan masukan NIK karyawan" required>
+                        <input type="text" class="form-control <?php if(session('validation.nik')) : ?> is-invalid <?php endif ?>" id="nik" name="nik" autofocus placeholder="Silahkan masukan NIK karyawan" value="<?= old('nik'); ?>">
+                        <div class="invalid-feedback">
+                            <?= session('validation.nik'); ?>
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label for="NamaKaryawan" class="form-label">Nama Karyawan</label>
-                        <input type="text" class="form-control" id="nama_karyawan" name="nama_karyawan" maxlength="100" aria-describedby="NamaKaryawan" placeholder="Silahkan masukan nama karyawan" required>
+                        <input type="text" class="form-control <?php if(session('validation.nama_karyawan')) : ?> is-invalid <?php endif ?>" id="nama_karyawan" name="nama_karyawan" placeholder="Silahkan masukan nama karyawan" value="<?= old('nama_karyawan'); ?>">
+                        <div class="invalid-feedback">
+                            <?= session('validation.nama_karyawan'); ?>
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label for="Jabatan" class="form-label">Jabatan</label>
-                        <select name="jabatan" id="jabatan" class="form-select" aria-describedby="Jabatan" required>
-                            <option value="" disabled selected>Pilih</option>
-                            <OPtion value="Direktur">Direktur</OPtion>
+                        <select name="jabatan" id="jabatan" class="form-select <?php if(session('validation.jabatan')) : ?> is-invalid <?php endif ?>">
+                            <option value="" disabled selected>-Pilih-</option>
+                            <?php foreach ($jabatan as $value) { ?>
+                                <option value="<?= $value['id_jabatan']; ?>" <?= old('jabatan') == $value['id_jabatan'] ? 'selected' : null ?>><?= $value['nama_jabatan']; ?></option>"
+                            <?php } ?>
                         </select>
+                        <div class="invalid-feedback">
+                            <?= session('validation.jabatan'); ?>
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label for="Devisi" class="form-label">Devisi</label>
-                        <select name="divisi" id="divisi" class="form-select" aria-describedby="Devisi" required>
-                            <option value="" disabled selected>Pilih</option>
-                            <option value="Gudang">Gudang</option>
+                        <select name="divisi" id="divisi" class="form-select <?php if(session('validation.divisi')) : ?> is-invalid <?php endif ?>">
+                            <option value="" disabled selected>-Pilih-</option>
+                            <?php foreach ($divisi as $value) { ?>
+                                <option value="<?= $value['id_divisi']; ?>" <?= old('divisi') == $value['id_divisi'] ? 'selected' : null ?>><?= $value['nama_divisi']; ?></option>"
+                            <?php } ?>
                         </select>
+                        <div class="invalid-feedback">
+                            <?= session('validation.divisi'); ?>
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label for="Alamat" class="form-label">Alamat</label>
-                        <textarea name="alamat" id="alamat" cols="20" rows="3" class="form-control" maxlength="100" aria-describedby="Alamat" placeholder="Silahkan masukan alamat karyawan" required></textarea>
+                        <textarea name="alamat" id="alamat" cols="20" rows="3" class="form-control <?php if(session('validation.alamat')) : ?> is-invalid <?php endif ?>" placeholder="Silahkan masukan alamat karyawan" value="<?= old('alamat'); ?>"></textarea>
+                        <div class="invalid-feedback">
+                            <?= session('validation.alamat'); ?>
+                        </div>
                     </div>
-                    <!-- <div class="mb-3">
-                        <label for="QRCode" class="form-label">QR Code</label>
-                        <input type="text" class="form-control" id="qr_code" name="qr_code" aria-describedby="QRCode" maxlength="100" placeholder="Silahkan masukan QR Code" required>
-                    </div> -->
                     <div class="mb-3">
                         <label for="Foto" class="form-label">Foto</label>
-                        <input type="file" class="form-control" id="foto" name="foto" aria-describedby="Foto" placeholder="Silahkan upload foto karyawan">
+                        <input type="file" class="form-control" id="foto" name="foto" placeholder="Silahkan upload foto karyawan">
+                        <div class="invalid-feedback">
+                            <?= session('validation.foto'); ?>
+                        </div>
                     </div>
 
                     <button type="submit" class="btn btn-primary">Save</button>

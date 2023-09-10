@@ -26,7 +26,7 @@
                                 <h5 class="card-title"><?= $detail_karyawan['nama_karyawan']; ?></h5>
                                 <p class="card-text"><?= $detail_karyawan['nik']; ?></p>
                                 <p class="card-text" ><?= $detail_karyawan['alamat']; ?></p>
-                                <p class="card-text"><small class="text-muted"><?= $detail_karyawan['jabatan']; ?></small></p>
+                                <p class="card-text"><small class="text-muted"><?= $detail_karyawan['id_jabatan']; ?></small></p>
                                 <img src="<?= $detail_karyawan["qr_code"]; ?>" alt="" width="100px;" align="right">
                             </div>
                         </div>

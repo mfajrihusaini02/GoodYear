@@ -23,21 +23,67 @@ class DaftarKaryawanController extends BaseController
 
     public function index()
     {
-        $data['karyawanModel'] = $this->karyawanModel->findAll();
+        $model = new DaftarKaryawanModel();
+        $data['karyawan'] = $model->getKaryawan();
         return view('daftar_karyawan', $data);
     }
 
     public function tambah_karyawan()
     {
-        $data = [
-            'title' => 'Form Tambah Karyawan'
-        ];
+        $modelPengguna = new DaftarKaryawanModel();
+        $data['jabatan'] = $modelPengguna->getJabatan();
+        $data['divisi'] = $modelPengguna->getDivisi();
         return view('tambah_karyawan', $data);
     }
 
     public function simpan_karyawan()
     {
         $karyawan   = new DaftarKaryawanModel();
+
+        // validation input
+        if(!$this->validate([
+            'nik' => [
+                'rules' => 'required|numeric|max_length[16]|min_length[16]',
+                'errors' => [
+                    'required' => 'NIK tidak boleh kosong',
+                    'max_length' => 'NIK harus 16 karakter',
+                    'min_length' => 'NIK harus 16 karakter',
+                    'numeric' => 'Isian harus angka',
+                ],
+            ],
+            'nama_karyawan' => [
+                'rules' => 'required|alpha_space|max_length[100]',
+                'errors' => [
+                    'required' => 'Nama karyawan tidak boleh kosong',
+                    'max_length' => 'Nama karyawan maximal 100 karakter',
+                    'alpha_space' => 'Isian hanya karakter alfabet dan spasi'
+                ],
+            ],
+            'jabatan' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Jabatan belum dipilih',
+                ],
+            ],
+            'divisi' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Divisi belum dipilih',
+                ],
+            ],
+            'alamat' => [
+                'rules' => 'required|max_length[100]',
+                'errors' => [
+                    'required' => 'Alamat tidak boleh kosong',
+                    'max_length' => 'Alamat maximal 100 karakter',
+                ],
+            ]
+        ])) {
+            $validation = \Config\Services::validation();
+            // dd($validation);
+            return redirect()->back()->withInput()->with('validation', $this->validator->getErrors());
+        }
+
         $writer     = new PngWriter();
         $id         = time();
         $nik        = $this->request->getVar('nik');
@@ -45,8 +91,8 @@ class DaftarKaryawanController extends BaseController
         $jabatan    = $this->request->getVar('jabatan');
         $divisi     = $this->request->getVar('divisi');
         $alamat     = $this->request->getVar('alamat');
-        $foto       = $this->request->getVar('foto');
-
+        $foto       = $this->request->getFile('foto');
+        
 
         $qrCode = QrCode::create(base_url('lihat_karyawan/' . $id))
             ->setEncoding(new Encoding('UTF-8'))
@@ -58,7 +104,7 @@ class DaftarKaryawanController extends BaseController
             ->setBackgroundColor(new Color(255, 255, 255));
 
         $logo = Logo::create('logo.png')
-            ->setResizeToWidth(50);
+            ->setResizeToWidth(250);
 
         $label = Label::create($nama)
             ->setTextColor(new Color(255, 0, 0));

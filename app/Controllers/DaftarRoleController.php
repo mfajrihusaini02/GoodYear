@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\DaftarRoleModel;
+use CodeIgniter\Validation\Validation;
 
 class DaftarRoleController extends BaseController
 {
@@ -23,7 +24,7 @@ class DaftarRoleController extends BaseController
     public function tambah_role()
     {
         $data = [
-            'title' => 'Form Tambah Role'
+            'title' => 'Form Tambah Role',
         ];
         return view('tambah_role', $data);
     }
@@ -31,6 +32,27 @@ class DaftarRoleController extends BaseController
     public function simpan_role()
     {
         $simpanModel = new DaftarRoleModel();
+
+        // validation input
+        if(!$this->validate([
+            'nama_role' => [
+                'rules' => 'required|max_length[50]',
+                'errors' => [
+                    'required' => 'Nama role tidak boleh kosong',
+                ],
+            ],
+            'level' => [
+                'rules' => 'required|max_length[50]',
+                'errors' => [
+                    'required' => 'Level tidak boleh kosong',
+                ],
+            ]
+        ])) {
+            $validation = \Config\Services::validation();
+            // dd($validation);
+            return redirect()->back()->withInput()->with('validation', $this->validator->getErrors());
+        }
+
         $data = [
             'nama_role' => $this->request->getPost('nama_role'),
             'level' => $this->request->getPost('level')
@@ -49,6 +71,27 @@ class DaftarRoleController extends BaseController
     public function update_role($id_role = null)
     {
         $updateModel = new DaftarRoleModel();
+
+        // validation input
+        if(!$this->validate([
+            'nama_role' => [
+                'rules' => 'required|max_length[50]',
+                'errors' => [
+                    'required' => 'Nama role tidak boleh kosong',
+                ],
+            ],
+            'level' => [
+                'rules' => 'required|max_length[50]',
+                'errors' => [
+                    'required' => 'Level tidak boleh kosong',
+                ],
+            ]
+        ])) {
+            $validation = \Config\Services::validation();
+            // dd($validation);
+            return redirect()->back()->withInput()->with('validation', $this->validator->getErrors());
+        }
+        
         $data = [
             'nama_role' => $this->request->getPost('nama_role'),
             'level' => $this->request->getPost('level')
