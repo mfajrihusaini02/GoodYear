@@ -15,8 +15,7 @@ class DaftarDivisiController extends BaseController
 
     public function index()
     {
-        $model = new DaftarDivisiModel();
-        $data['divisi'] = $model->getDivisi();
+        $data['divisi'] = $this->divisiModel->getDivisi();
         return view('daftar_divisi', $data);
     }
 
@@ -30,8 +29,6 @@ class DaftarDivisiController extends BaseController
 
     public function simpan_divisi()
     {
-        $simpanModel = new DaftarDivisiModel();
-
         // validation input
         if(!$this->validate([
             'nama_divisi' => [
@@ -51,21 +48,18 @@ class DaftarDivisiController extends BaseController
         $data = [
             'nama_divisi' => $this->request->getPost('nama_divisi')
         ];
-        $simpanModel->save($data);
+        $this->divisiModel->save($data);
         return redirect()->to(base_url('daftar_divisi'))->with('status', 'Divisi Berhasil Disimpan');
     }
 
     public function edit_divisi($id_divisi = null)
     {
-        $editModel = new DaftarDivisiModel();
-        $data['role'] = $editModel->find($id_divisi);
+        $data['role'] = $this->divisiModel->find($id_divisi);
         return view('edit_divisi', $data);
     }
 
     public function update_divisi($id_divisi = null)
     {
-        $updateModel = new DaftarDivisiModel();
-
         // validation input
         if(!$this->validate([
             'nama_divisi' => [
@@ -85,14 +79,13 @@ class DaftarDivisiController extends BaseController
         $data = [
             'nama_divisi' => $this->request->getPost('nama_divisi')
         ];
-        $updateModel->update($id_divisi, $data);
-        return redirect()->to(base_url('daftar_divisi'))->with('status', 'Divisi Berhasil Diupdate');
+        $this->divisiModel->update($id_divisi, $data);
+        return redirect()->to(base_url('daftar_divisi'))->with('status', 'Divisi Berhasil Diubah');
     }
 
     public function delete_divisi($id_divisi = null)
     {
-        $deleteModel = new DaftarDivisiModel();
-        $deleteModel->delete($id_divisi);
-        return redirect()->back()->with('status', 'Divisi Berhasil Didelete');
+        $this->divisiModel->delete($id_divisi);
+        return redirect()->back()->with('status', 'Divisi Berhasil Dihapus');
     }
 }

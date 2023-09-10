@@ -1,62 +1,41 @@
-<!DOCTYPE html>
+<?php include 'atas.php' ?>
 
-<html lang="en" class="light-style layout-navbar-fixed layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="../assets/" data-template="vertical-menu-template">
-
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
-
-  <title>Dashboard | Goodyear Indonesia</title>
-
-  <meta name="description" content="" />
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
-  <?php include 'kumpulanlink/linkatas.php' ?>
-</head>
-
-<body>
-  <!-- Layout wrapper -->
-  <div class="layout-wrapper layout-content-navbar">
-    <div class="layout-container">
-      <!-- Menu -->
-      <?php include 'sidebar.php' ?>
-      <!-- / Menu -->
-
-      <!-- Layout container -->
-      <div class="layout-page">
-        <!-- Navbar -->
-        <?php include 'navbar.php' ?>
-        <!-- / Navbar -->
-
-        <!-- Content wrapper -->
-        <div class="content-wrapper">
-          <!-- Content -->
-          <div class="container-xxl flex-grow-1 container-p-y">
-            <?php include 'isihalaman/dashboard.php' ?>
+<div class="row">
+  <!-- Overview -->
+  <div class="col-lg-6 col-sm-6 mb-4">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-6 col-sm-6 mb-4">
+            <h5>Selamat Pagi, Administrator!</h5>
+            <span>Username : administrator@gmail.com</span>
           </div>
-          <!-- / Content -->
-
-          <!-- Footer -->
-          <?php include 'footer.php' ?>
-          <!-- / Footer -->
+          <div class="col-lg-6 col-sm-6 mb-4" align="right">
+            <i class="menu-icon tf-icons ti ti-user" style="font-size: 60px;"></i>
+          </div>
         </div>
-        <!-- Content wrapper -->
       </div>
-      <!-- / Layout page -->
     </div>
-
-    <!-- Overlay -->
-    <div class="layout-overlay layout-menu-toggle"></div>
-
-    <!-- Drag Target Area To SlideIn Menu On Small Screens -->
-    <div class="drag-target"></div>
   </div>
-  <!-- / Layout wrapper -->
+  <!--/ Overview -->
 
-  <!-- Core JS -->
-  <!-- build:js assets/vendor/js/core.js -->
-  <?php include 'kumpulanscript/linkbawah.php' ?>
-</body>
+  <!-- Overview -->
+  <div class="col-lg-6 col-sm-6 mb-4">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-6 col-sm-6 mb-4">
+            <h5>Jumlah Task</h5>
+            <span>9 Orang</span>
+          </div>
+          <div class="col-lg-6 col-sm-6 mb-4" align="right">
+            <i class="menu-icon tf-icons ti ti-user" style="font-size: 60px;"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/ Overview -->
+</div>
 
-</html>
+<?php include 'bawah.php' ?>

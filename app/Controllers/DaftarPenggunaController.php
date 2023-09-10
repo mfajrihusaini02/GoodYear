@@ -15,24 +15,20 @@ class DaftarPenggunaController extends BaseController
 
     public function index()
     {
-        $model = new DaftarPenggunaModel();
-        $data['users'] = $model->getPengguna();
+        $data['users'] = $this->penggunaModel->getPengguna();
         return view('daftar_pengguna', $data);
     }
 
     public function tambah_pengguna()
     {
-        $modelPengguna = new DaftarPenggunaModel();
-        $data['level'] = $modelPengguna->getLevel();
-        $data['karyawan'] = $modelPengguna->getKaryawan();
+        $data['level'] = $this->penggunaModel->getLevel();
+        $data['karyawan'] = $this->penggunaModel->getKaryawan();
         
         return view('tambah_pengguna', $data);
     }
 
     public function simpan_pengguna()
     {
-        $simpanModel = new DaftarPenggunaModel();
-
         // validation input
         if(!$this->validate([
             'nik' => [
@@ -51,7 +47,7 @@ class DaftarPenggunaController extends BaseController
                 'rules' => 'required|valid_emails|max_length[50]',
                 'errors' => [
                     'required' => 'Email tidak boleh kosong',
-                    'valid_emails' => 'Harus bersifat email',
+                    'valid_emails' => 'Tidak ada mengandung unsur @',
                     'max_length' => 'Email maksimal 50 karakter',
                 ],
             ],
@@ -70,9 +66,9 @@ class DaftarPenggunaController extends BaseController
                 ],
             ],
             'active' => [
-                'rules' => 'required|max_length[50]',
+                'rules' => 'required',
                 'errors' => [
-                    'required' => 'Status aktif belum dipilih',
+                    'required' => 'Status belum dipilih',
                 ],
             ]
         ])) {
@@ -94,29 +90,27 @@ class DaftarPenggunaController extends BaseController
             'updated_at' => $this->request->getPost('updated_at'),
             'deleted_at' => $this->request->getPost('deleted_at')
         ];
-        $simpanModel->save($data);
+        $this->penggunaModel->save($data);
         return redirect()->to(base_url('daftar_pengguna'))->with('status', 'Daftar Pengguna Berhasil Disimpan');
     }
 
     public function edit_pengguna($id = null)
     {
-        $editModel = new DaftarPenggunaModel();
-        $data['users'] = $editModel->find($id);
-        $data['level'] = $editModel->getLevel();
-        $data['karyawan'] = $editModel->getKaryawan();
+        $data['users'] = $this->penggunaModel->find($id);
+        $data['level'] = $this->penggunaModel->getLevel();
+        $data['karyawan'] = $this->penggunaModel->getKaryawan();
         return view('edit_pengguna', $data);
     }
 
     public function update_pengguna($id_pengguna = null)
     {
-        $updateModel = new DaftarPenggunaModel();
-
         // validation input
         if(!$this->validate([
             'nik' => [
-                'rules' => 'required',
+                'rules' => 'required|is_unique',
                 'errors' => [
                     'required' => 'Karyawan belum dipilih',
+                    'is_unique' => 'Karyawan sudah menjadi pengguna',
                 ],
             ],
             'id_role' => [
@@ -129,7 +123,7 @@ class DaftarPenggunaController extends BaseController
                 'rules' => 'required|valid_emails|max_length[50]',
                 'errors' => [
                     'required' => 'Email tidak boleh kosong',
-                    'valid_emails' => 'Harus bersifat email',
+                    'valid_emails' => 'Tidak ada mengandung unsur @',
                     'max_length' => 'Email maksimal 50 karakter',
                 ],
             ],
@@ -148,9 +142,9 @@ class DaftarPenggunaController extends BaseController
                 ],
             ],
             'active' => [
-                'rules' => 'required|max_length[50]',
+                'rules' => 'required',
                 'errors' => [
-                    'required' => 'Status aktif belum dipilih',
+                    'required' => 'Status belum dipilih',
                 ],
             ]
         ])) {
@@ -172,14 +166,13 @@ class DaftarPenggunaController extends BaseController
             'updated_at' => $this->request->getPost('updated_at'),
             'deleted_at' => $this->request->getPost('deleted_at')
         ];
-        $updateModel->update($id_pengguna, $data);
-        return redirect()->to(base_url('daftar_pengguna'))->with('status', 'Pengguna Berhasil Diupdate');
+        $this->penggunaModel->update($id_pengguna, $data);
+        return redirect()->to(base_url('daftar_pengguna'))->with('status', 'Pengguna Berhasil Diubah');
     }
 
     public function delete_pengguna($id_pengguna = null)
     {
-        $deleteModel = new DaftarPenggunaModel();
-        $deleteModel->delete($id_pengguna);
-        return redirect()->back()->with('status', 'Pengguna Berhasil Didelete');
+        $this->penggunaModel->delete($id_pengguna);
+        return redirect()->back()->with('status', 'Pengguna Berhasil Dihapus');
     }
 }

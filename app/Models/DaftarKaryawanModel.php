@@ -27,16 +27,4 @@ class DaftarKaryawanModel extends Model
             ->join('divisi', 'divisi.id_divisi=karyawan.id_divisi')
             ->get()->getResultArray();
     }
-
-    function getJabatan()
-    {
-        $query = $this->db->query('SELECT * FROM jabatan');
-        return $query->getResultArray();
-    }
-
-    function getDivisi()
-    {
-        $query = $this->db->query('SELECT * FROM divisi');
-        return $query->getResultArray();
-    }
 }

@@ -39,6 +39,7 @@ $routes->get('/daftar_sertifikat', 'DaftarSertifikatController::index', ['filter
 $routes->get('/daftar_karyawan', 'DaftarKaryawanController::index', ['filter' => 'login']);
 $routes->get('/daftar_jabatan', 'DaftarJabatanController::index', ['filter' => 'login']);
 $routes->get('/daftar_divisi', 'DaftarDivisiController::index', ['filter' => 'login']);
+$routes->get('/karyawan', 'DaftarKaryawanController::index_karyawan', ['filter' => 'login']);
 //Daftar Add
 $routes->get('/tambah_role', 'DaftarRoleController::tambah_role', ['filter' => 'login']);
 $routes->get('/tambah_pengguna', 'DaftarPenggunaController::tambah_pengguna', ['filter' => 'login']);
@@ -53,6 +54,7 @@ $routes->post('/simpan_sertifikat', 'DaftarSertifikatController::simpan_sertifik
 $routes->post('/simpan_karyawan', 'DaftarKaryawanController::simpan_karyawan', ['filter' => 'login']);
 $routes->post('/simpan_jabatan', 'DaftarJabatanController::simpan_jabatan', ['filter' => 'login']);
 $routes->post('/simpan_divisi', 'DaftarDivisiController::simpan_divisi', ['filter' => 'login']);
+$routes->post('/simpan_sertifikatkaryawan', 'DaftarKaryawanController::simpan_sertifikatkaryawan', ['filter' => 'login']);
 // Daftar Edit
 $routes->get('/edit_role/(:num)', 'DaftarRoleController::edit_role/$1', ['filter' => 'login']);
 $routes->get('/edit_pengguna/(:num)', 'DaftarPenggunaController::edit_pengguna/$1', ['filter' => 'login']);
@@ -60,6 +62,7 @@ $routes->get('/edit_sertifikat/(:num)', 'DaftarSertifikatController::edit_sertif
 $routes->get('/edit_karyawan/(:num)', 'DaftarKaryawanController::edit_karyawan/$1', ['filter' => 'login']);
 $routes->get('/edit_jabatan/(:num)', 'DaftarJabatanController::edit_jabatan/$1', ['filter' => 'login']);
 $routes->get('/edit_divisi/(:num)', 'DaftarDivisiController::edit_divisi/$1', ['filter' => 'login']);
+$routes->get('/edit_karyawandisable/(:num)', 'DaftarKaryawanController::edit_karyawandisable/$1', ['filter' => 'login']);
 // Daftar Update
 $routes->put('/update_role/(:num)', 'DaftarRoleController::update_role/$1', ['filter' => 'login']);
 $routes->put('/update_pengguna/(:num)', 'DaftarPenggunaController::update_pengguna/$1', ['filter' => 'login']);
@@ -71,6 +74,7 @@ $routes->put('/update_divisi/(:num)', 'DaftarDivisiController::update_divisi/$1'
 $routes->get('/delete_role/(:num)', 'DaftarRoleController::delete_role/$1', ['filter' => 'login']);
 $routes->get('/delete_pengguna/(:num)', 'DaftarPenggunaController::delete_pengguna/$1', ['filter' => 'login']);
 $routes->get('/delete_sertifikat/(:num)', 'DaftarSertifikatController::delete_sertifikat/$1', ['filter' => 'login']);
+$routes->get('/delete_sertifikatkaryawan/(:num)', 'DaftarSertifikatController::delete_sertifikatkaryawan/$1', ['filter' => 'login']);
 $routes->get('/delete_karyawan/(:num)', 'DaftarKaryawanController::delete_karyawan/$1', ['filter' => 'login']);
 $routes->get('/delete_jabatan/(:num)', 'DaftarJabatanController::delete_jabatan/$1', ['filter' => 'login']);
 $routes->get('/delete_divisi/(:num)', 'DaftarDivisiController::delete_divisi/$1', ['filter' => 'login']);

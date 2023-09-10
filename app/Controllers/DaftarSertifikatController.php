@@ -15,8 +15,7 @@ class DaftarSertifikatController extends BaseController
 
     public function index()
     {
-        $model = new DaftarSertifikatModel();
-        $data['sertifikat'] = $model->getSertifikat();
+        $data['sertifikat'] = $this->sertifikatModel->getSertifikat();
         return view('daftar_sertifikat', $data);
     }
 
@@ -30,43 +29,85 @@ class DaftarSertifikatController extends BaseController
     
     public function simpan_sertifikat()
     {
-        $simpanModel = new DaftarSertifikatModel();
+        // validation input
+        if(!$this->validate([
+            'kodesertifikat' => [
+                'rules' => 'required|numeric|max_length[50]',
+                'errors' => [
+                    'required' => 'Kode sertifikat tidak boleh kosong',
+                    'max_length' => 'Kode sertifikat maksimal 50 karakter',
+                    'numeric' => 'Isian harus angka',
+                ],
+            ],
+            'namasertifikat' => [
+                'rules' => 'required|max_length[100]',
+                'errors' => [
+                    'required' => 'Nama sertifikat tidak boleh kosong',
+                    'max_length' => 'Nama sertifikat maksimal 100 karakter',
+                ],
+            ]
+        ])) {
+            $validation = \Config\Services::validation();
+            // dd($validation);
+            return redirect()->back()->withInput()->with('validation', $this->validator->getErrors());
+        }
+
         $data = [
-            'id_karyawan' => $this->request->getPost('id_karyawan'),
-            'kode_sertifikat' => $this->request->getPost('kode_sertifikat'),
-            'nama_sertifikat' => $this->request->getPost('nama_sertifikat'),
-            'tanggal_ambil' => $this->request->getPost('tanggal_ambil'),
-            'tanggal_ekspire' => $this->request->getPost('tanggal_ekspire')
+            'kode_sertifikat' => $this->request->getPost('kodesertifikat'),
+            'nama_sertifikat' => $this->request->getPost('namasertifikat')
         ];
-        $simpanModel->save($data);
+        $this->sertifikatModel->save($data);
         return redirect()->to(base_url('daftar_sertifikat'))->with('status', 'Data Sertifikat Berhasil Disimpan');
     }
 
     public function edit_sertifikat($id_sertifikat = null)
     {
-        $editModel = new DaftarSertifikatModel();
-        $data['role'] = $editModel->find($id_sertifikat);
+        $data['sertifikat'] = $this->sertifikatModel->find($id_sertifikat);
         return view('edit_sertifikat', $data);
     }
 
     public function update_sertifikat($id_sertifikat = null)
     {
-        $updateModel = new DaftarSertifikatModel();
+        // validation input
+        if(!$this->validate([
+            'kodesertifikat' => [
+                'rules' => 'required|numeric|max_length[50]',
+                'errors' => [
+                    'required' => 'Kode sertifikat tidak boleh kosong',
+                    'max_length' => 'Kode sertifikat maksimal 50 karakter',
+                    'numeric' => 'Isian harus angka',
+                ],
+            ],
+            'namasertifikat' => [
+                'rules' => 'required|max_length[100]',
+                'errors' => [
+                    'required' => 'Nama sertifikat tidak boleh kosong',
+                    'max_length' => 'Nama sertifikat maksimal 100 karakter',
+                ],
+            ]
+        ])) {
+            $validation = \Config\Services::validation();
+            // dd($validation);
+            return redirect()->back()->withInput()->with('validation', $this->validator->getErrors());
+        }
+
         $data = [
-            'id_karyawan' => $this->request->getPost('id_karyawan'),
-            'kode_sertifikat' => $this->request->getPost('kode_sertifikat'),
-            'nama_sertifikat' => $this->request->getPost('nama_sertifikat'),
-            'tanggal_ambil' => $this->request->getPost('tanggal_ambil'),
-            'tanggal_ekspire' => $this->request->getPost('tanggal_ekspire')
+            'kode_sertifikat' => $this->request->getPost('kodesertifikat'),
+            'nama_sertifikat' => $this->request->getPost('namasertifikat')
         ];
-        $updateModel->update($id_sertifikat, $data);
-        return redirect()->to(base_url('daftar_sertifikat'))->with('status', 'Data Sertifikat Berhasil Diupdate');
+
+        $this->sertifikatModel->update($id_sertifikat, $data);
+        return redirect()->to(base_url('daftar_sertifikat'))->with('status', 'Data Sertifikat Berhasil Diubah');        
     }
 
     public function delete_sertifikat($id_sertifikat = null)
     {
-        $deleteModel = new DaftarSertifikatModel();
-        $deleteModel->delete($id_sertifikat);
-        return redirect()->back()->with('status', 'Data Sertifikat Berhasil Didelete');
+        $this->sertifikatModel->delete($id_sertifikat);
+        return redirect()->back()->with('status', 'Data Sertifikat Berhasil Dihapus');
+    }
+
+    public function delete_sertifikatkaryawan($id_sertifikat = null) {
+        $this->sertifikatModel->delete($id_sertifikat);
+        return redirect()->back()->with('status', 'Data Sertifikat Karyawan Berhasil Dihapus');
     }
 }

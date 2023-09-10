@@ -15,8 +15,7 @@ class DaftarJabatanController extends BaseController
 
     public function index()
     {
-        $model = new DaftarJabatanModel();
-        $data['jabatan'] = $model->getjabatan();
+        $data['jabatan'] = $this->jabatanModel->getjabatan();
         return view('daftar_jabatan', $data);
     }
 
@@ -30,8 +29,6 @@ class DaftarJabatanController extends BaseController
 
     public function simpan_jabatan()
     {
-        $simpanModel = new DaftarJabatanModel();
-
         // validation input
         if(!$this->validate([
             'nama_jabatan' => [
@@ -51,21 +48,18 @@ class DaftarJabatanController extends BaseController
         $data = [
             'nama_jabatan' => $this->request->getPost('nama_jabatan')
         ];
-        $simpanModel->save($data);
+        $this->jabatanModel->save($data);
         return redirect()->to(base_url('daftar_jabatan'))->with('status', 'Jabatan Berhasil Disimpan');
     }
 
     public function edit_jabatan($id_jabatan = null)
     {
-        $editModel = new DaftarJabatanModel();
-        $data['role'] = $editModel->find($id_jabatan);
+        $data['role'] = $this->jabatanModel->find($id_jabatan);
         return view('edit_jabatan', $data);
     }
 
     public function update_jabatan($id_jabatan = null)
     {
-        $updateModel = new DaftarJabatanModel();
-
         // validation input
         if(!$this->validate([
             'nama_jabatan' => [
@@ -85,14 +79,13 @@ class DaftarJabatanController extends BaseController
         $data = [
             'nama_jabatan' => $this->request->getPost('nama_jabatan')
         ];
-        $updateModel->update($id_jabatan, $data);
-        return redirect()->to(base_url('daftar_jabatan'))->with('status', 'Jabatan Berhasil Diupdate');
+        $this->jabatanModel->update($id_jabatan, $data);
+        return redirect()->to(base_url('daftar_jabatan'))->with('status', 'Jabatan Berhasil Diubah');
     }
 
     public function delete_jabatan($id_jabatan = null)
     {
-        $deleteModel = new DaftarJabatanModel();
-        $deleteModel->delete($id_jabatan);
-        return redirect()->back()->with('status', 'Jabatan Berhasil Didelete');
+        $this->jabatanModel->delete($id_jabatan);
+        return redirect()->back()->with('status', 'Jabatan Berhasil Dihapus');
     }
 }

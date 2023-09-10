@@ -1,69 +1,81 @@
-<!DOCTYPE html>
+<?php include 'atas.php' ?>
 
-<html lang="en" class="light-style layout-navbar-fixed layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="../assets/" data-template="vertical-menu-template">
-
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
-
-  <title>Daftar Sertifikat | Goodyear Indonesia</title>
-
-  <meta name="description" content="" />
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
-  <?php include 'kumpulanlink/linkatas.php' ?>
-</head>
-
-<body>
-  <!-- Layout wrapper -->
-  <div class="layout-wrapper layout-content-navbar">
-    <div class="layout-container">
-      <!-- Menu -->
-      <?php include 'sidebar.php' ?>
-      <!-- / Menu -->
-
-      <!-- Layout container -->
-      <div class="layout-page">
-        <!-- Navbar -->
-        <?php include 'navbar.php' ?>
-        <!-- / Navbar -->
-
-        <!-- Content wrapper -->
-        <div class="content-wrapper">
-          <!-- Content -->
-          <div class="container-xxl flex-grow-1 container-p-y">
-            <?php include 'isihalaman/daftar_sertifikat.php' ?>
-          </div>
-          <!-- / Content -->
-
-          <!-- Footer -->
-          <?php include 'footer.php' ?>
-          <!-- / Footer -->
+<?php if(session()->getFlashdata('status')){
+    ?>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Selamat</strong> <?= session()->getFlashdata('status'); ?>.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-        <!-- Content wrapper -->
-      </div>
-      <!-- / Layout page -->
+    <?php
+} ?>
+
+<div class="card shadow">
+    <div class="row card-header bg-primary p-2 m-0">
+        <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
+            <h4 class="text-white mt-2">Daftar Sertifikat</h4>
+        </div>
+
+        <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12" align="right">
+            <a href="../tambah_sertifikat" class="btn btn-success btn-sm btn-icon-split mt-2">
+                <span class="icon text-white-50"><i class="fas fa-plus"></i></span>
+                <span class="text p-1">Tambah Sertifikat</span>
+            </a>
+        </div>
     </div>
 
-    <!-- Overlay -->
-    <div class="layout-overlay layout-menu-toggle"></div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-hover display nowrap w-100" id="datatabelSertifikat" cellspacing="0">
+                <thead>
+                    <tr class="first even" style="text-shadow: none; cursor: pointer;">
+                        <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">NO</th>
+                        <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">KODE SERTIFIKAT</th>
+                        <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">NAMA SERTIFIKAT</th>
+                        <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">AKSI</th>
+                    </tr>
+                </thead>
 
-    <!-- Drag Target Area To SlideIn Menu On Small Screens -->
-    <div class="drag-target"></div>
-  </div>
-  <!-- / Layout wrapper -->
+                <tbody>
+                    <?php $nomor = 1; ?>
+                    <?php foreach ($sertifikat as $value) : ?>
+                        <tr style="vertical-align: middle; text-align: center; text-shadow: none;">
+                            <td style="margin: 5px; padding: 3px; text-align: center;"><?= $nomor++; ?></td>
+                            <td style="margin: 5px; padding: 3px; text-align: center;"><?= $value["kode_sertifikat"]; ?></td>
+                            <td style="margin: 5px; padding: 3px; text-align: justify;"><?= $value["nama_sertifikat"]; ?></td>
+                            <td style="margin: 5px; padding: 3px; text-align: center;">
+                                <a href="<?= base_url('edit_sertifikat/'.$value['id_sertifikat']) ?>" class="btn btn-outline-warning">
+                                    <span class='icon'><i class='fas fa-edit'></i></span>
+                                </a>
+                                <a href="#" data-href="<?= base_url('delete_sertifikat/'.$value['id_sertifikat']) ?>" onclick="confirmToDelete(this)" class="btn btn-outline-danger">
+                                    <span class='icon'><i class='fas fa-trash'></i></span>
+                                </a>
+                            </td>
+                        </tr>
+                    <?php endforeach ?>
+                </tbody>
+            </table>
 
-  <!-- Core JS -->
-  <!-- build:js assets/vendor/js/core.js -->
-  <?php include 'kumpulanscript/linkbawah.php' ?>
+            <div id="confirm-dialog" class="modal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <h2 class="h2">Are you sure?</h2>
+                            <p>The data will be deleted and lost forever</p>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#" role="button" id="delete-button" class="btn btn-danger">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-  <script>
+<?php include 'bawah.php' ?>
+<script>
     function confirmToDelete(el) {
-      $("#delete-button").attr("href", el.dataset.href);
-      $("#confirm-dialog").modal('show');
+        $("#delete-button").attr("href", el.dataset.href);
+        $("#confirm-dialog").modal('show');
     }
-  </script>
-</body>
-
-</html>
+</script>

@@ -54,4 +54,12 @@
       ]
     });
   });
+  $(document).ready(function() {
+    $('#datatabelSertifikatKaryawan').DataTable({
+      "lengthMenu": [
+        [25, 50, 75, 100, -1],
+        [25, 50, 75, 100, "All"]
+      ]
+    });
+  });
 </script>
