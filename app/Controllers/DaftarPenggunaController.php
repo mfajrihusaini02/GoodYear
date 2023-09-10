@@ -32,6 +32,55 @@ class DaftarPenggunaController extends BaseController
     public function simpan_pengguna()
     {
         $simpanModel = new DaftarPenggunaModel();
+
+        // validation input
+        if(!$this->validate([
+            'nik' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Karyawan belum dipilih',
+                ],
+            ],
+            'id_role' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Level belum dipilih',
+                ],
+            ],
+            'email' => [
+                'rules' => 'required|valid_emails|max_length[50]',
+                'errors' => [
+                    'required' => 'Email tidak boleh kosong',
+                    'valid_emails' => 'Harus bersifat email',
+                    'max_length' => 'Email maksimal 50 karakter',
+                ],
+            ],
+            'username' => [
+                'rules' => 'required|max_length[50]',
+                'errors' => [
+                    'required' => 'Username tidak boleh kosong',
+                    'max_length' => 'Username maksimal 50 karakter',
+                ],
+            ],
+            'password_hash' => [
+                'rules' => 'required|max_length[50]',
+                'errors' => [
+                    'required' => 'Password tidak boleh kosong',
+                    'max_length' => 'Password maksimal 50 karakter',
+                ],
+            ],
+            'active' => [
+                'rules' => 'required|max_length[50]',
+                'errors' => [
+                    'required' => 'Status aktif belum dipilih',
+                ],
+            ]
+        ])) {
+            $validation = \Config\Services::validation();
+            // dd($validation);
+            return redirect()->back()->withInput()->with('validation', $this->validator->getErrors());
+        }
+
         $data = [
             'nik' => $this->request->getPost('nik'),
             'id_role' => $this->request->getPost('id_role'),
@@ -61,6 +110,55 @@ class DaftarPenggunaController extends BaseController
     public function update_pengguna($id_pengguna = null)
     {
         $updateModel = new DaftarPenggunaModel();
+
+        // validation input
+        if(!$this->validate([
+            'nik' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Karyawan belum dipilih',
+                ],
+            ],
+            'id_role' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Level belum dipilih',
+                ],
+            ],
+            'email' => [
+                'rules' => 'required|valid_emails|max_length[50]',
+                'errors' => [
+                    'required' => 'Email tidak boleh kosong',
+                    'valid_emails' => 'Harus bersifat email',
+                    'max_length' => 'Email maksimal 50 karakter',
+                ],
+            ],
+            'username' => [
+                'rules' => 'required|max_length[50]',
+                'errors' => [
+                    'required' => 'Username tidak boleh kosong',
+                    'max_length' => 'Username maksimal 50 karakter',
+                ],
+            ],
+            'password_hash' => [
+                'rules' => 'required|max_length[50]',
+                'errors' => [
+                    'required' => 'Password tidak boleh kosong',
+                    'max_length' => 'Password maksimal 50 karakter',
+                ],
+            ],
+            'active' => [
+                'rules' => 'required|max_length[50]',
+                'errors' => [
+                    'required' => 'Status aktif belum dipilih',
+                ],
+            ]
+        ])) {
+            $validation = \Config\Services::validation();
+            // dd($validation);
+            return redirect()->back()->withInput()->with('validation', $this->validator->getErrors());
+        }
+        
         $data = [
             'nik' => $this->request->getPost('nik'),
             'id_role' => $this->request->getPost('id_role'),

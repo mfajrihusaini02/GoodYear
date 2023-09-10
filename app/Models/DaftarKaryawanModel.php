@@ -22,12 +22,21 @@ class DaftarKaryawanModel extends Model
     
     public function getKaryawan()
     {
-        // return $this->db->table('karyawan')
-        //     ->join('kelas', 'kelas.IDKelas=siswa.IDKelas')
-        //     ->join('jurusan', 'jurusan.IDJurusan=siswa.IDJurusan')
-        //     ->get()->getResultArray();
-
         return $this->db->table('karyawan')
-        ->get()->getResultArray();
+            ->join('jabatan', 'jabatan.id_jabatan=karyawan.id_jabatan')
+            ->join('divisi', 'divisi.id_divisi=karyawan.id_divisi')
+            ->get()->getResultArray();
+    }
+
+    function getJabatan()
+    {
+        $query = $this->db->query('SELECT * FROM jabatan');
+        return $query->getResultArray();
+    }
+
+    function getDivisi()
+    {
+        $query = $this->db->query('SELECT * FROM divisi');
+        return $query->getResultArray();
     }
 }

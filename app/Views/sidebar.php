@@ -60,6 +60,16 @@
       </a>
       <ul class="menu-sub">
         <li class="menu-item">
+          <a href="daftar_divisi" class="menu-link">
+            <div data-i18n="Divisi">Divisi</div>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="daftar_jabatan" class="menu-link">
+            <div data-i18n="Jabatan">Jabatan</div>
+          </a>
+        </li>
+        <li class="menu-item">
           <a href="daftar_sertifikat" class="menu-link">
             <div data-i18n="Sertifikat">Sertifikat</div>
           </a>

@@ -40,13 +40,13 @@
 
                 <tbody>
                     <?php $nomor = 1; ?>
-                    <?php foreach ($karyawanModel as $value) : ?>
+                    <?php foreach ($karyawan as $value) : ?>
                         <tr style="vertical-align: middle; text-align: center; text-shadow: none;">
                             <td style="margin: 5px; padding: 3px; text-align: center;"><?= $nomor++; ?></td>
                             <td style="margin: 5px; padding: 3px; text-align: justify;"><?= $value["nik"]; ?></td>
                             <td style="margin: 5px; padding: 3px; text-align: justify;"><?= $value["nama_karyawan"]; ?></td>
-                            <td style="margin: 5px; padding: 3px; text-align: center;"><?= $value["jabatan"]; ?></td>
-                            <td style="margin: 5px; padding: 3px; text-align: center;"><?= $value["divisi"]; ?></td>
+                            <td style="margin: 5px; padding: 3px; text-align: center;"><?= $value["nama_jabatan"]; ?></td>
+                            <td style="margin: 5px; padding: 3px; text-align: center;"><?= $value["nama_divisi"]; ?></td>
                             <td style="margin: 5px; padding: 3px; text-align: center;"><?= $value["alamat"]; ?></td>
                             <td style="margin: 5px; padding: 3px; text-align: center;">
                                 <img src="<?= $value["qr_code"]; ?>" alt="" width="100px;">
