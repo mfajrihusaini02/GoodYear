@@ -123,7 +123,6 @@ class DaftarKaryawanController extends BaseController
             'foto' => $foto
         ];
 
-
         $this->karyawanModel->save($data);
         return redirect()->to(base_url('daftar_karyawan'))->with('status', 'Data Karyawan Berhasil Disimpan');
     }
@@ -139,22 +138,100 @@ class DaftarKaryawanController extends BaseController
     {
         $editModel = new DaftarKaryawanModel();
         $data['karyawan'] = $editModel->find($id_karyawan);
+        $data['jabatan'] = $editModel->getJabatan();
+        $data['divisi'] = $editModel->getDivisi();
         return view('edit_karyawan', $data);
     }
 
     public function update_karyawan($id_karyawan = null)
     {
         $updateModel = new DaftarKaryawanModel();
+
+        // validation input
+        if(!$this->validate([
+            'nik' => [
+                'rules' => 'required|numeric|max_length[16]|min_length[16]',
+                'errors' => [
+                    'required' => 'NIK tidak boleh kosong',
+                    'max_length' => 'NIK harus 16 karakter',
+                    'min_length' => 'NIK harus 16 karakter',
+                    'numeric' => 'Isian harus angka',
+                ],
+            ],
+            'nama_karyawan' => [
+                'rules' => 'required|alpha_space|max_length[100]',
+                'errors' => [
+                    'required' => 'Nama karyawan tidak boleh kosong',
+                    'max_length' => 'Nama karyawan maximal 100 karakter',
+                    'alpha_space' => 'Isian hanya karakter alfabet dan spasi'
+                ],
+            ],
+            'jabatan' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Jabatan belum dipilih',
+                ],
+            ],
+            'divisi' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Divisi belum dipilih',
+                ],
+            ],
+            'alamat' => [
+                'rules' => 'required|max_length[100]',
+                'errors' => [
+                    'required' => 'Alamat tidak boleh kosong',
+                    'max_length' => 'Alamat maximal 100 karakter',
+                ],
+            ]
+        ])) {
+            $validation = \Config\Services::validation();
+            // dd($validation);
+            return redirect()->back()->withInput()->with('validation', $this->validator->getErrors());
+        }
+
+        $writer     = new PngWriter();
+        $id         = time();
+        $nik        = $this->request->getVar('nik');
+        $nama       = $this->request->getVar('nama_karyawan');
+        $jabatan    = $this->request->getPost('jabatan');
+        $divisi     = $this->request->getPost('divisi');
+        $alamat     = $this->request->getVar('alamat');
+        $foto       = $this->request->getFile('foto');
+        
+
+        $qrCode = QrCode::create(base_url('lihat_karyawan/' . $id))
+            ->setEncoding(new Encoding('UTF-8'))
+            ->setErrorCorrectionLevel(new ErrorCorrectionLevelLow())
+            ->setSize(300)
+            ->setMargin(10)
+            ->setRoundBlockSizeMode(new RoundBlockSizeModeMargin())
+            ->setForegroundColor(new Color(0, 0, 0))
+            ->setBackgroundColor(new Color(255, 255, 255));
+
+        $logo = Logo::create('logo.png')
+            ->setResizeToWidth(250);
+
+        $label = Label::create($nama)
+            ->setTextColor(new Color(255, 0, 0));
+
+        $result = $writer->write($qrCode, $logo, $label);
+
+        $dataUri = $result->getDataUri();
+
         $data = [
-            'nik' => $this->request->getPost('nik'),
-            'nama_karyawan' => $this->request->getPost('nama_karyawan'),
-            'jabatan' => $this->request->getPost('jabatan'),
-            'divisi' => $this->request->getPost('divisi'),
-            'alamat' => $this->request->getPost('alamat'),
-            'qr_code' => $this->request->getPost('qr_code'),
-            'foto' => $this->request->getPost('foto')
+            'nik' => $nik,
+            'nama_karyawan' => $nama,
+            'id_jabatan' => $jabatan,
+            'id_divisi' => $divisi,
+            'alamat' => $alamat,
+            'qr_code' => $dataUri,
+            'foto' => $foto
         ];
+
         $updateModel->update($id_karyawan, $data);
+        // dd($data);
         return redirect()->to(base_url('daftar_karyawan'))->with('status', 'Data Karyawan Berhasil Diupdate');
     }
 
