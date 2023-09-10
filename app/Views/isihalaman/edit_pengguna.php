@@ -21,7 +21,6 @@
                     <div class="mb-3">
                         <label for="nik">Nama Karyawan</label>
                         <select name="nik" class="form-select" id="nik">
-                            <?= $users['nama_karyawan']; ?>
                             <option value="" disabled selected>-Pilih-</option>
                             <?php foreach ($karyawan as $value) { ?>
                                 <option value="<?= $value['nik']; ?>"><?= $value['nama_karyawan']; ?></option>"
@@ -64,7 +63,7 @@
                             <option value="0">Tidak Aktif</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="submit" class="btn btn-primary">Update</button>
                 </form>
             </div>
         </div>
