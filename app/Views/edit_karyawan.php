@@ -11,11 +11,11 @@
 
 <div class="card shadow">
     <div class="row card-header bg-primary p-2 m-0">
-        <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
+        <div class="col-lg-6 col-xl-6 col-md-6 col-xs-6 col-sm-6 col-6">
             <h4 class="text-white mt-2">Edit Karyawan</h4>
         </div>
 
-        <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12" align="right">
+        <div class="col-lg-6 col-xl-6 col-md-6 col-xs-6 col-sm-6 col-6" align="right">
             <a href="../daftar_karyawan" class="btn btn-success btn-sm btn-icon-split mt-2">
                 <span class="icon text-white-50"><i class="fas fa-list"></i></span>
                 <span class="text p-1">List</span>
@@ -25,6 +25,10 @@
 
     <div class="card-body mb-3 mt-3">
         <div class="row">
+            <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
+                <img src="<?= $karyawan["foto"]; ?>" alt="" style="width: 250px; height: 350px;">
+            </div>
+
             <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
                 <form method="POST" enctype="multipart/form-data" action="<?= base_url('update_karyawan/' . $karyawan['id_karyawan']); ?>">
                     <?= csrf_field(); ?>
@@ -82,21 +86,17 @@
                     <button type="submit" class="btn btn-primary">Update</button>
                 </form>
             </div>
-
-            <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
-                <img src="<?= $karyawan["foto"]; ?>" alt="" style="width: 250px; height: 350px;">
-            </div>
         </div>
     </div>
 </div>
 
 <div class="card shadow mt-4">
     <div class="row card-header bg-primary p-2 m-0">
-        <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
+        <div class="col-lg-6 col-xl-6 col-md-6 col-xs-6 col-sm-6 col-6">
             <h4 class="text-white mt-2">Sertifikat Karyawan</h4>
         </div>
 
-        <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12" align="right">
+        <div class="col-lg-6 col-xl-6 col-md-6 col-xs-6 col-sm-6 col-6" align="right">
             <a href="#" data-href="<?= base_url('add_sertifikatkaryawan') ?>" onclick="confirmToAdd(this)" class="btn btn-sm btn-success mt-2">
                 <span class="icon text-white-50"><i class="fas fa-plus"></i></span>
                 <span class="text p-1">Tambah</span>
