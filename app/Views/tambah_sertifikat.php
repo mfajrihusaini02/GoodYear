@@ -1,62 +1,44 @@
-<!DOCTYPE html>
+<?php include 'atas.php' ?>
 
-<html lang="en" class="light-style layout-navbar-fixed layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="../assets/" data-template="vertical-menu-template">
-
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
-
-  <title>Tambah Sertifikat | Goodyear Indonesia</title>
-
-  <meta name="description" content="" />
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
-  <?php include 'kumpulanlink/linkatas.php' ?>
-</head>
-
-<body>
-  <!-- Layout wrapper -->
-  <div class="layout-wrapper layout-content-navbar">
-    <div class="layout-container">
-      <!-- Menu -->
-      <?php include 'sidebar.php' ?>
-      <!-- / Menu -->
-
-      <!-- Layout container -->
-      <div class="layout-page">
-        <!-- Navbar -->
-        <?php include 'navbar.php' ?>
-        <!-- / Navbar -->
-
-        <!-- Content wrapper -->
-        <div class="content-wrapper">
-          <!-- Content -->
-          <div class="container-xxl flex-grow-1 container-p-y">
-            <?php include 'isihalaman/tambah_sertifikat.php' ?>
-          </div>
-          <!-- / Content -->
-
-          <!-- Footer -->
-          <?php include 'footer.php' ?>
-          <!-- / Footer -->
+<div class="card shadow">
+    <div class="row card-header bg-primary p-2 m-0">
+        <div class="col-lg-6 col-xl-6 col-md-6 col-xs-6 col-sm-6 col-6">
+            <h4 class="text-white mt-2">Tambah Sertifikat</h4>
         </div>
-        <!-- Content wrapper -->
-      </div>
-      <!-- / Layout page -->
+
+        <div class="col-lg-6 col-xl-6 col-md-6 col-xs-6 col-sm-6 col-6" align="right">
+            <a href="../daftar_sertifikat" class="btn btn-success btn-sm btn-icon-split mt-2">
+                <span class="icon text-white-50"><i class="fas fa-list"></i></span>
+                <span class="text p-1">List</span>
+            </a>
+        </div>
     </div>
 
-    <!-- Overlay -->
-    <div class="layout-overlay layout-menu-toggle"></div>
+    <div class="card-body mb-3 mt-3">
+        <div class="row">
+            <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
+                <form method="POST" action="simpan_sertifikat">
+                    <?= csrf_field(); ?>
+                    <div class="mb-3">
+                        <label for="kodesertifikat" class="form-label">Kode Sertifikat</label>
+                        <input type="text" class="form-control <?php if(session('validation.kodesertifikat')) : ?> is-invalid <?php endif ?>" id="kodesertifikat" name="kodesertifikat" placeholder="Masukan kode sertifikat" value="<?= old('kodesertifikat'); ?>">
+                        <div class="invalid-feedback">
+                            <?= session('validation.kodesertifikat'); ?>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="namasertifikat" class="form-label">Nama Sertifikat</label>
+                        <input type="text" class="form-control <?php if(session('validation.namasertifikat')) : ?> is-invalid <?php endif ?>" id="namasertifikat" name="namasertifikat" placeholder="Masukan nama sertifikat" value="<?= old('namasertifikat'); ?>">
+                        <div class="invalid-feedback">
+                            <?= session('validation.namasertifikat'); ?>
+                        </div>
+                    </div>
 
-    <!-- Drag Target Area To SlideIn Menu On Small Screens -->
-    <div class="drag-target"></div>
-  </div>
-  <!-- / Layout wrapper -->
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
-  <!-- Core JS -->
-  <!-- build:js assets/vendor/js/core.js -->
-  <?php include 'kumpulanscript/linkbawah.php' ?>
-</body>
-
-</html>
+<?php include 'bawah.php' ?>

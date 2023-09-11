@@ -1,62 +1,42 @@
-<!DOCTYPE html>
+<?php include 'atas.php' ?>
 
-<html lang="en" class="light-style layout-navbar-fixed layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="../assets/" data-template="vertical-menu-template">
-
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
-
-  <title>Detail Karyawan | Goodyear Indonesia</title>
-
-  <meta name="description" content="" />
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
-  <?php include 'kumpulanlink/linkatas.php' ?>
-</head>
-
-<body>
-  <!-- Layout wrapper -->
-  <div class="layout-wrapper layout-content-navbar">
-    <div class="layout-container">
-      <!-- Menu -->
-      <?php include 'sidebar.php' ?>
-      <!-- / Menu -->
-
-      <!-- Layout container -->
-      <div class="layout-page">
-        <!-- Navbar -->
-        <?php include 'navbar.php' ?>
-        <!-- / Navbar -->
-
-        <!-- Content wrapper -->
-        <div class="content-wrapper">
-          <!-- Content -->
-          <div class="container-xxl flex-grow-1 container-p-y">
-            <?php include 'isihalaman/lihat_karyawan.php' ?>
-          </div>
-          <!-- / Content -->
-
-          <!-- Footer -->
-          <?php include 'footer.php' ?>
-          <!-- / Footer -->
+<div class="card shadow">
+    <div class="row card-header bg-primary p-2 m-0">
+        <div class="col-lg-6 col-xl-6 col-md-6 col-xs-6 col-sm-6 col-6">
+            <h4 class="text-white mt-2">Detail Karyawan</h4>
         </div>
-        <!-- Content wrapper -->
-      </div>
-      <!-- / Layout page -->
+
+        <div class="col-lg-6 col-xl-6 col-md-6 col-xs-6 col-sm-6 col-6" align="right">
+            <a href="../daftar_karyawan" class="btn btn-success btn-sm btn-icon-split mt-2">
+                <span class="icon text-white-50"><i class="fas fa-list"></i></span>
+                <span class="text p-1">List</span>
+            </a>
+        </div>
     </div>
 
-    <!-- Overlay -->
-    <div class="layout-overlay layout-menu-toggle"></div>
+    <div class="card-body mb-3 mt-3">
+        <div class="row">
+            <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4" align="middle">
+                            <span>Ini Foto</span>
+                            <img src="<?= $detail_karyawan['foto']; ?>" class="img-fluid rounded-start" alt="">
+                        </div>
+                        <div class="col-md-8" style="text-align: justify;">
+                            <div class="card-body">
+                                <h5 class="card-title"><?= $detail_karyawan['nama_karyawan']; ?></h5>
+                                <p class="card-text"><?= $detail_karyawan['nik']; ?></p>
+                                <p class="card-text" ><?= $detail_karyawan['alamat']; ?></p>
+                                <p class="card-text"><small class="text-muted"><?= $detail_karyawan['id_jabatan']; ?></small></p>
+                                <img src="<?= $detail_karyawan["qr_code"]; ?>" alt="" width="100px;" align="right">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-    <!-- Drag Target Area To SlideIn Menu On Small Screens -->
-    <div class="drag-target"></div>
-  </div>
-  <!-- / Layout wrapper -->
-
-  <!-- Core JS -->
-  <!-- build:js assets/vendor/js/core.js -->
-  <?php include 'kumpulanscript/linkbawah.php' ?>
-</body>
-
-</html>
+<?php include 'bawah.php' ?>
