@@ -25,7 +25,14 @@
                     <h6><b>Data Lama</b></h6>
                     <div class="mb-3">
                         <label class="form-label">Nama Karyawan</label>
-                        <input type="text" class="form-control" id="nikdisable" name="nikdisable" value="<?= $users['nik']; ?>" disabled>
+                        <select name="nikdisable" id="nikdisable" class="form-select" disabled>
+                            <option value="" disabled>-Pilih-</option>
+                            <?php foreach ($karyawan as $value) { ?>
+                                <option value="<?= $value['nik']; ?>" <?= $users['nik'] == $value['nik'] ? 'selected' : null ?>>
+                                    <?= $value['nama_karyawan']; ?>
+                                </option>"
+                            <?php } ?>
+                        </select>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Email</label>
@@ -37,7 +44,14 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Level</label>
-                        <input type="text" class="form-control" id="id_roledisable" name="id_roledisable" value="<?= $users['id_role']; ?>" disabled>
+                        <select name="id_roledisable" id="id_roledisable" class="form-select" disabled>
+                            <option value="" disabled>-Pilih-</option>
+                            <?php foreach ($level as $value) { ?>
+                                <option value="<?= $value['id_role']; ?>" <?= $users['id_role'] == $value['id_role'] ? 'selected' : null ?>>
+                                    <?= $value['nama_role']; ?>
+                                </option>"
+                            <?php } ?>
+                        </select>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Password</label>
@@ -45,7 +59,10 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Status</label>
-                        <input type="text" class="form-control" id="activedisable" name="activedisable" value="<?= ($users['active'] == 1) ? 'Aktif' : 'Tidak Aktif' ?>" disabled>
+                        <select name="activedisable" id="activedisable" class="form-select" disabled>
+                            <option value="" disabled>-Pilih-</option>
+                            <option value="<?= $users['active'] == 1 ?>"><?= ($users['active'] == 1) ? 'Aktif' : 'Tidak Aktif' ?></option>
+                        </select>
                     </div>
                 </div>
 
@@ -125,7 +142,10 @@
 <script>
     $(document).ready(function() {
         $('#nik').select2();
+        $('#nikdisable').select2();
         $('#id_role').select2();
+        $('#id_roledisable').select2();
         $('#active').select2();
+        $('#activedisable').select2();
     });
 </script>
