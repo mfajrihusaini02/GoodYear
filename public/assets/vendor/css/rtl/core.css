@@ -22,7 +22,7 @@
   --bs-gray-dark: rgba(75, 70, 92, 0.8);
   --bs-gray-25: rgba(75, 70, 92, 0.015);
   --bs-gray-50: rgba(75, 70, 92, 0.03);
-  --bs-primary: #7367f0;
+  --bs-primary: #007bff;
   --bs-secondary: #a8aaae;
   --bs-success: #28c76f;
   --bs-info: #00cfe8;
@@ -5969,7 +5969,7 @@ textarea.form-control-lg {
 }
 
 .link-primary {
-  color: #7367f0 !important;
+  color: #007bff !important;
 }
 .link-primary:hover, .link-primary:focus {
   color: #685dd8 !important;
@@ -11715,7 +11715,7 @@ html:not([dir=rtl]) .card .card-separator {
 }
 
 .border-primary {
-  border-color: #7367f0 !important;
+  border-color: #007bff !important;
 }
 
 .border-secondary {
