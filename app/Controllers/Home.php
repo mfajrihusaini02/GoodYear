@@ -18,8 +18,9 @@ class Home extends BaseController
         return view('login');
     }
 
-    public function dashboard(): string
+    public function dashboard()
     {
-        return view('dashboard');
+        $data['users'] = $this->penggunaModel->getPengguna();
+        return view('dashboard', $data);
     }
 }

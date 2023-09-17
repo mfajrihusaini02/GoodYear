@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\DaftarKaryawanModel;
 use App\Models\DaftarJabatanModel;
 use App\Models\DaftarDivisiModel;
+use App\Models\DaftarPenggunaModel;
 use App\Models\DaftarSertifikatModel;
 use App\Models\TransaksiModel;
 use Endroid\QrCode\Color\Color;
@@ -23,6 +24,7 @@ class DaftarKaryawanController extends BaseController
     protected $divisiModel;
     protected $sertifikatModel;
     protected $transaksiModel;
+    protected $penggunaModel;
 
     public function __construct()
     {
@@ -31,22 +33,26 @@ class DaftarKaryawanController extends BaseController
         $this->jabatanModel = new DaftarJabatanModel();
         $this->divisiModel = new DaftarDivisiModel();
         $this->sertifikatModel = new DaftarSertifikatModel();
+        $this->penggunaModel = new DaftarPenggunaModel();    
     }
 
     public function index()
     {
+        $data['users'] = $this->penggunaModel->getPengguna();
         $data['karyawan'] = $this->karyawanModel->getKaryawan();
         return view('daftar_karyawan', $data);
     }
 
     public function index_karyawan()
     {
+        $data['users'] = $this->penggunaModel->getPengguna();
         $data['karyawan'] = $this->karyawanModel->getKaryawan();
         return view('karyawan', $data);
     }
 
     public function tambah_karyawan()
     {
+        $data['users'] = $this->penggunaModel->getPengguna();
         $data['jabatan'] = $this->jabatanModel->findAll();
         $data['divisi'] = $this->divisiModel->findAll();
         return view('tambah_karyawan', $data);
@@ -153,14 +159,20 @@ class DaftarKaryawanController extends BaseController
         return redirect()->to(base_url('daftar_karyawan'))->with('status', 'Data Karyawan Berhasil Disimpan');
     }
 
-    public function lihat_karyawan($id = null)
+    public function lihat_karyawan($id_karyawan = null)
     {
-        $data['detail_karyawan'] = $this->karyawanModel->find($id);
+        $data['users'] = $this->penggunaModel->getPengguna();
+        $data['jabatan'] = $this->jabatanModel->findAll();
+        $data['transaksi'] = $this->transaksiModel->getTransaksi();
+        $data['transaksi'] = $this->transaksiModel->getJenisTransaksi();
+        $data['transaksi'] = $this->transaksiModel->getSertifikatPerID($id_karyawan);
+        $data['detail_karyawan'] = $this->karyawanModel->find($id_karyawan);
         return view('lihat_karyawan', $data);
     }
 
     public function edit_karyawan($id_karyawan = null)
     {
+        $data['users'] = $this->penggunaModel->getPengguna();
         $data['transaksi'] = $this->transaksiModel->getTransaksi();
         $data['transaksi'] = $this->transaksiModel->getJenisTransaksi();
         $data['transaksi'] = $this->transaksiModel->getSertifikatPerID($id_karyawan);
@@ -174,6 +186,7 @@ class DaftarKaryawanController extends BaseController
 
     public function edit_karyawandisable($id_karyawan = null)
     {
+        $data['users'] = $this->penggunaModel->getPengguna();
         $data['transaksi'] = $this->transaksiModel->getTransaksi();
         $data['transaksi'] = $this->transaksiModel->getJenisTransaksi();
         $data['transaksi'] = $this->transaksiModel->getSertifikatPerID($id_karyawan);

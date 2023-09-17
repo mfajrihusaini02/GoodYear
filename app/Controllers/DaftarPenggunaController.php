@@ -21,6 +21,7 @@ class DaftarPenggunaController extends BaseController
 
     public function tambah_pengguna()
     {
+        $data['users'] = $this->penggunaModel->getPengguna();
         $data['level'] = $this->penggunaModel->getLevel();
         $data['karyawan'] = $this->penggunaModel->getKaryawan();
         
@@ -96,7 +97,8 @@ class DaftarPenggunaController extends BaseController
 
     public function edit_pengguna($id = null)
     {
-        $data['users'] = $this->penggunaModel->find($id);
+        $data['users'] = $this->penggunaModel->getPengguna();
+        $data['user'] = $this->penggunaModel->find($id);
         $data['level'] = $this->penggunaModel->getLevel();
         $data['karyawan'] = $this->penggunaModel->getKaryawan();
         return view('edit_pengguna', $data);

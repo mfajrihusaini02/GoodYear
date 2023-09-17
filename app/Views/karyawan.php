@@ -12,7 +12,7 @@
 <div class="card shadow">
     <div class="row card-header bg-primary p-2 m-0">
         <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
-            <h4 class="text-white mt-2">Daftar Karyawan</h4>
+            <h4 class="text-white mt-2">List Karyawan</h4>
         </div>
     </div>
 
@@ -26,9 +26,6 @@
                         <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">NAMA KARYAWAN</th>
                         <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">JABATAN</th>
                         <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">DEVISI</th>
-                        <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">ALAMAT</th>
-                        <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">QR CODE</th>
-                        <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">FOTO</th>
                         <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">AKSI</th>
                     </tr>
                 </thead>
@@ -38,20 +35,15 @@
                     <?php foreach ($karyawan as $value) : ?>
                         <tr style="vertical-align: middle; text-align: center; text-shadow: none;">
                             <td style="margin: 5px; padding: 3px; text-align: center;"><?= $nomor++; ?></td>
-                            <td style="margin: 5px; padding: 3px; text-align: justify;"><?= $value["nik"]; ?></td>
+                            <td style="margin: 5px; padding: 3px; text-align: center;"><?= $value["nik"]; ?></td>
                             <td style="margin: 5px; padding: 3px; text-align: justify;"><?= $value["nama_karyawan"]; ?></td>
                             <td style="margin: 5px; padding: 3px; text-align: center;"><?= $value["nama_jabatan"]; ?></td>
                             <td style="margin: 5px; padding: 3px; text-align: center;"><?= $value["nama_divisi"]; ?></td>
-                            <td style="margin: 5px; padding: 3px; text-align: center;"><?= $value["alamat"]; ?></td>
                             <td style="margin: 5px; padding: 3px; text-align: center;">
-                                <img src="<?= $value["qr_code"]; ?>" alt="" width="100px;">
-                            </td>
-                            <td style="margin: 5px; padding: 3px; text-align: center;"><?= $value["foto"]; ?></td>
-                            <td style="margin: 5px; padding: 3px; text-align: center;">
-                                <a href="<?= base_url('edit_karyawandisable/'.$value['id_karyawan']) ?>" class="btn btn-outline-warning">
+                                <a href="<?= base_url('edit_karyawandisable/'.$value['id_karyawan']) ?>" class="btn btn-outline-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Detail">
                                     <span class='icon'><i class='fas fa-edit'></i></span>
                                 </a>
-                                <a href="<?= base_url('lihat_karyawan/'.$value['id_karyawan']) ?>" class="btn btn-outline-info">
+                                <a href="<?= base_url('lihat_karyawan/'.$value['id_karyawan']) ?>" class="btn btn-outline-info" data-bs-toggle="tooltip" data-bs-placement="bottom" title="View">
                                     <span class='icon'><i class='fas fa-eye'></i></span>
                                 </a>
                             </td>

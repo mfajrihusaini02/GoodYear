@@ -3,27 +3,29 @@
 namespace App\Controllers;
 
 use App\Models\DaftarDivisiModel;
+use App\Models\DaftarPenggunaModel;
 
 class DaftarDivisiController extends BaseController
 {
     protected $divisiModel;
+    protected $penggunaModel;
 
     public function __construct()
     {
         $this->divisiModel = new DaftarDivisiModel();    
+        $this->penggunaModel = new DaftarPenggunaModel();    
     }
 
     public function index()
     {
+        $data['users'] = $this->penggunaModel->getPengguna();
         $data['divisi'] = $this->divisiModel->getDivisi();
         return view('daftar_divisi', $data);
     }
 
     public function tambah_divisi()
     {
-        $data = [
-            'title' => 'Form Tambah Divisi',
-        ];
+        $data['users'] = $this->penggunaModel->getPengguna();
         return view('tambah_divisi', $data);
     }
 
@@ -54,6 +56,7 @@ class DaftarDivisiController extends BaseController
 
     public function edit_divisi($id_divisi = null)
     {
+        $data['users'] = $this->penggunaModel->getPengguna();
         $data['role'] = $this->divisiModel->find($id_divisi);
         return view('edit_divisi', $data);
     }

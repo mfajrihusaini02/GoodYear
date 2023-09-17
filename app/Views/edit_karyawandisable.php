@@ -1,4 +1,4 @@
-<?php include 'atas.php' ?>
+<?php include 'atas_edit.php' ?>
 
 <div class="card shadow">
     <div class="row card-header bg-primary p-2 m-0">
@@ -17,7 +17,7 @@
     <div class="card-body mb-3 mt-3">
         <div class="row">
             <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12" align="center">
-                <img src="<?= $karyawan["foto"]; ?>" alt="" style="width: 250px; height: 350px;">
+                <img src="../img/<?= $karyawan["foto"]; ?>" alt="" style="width: 250px; height: 350px;">
             </div>
 
             <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
@@ -25,40 +25,38 @@
                     <?= csrf_field(); ?>
                     <input type="hidden" name="_method" value="PUT">
                     <div class="mb-3">
-                        <label for="NikKaryawan" class="form-label">NIK</label>
-                        <input type="text" class="form-control <?php if (session('validation.nik')) : ?> is-invalid <?php endif ?>" disabled id="nik" name="nik" maxlength="16" minlength="16" value="<?= $karyawan['nik']; ?>" autofocus placeholder="Silahkan masukan NIK karyawan">
-                        <div class="invalid-feedback">
-                            <?= session('validation.nik'); ?>
-                        </div>
+                        <label class="form-label">NIK</label>
+                        <input type="text" class="form-control" id="nikdisable" name="nikdisable" value="<?= $karyawan['nik']; ?>" disabled>
                     </div>
                     <div class="mb-3">
-                        <label for="NamaKaryawan" class="form-label">Nama Karyawan</label>
-                        <input type="text" class="form-control <?php if (session('validation.nama_karyawan')) : ?> is-invalid <?php endif ?>" disabled id="nama_karyawan" name="nama_karyawan" placeholder="Silahkan masukan nama karyawan" value="<?= $karyawan['nama_karyawan']; ?>">
-                        <div class="invalid-feedback">
-                            <?= session('validation.nama_karyawan'); ?>
-                        </div>
+                        <label class="form-label">Nama Karyawan</label>
+                        <input type="text" class="form-control" id="nama_karyawandisable" name="nama_karyawandisable" value="<?= $karyawan['nama_karyawan']; ?>" disabled>
                     </div>
                     <div class="mb-3">
-                        <label for="Jabatan" class="form-label">Jabatan</label>
-                        <input type="text" class="form-control <?php if (session('validation.jabatan')) : ?> is-invalid <?php endif ?>" id="jabatan" name="jabatan" placeholder="Silahkan masukan jabatan karyawan" value="<?= $karyawan['id_jabatan']; ?>" disabled>
-                        <div class="invalid-feedback">
-                            <?= session('validation.jabatan'); ?>
-                        </div>
+                        <label class="form-label">Jabatan</label>
+                        <select name="jabatandisable" id="jabatandisable" class="form-select" disabled>
+                            <option value="" disabled>-Pilih-</option>
+                            <?php foreach ($jabatan as $value) { ?>
+                                <option value="<?= $value['id_jabatan']; ?>" <?= $karyawan['id_jabatan'] == $value['id_jabatan'] ? 'selected' : null ?>>
+                                    <?= $value['nama_jabatan']; ?>
+                                </option>"
+                            <?php } ?>
+                        </select>
                     </div>
                     <div class="mb-3">
-                        <label for="Devisi" class="form-label">Devisi</label>
-                        <input type="text" class="form-control <?php if (session('validation.divisi')) : ?> is-invalid <?php endif ?>" id="divisi" name="divisi" placeholder="Silahkan masukan divisi karyawan" value="<?= $karyawan['id_divisi']; ?>" disabled>
-                        
-                        <div class="invalid-feedback">
-                            <?= session('validation.divisi'); ?>
-                        </div>
+                        <label class="form-label">Divisi</label>
+                        <select name="divisidisable" id="divisidisable" class="form-select" disabled>
+                            <option value="" disabled>-Pilih-</option>
+                            <?php foreach ($divisi as $value) { ?>
+                                <option value="<?= $value['id_divisi']; ?>" <?= $karyawan['id_divisi'] == $value['id_divisi'] ? 'selected' : null ?>>
+                                    <?= $value['nama_divisi']; ?>
+                                </option>"
+                            <?php } ?>
+                        </select>
                     </div>
                     <div class="mb-3">
-                        <label for="Alamat" class="form-label">Alamat</label>
-                        <textarea name="alamat" id="alamat" cols="20" rows="3" class="form-control <?php if (session('validation.alamat')) : ?> is-invalid <?php endif ?>" disabled placeholder="Silahkan masukan alamat karyawan" value="<?= $karyawan['alamat']; ?>"><?= $karyawan['alamat']; ?></textarea>
-                        <div class="invalid-feedback">
-                            <?= session('validation.alamat'); ?>
-                        </div>
+                        <label class="form-label">Alamat</label>
+                        <textarea name="alamatdisable" id="alamatdisable" cols="20" rows="3" class="form-control" value="<?= $karyawan['alamat']; ?>" disabled><?= $karyawan['alamat']; ?></textarea>
                     </div>
                 </form>
             </div>
@@ -120,11 +118,17 @@
     </div>
 </div>
 
-<?php include 'bawah.php' ?>
+<?php include 'bawah_edit.php' ?>
 
 <script>
     function confirmToDelete(el) {
         $("#delete-button").attr("href", el.dataset.href);
         $("#confirm-dialog").modal('show');
     }
+
+    $(document).ready(function() {
+        $('#jabatandisable').select2();
+        $('#divisidisable').select2();
+        $('#id_sertifikat2').select2();
+    });
 </script>

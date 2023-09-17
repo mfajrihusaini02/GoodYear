@@ -1,4 +1,4 @@
-<?php include 'atas.php' ?>
+<?php include 'atas_edit.php' ?>
 
 <div class="card shadow">
     <div class="row card-header bg-primary p-2 m-0">
@@ -15,7 +15,7 @@
     </div>
 
     <div class="card-body mb-3 mt-3">
-        <form method="POST" action="<?= base_url('update_jabatan/'.$role['id_jabatan']); ?>">
+        <form method="POST" action="<?= base_url('update_jabatan/'.$jabatan['id_jabatan']); ?>">
             <?= csrf_field(); ?>
             <input type="hidden" name="_method" value="PUT">
 
@@ -24,7 +24,7 @@
                     <h6><b>Data Lama</b></h6>
                     <div class="mb-3">
                         <label for="nama_jabatandisable" class="form-label">Nama Jabatan</label>
-                        <input type="text" class="form-control" id="nama_jabatandisable" name="nama_jabatandisable" value="<?= $role['nama_jabatan']; ?>" disabled>
+                        <input type="text" class="form-control" id="nama_jabatandisable" name="nama_jabatandisable" value="<?= $jabatan['nama_jabatan']; ?>" disabled>
                     </div>
                 </div>
 
@@ -46,4 +46,4 @@
     </div>
 </div>
 
-<?php include 'bawah.php' ?>
+<?php include 'bawah_edit.php' ?>

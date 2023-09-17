@@ -44,7 +44,7 @@
             <!-- / Style Switcher-->
 
             <!-- Notification -->
-            <li class="nav-item dropdown-notifications navbar-dropdown dropdown me-3 me-xl-1">
+            <!-- <li class="nav-item dropdown-notifications navbar-dropdown dropdown me-3 me-xl-1">
                 <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
                     <i class="ti ti-bell ti-md"></i>
                     <span class="badge bg-danger rounded-pill badge-notifications">5</span>
@@ -84,7 +84,7 @@
                         </a>
                     </li>
                 </ul>
-            </li>
+            </li> -->
             <!--/ Notification -->
 
             <!-- User -->
@@ -104,8 +104,10 @@
                                     </div>
                                 </div>
                                 <div class="flex-grow-1">
-                                    <span class="fw-medium d-block">Nama Pengguna</span>
-                                    <small class="text-muted">Admin</small>
+                                    <?php foreach ($users as $key => $value) : ?>
+                                        <span class="fw-medium d-block"><?= $value['nama_karyawan'] ?></span>
+                                        <small class="text-muted"><?= $value['level'] ?></small>
+                                    <?php endforeach ?>
                                 </div>
                             </div>
                         </a>
@@ -113,7 +115,7 @@
                     <li>
                         <div class="dropdown-divider"></div>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a class="dropdown-item" href="pages-profile-user.html">
                             <i class="ti ti-user-check me-2 ti-sm"></i>
                             <span class="align-middle">My Profile</span>
@@ -121,7 +123,7 @@
                     </li>
                     <li>
                         <div class="dropdown-divider"></div>
-                    </li>
+                    </li> -->
                     <li>
                         <a class="dropdown-item" href="<?= base_url('logout') ?>">
                             <i class="ti ti-logout me-2 ti-sm"></i>
