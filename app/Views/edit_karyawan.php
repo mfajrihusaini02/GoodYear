@@ -45,11 +45,25 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Jabatan</label>
-                        <input type="text" class="form-control" id="jabatandisable" name="jabatandisable" value="<?= $karyawan['id_jabatan']; ?>" disabled>
+                        <select name="jabatandisable" id="jabatandisable" class="form-select" disabled>
+                            <option value="" disabled>-Pilih-</option>
+                            <?php foreach ($jabatan as $value) { ?>
+                                <option value="<?= $value['id_jabatan']; ?>" <?= $karyawan['id_jabatan'] == $value['id_jabatan'] ? 'selected' : null ?>>
+                                    <?= $value['nama_jabatan']; ?>
+                                </option>"
+                            <?php } ?>
+                        </select>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Divisi</label>
-                        <input type="text" class="form-control" id="divisidisable" name="divisidisable" value="<?= $karyawan['id_divisi']; ?>" disabled>
+                        <select name="divisidisable" id="divisidisable" class="form-select" disabled>
+                            <option value="" disabled>-Pilih-</option>
+                            <?php foreach ($divisi as $value) { ?>
+                                <option value="<?= $value['id_divisi']; ?>" <?= $karyawan['id_divisi'] == $value['id_divisi'] ? 'selected' : null ?>>
+                                    <?= $value['nama_divisi']; ?>
+                                </option>"
+                            <?php } ?>
+                        </select>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Alamat</label>
@@ -238,7 +252,9 @@
 
     $(document).ready(function() {
         $('#jabatan').select2();
+        $('#jabatandisable').select2();
         $('#divisi').select2();
+        $('#divisidisable').select2();
         $('#id_sertifikat2').select2();
     });
 </script>
