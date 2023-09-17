@@ -91,7 +91,16 @@ class DaftarKaryawanController extends BaseController
                     'required' => 'Alamat tidak boleh kosong',
                     'max_length' => 'Alamat maximal 100 karakter',
                 ],
-            ]
+            ],
+            'foto' => [
+                'rules' => 'uploaded[foto]|max_size[foto, 1024]|is_image[foto]|mime_in[foto,image/jpg,image/jpeg,image/png]',
+                'errors' => [
+                    'uploaded' => 'Foto tidak boleh kosong',
+                    'max_size' => 'Foto tidak boleh besar dari 1 MB',
+                    'is_image' => 'File harus berupa gambar',
+                    'mime_in' => 'File harus berupa gambar',
+                ],
+            ],
         ])) {
             $validation = \Config\Services::validation();
             // dd($validation);
@@ -121,6 +130,13 @@ class DaftarKaryawanController extends BaseController
 
         $dataUri = $result->getDataUri();
 
+        // ambil foto
+        $fileFoto = $this->request->getFile('foto');
+        // pindahkan file ke folder img
+        $fileFoto->move('img');
+        // ambil nama file foto
+        $namaFoto = $fileFoto->getName();
+
         $data = [
             'nik' => $this->request->getVar('nik'),
             'nama_karyawan' => $nama,
@@ -128,7 +144,7 @@ class DaftarKaryawanController extends BaseController
             'id_divisi' => $this->request->getVar('divisi'),
             'alamat' => $this->request->getVar('alamat'),
             'qr_code' => $dataUri,
-            'foto' => $this->request->getFile('foto'),
+            'foto' => $namaFoto,
         ];
 
         // dd($data);

@@ -53,7 +53,9 @@
                             <td style="margin: 5px; padding: 3px; text-align: center;">
                                 <img src="<?= $value["qr_code"]; ?>" alt="" width="100px;">
                             </td>
-                            <td style="margin: 5px; padding: 3px; text-align: center;"><?= $value["foto"]; ?></td>
+                            <td style="margin: 5px; padding: 3px; text-align: center;">
+                                <img src="img/<?= $value["foto"]; ?>" alt="" width="100px;">
+                            </td>
                             <td style="margin: 5px; padding: 3px; text-align: center;">
                                 <a href="<?= base_url('edit_karyawan/'.$value['id_karyawan']) ?>" class="btn btn-outline-warning">
                                     <span class='icon'><i class='fas fa-edit'></i></span>

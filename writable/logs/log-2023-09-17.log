@@ -1309,3 +1309,81 @@ INFO - 2023-09-17 05:41:24 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2023-09-17 05:41:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2023-09-17 05:41:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2023-09-17 05:41:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-17 12:30:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-17 12:30:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-17 12:31:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-09-17 12:31:02 --> Error connecting to the database: ErrorException: pg_connect(): Unable to connect to PostgreSQL server: FATAL:  password authentication failed for user &quot;postgres&quot; in C:\ci4\GoodYear\system\Database\Postgre\Connection.php:72
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', 'C:\\ci4\\GoodYear...', 72)
+#1 C:\ci4\GoodYear\system\Database\Postgre\Connection.php(72): pg_connect('host=localhost ...')
+#2 C:\ci4\GoodYear\system\Database\BaseConnection.php(391): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 C:\ci4\GoodYear\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\ci4\GoodYear\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 C:\ci4\GoodYear\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\ci4\GoodYear\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#7 C:\ci4\GoodYear\vendor\myth\auth\src\Authentication\LocalAuthenticator.php(140): CodeIgniter\BaseModel->first()
+#8 C:\ci4\GoodYear\vendor\myth\auth\src\Authentication\LocalAuthenticator.php(19): Myth\Auth\Authentication\LocalAuthenticator->validate(Array, true)
+#9 C:\ci4\GoodYear\vendor\myth\auth\src\Controllers\AuthController.php(87): Myth\Auth\Authentication\LocalAuthenticator->attempt(Array, false)
+#10 C:\ci4\GoodYear\system\CodeIgniter.php(932): Myth\Auth\Controllers\AuthController->attemptLogin()
+#11 C:\ci4\GoodYear\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+#12 C:\ci4\GoodYear\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\ci4\GoodYear\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#14 C:\ci4\GoodYear\system\Commands\Server\rewrite.php(47): require_once('C:\\ci4\\GoodYear...')
+#15 {main}
+CRITICAL - 2023-09-17 12:31:02 --> Unable to connect to the database.
+Main connection [Postgre]: pg_connect(): Unable to connect to PostgreSQL server: FATAL:  password authentication failed for user &quot;postgres&quot;
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "users"
+WHERE "email" = :email:
+AND "users"."deleted_at" IS NULL
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(656): CodeIgniter\Model->doFirst()
+ 5 VENDORPATH\myth\auth\src\Authentication\LocalAuthenticator.php(140): CodeIgniter\BaseModel->first()
+ 6 VENDORPATH\myth\auth\src\Authentication\LocalAuthenticator.php(19): Myth\Auth\Authentication\LocalAuthenticator->validate([...], true)
+ 7 VENDORPATH\myth\auth\src\Controllers\AuthController.php(87): Myth\Auth\Authentication\LocalAuthenticator->attempt([...], false)
+ 8 SYSTEMPATH\CodeIgniter.php(932): Myth\Auth\Controllers\AuthController->attemptLogin()
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\ci4\\GoodYear\\public\\index.php')
+INFO - 2023-09-17 12:31:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-17 12:31:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-17 12:31:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-17 12:31:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-17 12:32:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-17 12:32:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-17 12:32:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-17 12:32:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-17 12:33:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-17 12:33:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-17 12:42:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-17 12:51:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-17 12:51:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-17 12:51:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-17 12:52:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-17 12:53:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-17 13:19:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-17 13:19:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-17 13:19:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-17 13:19:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-17 13:24:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-17 13:24:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-17 13:25:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-17 13:25:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-17 13:25:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-17 13:25:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-17 13:26:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-17 13:26:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-17 13:26:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-17 13:51:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-17 13:51:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-17 13:51:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-17 13:53:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-17 13:54:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-17 13:54:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-17 13:54:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-17 13:55:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-17 13:56:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
