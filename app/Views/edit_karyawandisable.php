@@ -16,6 +16,10 @@
 
     <div class="card-body mb-3 mt-3">
         <div class="row">
+            <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12" align="center">
+                <img src="<?= $karyawan["foto"]; ?>" alt="" style="width: 250px; height: 350px;">
+            </div>
+
             <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
                 <form method="POST" enctype="multipart/form-data" action="<?= base_url('update_karyawan/' . $karyawan['id_karyawan']); ?>">
                     <?= csrf_field(); ?>
@@ -36,24 +40,15 @@
                     </div>
                     <div class="mb-3">
                         <label for="Jabatan" class="form-label">Jabatan</label>
-                        <select name="jabatan" id="jabatan" class="form-select <?php if (session('validation.jabatan')) : ?> is-invalid <?php endif ?>" disabled>
-                            <option value="" disabled selected>-Pilih-</option>
-                            <?php foreach ($jabatan as $value) { ?>
-                                <option value="<?= $value['id_jabatan']; ?>"><?= $value['nama_jabatan']; ?></option>
-                            <?php } ?>
-                        </select>
+                        <input type="text" class="form-control <?php if (session('validation.jabatan')) : ?> is-invalid <?php endif ?>" id="jabatan" name="jabatan" placeholder="Silahkan masukan jabatan karyawan" value="<?= $karyawan['id_jabatan']; ?>" disabled>
                         <div class="invalid-feedback">
                             <?= session('validation.jabatan'); ?>
                         </div>
                     </div>
                     <div class="mb-3">
                         <label for="Devisi" class="form-label">Devisi</label>
-                        <select name="divisi" id="divisi" class="form-select <?php if (session('validation.divisi')) : ?> is-invalid <?php endif ?>" disabled>
-                            <option value="" disabled selected>-Pilih-</option>
-                            <?php foreach ($divisi as $value) { ?>
-                                <option value="<?= $value['id_divisi']; ?>"><?= $value['nama_divisi']; ?></option>
-                            <?php } ?>
-                        </select>
+                        <input type="text" class="form-control <?php if (session('validation.divisi')) : ?> is-invalid <?php endif ?>" id="divisi" name="divisi" placeholder="Silahkan masukan divisi karyawan" value="<?= $karyawan['id_divisi']; ?>" disabled>
+                        
                         <div class="invalid-feedback">
                             <?= session('validation.divisi'); ?>
                         </div>
@@ -66,10 +61,6 @@
                         </div>
                     </div>
                 </form>
-            </div>
-
-            <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
-                <img src="<?= $karyawan["foto"]; ?>" alt="" style="width: 250px; height: 350px;">
             </div>
         </div>
     </div>
@@ -98,7 +89,7 @@
 
                         <tbody>
                             <?php $nomor = 1; ?>
-                            <?php foreach ($sertifikat as $value) : ?>
+                            <?php foreach ($transaksi as $value) : ?>
                                 <tr style="vertical-align: middle; text-align: center; text-shadow: none;">
                                     <td style="margin: 5px; padding: 3px; text-align: center;"><?= $nomor++; ?></td>
                                     <td style="margin: 5px; padding: 3px; text-align: justify;"><?= $value["nama_sertifikat"]; ?></td>
@@ -109,7 +100,7 @@
                         </tbody>
                     </table>
 
-                    <div id="confirm-dialog" class="modal" tabindex="-1" role="dialog">
+                    <div id="confirm-dialog" class="modal fade" role="dialog" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-body">

@@ -21,7 +21,7 @@
                     <div class="row g-0">
                         <div class="col-md-4" align="middle">
                             <span>Ini Foto</span>
-                            <img src="<?= $detail_karyawan['foto']; ?>" class="img-fluid rounded-start" alt="">
+                            <img src="img/<?= $detail_karyawan['foto']; ?>" class="img-fluid rounded-start" alt="" width="150px;" height="200px;">
                         </div>
                         <div class="col-md-8" style="text-align: justify;">
                             <div class="card-body">

@@ -15,30 +15,45 @@
     </div>
 
     <div class="card-body mb-3 mt-3">
-        <div class="row">
-            <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
-                <form method="POST" action="<?= base_url('update_role/'.$role['id_role']); ?>">
-                    <?= csrf_field(); ?>
-                    <input type="hidden" name="_method" value="PUT">
+        <form method="POST" action="<?= base_url('update_role/'.$role['id_role']); ?>">
+            <?= csrf_field(); ?>
+            <input type="hidden" name="_method" value="PUT">
+
+            <div class="row">
+                <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
+                    <h6><b>Data Lama</b></h6>
+                    <div class="mb-3">
+                        <label class="form-label">Nama Role</label>
+                        <input type="text" class="form-control" id="nama_roledisable" name="nama_roledisable" value="<?= $role['nama_role']; ?>" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Level</label>
+                        <input type="text" class="form-control" id="leveldisable" name="leveldisable" value="<?= $role['level']; ?>" disabled>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
+                    <h6><b>Data Baru</b></h6>
                     <div class="mb-3">
                         <label for="nama_role" class="form-label">Nama Role</label>
-                        <input type="text" class="form-control <?php if(session('validation.nama_role')) : ?> is-invalid <?php endif ?>" id="nama_role" name="nama_role" value="<?= $role['nama_role']; ?>" autofocus placeholder="Silahkan masukan nama role">
+                        <input type="text" class="form-control <?php if(session('validation.nama_role')) : ?> is-invalid <?php endif ?>" id="nama_role" name="nama_role" autofocus placeholder="Silahkan masukan nama role">
                         <div class="invalid-feedback">
                             <?= session('validation.nama_role'); ?>
                         </div>
                     </div>
                     <div class="mb-3">
                         <label for="level" class="form-label">Level</label>
-                        <input type="text" class="form-control <?php if(session('validation.level')) : ?> is-invalid <?php endif ?>" id="level" name="level" value="<?= $role['level']; ?>" placeholder="Silahkan masukan level">
+                        <input type="text" class="form-control <?php if(session('validation.level')) : ?> is-invalid <?php endif ?>" id="level" name="level" placeholder="Silahkan masukan level">
                         <div class="invalid-feedback">
                             <?= session('validation.level'); ?>
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Update</button>
-                </form>
+                </div>
             </div>
-        </div>
+
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
     </div>
 </div>
 

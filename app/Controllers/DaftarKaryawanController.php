@@ -6,6 +6,7 @@ use App\Models\DaftarKaryawanModel;
 use App\Models\DaftarJabatanModel;
 use App\Models\DaftarDivisiModel;
 use App\Models\DaftarSertifikatModel;
+use App\Models\TransaksiModel;
 use Endroid\QrCode\Color\Color;
 use Endroid\QrCode\Encoding\Encoding;
 use Endroid\QrCode\ErrorCorrectionLevel\ErrorCorrectionLevelLow;
@@ -21,9 +22,11 @@ class DaftarKaryawanController extends BaseController
     protected $jabatanModel;
     protected $divisiModel;
     protected $sertifikatModel;
+    protected $transaksiModel;
 
     public function __construct()
     {
+        $this->transaksiModel = new TransaksiModel();
         $this->karyawanModel = new DaftarKaryawanModel();
         $this->jabatanModel = new DaftarJabatanModel();
         $this->divisiModel = new DaftarDivisiModel();
@@ -134,46 +137,6 @@ class DaftarKaryawanController extends BaseController
         return redirect()->to(base_url('daftar_karyawan'))->with('status', 'Data Karyawan Berhasil Disimpan');
     }
 
-    public function simpan_sertifikatkaryawan() {
-        // validation input
-        if(!$this->validate([
-            'id_sertifikat' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Sertifikat belum dipilih',
-                ],
-            ],
-            'tanggal_ambil' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Tanggal ambil belum dipilih',
-                ],
-            ],
-            'tanggal_ekspire' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Tanggal ekspire belum dipilih',
-                ],
-            ]
-        ])) {
-            $validation = \Config\Services::validation();
-            // dd($validation);
-            return redirect()->back()->withInput()->with('validation', $this->validator->getErrors());
-        }
-
-        $data = [
-            'id_karyawan' => $this->request->getVar('id_karyawan'),
-            'id_sertifikat' => $this->request->getVar('id_sertifikat'),
-            'tanggal_ambil' => $this->request->getVar('tanggal_ambil'),
-            'tanggal_ekspire' => $this->request->getVar('tanggal_ekspire'),
-        ];
-
-        // dd($data);
-
-        $this->sertifikatModel->save($data);
-        return redirect()->back()->with('status', 'Data Sertifikat Karyawan Berhasil Disimpan');
-    }
-
     public function lihat_karyawan($id = null)
     {
         $data['detail_karyawan'] = $this->karyawanModel->find($id);
@@ -182,7 +145,10 @@ class DaftarKaryawanController extends BaseController
 
     public function edit_karyawan($id_karyawan = null)
     {
-        $data['sertifikat'] = $this->sertifikatModel->getSertifikat();
+        $data['transaksi'] = $this->transaksiModel->getTransaksi();
+        $data['transaksi'] = $this->transaksiModel->getJenisTransaksi();
+        $data['transaksi'] = $this->transaksiModel->getSertifikatPerID($id_karyawan);
+        $data['sertifikat'] = $this->sertifikatModel->getJenisSertifikat();
         $data['jenissertifikat'] = $this->sertifikatModel->getJenisSertifikat();
         $data['karyawan'] = $this->karyawanModel->find($id_karyawan);
         $data['jabatan'] = $this->jabatanModel->findAll();
@@ -192,7 +158,11 @@ class DaftarKaryawanController extends BaseController
 
     public function edit_karyawandisable($id_karyawan = null)
     {
-        $data['sertifikat'] = $this->sertifikatModel->getSertifikat();
+        $data['transaksi'] = $this->transaksiModel->getTransaksi();
+        $data['transaksi'] = $this->transaksiModel->getJenisTransaksi();
+        $data['transaksi'] = $this->transaksiModel->getSertifikatPerID($id_karyawan);
+        $data['sertifikat'] = $this->sertifikatModel->getJenisSertifikat();
+        $data['jenissertifikat'] = $this->sertifikatModel->getJenisSertifikat();
         $data['karyawan'] = $this->karyawanModel->find($id_karyawan);
         $data['jabatan'] = $this->jabatanModel->findAll();
         $data['divisi'] = $this->divisiModel->findAll();
@@ -249,8 +219,8 @@ class DaftarKaryawanController extends BaseController
         $id         = time();
         $nik        = $this->request->getVar('nik');
         $nama       = $this->request->getVar('nama_karyawan');
-        $jabatan    = $this->request->getPost('jabatan');
-        $divisi     = $this->request->getPost('divisi');
+        $jabatan    = $this->request->getVar('jabatan');
+        $divisi     = $this->request->getVar('divisi');
         $alamat     = $this->request->getVar('alamat');
         $foto       = $this->request->getFile('foto');
         

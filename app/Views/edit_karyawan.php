@@ -24,31 +24,57 @@
     </div>
 
     <div class="card-body mb-3 mt-3">
-        <div class="row">
-            <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
-                <img src="<?= $karyawan["foto"]; ?>" alt="" style="width: 250px; height: 350px;">
-            </div>
+        <form method="POST" enctype="multipart/form-data" action="<?= base_url('update_karyawan/' . $karyawan['id_karyawan']); ?>">
+            <?= csrf_field(); ?>
+            <input type="hidden" name="_method" value="PUT">
 
-            <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
-                <form method="POST" enctype="multipart/form-data" action="<?= base_url('update_karyawan/' . $karyawan['id_karyawan']); ?>">
-                    <?= csrf_field(); ?>
-                    <input type="hidden" name="_method" value="PUT">
+            <div class="row">
+                <div class="col-lg-2 col-xl-2 col-md-2 col-xs-12 col-sm-12 col-12" align="center">
+                    <img src="<?= $karyawan["foto"]; ?>" alt="" style="width: 150px; height: 200px;">
+                </div>
+                
+                <div class="col-lg-5 col-xl-5 col-md-5 col-xs-12 col-sm-12 col-12">
+                    <h6><b>Data Lama</b></h6>
+                    <div class="mb-3">
+                        <label class="form-label">NIK</label>
+                        <input type="text" class="form-control" id="nikdisable" name="nikdisable" value="<?= $karyawan['nik']; ?>" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Nama Karyawan</label>
+                        <input type="text" class="form-control" id="nama_karyawandisable" name="nama_karyawandisable" value="<?= $karyawan['nama_karyawan']; ?>" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Jabatan</label>
+                        <input type="text" class="form-control" id="jabatandisable" name="jabatandisable" value="<?= $karyawan['id_jabatan']; ?>" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Divisi</label>
+                        <input type="text" class="form-control" id="divisidisable" name="divisidisable" value="<?= $karyawan['id_divisi']; ?>" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Alamat</label>
+                        <textarea name="alamatdisable" id="alamatdisable" cols="20" rows="3" class="form-control" value="<?= $karyawan['alamat']; ?>" disabled><?= $karyawan['alamat']; ?></textarea>
+                    </div>
+                </div>
+
+                <div class="col-lg-5 col-xl-5 col-md-5 col-xs-12 col-sm-12 col-12">
+                    <h6><b>Data Baru</b></h6>
                     <div class="mb-3">
                         <label for="NikKaryawan" class="form-label">NIK</label>
-                        <input type="text" class="form-control <?php if (session('validation.nik')) : ?> is-invalid <?php endif ?>" id="nik" name="nik" maxlength="16" minlength="16" value="<?= $karyawan['nik']; ?>" autofocus placeholder="Silahkan masukan NIK karyawan">
+                        <input type="text" class="form-control <?php if (session('validation.nik')) : ?> is-invalid <?php endif ?>" id="nik" name="nik" maxlength="16" minlength="16" autofocus placeholder="Silahkan masukan NIK karyawan">
                         <div class="invalid-feedback">
                             <?= session('validation.nik'); ?>
                         </div>
                     </div>
                     <div class="mb-3">
                         <label for="NamaKaryawan" class="form-label">Nama Karyawan</label>
-                        <input type="text" class="form-control <?php if (session('validation.nama_karyawan')) : ?> is-invalid <?php endif ?>" id="nama_karyawan" name="nama_karyawan" placeholder="Silahkan masukan nama karyawan" value="<?= $karyawan['nama_karyawan']; ?>">
+                        <input type="text" class="form-control <?php if (session('validation.nama_karyawan')) : ?> is-invalid <?php endif ?>" id="nama_karyawan" name="nama_karyawan" placeholder="Silahkan masukan nama karyawan">
                         <div class="invalid-feedback">
                             <?= session('validation.nama_karyawan'); ?>
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="Jabatan" class="form-label">Jabatan</label>
+                        <label for="Jabatan" class="form-label">Jabatan</label>                        
                         <select name="jabatan" id="jabatan" class="form-select <?php if (session('validation.jabatan')) : ?> is-invalid <?php endif ?>">
                             <option value="" disabled selected>-Pilih-</option>
                             <?php foreach ($jabatan as $value) { ?>
@@ -73,20 +99,20 @@
                     </div>
                     <div class="mb-3">
                         <label for="Alamat" class="form-label">Alamat</label>
-                        <textarea name="alamat" id="alamat" cols="20" rows="3" class="form-control <?php if (session('validation.alamat')) : ?> is-invalid <?php endif ?>" placeholder="Silahkan masukan alamat karyawan" value="<?= $karyawan['alamat']; ?>"><?= $karyawan['alamat']; ?></textarea>
+                        <textarea name="alamat" id="alamat" cols="20" rows="3" class="form-control <?php if (session('validation.alamat')) : ?> is-invalid <?php endif ?>" placeholder="Silahkan masukan alamat karyawan"></textarea>
                         <div class="invalid-feedback">
                             <?= session('validation.alamat'); ?>
                         </div>
                     </div>
                     <div class="mb-3">
                         <label for="Foto" class="form-label">Foto</label>
-                        <input type="file" class="form-control" id="foto" name="foto" aria-describedby="Foto" value="<?= $karyawan['foto']; ?>" placeholder="Silahkan upload foto karyawan">
+                        <input type="file" class="form-control" id="foto" name="foto" aria-describedby="Foto" placeholder="Silahkan upload foto karyawan">
                     </div>
-
-                    <button type="submit" class="btn btn-primary">Update</button>
-                </form>
+                </div>
             </div>
-        </div>
+
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
     </div>
 </div>
 
@@ -121,7 +147,7 @@
 
                         <tbody>
                             <?php $nomor = 1; ?>
-                            <?php foreach ($sertifikat as $value) : ?>
+                            <?php foreach ($transaksi as $value) : ?>
                                 <tr style="vertical-align: middle; text-align: center; text-shadow: none;">
                                     <td style="margin: 5px; padding: 3px; text-align: center;"><?= $nomor++; ?></td>
                                     <td style="margin: 5px; padding: 3px; text-align: justify;"><?= $value["nama_sertifikat"]; ?></td>
@@ -150,8 +176,8 @@
                             </div>
                         </div>
                     </div>
-
-                    <div id="add-dialog" class="modal" tabindex="-1" role="dialog">
+                    
+                    <div id="add-dialog" class="modal fade" role="dialog" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <form method="POST" action="<?= base_url('../simpan_sertifikatkaryawan') ?>">
@@ -209,4 +235,10 @@
         $("#add-button").attr("href", el.dataset.href);
         $("#add-dialog").modal('show');
     }
+
+    $(document).ready(function() {
+        $('#jabatan').select2();
+        $('#divisi').select2();
+        $('#id_sertifikat2').select2();
+    });
 </script>

@@ -15,23 +15,34 @@
     </div>
 
     <div class="card-body mb-3 mt-3">
-        <div class="row">
-            <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
-                <form method="POST" action="<?= base_url('update_divisi/'.$role['id_divisi']); ?>">
-                    <?= csrf_field(); ?>
-                    <input type="hidden" name="_method" value="PUT">
+        <form method="POST" action="<?= base_url('update_divisi/' . $role['id_divisi']); ?>">
+            <?= csrf_field(); ?>
+            <input type="hidden" name="_method" value="PUT">
+            
+            <div class="row">
+                <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
+                    <h6><b>Data Lama</b></h6>
+                    <div class="mb-3">
+                        <label for="nama_divisidisable" class="form-label">Nama Divisi</label>
+                        <input type="text" class="form-control" id="nama_divisidisable" name="nama_divisidisable" value="<?= $role['nama_divisi']; ?>" disabled>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
+                    <h6><b>Data Baru</b></h6>
                     <div class="mb-3">
                         <label for="nama_divisi" class="form-label">Nama Divisi</label>
-                        <input type="text" class="form-control <?php if(session('validation.nama_divisi')) : ?> is-invalid <?php endif ?>" id="nama_divisi" name="nama_divisi" value="<?= $role['nama_divisi']; ?>" autofocus placeholder="Silahkan masukan nama Divisi">
+                        <input type="text" class="form-control <?php if (session('validation.nama_divisi')) : ?> is-invalid <?php endif ?>" id="nama_divisi" name="nama_divisi" autofocus placeholder="Silahkan masukan nama Divisi">
                         <div class="invalid-feedback">
                             <?= session('validation.nama_divisi'); ?>
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Update</button>
-                </form>
+                </div>
             </div>
-        </div>
+
+            <button type="submit" class="btn btn-primary" text-align="right">Update</button>
+        </form>
     </div>
 </div>
 

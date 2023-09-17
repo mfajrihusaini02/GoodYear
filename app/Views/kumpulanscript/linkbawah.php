@@ -7,8 +7,9 @@
 <script src="../assets/vendor/libs/i18n/i18n.js"></script>
 <script src="../assets/vendor/libs/typeahead-js/typeahead.js"></script>
 <script src="../assets/vendor/js/menu.js"></script>
-
 <!-- endbuild -->
+<!-- Select2 -->
+<script src="../assets/vendor/libs/select2/js/select2.full.min.js"></script>
 
 <!-- Vendors JS -->
 <script src="../assets/vendor/libs/apex-charts/apexcharts.js"></script>

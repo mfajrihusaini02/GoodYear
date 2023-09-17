@@ -89,3 +89,11 @@
 </div>
 
 <?php include 'bawah.php' ?>
+
+<script>
+    $(document).ready(function() {
+        $('#nik').select2();
+        $('#id_role').select2();
+        $('#active').select2();
+    });
+</script>
