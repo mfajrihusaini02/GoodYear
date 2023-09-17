@@ -15,7 +15,7 @@ class DaftarSertifikatController extends BaseController
 
     public function index()
     {
-        $data['sertifikat'] = $this->sertifikatModel->getSertifikat();
+        $data['sertifikat'] = $this->sertifikatModel->getJenisSertifikat();
         return view('daftar_sertifikat', $data);
     }
 
@@ -104,10 +104,5 @@ class DaftarSertifikatController extends BaseController
     {
         $this->sertifikatModel->delete($id_sertifikat);
         return redirect()->back()->with('status', 'Data Sertifikat Berhasil Dihapus');
-    }
-
-    public function delete_sertifikatkaryawan($id_sertifikat = null) {
-        $this->sertifikatModel->delete($id_sertifikat);
-        return redirect()->back()->with('status', 'Data Sertifikat Karyawan Berhasil Dihapus');
     }
 }

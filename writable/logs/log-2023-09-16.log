@@ -1,0 +1,459 @@
+INFO - 2023-09-16 16:36:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 16:37:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 16:37:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 16:37:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 16:37:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 16:38:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 16:38:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 16:38:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 16:38:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 16:38:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 16:38:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 16:39:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 16:42:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 16:42:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 16:42:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 16:43:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 16:43:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 16:44:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 16:44:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 16:45:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 16:45:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 16:47:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 16:47:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 16:48:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 16:48:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 16:54:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 16:54:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 16:54:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 16:55:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 16:55:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 16:55:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 16:55:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 16:56:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 16:56:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 16:56:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-16 16:56:21 --> Trying to access array offset on value of type null
+in APPPATH\Views\edit_sertifikat.php on line 20.
+ 1 APPPATH\Views\edit_sertifikat.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\edit_sertifikat.php', 20)
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\edit_sertifikat.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('edit_sertifikat', [], true)
+ 5 APPPATH\Controllers\DaftarSertifikatController.php(66): view('edit_sertifikat', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarSertifikatController->edit_sertifikat('3')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarSertifikatController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-16 16:56:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-16 16:56:45 --> Trying to access array offset on value of type null
+in APPPATH\Views\edit_sertifikat.php on line 20.
+ 1 APPPATH\Views\edit_sertifikat.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\edit_sertifikat.php', 20)
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\edit_sertifikat.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('edit_sertifikat', [], true)
+ 5 APPPATH\Controllers\DaftarSertifikatController.php(66): view('edit_sertifikat', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarSertifikatController->edit_sertifikat('1')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarSertifikatController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-16 16:58:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-16 16:58:35 --> Trying to access array offset on value of type null
+in APPPATH\Views\edit_sertifikat.php on line 20.
+ 1 APPPATH\Views\edit_sertifikat.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\edit_sertifikat.php', 20)
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\edit_sertifikat.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('edit_sertifikat', [], true)
+ 5 APPPATH\Controllers\DaftarSertifikatController.php(66): view('edit_sertifikat', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarSertifikatController->edit_sertifikat('1')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarSertifikatController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-16 16:58:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-16 16:58:54 --> Trying to access array offset on value of type null
+in APPPATH\Views\edit_sertifikat.php on line 25.
+ 1 APPPATH\Views\edit_sertifikat.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\edit_sertifikat.php', 25)
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\edit_sertifikat.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('edit_sertifikat', [], true)
+ 5 APPPATH\Controllers\DaftarSertifikatController.php(66): view('edit_sertifikat', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarSertifikatController->edit_sertifikat('1')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarSertifikatController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-16 17:01:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:01:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:02:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:02:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:02:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:02:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:02:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:03:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:03:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:03:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:03:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:09:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:09:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-16 17:09:49 --> Call to a member function delete() on null
+in APPPATH\Controllers\DaftarSertifikatController.php on line 110.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarSertifikatController->delete_sertifikatkaryawan('9')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarSertifikatController))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-16 17:12:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:12:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:12:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:12:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-16 17:12:45 --> Trying to access array offset on value of type null
+in APPPATH\Views\edit_sertifikat.php on line 20.
+ 1 APPPATH\Views\edit_sertifikat.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\edit_sertifikat.php', 20)
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\edit_sertifikat.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('edit_sertifikat', [], true)
+ 5 APPPATH\Controllers\DaftarSertifikatController.php(66): view('edit_sertifikat', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarSertifikatController->edit_sertifikat('3')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarSertifikatController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-16 17:14:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-16 17:14:29 --> Trying to access array offset on value of type null
+in APPPATH\Views\edit_sertifikat.php on line 20.
+ 1 APPPATH\Views\edit_sertifikat.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\edit_sertifikat.php', 20)
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\edit_sertifikat.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('edit_sertifikat', [], true)
+ 5 APPPATH\Controllers\DaftarSertifikatController.php(66): view('edit_sertifikat', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarSertifikatController->edit_sertifikat('3')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarSertifikatController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-16 17:14:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:14:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:14:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:14:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:14:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:15:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:27:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:27:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:27:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-09-16 17:27:24 --> ErrorException: pg_query(): Query failed: ERROR:  invalid input syntax for type integer: &quot;logo.png&quot;
+LINE 3: WHERE &quot;role&quot;.&quot;id_role&quot; = 'logo.png'
+                                 ^ in D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\Postgre\Connection.php:187
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'D:\\SKYWORX\\Proj...', 187)
+#1 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\Postgre\Connection.php(187): pg_query(Object(PgSql\Connection), 'SELECT *\nFROM "...')
+#2 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseConnection.php(692): CodeIgniter\Database\Postgre\Connection->execute('SELECT *\nFROM "...')
+#3 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM "...')
+#4 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 D:\SKYWORX\Project\good-year-new\GoodYear\system\Model.php(200): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\SKYWORX\Project\good-year-new\GoodYear\system\BaseModel.php(557): CodeIgniter\Model->doFind(true, 'logo.png')
+#7 D:\SKYWORX\Project\good-year-new\GoodYear\app\Controllers\DaftarRoleController.php(63): CodeIgniter\BaseModel->find('logo.png')
+#8 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(932): App\Controllers\DaftarRoleController->edit_role('logo.png')
+#9 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarRoleController))
+#10 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\SKYWORX\Project\good-year-new\GoodYear\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 D:\SKYWORX\Project\good-year-new\GoodYear\system\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Proj...')
+#13 {main}
+CRITICAL - 2023-09-16 17:27:25 --> pg_query(): Query failed: ERROR:  invalid input syntax for type integer: &quot;logo.png&quot;
+LINE 3: WHERE &quot;role&quot;.&quot;id_role&quot; = 'logo.png'
+                                 ^
+in SYSTEMPATH\Database\Postgre\Connection.php on line 187.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  invalid input syntax for type integer: &quot;logo.png&quot;
+LINE 3: WHERE &quot;role&quot;.&quot;id_role&quot; = \'logo.png\'
+                                 ^', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\system\\Database\\Postgre\\Connection.php', 187)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(187): pg_query(Object(PgSql\Connection), 'SELECT *
+FROM "role"
+WHERE "role"."id_role" = \'logo.png\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\Postgre\Connection->execute('SELECT *
+FROM "role"
+WHERE "role"."id_role" = \'logo.png\'')
+ 4 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "role"
+WHERE "role"."id_role" = \'logo.png\'')
+ 5 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "role"
+WHERE "role"."id_role" = :role.id_role:', [...], false)
+ 6 SYSTEMPATH\Model.php(200): CodeIgniter\Database\BaseBuilder->get()
+ 7 SYSTEMPATH\BaseModel.php(557): CodeIgniter\Model->doFind(true, 'logo.png')
+ 8 APPPATH\Controllers\DaftarRoleController.php(63): CodeIgniter\BaseModel->find('logo.png')
+ 9 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarRoleController->edit_role('logo.png')
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarRoleController))
+11 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-16 17:28:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:28:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:28:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-09-16 17:28:53 --> ErrorException: pg_query(): Query failed: ERROR:  invalid input syntax for type integer: &quot;logo.png&quot;
+LINE 3: WHERE &quot;role&quot;.&quot;id_role&quot; = 'logo.png'
+                                 ^ in D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\Postgre\Connection.php:187
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'D:\\SKYWORX\\Proj...', 187)
+#1 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\Postgre\Connection.php(187): pg_query(Object(PgSql\Connection), 'SELECT *\nFROM "...')
+#2 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseConnection.php(692): CodeIgniter\Database\Postgre\Connection->execute('SELECT *\nFROM "...')
+#3 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM "...')
+#4 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 D:\SKYWORX\Project\good-year-new\GoodYear\system\Model.php(200): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\SKYWORX\Project\good-year-new\GoodYear\system\BaseModel.php(557): CodeIgniter\Model->doFind(true, 'logo.png')
+#7 D:\SKYWORX\Project\good-year-new\GoodYear\app\Controllers\DaftarRoleController.php(63): CodeIgniter\BaseModel->find('logo.png')
+#8 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(932): App\Controllers\DaftarRoleController->edit_role('logo.png')
+#9 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarRoleController))
+#10 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\SKYWORX\Project\good-year-new\GoodYear\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 D:\SKYWORX\Project\good-year-new\GoodYear\system\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Proj...')
+#13 {main}
+CRITICAL - 2023-09-16 17:28:53 --> pg_query(): Query failed: ERROR:  invalid input syntax for type integer: &quot;logo.png&quot;
+LINE 3: WHERE &quot;role&quot;.&quot;id_role&quot; = 'logo.png'
+                                 ^
+in SYSTEMPATH\Database\Postgre\Connection.php on line 187.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  invalid input syntax for type integer: &quot;logo.png&quot;
+LINE 3: WHERE &quot;role&quot;.&quot;id_role&quot; = \'logo.png\'
+                                 ^', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\system\\Database\\Postgre\\Connection.php', 187)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(187): pg_query(Object(PgSql\Connection), 'SELECT *
+FROM "role"
+WHERE "role"."id_role" = \'logo.png\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\Postgre\Connection->execute('SELECT *
+FROM "role"
+WHERE "role"."id_role" = \'logo.png\'')
+ 4 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "role"
+WHERE "role"."id_role" = \'logo.png\'')
+ 5 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "role"
+WHERE "role"."id_role" = :role.id_role:', [...], false)
+ 6 SYSTEMPATH\Model.php(200): CodeIgniter\Database\BaseBuilder->get()
+ 7 SYSTEMPATH\BaseModel.php(557): CodeIgniter\Model->doFind(true, 'logo.png')
+ 8 APPPATH\Controllers\DaftarRoleController.php(63): CodeIgniter\BaseModel->find('logo.png')
+ 9 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarRoleController->edit_role('logo.png')
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarRoleController))
+11 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-16 17:33:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:33:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:33:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:33:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:33:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:34:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:34:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-16 17:34:46 --> There is no data to insert.
+in SYSTEMPATH\BaseModel.php on line 762.
+ 1 SYSTEMPATH\BaseModel.php(762): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+ 2 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([], false)
+ 3 SYSTEMPATH\BaseModel.php(692): CodeIgniter\Model->insert([...], false)
+ 4 APPPATH\Controllers\DaftarSertifikatController.php(59): CodeIgniter\BaseModel->save([...])
+ 5 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarSertifikatController->simpan_sertifikat()
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarSertifikatController))
+ 7 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-16 17:40:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-16 17:40:15 --> There is no data to insert.
+in SYSTEMPATH\BaseModel.php on line 762.
+ 1 SYSTEMPATH\BaseModel.php(762): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+ 2 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([], false)
+ 3 SYSTEMPATH\BaseModel.php(692): CodeIgniter\Model->insert([...], false)
+ 4 APPPATH\Controllers\DaftarSertifikatController.php(59): CodeIgniter\BaseModel->save([...])
+ 5 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarSertifikatController->simpan_sertifikat()
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarSertifikatController))
+ 7 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-16 17:40:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:40:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:40:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:40:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:40:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:41:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:41:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:42:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:42:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:43:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:43:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:43:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-16 17:43:35 --> Undefined array key "jabatan"
+in APPPATH\Views\edit_karyawandisable.php on line 43.
+ 1 APPPATH\Views\edit_karyawandisable.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "jabatan"', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\edit_karyawandisable.php', 43)
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\edit_karyawandisable.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('edit_karyawandisable', [], true)
+ 5 APPPATH\Controllers\DaftarKaryawanController.php(199): view('edit_karyawandisable', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->edit_karyawandisable('10')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-16 17:43:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-16 17:43:36 --> Undefined array key "jabatan"
+in APPPATH\Views\edit_karyawandisable.php on line 43.
+ 1 APPPATH\Views\edit_karyawandisable.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "jabatan"', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\edit_karyawandisable.php', 43)
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\edit_karyawandisable.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('edit_karyawandisable', [], true)
+ 5 APPPATH\Controllers\DaftarKaryawanController.php(199): view('edit_karyawandisable', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->edit_karyawandisable('10')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-16 17:44:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-16 17:44:05 --> Undefined array key "jabatan"
+in APPPATH\Views\edit_karyawandisable.php on line 43.
+ 1 APPPATH\Views\edit_karyawandisable.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "jabatan"', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\edit_karyawandisable.php', 43)
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\edit_karyawandisable.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('edit_karyawandisable', [], true)
+ 5 APPPATH\Controllers\DaftarKaryawanController.php(199): view('edit_karyawandisable', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->edit_karyawandisable('10')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-16 17:44:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-16 17:44:05 --> Undefined array key "jabatan"
+in APPPATH\Views\edit_karyawandisable.php on line 43.
+ 1 APPPATH\Views\edit_karyawandisable.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "jabatan"', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\edit_karyawandisable.php', 43)
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\edit_karyawandisable.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('edit_karyawandisable', [], true)
+ 5 APPPATH\Controllers\DaftarKaryawanController.php(199): view('edit_karyawandisable', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->edit_karyawandisable('10')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-16 17:44:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-16 17:44:23 --> Undefined array key "nama_jabatan"
+in APPPATH\Views\edit_karyawandisable.php on line 43.
+ 1 APPPATH\Views\edit_karyawandisable.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_jabatan"', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\edit_karyawandisable.php', 43)
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\edit_karyawandisable.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('edit_karyawandisable', [], true)
+ 5 APPPATH\Controllers\DaftarKaryawanController.php(199): view('edit_karyawandisable', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->edit_karyawandisable('10')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-16 17:44:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-16 17:44:24 --> Undefined array key "nama_jabatan"
+in APPPATH\Views\edit_karyawandisable.php on line 43.
+ 1 APPPATH\Views\edit_karyawandisable.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_jabatan"', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\edit_karyawandisable.php', 43)
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\edit_karyawandisable.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('edit_karyawandisable', [], true)
+ 5 APPPATH\Controllers\DaftarKaryawanController.php(199): view('edit_karyawandisable', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->edit_karyawandisable('10')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-16 17:46:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-16 17:46:34 --> Undefined array key "nama_jabatan"
+in APPPATH\Views\edit_karyawandisable.php on line 43.
+ 1 APPPATH\Views\edit_karyawandisable.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_jabatan"', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\edit_karyawandisable.php', 43)
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\edit_karyawandisable.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('edit_karyawandisable', [], true)
+ 5 APPPATH\Controllers\DaftarKaryawanController.php(199): view('edit_karyawandisable', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->edit_karyawandisable('10')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-16 17:46:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-16 17:46:35 --> Undefined array key "nama_jabatan"
+in APPPATH\Views\edit_karyawandisable.php on line 43.
+ 1 APPPATH\Views\edit_karyawandisable.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_jabatan"', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\edit_karyawandisable.php', 43)
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\edit_karyawandisable.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('edit_karyawandisable', [], true)
+ 5 APPPATH\Controllers\DaftarKaryawanController.php(199): view('edit_karyawandisable', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->edit_karyawandisable('10')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-16 17:47:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-16 17:47:33 --> Cannot use object of type App\Models\DaftarKaryawanModel as array
+in APPPATH\Views\edit_karyawandisable.php on line 20.
+ 1 SYSTEMPATH\View\View.php(224): include()
+ 2 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('edit_karyawandisable', [], true)
+ 4 APPPATH\Controllers\DaftarKaryawanController.php(199): view('edit_karyawandisable', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->edit_karyawandisable('10')
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 7 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-16 17:47:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-16 17:47:34 --> Cannot use object of type App\Models\DaftarKaryawanModel as array
+in APPPATH\Views\edit_karyawandisable.php on line 20.
+ 1 SYSTEMPATH\View\View.php(224): include()
+ 2 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('edit_karyawandisable', [], true)
+ 4 APPPATH\Controllers\DaftarKaryawanController.php(199): view('edit_karyawandisable', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->edit_karyawandisable('10')
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 7 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-16 17:47:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-16 17:47:40 --> Undefined array key "nama_jabatan"
+in APPPATH\Views\edit_karyawandisable.php on line 43.
+ 1 APPPATH\Views\edit_karyawandisable.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_jabatan"', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\edit_karyawandisable.php', 43)
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\edit_karyawandisable.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('edit_karyawandisable', [], true)
+ 5 APPPATH\Controllers\DaftarKaryawanController.php(199): view('edit_karyawandisable', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->edit_karyawandisable('10')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-16 17:47:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-16 17:47:41 --> Undefined array key "nama_jabatan"
+in APPPATH\Views\edit_karyawandisable.php on line 43.
+ 1 APPPATH\Views\edit_karyawandisable.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_jabatan"', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\edit_karyawandisable.php', 43)
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\edit_karyawandisable.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('edit_karyawandisable', [], true)
+ 5 APPPATH\Controllers\DaftarKaryawanController.php(199): view('edit_karyawandisable', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->edit_karyawandisable('10')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-16 17:48:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:48:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:48:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:49:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:50:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:50:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:51:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:51:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:52:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-16 17:52:07 --> Undefined array key "nama_divisi"
+in APPPATH\Views\edit_karyawandisable.php on line 50.
+ 1 APPPATH\Views\edit_karyawandisable.php(50): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_divisi"', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\edit_karyawandisable.php', 50)
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\edit_karyawandisable.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('edit_karyawandisable', [], true)
+ 5 APPPATH\Controllers\DaftarKaryawanController.php(199): view('edit_karyawandisable', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->edit_karyawandisable('10')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-16 17:52:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:52:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:52:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:52:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:52:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-16 17:52:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

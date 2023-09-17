@@ -22,6 +22,8 @@
   <link rel="stylesheet" href="../assets/vendor/libs/datatables-bs5/datatables.bootstrap5.css" />
   <link rel="stylesheet" href="../assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css" />
   <link rel="stylesheet" href="../assets/vendor/libs/datatables-checkboxes-jquery/datatables.checkboxes.css" />
+  <!-- Select2 -->
+  <link rel="stylesheet" href="../assets/vendor/libs/select2/css/select2.min.css">
 
   <!-- Page CSS -->
   <link rel="stylesheet" href="../assets/vendor/css/pages/cards-advance.css" />

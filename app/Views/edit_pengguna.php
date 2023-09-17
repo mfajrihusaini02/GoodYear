@@ -15,61 +15,117 @@
     </div>
 
     <div class="card-body mb-3 mt-3">
-        <div class="row">
-            <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
-                <form method="POST" enctype="multipart/form-data" action="<?= base_url('update_pengguna/'.$users['id']); ?>">
-                    <input type="hidden" name="_method" value="PUT">
-                    <input type="hidden" id="force_pass_reset" name="force_pass_reset" value="0">
+        <form method="POST" enctype="multipart/form-data" action="<?= base_url('update_pengguna/'.$users['id']); ?>">
+            <?= csrf_field(); ?>
+            <input type="hidden" name="_method" value="PUT">
+            <input type="hidden" id="force_pass_reset" name="force_pass_reset" value="0">
+
+            <div class="row">
+                <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
+                    <h6><b>Data Lama</b></h6>
                     <div class="mb-3">
-                        <label for="nik">Nama Karyawan</label>
-                        <select name="nik" class="form-select" id="nik">
+                        <label class="form-label">Nama Karyawan</label>
+                        <input type="text" class="form-control" id="nikdisable" name="nikdisable" value="<?= $users['nik']; ?>" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="text" class="form-control" id="emaildisable" name="emaildisable" value="<?= $users['email']; ?>" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Username</label>
+                        <input type="text" class="form-control" id="usernamedisable" name="usernamedisable" value="<?= $users['username']; ?>" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Level</label>
+                        <input type="text" class="form-control" id="id_roledisable" name="id_roledisable" value="<?= $users['id_role']; ?>" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Password</label>
+                        <input type="text" class="form-control" id="password_hashdisable" name="password_hashdisable" value="<?= $users['password']; ?>" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Status</label>
+                        <input type="text" class="form-control" id="activedisable" name="activedisable" value="<?= ($users['active'] == 1) ? 'Aktif' : 'Tidak Aktif' ?>" disabled>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
+                    <h6><b>Data Baru</b></h6>
+                    <div class="mb-3">
+                        <label class="form-label">Nama Karyawan</label>
+                        <select name="nik" id="nik" class="form-select <?php if (session('validation.nik')) : ?> is-invalid <?php endif ?>">
                             <option value="" disabled selected>-Pilih-</option>
                             <?php foreach ($karyawan as $value) { ?>
                                 <option value="<?= $value['nik']; ?>"><?= $value['nama_karyawan']; ?></option>"
                             <?php } ?>
                         </select>
+                        <div class="invalid-feedback">
+                            <?= session('validation.nik'); ?>
+                        </div>
                     </div>
                     <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" value="<?= $users['email']; ?>" placeholder="Silahkan masukan email pengguna">
+                        <label class="form-label">Email</label>
+                        <input type="email" id="email" name="email" class="form-control <?php if (session('validation.email')) : ?> is-invalid <?php endif ?>" placeholder="Silahkan masukan email pengguna">
+                        <div class="invalid-feedback">
+                            <?= session('validation.email'); ?>
+                        </div>
                     </div>
                     <div class="mb-3">
-                        <label for="username" class="form-label">Username</label>
-                        <input type="text" class="form-control" id="username" name="username" value="<?= $users['username']; ?>"placeholder="Silahkan masukan username pengguna">
+                        <label class="form-label">Username</label>
+                        <input type="text" id="username" name="username" class="form-control <?php if (session('validation.username')) : ?> is-invalid <?php endif ?>" placeholder="Silahkan masukan username pengguna">
+                        <div class="invalid-feedback">
+                            <?= session('validation.username'); ?>
+                        </div>
                     </div>
                     <div class="mb-3">
-                        <label for="id_role">Level</label>
-                        <select name="id_role" class="form-select" id="id_role">
-                            
+                        <label class="form-label">Level</label>
+                        <select name="id_role" id="id_role" class="form-select <?php if (session('validation.id_role')) : ?> is-invalid <?php endif ?>">
                             <option value="" disabled selected>-Pilih-</option>
                             <?php foreach ($level as $value) { ?>
                                 <option value="<?= $value['id_role']; ?>"><?= $value['nama_role']; ?></option>"
                             <?php } ?>
                         </select>
+                        <div class="invalid-feedback">
+                            <?= session('validation.id_role'); ?>
+                        </div>
                     </div>
                     <div class="mb-3 form-password-toggle">
                         <div class="d-flex justify-content-between">
                             <label class="form-label" for="password">Password</label>
                         </div>
                         <div class="input-group input-group-merge">
-                            <input type="password" id="password_hash" class="form-control" name="password_hash" value="<?= $users['password']; ?>" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"/>
+                            <input type="password" id="password_hash" class="form-control <?php if(session('validation.password_hash')) : ?> is-invalid <?php endif ?>" name="password_hash" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" value="<?= old('password_hash'); ?>">
                             <span class="input-group-text cursor-pointer"><i class="ti ti-eye-off"></i></span>
+                        </div>
+                        <div class="invalid-feedback">
+                            <?= session('validation.password_hash'); ?>
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="active">Status</label>
-                        <select name="active" class="form-select" id="active">
-                            <?= ($users['active'] == 1) ? 'Aktif' : 'Tidak Aktif' ?>
-                            <option value="" disabled>-Pilih-</option>
+                        <label class="form-label">Status</label>
+                        <select name="active" id="active" class="form-select <?php if (session('validation.active')) : ?> is-invalid <?php endif ?>">
+                            <option value="" disabled selected>-Pilih-</option>
                             <option value="1">Aktif</option>
                             <option value="0">Tidak Aktif</option>
                         </select>
+                        <div class="invalid-feedback">
+                            <?= session('validation.active'); ?>
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Update</button>
-                </form>
+                </div>
             </div>
-        </div>
+
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
     </div>
 </div>
 
 <?php include 'bawah.php' ?>
+
+<script>
+    $(document).ready(function() {
+        $('#nik').select2();
+        $('#id_role').select2();
+        $('#active').select2();
+    });
+</script>
