@@ -59,7 +59,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="Alamat" class="form-label">Alamat</label>
-                        <textarea name="alamat" id="alamat" cols="20" rows="3" class="form-control <?php if (session('validation.alamat')) : ?> is-invalid <?php endif ?>" placeholder="Silahkan masukan alamat karyawan" value="<?= old('alamat'); ?>"></textarea>
+                        <textarea name="alamat" id="alamat" cols="20" rows="3" class="form-control <?php if (session('validation.alamat')) : ?> is-invalid <?php endif ?>" placeholder="Silahkan masukan alamat karyawan" value="<?= old('alamat'); ?>"><?= old('alamat'); ?></textarea>
                         <div class="invalid-feedback">
                             <?= session('validation.alamat'); ?>
                         </div>
