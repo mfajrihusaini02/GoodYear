@@ -1,4 +1,4 @@
-<?php include 'atas.php' ?>
+<?php include 'atas_edit.php' ?>
 
 <div class="card shadow">
     <div class="row card-header bg-primary p-2 m-0">
@@ -15,7 +15,7 @@
     </div>
 
     <div class="card-body mb-3 mt-3">
-        <form method="POST" enctype="multipart/form-data" action="<?= base_url('update_pengguna/'.$users['id']); ?>">
+        <form method="POST" enctype="multipart/form-data" action="<?= base_url('update_pengguna/'.$user['id']); ?>">
             <?= csrf_field(); ?>
             <input type="hidden" name="_method" value="PUT">
             <input type="hidden" id="force_pass_reset" name="force_pass_reset" value="0">
@@ -28,7 +28,7 @@
                         <select name="nikdisable" id="nikdisable" class="form-select" disabled>
                             <option value="" disabled>-Pilih-</option>
                             <?php foreach ($karyawan as $value) { ?>
-                                <option value="<?= $value['nik']; ?>" <?= $users['nik'] == $value['nik'] ? 'selected' : null ?>>
+                                <option value="<?= $value['nik']; ?>" <?= $user['nik'] == $value['nik'] ? 'selected' : null ?>>
                                     <?= $value['nama_karyawan']; ?>
                                 </option>"
                             <?php } ?>
@@ -36,18 +36,18 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Email</label>
-                        <input type="text" class="form-control" id="emaildisable" name="emaildisable" value="<?= $users['email']; ?>" disabled>
+                        <input type="text" class="form-control" id="emaildisable" name="emaildisable" value="<?= $user['email']; ?>" disabled>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Username</label>
-                        <input type="text" class="form-control" id="usernamedisable" name="usernamedisable" value="<?= $users['username']; ?>" disabled>
+                        <input type="text" class="form-control" id="usernamedisable" name="usernamedisable" value="<?= $user['username']; ?>" disabled>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Level</label>
                         <select name="id_roledisable" id="id_roledisable" class="form-select" disabled>
                             <option value="" disabled>-Pilih-</option>
                             <?php foreach ($level as $value) { ?>
-                                <option value="<?= $value['id_role']; ?>" <?= $users['id_role'] == $value['id_role'] ? 'selected' : null ?>>
+                                <option value="<?= $value['id_role']; ?>" <?= $user['id_role'] == $value['id_role'] ? 'selected' : null ?>>
                                     <?= $value['nama_role']; ?>
                                 </option>"
                             <?php } ?>
@@ -55,13 +55,13 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Password</label>
-                        <input type="text" class="form-control" id="password_hashdisable" name="password_hashdisable" value="<?= $users['password']; ?>" disabled>
+                        <input type="text" class="form-control" id="password_hashdisable" name="password_hashdisable" value="<?= $user['password']; ?>" disabled>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Status</label>
                         <select name="activedisable" id="activedisable" class="form-select" disabled>
                             <option value="" disabled>-Pilih-</option>
-                            <option value="<?= $users['active'] == 1 ?>"><?= ($users['active'] == 1) ? 'Aktif' : 'Tidak Aktif' ?></option>
+                            <option value="<?= $user['active'] == 1 ?>"><?= ($user['active'] == 1) ? 'Aktif' : 'Tidak Aktif' ?></option>
                         </select>
                     </div>
                 </div>
@@ -113,9 +113,9 @@
                         <div class="input-group input-group-merge">
                             <input type="password" id="password_hash" class="form-control <?php if(session('validation.password_hash')) : ?> is-invalid <?php endif ?>" name="password_hash" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" value="<?= old('password_hash'); ?>">
                             <span class="input-group-text cursor-pointer"><i class="ti ti-eye-off"></i></span>
-                        </div>
-                        <div class="invalid-feedback">
-                            <?= session('validation.password_hash'); ?>
+                            <div class="invalid-feedback">
+                                <?= session('validation.password_hash'); ?>
+                            </div>
                         </div>
                     </div>
                     <div class="mb-3">
@@ -137,7 +137,7 @@
     </div>
 </div>
 
-<?php include 'bawah.php' ?>
+<?php include 'bawah_edit.php' ?>
 
 <script>
     $(document).ready(function() {

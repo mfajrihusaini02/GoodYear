@@ -19,7 +19,7 @@ class DaftarKaryawanModel extends Model
         'qr_code',
         'foto'
     ];
-    
+
     public function getKaryawan()
     {
         return $this->db->table('karyawan')
@@ -28,11 +28,12 @@ class DaftarKaryawanModel extends Model
             ->get()->getResultArray();
     }
 
-    public function getKaryawanJabatanPerID($id_jabatan)
+    public function getKaryawanJabatanPerID($id_karyawan)
     {
         return $this->db->table('karyawan')
             ->join('jabatan', 'jabatan.id_jabatan=karyawan.id_jabatan')
-            ->where('id_jabatan', $id_jabatan)
+            ->join('divisi', 'divisi.id_divisi=karyawan.id_divisi')
+            ->where('id_karyawan', $id_karyawan)
             ->get()->getResultArray();
     }
 

@@ -12,13 +12,13 @@
 <div class="card shadow">
     <div class="row card-header bg-primary p-2 m-0">
         <div class="col-lg-6 col-xl-6 col-md-6 col-xs-6 col-sm-6 col-6">
-            <h4 class="text-white mt-2">Daftar Role</h4>
+            <h4 class="text-white mt-2">List Role</h4>
         </div>
 
         <div class="col-lg-6 col-xl-6 col-md-6 col-xs-6 col-sm-6 col-6" align="right">
             <a href="../tambah_role" class="btn btn-success btn-sm btn-icon-split mt-2">
                 <span class="icon text-white-50"><i class="fas fa-plus"></i></span>
-                <span class="text p-1">Tambah</span>
+                <span class="text p-1">New</span>
             </a>
         </div>
     </div>
@@ -43,10 +43,10 @@
                             <td style="margin: 5px; padding: 3px; text-align: justify;"><?= $value["nama_role"]; ?></td>
                             <td style="margin: 5px; padding: 3px; text-align: center;"><?= $value["level"]; ?></td>
                             <td style="margin: 5px; padding: 3px; text-align: center;">
-                                <a href="<?= base_url('edit_role/'.$value['id_role']) ?>" class="btn btn-outline-warning">
+                                <a href="<?= base_url('edit_role/'.$value['id_role']) ?>" class="btn btn-outline-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit">
                                     <span class='icon'><i class='fas fa-edit'></i></span>
                                 </a>
-                                <a href="#" data-href="<?= base_url('delete_role/'.$value['id_role']) ?>" onclick="confirmToDelete(this)" class="btn btn-outline-danger">
+                                <a href="#" data-href="<?= base_url('delete_role/'.$value['id_role']) ?>" onclick="confirmToDelete(this)" class="btn btn-outline-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Delete">
                                     <span class='icon'><i class='fas fa-trash'></i></span>
                                 </a>
                             </td>

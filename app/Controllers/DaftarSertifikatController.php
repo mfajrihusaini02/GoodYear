@@ -2,28 +2,30 @@
 
 namespace App\Controllers;
 
+use App\Models\DaftarPenggunaModel;
 use App\Models\DaftarSertifikatModel;
 
 class DaftarSertifikatController extends BaseController
 {
     protected $sertifikatModel;
+    protected $penggunaModel;
 
     public function __construct()
     {
         $this->sertifikatModel = new DaftarSertifikatModel();    
+        $this->penggunaModel = new DaftarPenggunaModel(); 
     }
 
     public function index()
     {
+        $data['users'] = $this->penggunaModel->getPengguna();
         $data['sertifikat'] = $this->sertifikatModel->getJenisSertifikat();
         return view('daftar_sertifikat', $data);
     }
 
     public function tambah_sertifikat()
     {
-        $data = [
-            'title' => 'Form Tambah Role'
-        ];
+        $data['users'] = $this->penggunaModel->getPengguna();
         return view('tambah_sertifikat', $data);
     }
     
@@ -62,6 +64,7 @@ class DaftarSertifikatController extends BaseController
 
     public function edit_sertifikat($id_sertifikat = null)
     {
+        $data['users'] = $this->penggunaModel->getPengguna();
         $data['sertifikat'] = $this->sertifikatModel->find($id_sertifikat);
         return view('edit_sertifikat', $data);
     }

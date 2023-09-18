@@ -6,11 +6,13 @@
     <div class="card">
       <div class="card-body">
         <div class="row">
-          <div class="col-lg-6 col-sm-6 mb-4">
-            <h5>Selamat Pagi, Administrator!</h5>
-            <span>Username : administrator@gmail.com</span>
+          <div class="col-lg-10 col-sm-10 mb-4">
+            <?php foreach ($users as $key => $value) : ?>
+              <h5>Selamat Datang, <?= $value['nama_karyawan'] ?>!</h5>
+              <span>Username : <?= $value['email'] ?></span>
+            <?php endforeach ?>
           </div>
-          <div class="col-lg-6 col-sm-6 mb-4" align="right">
+          <div class="col-lg-2 col-sm-2 mb-4" align="right">
             <i class="menu-icon tf-icons ti ti-user" style="font-size: 60px;"></i>
           </div>
         </div>
@@ -25,7 +27,7 @@
       <div class="card-body">
         <div class="row">
           <div class="col-lg-6 col-sm-6 mb-4">
-            <h5>Jumlah Task</h5>
+            <h5>Jumlah Karyawan</h5>
             <span>9 Orang</span>
           </div>
           <div class="col-lg-6 col-sm-6 mb-4" align="right">

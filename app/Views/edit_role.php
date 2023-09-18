@@ -1,4 +1,4 @@
-<?php include 'atas.php' ?>
+<?php include 'atas_edit.php' ?>
 
 <div class="card shadow">
     <div class="row card-header bg-primary p-2 m-0">
@@ -57,4 +57,4 @@
     </div>
 </div>
 
-<?php include 'bawah.php' ?>
+<?php include 'bawah_edit.php' ?>

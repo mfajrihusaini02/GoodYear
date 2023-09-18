@@ -3,27 +3,29 @@
 namespace App\Controllers;
 
 use App\Models\DaftarJabatanModel;
+use App\Models\DaftarPenggunaModel;
 
 class DaftarJabatanController extends BaseController
 {
     protected $jabatanModel;
+    protected $penggunaModel;
 
     public function __construct()
     {
         $this->jabatanModel = new DaftarJabatanModel();    
+        $this->penggunaModel = new DaftarPenggunaModel();    
     }
 
     public function index()
     {
+        $data['users'] = $this->penggunaModel->getPengguna();
         $data['jabatan'] = $this->jabatanModel->getjabatan();
         return view('daftar_jabatan', $data);
     }
 
     public function tambah_jabatan()
     {
-        $data = [
-            'title' => 'Form Tambah Jabatan',
-        ];
+        $data['users'] = $this->penggunaModel->getPengguna();
         return view('tambah_jabatan', $data);
     }
 
@@ -54,7 +56,8 @@ class DaftarJabatanController extends BaseController
 
     public function edit_jabatan($id_jabatan = null)
     {
-        $data['role'] = $this->jabatanModel->find($id_jabatan);
+        $data['users'] = $this->penggunaModel->getPengguna();
+        $data['jabatan'] = $this->jabatanModel->find($id_jabatan);
         return view('edit_jabatan', $data);
     }
 
