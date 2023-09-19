@@ -17,6 +17,8 @@
 					<h4 class="mb-1">Welcome to Goodyear Indonesia!</h4>
 					<p class="mb-4">Please sign-in to your account and start the adventure</p>
 
+					<?= view('Myth\Auth\Views\_message_block') ?>
+
 					<form action="<?= url_to('login') ?>" method="post">
 						<?= csrf_field() ?>
 

@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\DaftarPenggunaModel;
+use Myth\Auth\Password;
 
 class DaftarPenggunaController extends BaseController
 {
@@ -84,7 +85,8 @@ class DaftarPenggunaController extends BaseController
             'email' => $this->request->getPost('email'),
             'username' => $this->request->getPost('username'),
             'password' => $this->request->getPost('password_hash'),
-            'password_hash' => password_hash($this->request->getVar('password_hash'), PASSWORD_BCRYPT),
+            // 'password_hash' => password_hash($this->request->getVar('password_hash'), PASSWORD_BCRYPT),
+            'password_hash' => Password::hash($this->request->getVar('password_hash')),
             'active' => $this->request->getPost('active'),
             'force_pass_reset' => $this->request->getPost('force_pass_reset'),
             'created_at' => $this->request->getPost('created_at'),
@@ -109,10 +111,9 @@ class DaftarPenggunaController extends BaseController
         // validation input
         if(!$this->validate([
             'nik' => [
-                'rules' => 'required|is_unique',
+                'rules' => 'required',
                 'errors' => [
                     'required' => 'Karyawan belum dipilih',
-                    'is_unique' => 'Karyawan sudah menjadi pengguna',
                 ],
             ],
             'id_role' => [
@@ -161,7 +162,7 @@ class DaftarPenggunaController extends BaseController
             'email' => $this->request->getPost('email'),
             'username' => $this->request->getPost('username'),
             'password' => $this->request->getPost('password_hash'),
-            'password_hash' => password_hash($this->request->getVar('password_hash'), PASSWORD_BCRYPT),
+            'password_hash' => Password::hash($this->request->getVar('password_hash')),
             'active' => $this->request->getPost('active'),
             'force_pass_reset' => $this->request->getPost('force_pass_reset'),
             'created_at' => $this->request->getPost('created_at'),
