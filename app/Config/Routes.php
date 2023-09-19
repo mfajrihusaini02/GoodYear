@@ -79,8 +79,7 @@ $routes->get('/delete_karyawan/(:num)', 'DaftarKaryawanController::delete_karyaw
 $routes->get('/delete_jabatan/(:num)', 'DaftarJabatanController::delete_jabatan/$1', ['filter' => 'login']);
 $routes->get('/delete_divisi/(:num)', 'DaftarDivisiController::delete_divisi/$1', ['filter' => 'login']);
 // Lihat Karyawan
-$routes->get('/lihat_karyawan/(:num)', 'DaftarKaryawanController::lihat_karyawan/$1', ['filter' => 'login']);
-$routes->get('/lihat_karyawanQR/(:num)', 'DaftarKaryawanController::lihat_karyawanQR/$1');
+$routes->get('/lihat_karyawan/(:num)', 'DaftarKaryawanController::lihat_karyawan/$1');
 
 /*
  * --------------------------------------------------------------------

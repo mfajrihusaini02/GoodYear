@@ -109,7 +109,7 @@ class DaftarKaryawanController extends BaseController
             'foto' => [
                 'rules' => 'max_size[foto, 1024]|is_image[foto]|mime_in[foto,image/jpg,image/jpeg,image/png]',
                 'errors' => [
-                    // 'required' => 'Foto tidak boleh kosong',
+                    'required' => 'Foto tidak boleh kosong',
                     'max_size' => 'Foto tidak boleh besar dari 1 MB',
                     'is_image' => 'File harus berupa gambar',
                     'mime_in' => 'File harus berupa gambar',
@@ -166,7 +166,7 @@ class DaftarKaryawanController extends BaseController
             'qr_code' => $dataUri,
             'foto' => $namaFoto
         ];
-        dd($data);
+        // dd($data);
 
         $this->karyawanModel->save($data);
         return redirect()->to(base_url('daftar_karyawan'))->with('status', 'Data Karyawan Berhasil Disimpan');
