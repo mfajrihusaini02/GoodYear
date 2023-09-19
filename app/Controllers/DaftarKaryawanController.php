@@ -33,7 +33,7 @@ class DaftarKaryawanController extends BaseController
         $this->jabatanModel = new DaftarJabatanModel();
         $this->divisiModel = new DaftarDivisiModel();
         $this->sertifikatModel = new DaftarSertifikatModel();
-        $this->penggunaModel = new DaftarPenggunaModel();    
+        $this->penggunaModel = new DaftarPenggunaModel();
     }
 
     public function index()
@@ -61,7 +61,7 @@ class DaftarKaryawanController extends BaseController
     public function simpan_karyawan()
     {
         // validation input
-        if(!$this->validate([
+        if (!$this->validate([
             'nik' => [
                 'rules' => 'required|numeric|max_length[16]|min_length[16]',
                 'errors' => [
@@ -99,9 +99,8 @@ class DaftarKaryawanController extends BaseController
                 ],
             ],
             'foto' => [
-                'rules' => 'uploaded[foto]|max_size[foto, 1024]|is_image[foto]|mime_in[foto,image/jpg,image/jpeg,image/png]',
+                'rules' => 'max_size[foto, 1024]|is_image[foto]|mime_in[foto,image/jpg,image/jpeg,image/png]',
                 'errors' => [
-                    'uploaded' => 'Foto tidak boleh kosong',
                     'max_size' => 'Foto tidak boleh besar dari 1 MB',
                     'is_image' => 'File harus berupa gambar',
                     'mime_in' => 'File harus berupa gambar',
@@ -115,7 +114,7 @@ class DaftarKaryawanController extends BaseController
 
         $writer     = new PngWriter();
         $id         = time();
-        $nama       = $this->request->getVar('nama_karyawan');        
+        $nama       = $this->request->getVar('nama_karyawan');
 
         $qrCode = QrCode::create(base_url('lihat_karyawan/' . $id))
             ->setEncoding(new Encoding('UTF-8'))
@@ -127,7 +126,7 @@ class DaftarKaryawanController extends BaseController
             ->setBackgroundColor(new Color(255, 255, 255));
 
         $logo = Logo::create('logo.png')
-            ->setResizeToWidth(250);
+            ->setResizeToWidth(150);
 
         $label = Label::create($nama)
             ->setTextColor(new Color(255, 0, 0));
@@ -141,7 +140,7 @@ class DaftarKaryawanController extends BaseController
         // pindahkan file ke folder img
         $fileFoto->move('img');
         // ambil nama file foto
-        $namaFoto = $fileFoto->getName();
+        $namaFoto = $fileFoto->getRandomName();
 
         $data = [
             'nik' => $this->request->getVar('nik'),
@@ -201,7 +200,7 @@ class DaftarKaryawanController extends BaseController
     public function update_karyawan($id_karyawan = null)
     {
         // validation input
-        if(!$this->validate([
+        if (!$this->validate([
             'nik' => [
                 'rules' => 'required|numeric|max_length[16]|min_length[16]',
                 'errors' => [
@@ -237,7 +236,15 @@ class DaftarKaryawanController extends BaseController
                     'required' => 'Alamat tidak boleh kosong',
                     'max_length' => 'Alamat maximal 100 karakter',
                 ],
-            ]
+            ],
+            'foto' => [
+                'rules' => 'max_size[foto, 1024]|is_image[foto]|mime_in[foto,image/jpg,image/jpeg,image/png]',
+                'errors' => [
+                    'max_size' => 'Foto tidak boleh besar dari 1 MB',
+                    'is_image' => 'File harus berupa gambar',
+                    'mime_in' => 'File harus berupa gambar',
+                ],
+            ],
         ])) {
             $validation = \Config\Services::validation();
             // dd($validation);
@@ -252,7 +259,7 @@ class DaftarKaryawanController extends BaseController
         $divisi     = $this->request->getVar('divisi');
         $alamat     = $this->request->getVar('alamat');
         $foto       = $this->request->getFile('foto');
-        
+
 
         $qrCode = QrCode::create(base_url('lihat_karyawan/' . $id))
             ->setEncoding(new Encoding('UTF-8'))
@@ -264,7 +271,7 @@ class DaftarKaryawanController extends BaseController
             ->setBackgroundColor(new Color(255, 255, 255));
 
         $logo = Logo::create('logo.png')
-            ->setResizeToWidth(250);
+            ->setResizeToWidth(150);
 
         $label = Label::create($nama)
             ->setTextColor(new Color(255, 0, 0));
@@ -273,6 +280,17 @@ class DaftarKaryawanController extends BaseController
 
         $dataUri = $result->getDataUri();
 
+        // ambil foto
+        $fileFoto = $this->request->getFile('foto');
+        // cek gambar
+        if ($fileFoto->getError() == 4) {
+            $namaFoto = $this->request->getVar('fotoLama');
+        } else {
+            $namaFoto = $fileFoto->getRandomName();
+            $fileFoto->move('img', $namaFoto);
+            unlink('img/' . $this->request->getVar('fotoLama'));
+        }
+
         $data = [
             'nik' => $nik,
             'nama_karyawan' => $nama,
@@ -280,7 +298,7 @@ class DaftarKaryawanController extends BaseController
             'id_divisi' => $divisi,
             'alamat' => $alamat,
             'qr_code' => $dataUri,
-            'foto' => $foto
+            'foto' => $namaFoto,
         ];
 
         $this->karyawanModel->update($id_karyawan, $data);

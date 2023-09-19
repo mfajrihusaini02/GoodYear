@@ -1,4 +1,4 @@
-<?php include 'atas.php' ?>
+<?php include 'atas_edit.php' ?>
 
 <?php if(session()->getFlashdata('status')){
     ?>
@@ -27,10 +27,11 @@
         <form method="POST" enctype="multipart/form-data" action="<?= base_url('update_karyawan/' . $karyawan['id_karyawan']); ?>">
             <?= csrf_field(); ?>
             <input type="hidden" name="_method" value="PUT">
+            <input type="hidden" name="fotoLama" value="<?= $karyawan['foto']; ?>">
 
             <div class="row">
                 <div class="col-lg-2 col-xl-2 col-md-2 col-xs-12 col-sm-12 col-12" align="center">
-                    <img src="<?= $karyawan["foto"]; ?>" alt="" style="width: 150px; height: 200px;">
+                    <img src="../img/<?= $karyawan["foto"]; ?>" alt="" style="width: 150px; height: 200px;">
                 </div>
                 
                 <div class="col-lg-5 col-xl-5 col-md-5 col-xs-12 col-sm-12 col-12">
@@ -100,7 +101,7 @@
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="Devisi" class="form-label">Devisi</label>
+                        <label for="Devisi" class="form-label">Divisi</label>
                         <select name="divisi" id="divisi" class="form-select <?php if (session('validation.divisi')) : ?> is-invalid <?php endif ?>">
                             <option value="" disabled selected>-Pilih-</option>
                             <?php foreach ($divisi as $value) { ?>
@@ -120,7 +121,10 @@
                     </div>
                     <div class="mb-3">
                         <label for="Foto" class="form-label">Foto</label>
-                        <input type="file" class="form-control" id="foto" name="foto" aria-describedby="Foto" placeholder="Silahkan upload foto karyawan">
+                        <input type="file" class="form-control <?php if (session('validation.foto')) : ?> is-invalid <?php endif ?>" id="foto" name="foto">
+                        <div class="invalid-feedback">
+                            <?= session('validation.foto'); ?>
+                        </div>
                     </div>
                 </div>
             </div>
