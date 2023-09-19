@@ -201,42 +201,42 @@ class DaftarKaryawanController extends BaseController
     {
         // validation input
         if (!$this->validate([
-            'nik' => [
-                'rules' => 'required|numeric|max_length[16]|min_length[16]',
-                'errors' => [
-                    'required' => 'NIK tidak boleh kosong',
-                    'max_length' => 'NIK harus 16 karakter',
-                    'min_length' => 'NIK harus 16 karakter',
-                    'numeric' => 'Isian harus angka',
-                ],
-            ],
-            'nama_karyawan' => [
-                'rules' => 'required|alpha_space|max_length[100]',
-                'errors' => [
-                    'required' => 'Nama karyawan tidak boleh kosong',
-                    'max_length' => 'Nama karyawan maximal 100 karakter',
-                    'alpha_space' => 'Isian hanya karakter alfabet dan spasi'
-                ],
-            ],
-            'jabatan' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Jabatan belum dipilih',
-                ],
-            ],
-            'divisi' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Divisi belum dipilih',
-                ],
-            ],
-            'alamat' => [
-                'rules' => 'required|max_length[100]',
-                'errors' => [
-                    'required' => 'Alamat tidak boleh kosong',
-                    'max_length' => 'Alamat maximal 100 karakter',
-                ],
-            ],
+            // 'nik' => [
+            //     'rules' => 'required|numeric|max_length[16]|min_length[16]',
+            //     'errors' => [
+            //         'required' => 'NIK tidak boleh kosong',
+            //         'max_length' => 'NIK harus 16 karakter',
+            //         'min_length' => 'NIK harus 16 karakter',
+            //         'numeric' => 'Isian harus angka',
+            //     ],
+            // ],
+            // 'nama_karyawan' => [
+            //     'rules' => 'required|alpha_space|max_length[100]',
+            //     'errors' => [
+            //         'required' => 'Nama karyawan tidak boleh kosong',
+            //         'max_length' => 'Nama karyawan maximal 100 karakter',
+            //         'alpha_space' => 'Isian hanya karakter alfabet dan spasi'
+            //     ],
+            // ],
+            // 'jabatan' => [
+            //     'rules' => 'required',
+            //     'errors' => [
+            //         'required' => 'Jabatan belum dipilih',
+            //     ],
+            // ],
+            // 'divisi' => [
+            //     'rules' => 'required',
+            //     'errors' => [
+            //         'required' => 'Divisi belum dipilih',
+            //     ],
+            // ],
+            // 'alamat' => [
+            //     'rules' => 'required|max_length[100]',
+            //     'errors' => [
+            //         'required' => 'Alamat tidak boleh kosong',
+            //         'max_length' => 'Alamat maximal 100 karakter',
+            //     ],
+            // ],
             'foto' => [
                 'rules' => 'max_size[foto, 1024]|is_image[foto]|mime_in[foto,image/jpg,image/jpeg,image/png]',
                 'errors' => [
@@ -253,13 +253,56 @@ class DaftarKaryawanController extends BaseController
 
         $writer     = new PngWriter();
         $id         = time();
-        $nik        = $this->request->getVar('nik');
-        $nama       = $this->request->getVar('nama_karyawan');
-        $jabatan    = $this->request->getVar('jabatan');
-        $divisi     = $this->request->getVar('divisi');
-        $alamat     = $this->request->getVar('alamat');
-        $foto       = $this->request->getFile('foto');
 
+        //nik
+        $nik = $this->request->getVar('nik');
+        if ($nik == null) {
+            $namaNik = $this->request->getVar('nikLama');
+        } else {
+            $namaNik = $this->request->getVar('nik');
+        }
+
+        //nama karyawan
+        $nama = $this->request->getVar('nama_karyawan');
+        if ($nama == null) {
+            $namaKaryawan = $this->request->getVar('nama_karyawanLama');
+        } else {
+            $namaKaryawan = $this->request->getVar('nama_karyawan');
+        }
+
+        // jabatan
+        $jabatan = $this->request->getVar('jabatan');
+        if ($jabatan == null) {
+            $namaJabatan = $this->request->getVar('jabatanLama');
+        } else {
+            $namaJabatan = $this->request->getVar('jabatan');
+        }
+
+        //divisi
+        $divisi = $this->request->getVar('divisi');
+        if ($divisi == null) {
+            $namaDivisi = $this->request->getVar('divisiLama');
+        } else {
+            $namaDivisi = $this->request->getVar('divisi');
+        }
+
+        //alamat
+        $alamat = $this->request->getVar('alamat');
+        if ($alamat == null) {
+            $namaAlamat = $this->request->getVar('alamatLama');
+        } else {
+            $namaAlamat = $this->request->getVar('alamat');
+        }
+
+        // foto
+        $fileFoto = $this->request->getFile('foto');
+        if ($fileFoto->getError() == 4) {
+            $namaFoto = $this->request->getVar('fotoLama');
+        } else {
+            $namaFoto = $fileFoto->getRandomName();
+            $fileFoto->move('img', $namaFoto);
+            unlink('img/' . $this->request->getVar('fotoLama'));
+        }
 
         $qrCode = QrCode::create(base_url('lihat_karyawan/' . $id))
             ->setEncoding(new Encoding('UTF-8'))
@@ -273,30 +316,19 @@ class DaftarKaryawanController extends BaseController
         $logo = Logo::create('logo.png')
             ->setResizeToWidth(150);
 
-        $label = Label::create($nama)
+        $label = Label::create($namaKaryawan)
             ->setTextColor(new Color(255, 0, 0));
 
         $result = $writer->write($qrCode, $logo, $label);
 
         $dataUri = $result->getDataUri();
 
-        // ambil foto
-        $fileFoto = $this->request->getFile('foto');
-        // cek gambar
-        if ($fileFoto->getError() == 4) {
-            $namaFoto = $this->request->getVar('fotoLama');
-        } else {
-            $namaFoto = $fileFoto->getRandomName();
-            $fileFoto->move('img', $namaFoto);
-            unlink('img/' . $this->request->getVar('fotoLama'));
-        }
-
         $data = [
-            'nik' => $nik,
-            'nama_karyawan' => $nama,
-            'id_jabatan' => $jabatan,
-            'id_divisi' => $divisi,
-            'alamat' => $alamat,
+            'nik' => $namaNik,
+            'nama_karyawan' => $namaKaryawan,
+            'id_jabatan' => $namaJabatan,
+            'id_divisi' => $namaDivisi,
+            'alamat' => $namaAlamat,
             'qr_code' => $dataUri,
             'foto' => $namaFoto,
         ];

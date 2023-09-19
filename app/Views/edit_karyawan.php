@@ -27,6 +27,11 @@
         <form method="POST" enctype="multipart/form-data" action="<?= base_url('update_karyawan/' . $karyawan['id_karyawan']); ?>">
             <?= csrf_field(); ?>
             <input type="hidden" name="_method" value="PUT">
+            <input type="hidden" name="nikLama" value="<?= $karyawan['nik']; ?>">
+            <input type="hidden" name="nama_karyawanLama" value="<?= $karyawan['nama_karyawan']; ?>">
+            <input type="hidden" name="jabatanLama" value="<?= $karyawan['id_jabatan']; ?>">
+            <input type="hidden" name="divisiLama" value="<?= $karyawan['id_divisi']; ?>">
+            <input type="hidden" name="alamatLama" value="<?= $karyawan['alamat']; ?>">
             <input type="hidden" name="fotoLama" value="<?= $karyawan['foto']; ?>">
 
             <div class="row">
