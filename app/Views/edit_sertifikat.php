@@ -15,9 +15,11 @@
     </div>
 
     <div class="card-body mb-3 mt-3">
-        <form method="POST" action="<?= base_url('update_sertifikat/'.$sertifikat['id_sertifikat']); ?>">
+        <form method="POST" action="<?= base_url('update_sertifikat/' . $sertifikat['id_sertifikat']); ?>">
             <?= csrf_field(); ?>
             <input type="hidden" name="_method" value="PUT">
+            <input type="hidden" name="kodesertifikatLama" value="<?= $sertifikat['kode_sertifikat']; ?>">
+            <input type="hidden" name="namasertifikatLama" value="<?= $sertifikat['nama_sertifikat']; ?>">
 
             <div class="row">
                 <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
@@ -36,14 +38,14 @@
                     <h6><b>Data Baru</b></h6>
                     <div class="mb-3">
                         <label for="kodesertifikat" class="form-label">Kode Sertifikat</label>
-                        <input type="text" class="form-control <?php if(session('validation.kodesertifikat')) : ?> is-invalid <?php endif ?>" id="kodesertifikat" name="kodesertifikat" autofocus placeholder="Silahkan masukan kode sertifikat">
+                        <input type="text" class="form-control <?php if (session('validation.kodesertifikat')) : ?> is-invalid <?php endif ?>" id="kodesertifikat" name="kodesertifikat" autofocus placeholder="Silahkan masukan kode sertifikat">
                         <div class="invalid-feedback">
                             <?= session('validation.kodesertifikat'); ?>
                         </div>
                     </div>
                     <div class="mb-3">
                         <label for="namasertifikat" class="form-label">Nama Sertifikat</label>
-                        <input type="text" class="form-control <?php if(session('validation.namasertifikat')) : ?> is-invalid <?php endif ?>" id="namasertifikat" name="namasertifikat" placeholder="Silahkan masukan nama sertifikat">
+                        <input type="text" class="form-control <?php if (session('validation.namasertifikat')) : ?> is-invalid <?php endif ?>" id="namasertifikat" name="namasertifikat" placeholder="Silahkan masukan nama sertifikat">
                         <div class="invalid-feedback">
                             <?= session('validation.namasertifikat'); ?>
                         </div>

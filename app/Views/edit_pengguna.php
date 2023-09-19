@@ -15,25 +15,20 @@
     </div>
 
     <div class="card-body mb-3 mt-3">
-        <form method="POST" enctype="multipart/form-data" action="<?= base_url('update_pengguna/'.$user['id']); ?>">
+        <form method="POST" enctype="multipart/form-data" action="<?= base_url('update_pengguna/' . $user['nik']); ?>">
             <?= csrf_field(); ?>
             <input type="hidden" name="_method" value="PUT">
             <input type="hidden" id="force_pass_reset" name="force_pass_reset" value="0">
+            <input type="hidden" name="emailLama" value="<?= $user['email']; ?>">
+            <input type="hidden" name="usernameLama" value="<?= $user['username']; ?>">
+            <input type="hidden" name="id_roleLama" value="<?= $user['id_role']; ?>">
+            <input type="hidden" name="passwordLama" value="<?= $user['password']; ?>">
+            <input type="hidden" name="password_hashLama" value="<?= $user['password_hash']; ?>">
+            <input type="hidden" name="activeLama" value="<?= $user['active']; ?>">
 
             <div class="row">
                 <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
                     <h6><b>Data Lama</b></h6>
-                    <div class="mb-3">
-                        <label class="form-label">Nama Karyawan</label>
-                        <select name="nikdisable" id="nikdisable" class="form-select" disabled>
-                            <option value="" disabled>-Pilih-</option>
-                            <?php foreach ($karyawan as $value) { ?>
-                                <option value="<?= $value['nik']; ?>" <?= $user['nik'] == $value['nik'] ? 'selected' : null ?>>
-                                    <?= $value['nama_karyawan']; ?>
-                                </option>"
-                            <?php } ?>
-                        </select>
-                    </div>
                     <div class="mb-3">
                         <label class="form-label">Email</label>
                         <input type="text" class="form-control" id="emaildisable" name="emaildisable" value="<?= $user['email']; ?>" disabled>
@@ -69,18 +64,6 @@
                 <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
                     <h6><b>Data Baru</b></h6>
                     <div class="mb-3">
-                        <label class="form-label">Nama Karyawan</label>
-                        <select name="nik" id="nik" class="form-select <?php if (session('validation.nik')) : ?> is-invalid <?php endif ?>">
-                            <option value="" disabled selected>-Pilih-</option>
-                            <?php foreach ($karyawan as $value) { ?>
-                                <option value="<?= $value['nik']; ?>"><?= $value['nama_karyawan']; ?></option>"
-                            <?php } ?>
-                        </select>
-                        <div class="invalid-feedback">
-                            <?= session('validation.nik'); ?>
-                        </div>
-                    </div>
-                    <div class="mb-3">
                         <label class="form-label">Email</label>
                         <input type="email" id="email" name="email" class="form-control <?php if (session('validation.email')) : ?> is-invalid <?php endif ?>" placeholder="Silahkan masukan email pengguna">
                         <div class="invalid-feedback">
@@ -111,7 +94,7 @@
                             <label class="form-label" for="password">Password</label>
                         </div>
                         <div class="input-group input-group-merge">
-                            <input type="password" id="password_hash" class="form-control <?php if(session('validation.password_hash')) : ?> is-invalid <?php endif ?>" name="password_hash" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" value="<?= old('password_hash'); ?>">
+                            <input type="password" id="password_hash" class="form-control <?php if (session('validation.password_hash')) : ?> is-invalid <?php endif ?>" name="password_hash" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" value="<?= old('password_hash'); ?>">
                             <span class="input-group-text cursor-pointer"><i class="ti ti-eye-off"></i></span>
                             <div class="invalid-feedback">
                                 <?= session('validation.password_hash'); ?>

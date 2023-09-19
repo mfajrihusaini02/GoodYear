@@ -80,6 +80,7 @@ $routes->get('/delete_jabatan/(:num)', 'DaftarJabatanController::delete_jabatan/
 $routes->get('/delete_divisi/(:num)', 'DaftarDivisiController::delete_divisi/$1', ['filter' => 'login']);
 // Lihat Karyawan
 $routes->get('/lihat_karyawan/(:num)', 'DaftarKaryawanController::lihat_karyawan/$1', ['filter' => 'login']);
+$routes->get('/lihat_karyawanQR/(:num)', 'DaftarKaryawanController::lihat_karyawanQR/$1');
 
 /*
  * --------------------------------------------------------------------

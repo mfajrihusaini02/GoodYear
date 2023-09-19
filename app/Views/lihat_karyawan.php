@@ -1,4 +1,8 @@
-<?php include 'atas_edit.php' ?>
+<?php
+
+use PHPUnit\Framework\Constraint\Count;
+
+include 'atas_edit.php' ?>
 
 <div class="card shadow">
     <div class="row card-header bg-primary p-2 m-0">
@@ -25,47 +29,60 @@
                             </div>
 
                             <div class="col-md-9" style="text-align: justify;">
-                                <div class="row">
-                                    <div class="col-lg-4 col-xl-4 col-md-4 col-ls-4 col-xs-4 col-4">
-                                        <p><b>NIK</b></p>
-                                        <p><b>Nama Lengkap</b></p>
-                                        <p><b>Alamat</b></p>
-                                        <p><b>Jabatan</b></p>
-                                        <p><b>Sertifikat</b></p>
-                                    </div>
-                                    <div class="col-lg-8 col-xl-8 col-md-8 col-ls-8 col-xs-8 col-8">
-                                        <p>: <?= $detail_karyawan['nik']; ?></p>
-                                        <p>: <?= $detail_karyawan['nama_karyawan']; ?></p>
-                                        <p>: <?= $detail_karyawan['alamat']; ?></p>
-                                        <p>:
-                                            <?php foreach ($jabatan as $value) : ?>
-                                                <?= $detail_karyawan['id_jabatan'] == $value['id_jabatan'] ? $value['nama_jabatan'] : null ?>
-                                            <?php endforeach ?>
-                                        </p>
-                                        <p>: </p>
-                                    </div>
-                                    <div class="table-responsive  mt-0">
-                                        <table class="table table-hover display nowrap table-bordered w-100" cellspacing="0">
-                                            <thead>
-                                                <tr class="first even" style="text-shadow: none; cursor: pointer;">
-                                                    <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">No</th>
-                                                    <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">Nama Sertifikat</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <?php $nomor = 1; ?>
-                                                <?php foreach ($transaksi as $value) : ?>
-                                                    <tr style="vertical-align: middle; text-align: center; text-shadow: none;">
-                                                        <td style="margin: 5px; padding: 3px; text-align: center; width: 10%;"><?= $nomor++; ?></td>
-                                                        <td style="margin: 5px; padding: 3px; text-align: center; width: 90%;"><?= $value['nama_sertifikat']; ?></td>
-                                                    </tr>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th style="text-align: justify; vertical-align: middle; margin: 5px; padding: 7px;"><b>NIK</b></th>
+                                            <th style="text-align: justify; vertical-align: middle; margin: 5px; padding: 7px; width: 100%;">: <?= $detail_karyawan['nik']; ?></th>
+                                        </tr>
+                                        <tr>
+                                            <th style="text-align: justify; vertical-align: middle; margin: 5px; padding: 7px;"><b>Nama Lengkap</b></th>
+                                            <th style="text-align: justify; vertical-align: middle; margin: 5px; padding: 7px; width: 100%;">: <?= $detail_karyawan['nama_karyawan']; ?></th>
+                                        </tr>
+                                        <tr>
+                                            <th style="text-align: justify; vertical-align: middle; margin: 5px; padding: 7px;"><b>Alamat</b></th>
+                                            <th style="text-align: justify; vertical-align: middle; margin: 5px; padding: 7px; width: 100%;">: <?= $detail_karyawan['alamat']; ?></th>
+                                        </tr>
+                                        <tr>
+                                            <th style="text-align: justify; vertical-align: middle; margin: 5px; padding: 7px;"><b>Jabatan</b></th>
+                                            <th style="text-align: justify; vertical-align: middle; margin: 5px; padding: 7px; width: 100%;">:
+                                                <?php foreach ($jabatan as $value) : ?>
+                                                    <?= $detail_karyawan['id_jabatan'] == $value['id_jabatan'] ? $value['nama_jabatan'] : null ?>
                                                 <?php endforeach ?>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th style="text-align: justify; vertical-align: middle; margin: 5px; padding: 7px;"><b>Sertifikat</b></th>
+                                            <th style="text-align: justify; vertical-align: middle; margin: 5px; padding: 7px; width: 100%;">: </th>
+                                        </tr>
+                                    </thead>
+                                </table>
                             </div>
                         </div>
+                    </div>
+
+                    <div class="table-responsive container mt-0">
+                        <table class="table table-hover display nowrap table-bordered w-100" cellspacing="0">
+                            <thead>
+                                <tr class="first even" style="text-shadow: none; cursor: pointer;">
+                                    <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">No</th>
+                                    <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">Nama Sertifikat</th>
+                                    <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">Tanggal Ambil</th>
+                                    <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">Tanggal Ekspired</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php $nomor = 1; ?>
+                                <?php foreach ($transaksi as $value) : ?>
+                                    <tr style="vertical-align: middle; text-align: center; text-shadow: none;">
+                                        <td style="margin: 5px; padding: 3px; text-align: center; width: 5%;"><?= $nomor++; ?></td>
+                                        <td style="margin: 5px; padding: 3px; text-align: center; width: 30%;"><?= $value['nama_sertifikat']; ?></td>
+                                        <td style="margin: 5px; padding: 3px; text-align: center; width: 15%;"><?= $value['tanggal_ambil']; ?></td>
+                                        <td style="margin: 5px; padding: 3px; text-align: center; width: 15%;"><?= $value['tanggal_ekspire']; ?></td>
+                                    </tr>
+                                <?php endforeach ?>
+                            </tbody>
+                        </table>
                     </div>
 
                     <div class="container mt-2" align="center">

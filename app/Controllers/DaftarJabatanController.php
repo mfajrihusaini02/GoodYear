@@ -12,8 +12,8 @@ class DaftarJabatanController extends BaseController
 
     public function __construct()
     {
-        $this->jabatanModel = new DaftarJabatanModel();    
-        $this->penggunaModel = new DaftarPenggunaModel();    
+        $this->jabatanModel = new DaftarJabatanModel();
+        $this->penggunaModel = new DaftarPenggunaModel();
     }
 
     public function index()
@@ -32,7 +32,7 @@ class DaftarJabatanController extends BaseController
     public function simpan_jabatan()
     {
         // validation input
-        if(!$this->validate([
+        if (!$this->validate([
             'nama_jabatan' => [
                 'rules' => 'required|alpha_space|max_length[50]',
                 'errors' => [
@@ -43,12 +43,13 @@ class DaftarJabatanController extends BaseController
             ]
         ])) {
             $validation = \Config\Services::validation();
-            // dd($validation);
             return redirect()->back()->withInput()->with('validation', $this->validator->getErrors());
         }
 
+        $nama_jabatan = $this->request->getVar('nama_jabatan');
+
         $data = [
-            'nama_jabatan' => $this->request->getPost('nama_jabatan')
+            'nama_jabatan' => $nama_jabatan
         ];
         $this->jabatanModel->save($data);
         return redirect()->to(base_url('daftar_jabatan'))->with('status', 'Jabatan Berhasil Disimpan');
@@ -64,23 +65,28 @@ class DaftarJabatanController extends BaseController
     public function update_jabatan($id_jabatan = null)
     {
         // validation input
-        if(!$this->validate([
+        if (!$this->validate([
             'nama_jabatan' => [
-                'rules' => 'required|alpha_space|max_length[50]',
+                'rules' => 'permit_empty|alpha_space|max_length[50]',
                 'errors' => [
-                    'required' => 'Nama jabatan tidak boleh kosong',
                     'max_length' => 'Nama jabatan maksimal 50 karakter',
                     'alpha_space' => 'Isian hanya karakter alfabet dan spasi'
                 ],
             ]
         ])) {
             $validation = \Config\Services::validation();
-            // dd($validation);
             return redirect()->back()->withInput()->with('validation', $this->validator->getErrors());
         }
-        
+
+        $nama_jabatan = $this->request->getVar('nama_jabatan');
+        if ($nama_jabatan == null) {
+            $namaJabatan = $this->request->getVar('nama_jabatanLama');
+        } else {
+            $namaJabatan = $this->request->getVar('nama_jabatan');
+        }
+
         $data = [
-            'nama_jabatan' => $this->request->getPost('nama_jabatan')
+            'nama_jabatan' => $namaJabatan
         ];
         $this->jabatanModel->update($id_jabatan, $data);
         return redirect()->to(base_url('daftar_jabatan'))->with('status', 'Jabatan Berhasil Diubah');

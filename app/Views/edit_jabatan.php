@@ -15,9 +15,10 @@
     </div>
 
     <div class="card-body mb-3 mt-3">
-        <form method="POST" action="<?= base_url('update_jabatan/'.$jabatan['id_jabatan']); ?>">
+        <form method="POST" action="<?= base_url('update_jabatan/' . $jabatan['id_jabatan']); ?>">
             <?= csrf_field(); ?>
             <input type="hidden" name="_method" value="PUT">
+            <input type="hidden" name="nama_jabatanLama" value="<?= $jabatan['nama_jabatan']; ?>">
 
             <div class="row">
                 <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
@@ -32,7 +33,7 @@
                     <h6><b>Data Baru</b></h6>
                     <div class="mb-3">
                         <label for="nama_jabatan" class="form-label">Nama Jabatan</label>
-                        <input type="text" class="form-control <?php if(session('validation.nama_jabatan')) : ?> is-invalid <?php endif ?>" id="nama_jabatan" name="nama_jabatan" autofocus placeholder="Silahkan masukan nama jabatan">
+                        <input type="text" class="form-control <?php if (session('validation.nama_jabatan')) : ?> is-invalid <?php endif ?>" id="nama_jabatan" name="nama_jabatan" autofocus placeholder="Silahkan masukan nama jabatan">
                         <div class="invalid-feedback">
                             <?= session('validation.nama_jabatan'); ?>
                         </div>

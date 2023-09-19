@@ -1,12 +1,12 @@
 <?php include 'atas.php' ?>
 
-<?php if(session()->getFlashdata('status')){
-    ?>
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <strong>Selamat</strong> <?= session()->getFlashdata('status'); ?>.
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    <?php
+<?php if (session()->getFlashdata('status')) {
+?>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Selamat</strong> <?= session()->getFlashdata('status'); ?>.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<?php
 } ?>
 
 <div class="card shadow">
@@ -51,10 +51,10 @@
                                 <?= ($value['active'] == 1) ? 'Aktif' : 'Tidak Aktif' ?>
                             </td>
                             <td style="margin: 5px; padding: 3px; text-align: center;">
-                                <a href="<?= base_url('edit_pengguna/'.$value['id']) ?>" class="btn btn-outline-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit">
+                                <a href="<?= base_url('edit_pengguna/' . $value['nik']) ?>" class="btn btn-outline-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit">
                                     <span class='icon'><i class='fas fa-edit'></i></span>
                                 </a>
-                                <a href="#" data-href="<?= base_url('delete_pengguna/'.$value['id']) ?>" onclick="confirmToDelete(this)" class="btn btn-outline-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Delete">
+                                <a href="#" data-href="<?= base_url('delete_pengguna/' . $value['nik']) ?>" onclick="confirmToDelete(this)" class="btn btn-outline-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Delete">
                                     <span class='icon'><i class='fas fa-trash'></i></span>
                                 </a>
                             </td>

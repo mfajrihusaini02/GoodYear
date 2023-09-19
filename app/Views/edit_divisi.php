@@ -15,16 +15,17 @@
     </div>
 
     <div class="card-body mb-3 mt-3">
-        <form method="POST" action="<?= base_url('update_divisi/' . $role['id_divisi']); ?>">
+        <form method="POST" action="<?= base_url('update_divisi/' . $divisi['id_divisi']); ?>">
             <?= csrf_field(); ?>
             <input type="hidden" name="_method" value="PUT">
-            
+            <input type="hidden" name="nama_divisiLama" value="<?= $divisi['nama_divisi']; ?>">
+
             <div class="row">
                 <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
                     <h6><b>Data Lama</b></h6>
                     <div class="mb-3">
                         <label for="nama_divisidisable" class="form-label">Nama Divisi</label>
-                        <input type="text" class="form-control" id="nama_divisidisable" name="nama_divisidisable" value="<?= $role['nama_divisi']; ?>" disabled>
+                        <input type="text" class="form-control" id="nama_divisidisable" name="nama_divisidisable" value="<?= $divisi['nama_divisi']; ?>" disabled>
                     </div>
                 </div>
 

@@ -1,12 +1,12 @@
 <?php include 'atas.php' ?>
 
-<?php if(session()->getFlashdata('status')){
-    ?>
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <strong>Selamat</strong> <?= session()->getFlashdata('status'); ?>.
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    <?php
+<?php if (session()->getFlashdata('status')) {
+?>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Selamat</strong> <?= session()->getFlashdata('status'); ?>.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<?php
 } ?>
 
 <div class="card shadow">
@@ -47,13 +47,13 @@
                             <td style="margin: 5px; padding: 3px; text-align: center;"><?= $value["nama_jabatan"]; ?></td>
                             <td style="margin: 5px; padding: 3px; text-align: center;"><?= $value["nama_divisi"]; ?></td>
                             <td style="margin: 5px; padding: 3px; text-align: center;">
-                                <a href="<?= base_url('edit_karyawan/'.$value['id_karyawan']) ?>" class="btn btn-outline-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit">
+                                <a href="<?= base_url('edit_karyawan/' . $value['nik']) ?>" class="btn btn-outline-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit">
                                     <span class='icon'><i class='fas fa-edit'></i></span>
                                 </a>
-                                <a href="#" data-href="<?= base_url('delete_karyawan/'.$value['id_karyawan']) ?>" onclick="confirmToDelete(this)" class="btn btn-outline-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Delete">
+                                <a href="#" data-href="<?= base_url('delete_karyawan/' . $value['nik']) ?>" onclick="confirmToDelete(this)" class="btn btn-outline-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Delete">
                                     <span class='icon'><i class='fas fa-trash'></i></span>
                                 </a>
-                                <a href="<?= base_url('lihat_karyawan/'.$value['id_karyawan']) ?>" class="btn btn-outline-info" data-bs-toggle="tooltip" data-bs-placement="bottom" title="View">
+                                <a href="<?= base_url('lihat_karyawan/' . $value['id_karyawan']) ?>" class="btn btn-outline-info" data-bs-toggle="tooltip" data-bs-placement="bottom" title="View">
                                     <span class='icon'><i class='fas fa-eye'></i></span>
                                 </a>
                             </td>

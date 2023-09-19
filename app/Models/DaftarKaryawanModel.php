@@ -8,7 +8,7 @@ class DaftarKaryawanModel extends Model
 {
     protected $table = 'karyawan';
     protected $primaryKey = 'id_karyawan';
-    protected $useAutoIncrement = true;
+    protected $useAutoIncrement = false;
     protected $allowedFields = [
         'id_karyawan',
         'nik',
@@ -28,12 +28,19 @@ class DaftarKaryawanModel extends Model
             ->get()->getResultArray();
     }
 
+    public function getKaryawanPerID($id_karyawan)
+    {
+        return $this->db->table('karyawan')
+            ->where('nik', $id_karyawan)
+            ->get()->getResultArray();
+    }
+
     public function getKaryawanJabatanPerID($id_karyawan)
     {
         return $this->db->table('karyawan')
             ->join('jabatan', 'jabatan.id_jabatan=karyawan.id_jabatan')
             ->join('divisi', 'divisi.id_divisi=karyawan.id_divisi')
-            ->where('id_karyawan', $id_karyawan)
+            ->where('nik', $id_karyawan)
             ->get()->getResultArray();
     }
 

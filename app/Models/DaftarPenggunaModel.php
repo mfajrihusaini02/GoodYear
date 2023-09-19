@@ -35,6 +35,15 @@ class DaftarPenggunaModel extends Model
             ->get()->getResultArray();
     }
 
+    public function getPenggunaPerID($id_pengguna)
+    {
+        return $this->db->table('users')
+            ->join('role', 'role.id_role=users.id_role')
+            ->join('karyawan', 'karyawan.nik=users.nik')
+            ->where('users.nik', $id_pengguna)
+            ->get()->getResultArray();
+    }
+
     function getLevel()
     {
         $query = $this->db->query('SELECT * FROM role');

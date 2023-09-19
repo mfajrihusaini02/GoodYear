@@ -1,12 +1,12 @@
 <?php include 'atas_edit.php' ?>
 
-<?php if(session()->getFlashdata('status')){
-    ?>
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <strong>Selamat</strong> <?= session()->getFlashdata('status'); ?>.
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    <?php
+<?php if (session()->getFlashdata('status')) {
+?>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Selamat</strong> <?= session()->getFlashdata('status'); ?>.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<?php
 } ?>
 
 <div class="card shadow">
@@ -24,7 +24,7 @@
     </div>
 
     <div class="card-body mb-3 mt-3">
-        <form method="POST" enctype="multipart/form-data" action="<?= base_url('update_karyawan/' . $karyawan['id_karyawan']); ?>">
+        <form method="POST" enctype="multipart/form-data" action="<?= base_url('update_karyawan/' . $karyawan['nik']); ?>">
             <?= csrf_field(); ?>
             <input type="hidden" name="_method" value="PUT">
             <input type="hidden" name="nikLama" value="<?= $karyawan['nik']; ?>">
@@ -38,7 +38,7 @@
                 <div class="col-lg-2 col-xl-2 col-md-2 col-xs-12 col-sm-12 col-12" align="center">
                     <img src="../img/<?= $karyawan["foto"]; ?>" alt="" style="width: 150px; height: 200px;">
                 </div>
-                
+
                 <div class="col-lg-5 col-xl-5 col-md-5 col-xs-12 col-sm-12 col-12">
                     <h6><b>Data Lama</b></h6>
                     <div class="mb-3">
@@ -81,7 +81,7 @@
                     <h6><b>Data Baru</b></h6>
                     <div class="mb-3">
                         <label for="NikKaryawan" class="form-label">NIK</label>
-                        <input type="text" class="form-control <?php if (session('validation.nik')) : ?> is-invalid <?php endif ?>" id="nik" name="nik" maxlength="16" minlength="16" autofocus placeholder="Silahkan masukan NIK karyawan">
+                        <input type="text" class="form-control <?php if (session('validation.nik')) : ?> is-invalid <?php endif ?>" id="nik" name="nik" autofocus placeholder="Silahkan masukan NIK karyawan">
                         <div class="invalid-feedback">
                             <?= session('validation.nik'); ?>
                         </div>
@@ -94,7 +94,7 @@
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="Jabatan" class="form-label">Jabatan</label>                        
+                        <label for="Jabatan" class="form-label">Jabatan</label>
                         <select name="jabatan" id="jabatan" class="form-select <?php if (session('validation.jabatan')) : ?> is-invalid <?php endif ?>">
                             <option value="" disabled selected>-Pilih-</option>
                             <?php foreach ($jabatan as $value) { ?>
@@ -199,43 +199,43 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div id="add-dialog" class="modal fade" role="dialog" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <form method="POST" action="<?= base_url('../simpan_sertifikatkaryawan') ?>">
-                                <div class="modal-body">
-                                    <div class="mb-3">
-                                        <input type="hidden" value="<?= $karyawan['id_karyawan'] ?>" id="id_karyawan" name="id_karyawan">
-                                        <label for="id_sertifikat">Sertifikat</label>
-                                        <select name="id_sertifikat" id="id_sertifikat" class="form-select <?php if (session('validation.id_sertifikat')) : ?> is-invalid <?php endif ?>">
-                                            <option value="" disabled selected>-Pilih-</option>
-                                            <?php foreach ($jenissertifikat as $value) { ?>
-                                                <option value="<?= $value['id_sertifikat']; ?>" <?= old('id_sertifikat') == $value['id_sertifikat'] ? 'selected' : null ?>><?= $value['nama_sertifikat']; ?></option>"
-                                            <?php } ?>
-                                        </select>
-                                        <div class="invalid-feedback">
-                                            <?= session('validation.id_sertifikat'); ?>
+                                    <div class="modal-body">
+                                        <div class="mb-3">
+                                            <input type="hidden" value="<?= $karyawan['id_karyawan'] ?>" id="id_karyawan" name="id_karyawan">
+                                            <label for="id_sertifikat">Sertifikat</label>
+                                            <select name="id_sertifikat" id="id_sertifikat" class="form-select <?php if (session('validation.id_sertifikat')) : ?> is-invalid <?php endif ?>">
+                                                <option value="" disabled selected>-Pilih-</option>
+                                                <?php foreach ($jenissertifikat as $value) { ?>
+                                                    <option value="<?= $value['id_sertifikat']; ?>" <?= old('id_sertifikat') == $value['id_sertifikat'] ? 'selected' : null ?>><?= $value['nama_sertifikat']; ?></option>"
+                                                <?php } ?>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                <?= session('validation.id_sertifikat'); ?>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="tanggal_ambil">Tanggal Ambil</label>
+                                            <input type="date" id="tanggal_ambil" name="tanggal_ambil" class="form-control <?php if (session('validation.tanggal_ambil')) : ?> is-invalid <?php endif ?>" value="<?= old('tanggal_ambil'); ?>">
+                                            <div class="invalid-feedback">
+                                                <?= session('validation.tanggal_ambil'); ?>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="tanggal_ekspire">Tanggal Ekspired</label>
+                                            <input type="date" id="tanggal_ekspire" name="tanggal_ekspire" class="form-control <?php if (session('validation.tanggal_ekspire')) : ?> is-invalid <?php endif ?>" value="<?= old('tanggal_ekspire'); ?>">
+                                            <div class="invalid-feedback">
+                                                <?= session('validation.tanggal_ekspire'); ?>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="mb-3">
-                                        <label for="tanggal_ambil">Tanggal Ambil</label>
-                                        <input type="date" id="tanggal_ambil" name="tanggal_ambil" class="form-control <?php if (session('validation.tanggal_ambil')) : ?> is-invalid <?php endif ?>" value="<?= old('tanggal_ambil'); ?>">
-                                        <div class="invalid-feedback">
-                                            <?= session('validation.tanggal_ambil'); ?>
-                                        </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-primary">Save</button>
                                     </div>
-                                    <div class="mb-3">
-                                        <label for="tanggal_ekspire">Tanggal Ekspire</label>
-                                        <input type="date" id="tanggal_ekspire" name="tanggal_ekspire" class="form-control <?php if (session('validation.tanggal_ekspire')) : ?> is-invalid <?php endif ?>" value="<?= old('tanggal_ekspire'); ?>">
-                                        <div class="invalid-feedback">
-                                            <?= session('validation.tanggal_ekspire'); ?>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="submit" class="btn btn-primary">Save</button>
-                                </div>
                                 </form>
                             </div>
                         </div>
