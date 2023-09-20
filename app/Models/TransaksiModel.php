@@ -34,7 +34,8 @@ class TransaksiModel extends Model
     {
         return $this->db->table('sertifikat')
             ->join('transaksi_sertifikat', 'transaksi_sertifikat.id_sertifikat=sertifikat.id_sertifikat')
-            ->where('id_karyawan', $id_karyawan)
+            ->join('karyawan', 'karyawan.id_karyawan=transaksi_sertifikat.id_karyawan')
+            ->where('nik', $id_karyawan)
             ->get()->getResultArray();
     }
 }

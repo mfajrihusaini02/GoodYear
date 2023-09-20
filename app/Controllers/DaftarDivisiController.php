@@ -12,8 +12,8 @@ class DaftarDivisiController extends BaseController
 
     public function __construct()
     {
-        $this->divisiModel = new DaftarDivisiModel();    
-        $this->penggunaModel = new DaftarPenggunaModel();    
+        $this->divisiModel = new DaftarDivisiModel();
+        $this->penggunaModel = new DaftarPenggunaModel();
     }
 
     public function index()
@@ -32,7 +32,7 @@ class DaftarDivisiController extends BaseController
     public function simpan_divisi()
     {
         // validation input
-        if(!$this->validate([
+        if (!$this->validate([
             'nama_divisi' => [
                 'rules' => 'required|alpha_space|max_length[50]',
                 'errors' => [
@@ -43,12 +43,13 @@ class DaftarDivisiController extends BaseController
             ]
         ])) {
             $validation = \Config\Services::validation();
-            // dd($validation);
             return redirect()->back()->withInput()->with('validation', $this->validator->getErrors());
         }
 
+        $nama_divisi = $this->request->getVar('nama_divisi');
+
         $data = [
-            'nama_divisi' => $this->request->getPost('nama_divisi')
+            'nama_divisi' => $nama_divisi
         ];
         $this->divisiModel->save($data);
         return redirect()->to(base_url('daftar_divisi'))->with('status', 'Divisi Berhasil Disimpan');
@@ -57,30 +58,35 @@ class DaftarDivisiController extends BaseController
     public function edit_divisi($id_divisi = null)
     {
         $data['users'] = $this->penggunaModel->getPengguna();
-        $data['role'] = $this->divisiModel->find($id_divisi);
+        $data['divisi'] = $this->divisiModel->find($id_divisi);
         return view('edit_divisi', $data);
     }
 
     public function update_divisi($id_divisi = null)
     {
         // validation input
-        if(!$this->validate([
+        if (!$this->validate([
             'nama_divisi' => [
-                'rules' => 'required|alpha_space|max_length[50]',
+                'rules' => 'permit_empty|alpha_space|max_length[50]',
                 'errors' => [
-                    'required' => 'Nama divisi tidak boleh kosong',
                     'max_length' => 'Nama divisi maksimal 50 karakter',
                     'alpha_space' => 'Isian hanya karakter alfabet dan spasi'
                 ],
             ]
         ])) {
             $validation = \Config\Services::validation();
-            // dd($validation);
             return redirect()->back()->withInput()->with('validation', $this->validator->getErrors());
         }
-        
+
+        $nama_divisi = $this->request->getVar('nama_divisi');
+        if ($nama_divisi == null) {
+            $namaDivisi = $this->request->getVar('nama_divisiLama');
+        } else {
+            $namaDivisi = $this->request->getVar('nama_divisi');
+        }
+
         $data = [
-            'nama_divisi' => $this->request->getPost('nama_divisi')
+            'nama_divisi' => $namaDivisi
         ];
         $this->divisiModel->update($id_divisi, $data);
         return redirect()->to(base_url('daftar_divisi'))->with('status', 'Divisi Berhasil Diubah');

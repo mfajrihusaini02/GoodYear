@@ -66,7 +66,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="Foto" class="form-label">Foto</label>
-                        <input type="file" class="form-control <?php if (session('validation.foto')) : ?> is-invalid <?php endif ?>" id="foto" name="foto">
+                        <input type="file" id="foto" name="foto" class="form-control <?php if (session('validation.foto')) : ?> is-invalid <?php endif ?>" value="<?= old('foto'); ?>">
                         <div class="invalid-feedback">
                             <?= session('validation.foto'); ?>
                         </div>
