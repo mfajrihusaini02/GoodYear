@@ -2,20 +2,24 @@
 
 namespace App\Controllers;
 
+use App\Models\TransaksiEditModel;
 use App\Models\TransaksiModel;
 
 class TransaksiController extends BaseController
 {
     protected $transaksiModel;
+    protected $transaksiEditModel;
 
     public function __construct()
     {
-        $this->transaksiModel = new TransaksiModel();    
+        $this->transaksiModel = new TransaksiModel();
+        $this->transaksiEditModel = new TransaksiEditModel();
     }
 
-    public function simpan_sertifikatkaryawan() {
+    public function simpan_sertifikatkaryawan()
+    {
         // validation input
-        if(!$this->validate([
+        if (!$this->validate([
             'id_sertifikat' => [
                 'rules' => 'required',
                 'errors' => [
@@ -49,12 +53,13 @@ class TransaksiController extends BaseController
 
         // dd($data);
 
-        $this->transaksiModel->save($data);
+        $this->transaksiEditModel->save($data);
         return redirect()->back()->with('status', 'Data Sertifikat Karyawan Berhasil Disimpan');
     }
 
-    public function delete_sertifikatkaryawan($id_transaksi = null) {
-        $this->transaksiModel->delete($id_transaksi);
+    public function delete_sertifikatkaryawan($id_transaksi = null)
+    {
+        $this->transaksiEditModel->delete($id_transaksi);
         return redirect()->back()->with('status', 'Data Sertifikat Karyawan Berhasil Dihapus');
     }
 }
