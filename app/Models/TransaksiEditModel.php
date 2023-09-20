@@ -4,10 +4,10 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class TransaksiModel extends Model
+class TransaksiEditModel extends Model
 {
     protected $table = 'transaksi_sertifikat';
-    protected $primaryKey = 'id_karyawan';
+    protected $primaryKey = 'nik';
     protected $useAutoIncrement = true;
     protected $allowedFields = [
         'id_transaksi',

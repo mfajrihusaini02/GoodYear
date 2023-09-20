@@ -178,7 +178,7 @@ class DaftarKaryawanController extends BaseController
         $data['jabatan'] = $this->jabatanModel->findAll();
         $data['transaksi'] = $this->transaksiModel->getTransaksi();
         $data['transaksi'] = $this->transaksiModel->getJenisTransaksi();
-        $data['transaksi'] = $this->transaksiModel->getSertifikatPerID($id_karyawan);
+        $data['transaksi'] = $this->transaksiModel->getSertifikatPerIDLihat($id_karyawan);
         $data['detail_karyawan'] = $this->karyawanModel->getKaryawanPerID($id_karyawan);
         $data['detail_karyawan'] = $this->karyawanModel->where(['id_karyawan' => $id_karyawan])->first();
         // dd($data);

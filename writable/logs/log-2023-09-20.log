@@ -577,3 +577,848 @@ INFO - 2023-09-20 07:20:38 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2023-09-20 07:20:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2023-09-20 07:20:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2023-09-20 07:20:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:08:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:08:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:08:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-09-20 08:08:20 --> ErrorException: pg_query(): Query failed: ERROR:  value &quot;1371115506870007&quot; is out of range for type integer
+LINE 5: WHERE &quot;transaksi_sertifikat&quot;.&quot;id_karyawan&quot; = '13711155068700...
+                                                     ^ in D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\Postgre\Connection.php:187
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'D:\\SKYWORX\\Proj...', 187)
+#1 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\Postgre\Connection.php(187): pg_query(Object(PgSql\Connection), 'SELECT *\nFROM "...')
+#2 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseConnection.php(692): CodeIgniter\Database\Postgre\Connection->execute('SELECT *\nFROM "...')
+#3 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM "...')
+#4 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 D:\SKYWORX\Project\good-year-new\GoodYear\app\Models\TransaksiModel.php(39): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\SKYWORX\Project\good-year-new\GoodYear\app\Controllers\DaftarKaryawanController.php(208): App\Models\TransaksiModel->getSertifikatPerID('137111550687000...')
+#7 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->edit_karyawandisable('137111550687000...')
+#8 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+#9 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\SKYWORX\Project\good-year-new\GoodYear\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 D:\SKYWORX\Project\good-year-new\GoodYear\system\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Proj...')
+#12 {main}
+CRITICAL - 2023-09-20 08:08:20 --> pg_query(): Query failed: ERROR:  value &quot;1371115506870007&quot; is out of range for type integer
+LINE 5: WHERE &quot;transaksi_sertifikat&quot;.&quot;id_karyawan&quot; = '13711155068700...
+                                                     ^
+in SYSTEMPATH\Database\Postgre\Connection.php on line 187.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  value &quot;1371115506870007&quot; is out of range for type integer
+LINE 5: WHERE &quot;transaksi_sertifikat&quot;.&quot;id_karyawan&quot; = \'13711155068700...
+                                                     ^', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\system\\Database\\Postgre\\Connection.php', 187)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(187): pg_query(Object(PgSql\Connection), 'SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = \'1371115506870007\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\Postgre\Connection->execute('SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = \'1371115506870007\'')
+ 4 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = \'1371115506870007\'')
+ 5 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = :transaksi_sertifikat.id_karyawan:', [...], false)
+ 6 APPPATH\Models\TransaksiModel.php(39): CodeIgniter\Database\BaseBuilder->get()
+ 7 APPPATH\Controllers\DaftarKaryawanController.php(208): App\Models\TransaksiModel->getSertifikatPerID('1371115506870007')
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->edit_karyawandisable('1371115506870007')
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-20 08:08:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:09:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:09:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 08:09:16 --> Trying to access array offset on value of type null
+in APPPATH\Views\edit_karyawandisable.php on line 20.
+ 1 APPPATH\Views\edit_karyawandisable.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\edit_karyawandisable.php', 20)
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\edit_karyawandisable.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('edit_karyawandisable', [], true)
+ 5 APPPATH\Controllers\DaftarKaryawanController.php(215): view('edit_karyawandisable', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->edit_karyawandisable('1695163117')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-20 08:09:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 08:09:28 --> Trying to access array offset on value of type null
+in APPPATH\Views\edit_karyawandisable.php on line 20.
+ 1 APPPATH\Views\edit_karyawandisable.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\edit_karyawandisable.php', 20)
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\edit_karyawandisable.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('edit_karyawandisable', [], true)
+ 5 APPPATH\Controllers\DaftarKaryawanController.php(215): view('edit_karyawandisable', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->edit_karyawandisable('1695163117')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-20 08:09:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:09:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-09-20 08:09:34 --> ErrorException: pg_query(): Query failed: ERROR:  value &quot;1371086709830003&quot; is out of range for type integer
+LINE 5: WHERE &quot;transaksi_sertifikat&quot;.&quot;id_karyawan&quot; = '13710867098300...
+                                                     ^ in D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\Postgre\Connection.php:187
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'D:\\SKYWORX\\Proj...', 187)
+#1 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\Postgre\Connection.php(187): pg_query(Object(PgSql\Connection), 'SELECT *\nFROM "...')
+#2 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseConnection.php(692): CodeIgniter\Database\Postgre\Connection->execute('SELECT *\nFROM "...')
+#3 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM "...')
+#4 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 D:\SKYWORX\Project\good-year-new\GoodYear\app\Models\TransaksiModel.php(39): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\SKYWORX\Project\good-year-new\GoodYear\app\Controllers\DaftarKaryawanController.php(208): App\Models\TransaksiModel->getSertifikatPerID('137108670983000...')
+#7 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->edit_karyawandisable('137108670983000...')
+#8 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+#9 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\SKYWORX\Project\good-year-new\GoodYear\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 D:\SKYWORX\Project\good-year-new\GoodYear\system\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Proj...')
+#12 {main}
+CRITICAL - 2023-09-20 08:09:34 --> pg_query(): Query failed: ERROR:  value &quot;1371086709830003&quot; is out of range for type integer
+LINE 5: WHERE &quot;transaksi_sertifikat&quot;.&quot;id_karyawan&quot; = '13710867098300...
+                                                     ^
+in SYSTEMPATH\Database\Postgre\Connection.php on line 187.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  value &quot;1371086709830003&quot; is out of range for type integer
+LINE 5: WHERE &quot;transaksi_sertifikat&quot;.&quot;id_karyawan&quot; = \'13710867098300...
+                                                     ^', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\system\\Database\\Postgre\\Connection.php', 187)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(187): pg_query(Object(PgSql\Connection), 'SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = \'1371086709830003\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\Postgre\Connection->execute('SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = \'1371086709830003\'')
+ 4 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = \'1371086709830003\'')
+ 5 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = :transaksi_sertifikat.id_karyawan:', [...], false)
+ 6 APPPATH\Models\TransaksiModel.php(39): CodeIgniter\Database\BaseBuilder->get()
+ 7 APPPATH\Controllers\DaftarKaryawanController.php(208): App\Models\TransaksiModel->getSertifikatPerID('1371086709830003')
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->edit_karyawandisable('1371086709830003')
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-20 08:10:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-09-20 08:10:34 --> ErrorException: pg_query(): Query failed: ERROR:  value &quot;1371086709830003&quot; is out of range for type integer
+LINE 5: WHERE &quot;transaksi_sertifikat&quot;.&quot;id_karyawan&quot; = '13710867098300...
+                                                     ^ in D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\Postgre\Connection.php:187
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'D:\\SKYWORX\\Proj...', 187)
+#1 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\Postgre\Connection.php(187): pg_query(Object(PgSql\Connection), 'SELECT *\nFROM "...')
+#2 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseConnection.php(692): CodeIgniter\Database\Postgre\Connection->execute('SELECT *\nFROM "...')
+#3 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM "...')
+#4 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 D:\SKYWORX\Project\good-year-new\GoodYear\app\Models\TransaksiModel.php(39): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\SKYWORX\Project\good-year-new\GoodYear\app\Controllers\DaftarKaryawanController.php(208): App\Models\TransaksiModel->getSertifikatPerID('137108670983000...')
+#7 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->edit_karyawandisable('137108670983000...')
+#8 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+#9 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\SKYWORX\Project\good-year-new\GoodYear\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 D:\SKYWORX\Project\good-year-new\GoodYear\system\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Proj...')
+#12 {main}
+CRITICAL - 2023-09-20 08:10:34 --> pg_query(): Query failed: ERROR:  value &quot;1371086709830003&quot; is out of range for type integer
+LINE 5: WHERE &quot;transaksi_sertifikat&quot;.&quot;id_karyawan&quot; = '13710867098300...
+                                                     ^
+in SYSTEMPATH\Database\Postgre\Connection.php on line 187.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  value &quot;1371086709830003&quot; is out of range for type integer
+LINE 5: WHERE &quot;transaksi_sertifikat&quot;.&quot;id_karyawan&quot; = \'13710867098300...
+                                                     ^', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\system\\Database\\Postgre\\Connection.php', 187)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(187): pg_query(Object(PgSql\Connection), 'SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = \'1371086709830003\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\Postgre\Connection->execute('SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = \'1371086709830003\'')
+ 4 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = \'1371086709830003\'')
+ 5 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = :transaksi_sertifikat.id_karyawan:', [...], false)
+ 6 APPPATH\Models\TransaksiModel.php(39): CodeIgniter\Database\BaseBuilder->get()
+ 7 APPPATH\Controllers\DaftarKaryawanController.php(208): App\Models\TransaksiModel->getSertifikatPerID('1371086709830003')
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->edit_karyawandisable('1371086709830003')
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-20 08:11:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-09-20 08:11:18 --> ErrorException: pg_query(): Query failed: ERROR:  value &quot;1371086709830003&quot; is out of range for type integer
+LINE 5: WHERE &quot;transaksi_sertifikat&quot;.&quot;id_karyawan&quot; = '13710867098300...
+                                                     ^ in D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\Postgre\Connection.php:187
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'D:\\SKYWORX\\Proj...', 187)
+#1 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\Postgre\Connection.php(187): pg_query(Object(PgSql\Connection), 'SELECT *\nFROM "...')
+#2 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseConnection.php(692): CodeIgniter\Database\Postgre\Connection->execute('SELECT *\nFROM "...')
+#3 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM "...')
+#4 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 D:\SKYWORX\Project\good-year-new\GoodYear\app\Models\TransaksiModel.php(39): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\SKYWORX\Project\good-year-new\GoodYear\app\Controllers\DaftarKaryawanController.php(208): App\Models\TransaksiModel->getSertifikatPerID('137108670983000...')
+#7 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->edit_karyawandisable('137108670983000...')
+#8 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+#9 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\SKYWORX\Project\good-year-new\GoodYear\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 D:\SKYWORX\Project\good-year-new\GoodYear\system\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Proj...')
+#12 {main}
+CRITICAL - 2023-09-20 08:11:18 --> pg_query(): Query failed: ERROR:  value &quot;1371086709830003&quot; is out of range for type integer
+LINE 5: WHERE &quot;transaksi_sertifikat&quot;.&quot;id_karyawan&quot; = '13710867098300...
+                                                     ^
+in SYSTEMPATH\Database\Postgre\Connection.php on line 187.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  value &quot;1371086709830003&quot; is out of range for type integer
+LINE 5: WHERE &quot;transaksi_sertifikat&quot;.&quot;id_karyawan&quot; = \'13710867098300...
+                                                     ^', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\system\\Database\\Postgre\\Connection.php', 187)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(187): pg_query(Object(PgSql\Connection), 'SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = \'1371086709830003\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\Postgre\Connection->execute('SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = \'1371086709830003\'')
+ 4 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = \'1371086709830003\'')
+ 5 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = :transaksi_sertifikat.id_karyawan:', [...], false)
+ 6 APPPATH\Models\TransaksiModel.php(39): CodeIgniter\Database\BaseBuilder->get()
+ 7 APPPATH\Controllers\DaftarKaryawanController.php(208): App\Models\TransaksiModel->getSertifikatPerID('1371086709830003')
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->edit_karyawandisable('1371086709830003')
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-20 08:11:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-09-20 08:11:39 --> ErrorException: pg_query(): Query failed: ERROR:  value &quot;1371086709830003&quot; is out of range for type integer
+LINE 5: WHERE &quot;transaksi_sertifikat&quot;.&quot;id_karyawan&quot; = '13710867098300...
+                                                     ^ in D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\Postgre\Connection.php:187
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'D:\\SKYWORX\\Proj...', 187)
+#1 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\Postgre\Connection.php(187): pg_query(Object(PgSql\Connection), 'SELECT *\nFROM "...')
+#2 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseConnection.php(692): CodeIgniter\Database\Postgre\Connection->execute('SELECT *\nFROM "...')
+#3 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM "...')
+#4 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 D:\SKYWORX\Project\good-year-new\GoodYear\app\Models\TransaksiModel.php(39): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\SKYWORX\Project\good-year-new\GoodYear\app\Controllers\DaftarKaryawanController.php(208): App\Models\TransaksiModel->getSertifikatPerID('137108670983000...')
+#7 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->edit_karyawandisable('137108670983000...')
+#8 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+#9 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\SKYWORX\Project\good-year-new\GoodYear\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 D:\SKYWORX\Project\good-year-new\GoodYear\system\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Proj...')
+#12 {main}
+CRITICAL - 2023-09-20 08:11:39 --> pg_query(): Query failed: ERROR:  value &quot;1371086709830003&quot; is out of range for type integer
+LINE 5: WHERE &quot;transaksi_sertifikat&quot;.&quot;id_karyawan&quot; = '13710867098300...
+                                                     ^
+in SYSTEMPATH\Database\Postgre\Connection.php on line 187.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  value &quot;1371086709830003&quot; is out of range for type integer
+LINE 5: WHERE &quot;transaksi_sertifikat&quot;.&quot;id_karyawan&quot; = \'13710867098300...
+                                                     ^', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\system\\Database\\Postgre\\Connection.php', 187)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(187): pg_query(Object(PgSql\Connection), 'SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = \'1371086709830003\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\Postgre\Connection->execute('SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = \'1371086709830003\'')
+ 4 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = \'1371086709830003\'')
+ 5 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = :transaksi_sertifikat.id_karyawan:', [...], false)
+ 6 APPPATH\Models\TransaksiModel.php(39): CodeIgniter\Database\BaseBuilder->get()
+ 7 APPPATH\Controllers\DaftarKaryawanController.php(208): App\Models\TransaksiModel->getSertifikatPerID('1371086709830003')
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->edit_karyawandisable('1371086709830003')
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-20 08:12:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-09-20 08:12:14 --> ErrorException: pg_query(): Query failed: ERROR:  value &quot;1371086709830003&quot; is out of range for type integer
+LINE 5: WHERE &quot;transaksi_sertifikat&quot;.&quot;id_karyawan&quot; = '13710867098300...
+                                                     ^ in D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\Postgre\Connection.php:187
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'D:\\SKYWORX\\Proj...', 187)
+#1 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\Postgre\Connection.php(187): pg_query(Object(PgSql\Connection), 'SELECT *\nFROM "...')
+#2 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseConnection.php(692): CodeIgniter\Database\Postgre\Connection->execute('SELECT *\nFROM "...')
+#3 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM "...')
+#4 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 D:\SKYWORX\Project\good-year-new\GoodYear\app\Models\TransaksiModel.php(39): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\SKYWORX\Project\good-year-new\GoodYear\app\Controllers\DaftarKaryawanController.php(208): App\Models\TransaksiModel->getSertifikatPerID('137108670983000...')
+#7 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->edit_karyawandisable('137108670983000...')
+#8 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+#9 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\SKYWORX\Project\good-year-new\GoodYear\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 D:\SKYWORX\Project\good-year-new\GoodYear\system\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Proj...')
+#12 {main}
+CRITICAL - 2023-09-20 08:12:14 --> pg_query(): Query failed: ERROR:  value &quot;1371086709830003&quot; is out of range for type integer
+LINE 5: WHERE &quot;transaksi_sertifikat&quot;.&quot;id_karyawan&quot; = '13710867098300...
+                                                     ^
+in SYSTEMPATH\Database\Postgre\Connection.php on line 187.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  value &quot;1371086709830003&quot; is out of range for type integer
+LINE 5: WHERE &quot;transaksi_sertifikat&quot;.&quot;id_karyawan&quot; = \'13710867098300...
+                                                     ^', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\system\\Database\\Postgre\\Connection.php', 187)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(187): pg_query(Object(PgSql\Connection), 'SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = \'1371086709830003\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\Postgre\Connection->execute('SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = \'1371086709830003\'')
+ 4 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = \'1371086709830003\'')
+ 5 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = :transaksi_sertifikat.id_karyawan:', [...], false)
+ 6 APPPATH\Models\TransaksiModel.php(39): CodeIgniter\Database\BaseBuilder->get()
+ 7 APPPATH\Controllers\DaftarKaryawanController.php(208): App\Models\TransaksiModel->getSertifikatPerID('1371086709830003')
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->edit_karyawandisable('1371086709830003')
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-20 08:12:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-09-20 08:12:25 --> ErrorException: pg_query(): Query failed: ERROR:  value &quot;1371086709830003&quot; is out of range for type integer
+LINE 5: WHERE &quot;transaksi_sertifikat&quot;.&quot;id_karyawan&quot; = '13710867098300...
+                                                     ^ in D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\Postgre\Connection.php:187
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'D:\\SKYWORX\\Proj...', 187)
+#1 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\Postgre\Connection.php(187): pg_query(Object(PgSql\Connection), 'SELECT *\nFROM "...')
+#2 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseConnection.php(692): CodeIgniter\Database\Postgre\Connection->execute('SELECT *\nFROM "...')
+#3 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM "...')
+#4 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 D:\SKYWORX\Project\good-year-new\GoodYear\app\Models\TransaksiModel.php(39): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\SKYWORX\Project\good-year-new\GoodYear\app\Controllers\DaftarKaryawanController.php(208): App\Models\TransaksiModel->getSertifikatPerID('137108670983000...')
+#7 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->edit_karyawandisable('137108670983000...')
+#8 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+#9 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\SKYWORX\Project\good-year-new\GoodYear\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 D:\SKYWORX\Project\good-year-new\GoodYear\system\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Proj...')
+#12 {main}
+CRITICAL - 2023-09-20 08:12:25 --> pg_query(): Query failed: ERROR:  value &quot;1371086709830003&quot; is out of range for type integer
+LINE 5: WHERE &quot;transaksi_sertifikat&quot;.&quot;id_karyawan&quot; = '13710867098300...
+                                                     ^
+in SYSTEMPATH\Database\Postgre\Connection.php on line 187.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  value &quot;1371086709830003&quot; is out of range for type integer
+LINE 5: WHERE &quot;transaksi_sertifikat&quot;.&quot;id_karyawan&quot; = \'13710867098300...
+                                                     ^', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\system\\Database\\Postgre\\Connection.php', 187)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(187): pg_query(Object(PgSql\Connection), 'SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = \'1371086709830003\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\Postgre\Connection->execute('SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = \'1371086709830003\'')
+ 4 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = \'1371086709830003\'')
+ 5 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = :transaksi_sertifikat.id_karyawan:', [...], false)
+ 6 APPPATH\Models\TransaksiModel.php(39): CodeIgniter\Database\BaseBuilder->get()
+ 7 APPPATH\Controllers\DaftarKaryawanController.php(208): App\Models\TransaksiModel->getSertifikatPerID('1371086709830003')
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->edit_karyawandisable('1371086709830003')
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-20 08:12:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:13:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:13:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-09-20 08:13:05 --> ErrorException: pg_query(): Query failed: ERROR:  value &quot;1371041108920099&quot; is out of range for type integer
+LINE 5: WHERE &quot;transaksi_sertifikat&quot;.&quot;id_karyawan&quot; = '13710411089200...
+                                                     ^ in D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\Postgre\Connection.php:187
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'D:\\SKYWORX\\Proj...', 187)
+#1 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\Postgre\Connection.php(187): pg_query(Object(PgSql\Connection), 'SELECT *\nFROM "...')
+#2 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseConnection.php(692): CodeIgniter\Database\Postgre\Connection->execute('SELECT *\nFROM "...')
+#3 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM "...')
+#4 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 D:\SKYWORX\Project\good-year-new\GoodYear\app\Models\TransaksiModel.php(39): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\SKYWORX\Project\good-year-new\GoodYear\app\Controllers\DaftarKaryawanController.php(193): App\Models\TransaksiModel->getSertifikatPerID('137104110892009...')
+#7 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->edit_karyawan('137104110892009...')
+#8 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+#9 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\SKYWORX\Project\good-year-new\GoodYear\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 D:\SKYWORX\Project\good-year-new\GoodYear\system\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Proj...')
+#12 {main}
+CRITICAL - 2023-09-20 08:13:05 --> pg_query(): Query failed: ERROR:  value &quot;1371041108920099&quot; is out of range for type integer
+LINE 5: WHERE &quot;transaksi_sertifikat&quot;.&quot;id_karyawan&quot; = '13710411089200...
+                                                     ^
+in SYSTEMPATH\Database\Postgre\Connection.php on line 187.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  value &quot;1371041108920099&quot; is out of range for type integer
+LINE 5: WHERE &quot;transaksi_sertifikat&quot;.&quot;id_karyawan&quot; = \'13710411089200...
+                                                     ^', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\system\\Database\\Postgre\\Connection.php', 187)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(187): pg_query(Object(PgSql\Connection), 'SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = \'1371041108920099\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\Postgre\Connection->execute('SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = \'1371041108920099\'')
+ 4 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = \'1371041108920099\'')
+ 5 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = :transaksi_sertifikat.id_karyawan:', [...], false)
+ 6 APPPATH\Models\TransaksiModel.php(39): CodeIgniter\Database\BaseBuilder->get()
+ 7 APPPATH\Controllers\DaftarKaryawanController.php(193): App\Models\TransaksiModel->getSertifikatPerID('1371041108920099')
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->edit_karyawan('1371041108920099')
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-20 08:13:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:14:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-09-20 08:14:05 --> ErrorException: pg_query(): Query failed: ERROR:  value &quot;1371041108920099&quot; is out of range for type integer
+LINE 5: WHERE &quot;transaksi_sertifikat&quot;.&quot;id_karyawan&quot; = '13710411089200...
+                                                     ^ in D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\Postgre\Connection.php:187
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'D:\\SKYWORX\\Proj...', 187)
+#1 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\Postgre\Connection.php(187): pg_query(Object(PgSql\Connection), 'SELECT *\nFROM "...')
+#2 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseConnection.php(692): CodeIgniter\Database\Postgre\Connection->execute('SELECT *\nFROM "...')
+#3 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM "...')
+#4 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 D:\SKYWORX\Project\good-year-new\GoodYear\app\Models\TransaksiModel.php(39): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\SKYWORX\Project\good-year-new\GoodYear\app\Controllers\DaftarKaryawanController.php(193): App\Models\TransaksiModel->getSertifikatPerID('137104110892009...')
+#7 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->edit_karyawan('137104110892009...')
+#8 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+#9 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\SKYWORX\Project\good-year-new\GoodYear\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 D:\SKYWORX\Project\good-year-new\GoodYear\system\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Proj...')
+#12 {main}
+CRITICAL - 2023-09-20 08:14:05 --> pg_query(): Query failed: ERROR:  value &quot;1371041108920099&quot; is out of range for type integer
+LINE 5: WHERE &quot;transaksi_sertifikat&quot;.&quot;id_karyawan&quot; = '13710411089200...
+                                                     ^
+in SYSTEMPATH\Database\Postgre\Connection.php on line 187.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  value &quot;1371041108920099&quot; is out of range for type integer
+LINE 5: WHERE &quot;transaksi_sertifikat&quot;.&quot;id_karyawan&quot; = \'13710411089200...
+                                                     ^', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\system\\Database\\Postgre\\Connection.php', 187)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(187): pg_query(Object(PgSql\Connection), 'SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = \'1371041108920099\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\Postgre\Connection->execute('SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = \'1371041108920099\'')
+ 4 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = \'1371041108920099\'')
+ 5 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = :transaksi_sertifikat.id_karyawan:', [...], false)
+ 6 APPPATH\Models\TransaksiModel.php(39): CodeIgniter\Database\BaseBuilder->get()
+ 7 APPPATH\Controllers\DaftarKaryawanController.php(193): App\Models\TransaksiModel->getSertifikatPerID('1371041108920099')
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->edit_karyawan('1371041108920099')
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-20 08:14:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-09-20 08:14:56 --> ErrorException: pg_query(): Query failed: ERROR:  value &quot;1371041108920099&quot; is out of range for type integer
+LINE 5: WHERE &quot;transaksi_sertifikat&quot;.&quot;id_karyawan&quot; = '13710411089200...
+                                                     ^ in D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\Postgre\Connection.php:187
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'D:\\SKYWORX\\Proj...', 187)
+#1 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\Postgre\Connection.php(187): pg_query(Object(PgSql\Connection), 'SELECT *\nFROM "...')
+#2 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseConnection.php(692): CodeIgniter\Database\Postgre\Connection->execute('SELECT *\nFROM "...')
+#3 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM "...')
+#4 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 D:\SKYWORX\Project\good-year-new\GoodYear\app\Models\TransaksiModel.php(39): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\SKYWORX\Project\good-year-new\GoodYear\app\Controllers\DaftarKaryawanController.php(193): App\Models\TransaksiModel->getSertifikatPerID('137104110892009...')
+#7 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->edit_karyawan('137104110892009...')
+#8 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+#9 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\SKYWORX\Project\good-year-new\GoodYear\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 D:\SKYWORX\Project\good-year-new\GoodYear\system\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Proj...')
+#12 {main}
+CRITICAL - 2023-09-20 08:14:56 --> pg_query(): Query failed: ERROR:  value &quot;1371041108920099&quot; is out of range for type integer
+LINE 5: WHERE &quot;transaksi_sertifikat&quot;.&quot;id_karyawan&quot; = '13710411089200...
+                                                     ^
+in SYSTEMPATH\Database\Postgre\Connection.php on line 187.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  value &quot;1371041108920099&quot; is out of range for type integer
+LINE 5: WHERE &quot;transaksi_sertifikat&quot;.&quot;id_karyawan&quot; = \'13710411089200...
+                                                     ^', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\system\\Database\\Postgre\\Connection.php', 187)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(187): pg_query(Object(PgSql\Connection), 'SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = \'1371041108920099\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\Postgre\Connection->execute('SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = \'1371041108920099\'')
+ 4 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = \'1371041108920099\'')
+ 5 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = :transaksi_sertifikat.id_karyawan:', [...], false)
+ 6 APPPATH\Models\TransaksiModel.php(39): CodeIgniter\Database\BaseBuilder->get()
+ 7 APPPATH\Controllers\DaftarKaryawanController.php(193): App\Models\TransaksiModel->getSertifikatPerID('1371041108920099')
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->edit_karyawan('1371041108920099')
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-20 08:15:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-09-20 08:15:15 --> ErrorException: pg_query(): Query failed: ERROR:  value &quot;1371041108920099&quot; is out of range for type integer
+LINE 5: WHERE &quot;transaksi_sertifikat&quot;.&quot;id_karyawan&quot; = '13710411089200...
+                                                     ^ in D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\Postgre\Connection.php:187
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'D:\\SKYWORX\\Proj...', 187)
+#1 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\Postgre\Connection.php(187): pg_query(Object(PgSql\Connection), 'SELECT *\nFROM "...')
+#2 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseConnection.php(692): CodeIgniter\Database\Postgre\Connection->execute('SELECT *\nFROM "...')
+#3 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM "...')
+#4 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 D:\SKYWORX\Project\good-year-new\GoodYear\app\Models\TransaksiModel.php(39): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\SKYWORX\Project\good-year-new\GoodYear\app\Controllers\DaftarKaryawanController.php(193): App\Models\TransaksiModel->getSertifikatPerID('137104110892009...')
+#7 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->edit_karyawan('137104110892009...')
+#8 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+#9 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\SKYWORX\Project\good-year-new\GoodYear\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 D:\SKYWORX\Project\good-year-new\GoodYear\system\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Proj...')
+#12 {main}
+CRITICAL - 2023-09-20 08:15:15 --> pg_query(): Query failed: ERROR:  value &quot;1371041108920099&quot; is out of range for type integer
+LINE 5: WHERE &quot;transaksi_sertifikat&quot;.&quot;id_karyawan&quot; = '13710411089200...
+                                                     ^
+in SYSTEMPATH\Database\Postgre\Connection.php on line 187.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  value &quot;1371041108920099&quot; is out of range for type integer
+LINE 5: WHERE &quot;transaksi_sertifikat&quot;.&quot;id_karyawan&quot; = \'13710411089200...
+                                                     ^', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\system\\Database\\Postgre\\Connection.php', 187)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(187): pg_query(Object(PgSql\Connection), 'SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = \'1371041108920099\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\Postgre\Connection->execute('SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = \'1371041108920099\'')
+ 4 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = \'1371041108920099\'')
+ 5 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = :transaksi_sertifikat.id_karyawan:', [...], false)
+ 6 APPPATH\Models\TransaksiModel.php(39): CodeIgniter\Database\BaseBuilder->get()
+ 7 APPPATH\Controllers\DaftarKaryawanController.php(193): App\Models\TransaksiModel->getSertifikatPerID('1371041108920099')
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->edit_karyawan('1371041108920099')
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-20 08:15:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-09-20 08:15:31 --> ErrorException: pg_query(): Query failed: ERROR:  column transaksi_sertifikat.nik does not exist
+LINE 5: WHERE &quot;transaksi_sertifikat&quot;.&quot;nik&quot; = '1371041108920099'
+              ^ in D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\Postgre\Connection.php:187
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'D:\\SKYWORX\\Proj...', 187)
+#1 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\Postgre\Connection.php(187): pg_query(Object(PgSql\Connection), 'SELECT *\nFROM "...')
+#2 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseConnection.php(692): CodeIgniter\Database\Postgre\Connection->execute('SELECT *\nFROM "...')
+#3 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM "...')
+#4 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 D:\SKYWORX\Project\good-year-new\GoodYear\app\Models\TransaksiModel.php(39): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\SKYWORX\Project\good-year-new\GoodYear\app\Controllers\DaftarKaryawanController.php(193): App\Models\TransaksiModel->getSertifikatPerID('137104110892009...')
+#7 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->edit_karyawan('137104110892009...')
+#8 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+#9 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\SKYWORX\Project\good-year-new\GoodYear\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 D:\SKYWORX\Project\good-year-new\GoodYear\system\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Proj...')
+#12 {main}
+CRITICAL - 2023-09-20 08:15:31 --> pg_query(): Query failed: ERROR:  column transaksi_sertifikat.nik does not exist
+LINE 5: WHERE &quot;transaksi_sertifikat&quot;.&quot;nik&quot; = '1371041108920099'
+              ^
+in SYSTEMPATH\Database\Postgre\Connection.php on line 187.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  column transaksi_sertifikat.nik does not exist
+LINE 5: WHERE &quot;transaksi_sertifikat&quot;.&quot;nik&quot; = \'1371041108920099\'
+              ^', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\system\\Database\\Postgre\\Connection.php', 187)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(187): pg_query(Object(PgSql\Connection), 'SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."nik" = \'1371041108920099\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\Postgre\Connection->execute('SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."nik" = \'1371041108920099\'')
+ 4 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."nik" = \'1371041108920099\'')
+ 5 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."nik" = :transaksi_sertifikat.nik:', [...], false)
+ 6 APPPATH\Models\TransaksiModel.php(39): CodeIgniter\Database\BaseBuilder->get()
+ 7 APPPATH\Controllers\DaftarKaryawanController.php(193): App\Models\TransaksiModel->getSertifikatPerID('1371041108920099')
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->edit_karyawan('1371041108920099')
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-20 08:15:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:16:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:16:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:16:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:17:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:17:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:17:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:17:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:18:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:18:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 08:18:12 --> Trying to access array offset on value of type null
+in APPPATH\Views\lihat_karyawan.php on line 28.
+ 1 APPPATH\Views\lihat_karyawan.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\lihat_karyawan.php', 28)
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\app\\Views\\lihat_karyawan.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('lihat_karyawan', [], true)
+ 5 APPPATH\Controllers\DaftarKaryawanController.php(185): view('lihat_karyawan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->lihat_karyawan('1695163179')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-20 08:18:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:18:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:18:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:18:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:18:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:19:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:19:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:19:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:19:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:19:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:19:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:19:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:19:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:19:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:20:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:20:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-09-20 08:20:22 --> ErrorException: pg_query(): Query failed: ERROR:  value &quot;1371025811790004&quot; is out of range for type integer
+LINE 5: WHERE &quot;transaksi_sertifikat&quot;.&quot;id_karyawan&quot; = '13710258117900...
+                                                     ^ in D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\Postgre\Connection.php:187
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'D:\\SKYWORX\\Proj...', 187)
+#1 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\Postgre\Connection.php(187): pg_query(Object(PgSql\Connection), 'SELECT *\nFROM "...')
+#2 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseConnection.php(692): CodeIgniter\Database\Postgre\Connection->execute('SELECT *\nFROM "...')
+#3 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM "...')
+#4 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 D:\SKYWORX\Project\good-year-new\GoodYear\app\Models\TransaksiModel.php(48): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\SKYWORX\Project\good-year-new\GoodYear\app\Controllers\DaftarKaryawanController.php(193): App\Models\TransaksiModel->getSertifikatPerIDLihat('137102581179000...')
+#7 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->edit_karyawan('137102581179000...')
+#8 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+#9 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\SKYWORX\Project\good-year-new\GoodYear\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 D:\SKYWORX\Project\good-year-new\GoodYear\system\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Proj...')
+#12 {main}
+CRITICAL - 2023-09-20 08:20:22 --> pg_query(): Query failed: ERROR:  value &quot;1371025811790004&quot; is out of range for type integer
+LINE 5: WHERE &quot;transaksi_sertifikat&quot;.&quot;id_karyawan&quot; = '13710258117900...
+                                                     ^
+in SYSTEMPATH\Database\Postgre\Connection.php on line 187.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  value &quot;1371025811790004&quot; is out of range for type integer
+LINE 5: WHERE &quot;transaksi_sertifikat&quot;.&quot;id_karyawan&quot; = \'13710258117900...
+                                                     ^', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\system\\Database\\Postgre\\Connection.php', 187)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(187): pg_query(Object(PgSql\Connection), 'SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = \'1371025811790004\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\Postgre\Connection->execute('SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = \'1371025811790004\'')
+ 4 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = \'1371025811790004\'')
+ 5 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = :transaksi_sertifikat.id_karyawan:', [...], false)
+ 6 APPPATH\Models\TransaksiModel.php(48): CodeIgniter\Database\BaseBuilder->get()
+ 7 APPPATH\Controllers\DaftarKaryawanController.php(193): App\Models\TransaksiModel->getSertifikatPerIDLihat('1371025811790004')
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->edit_karyawan('1371025811790004')
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-20 08:20:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-09-20 08:20:39 --> ErrorException: pg_query(): Query failed: ERROR:  value &quot;1371025811790004&quot; is out of range for type integer
+LINE 5: WHERE &quot;transaksi_sertifikat&quot;.&quot;id_karyawan&quot; = '13710258117900...
+                                                     ^ in D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\Postgre\Connection.php:187
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'D:\\SKYWORX\\Proj...', 187)
+#1 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\Postgre\Connection.php(187): pg_query(Object(PgSql\Connection), 'SELECT *\nFROM "...')
+#2 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseConnection.php(692): CodeIgniter\Database\Postgre\Connection->execute('SELECT *\nFROM "...')
+#3 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM "...')
+#4 D:\SKYWORX\Project\good-year-new\GoodYear\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 D:\SKYWORX\Project\good-year-new\GoodYear\app\Models\TransaksiModel.php(48): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\SKYWORX\Project\good-year-new\GoodYear\app\Controllers\DaftarKaryawanController.php(194): App\Models\TransaksiModel->getSertifikatPerIDLihat('137102581179000...')
+#7 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->edit_karyawan('137102581179000...')
+#8 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+#9 D:\SKYWORX\Project\good-year-new\GoodYear\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\SKYWORX\Project\good-year-new\GoodYear\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 D:\SKYWORX\Project\good-year-new\GoodYear\system\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Proj...')
+#12 {main}
+CRITICAL - 2023-09-20 08:20:39 --> pg_query(): Query failed: ERROR:  value &quot;1371025811790004&quot; is out of range for type integer
+LINE 5: WHERE &quot;transaksi_sertifikat&quot;.&quot;id_karyawan&quot; = '13710258117900...
+                                                     ^
+in SYSTEMPATH\Database\Postgre\Connection.php on line 187.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  value &quot;1371025811790004&quot; is out of range for type integer
+LINE 5: WHERE &quot;transaksi_sertifikat&quot;.&quot;id_karyawan&quot; = \'13710258117900...
+                                                     ^', 'D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\system\\Database\\Postgre\\Connection.php', 187)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(187): pg_query(Object(PgSql\Connection), 'SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = \'1371025811790004\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\Postgre\Connection->execute('SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = \'1371025811790004\'')
+ 4 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = \'1371025811790004\'')
+ 5 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "sertifikat"
+JOIN "transaksi_sertifikat" ON "transaksi_sertifikat"."id_sertifikat"="sertifikat"."id_sertifikat"
+JOIN "karyawan" ON "karyawan"."id_karyawan"="transaksi_sertifikat"."id_karyawan"
+WHERE "transaksi_sertifikat"."id_karyawan" = :transaksi_sertifikat.id_karyawan:', [...], false)
+ 6 APPPATH\Models\TransaksiModel.php(48): CodeIgniter\Database\BaseBuilder->get()
+ 7 APPPATH\Controllers\DaftarKaryawanController.php(194): App\Models\TransaksiModel->getSertifikatPerIDLihat('1371025811790004')
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->edit_karyawan('1371025811790004')
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-20 08:21:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:21:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:21:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:21:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:22:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:22:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:22:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:22:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:22:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:24:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:25:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 08:25:05 --> Class "App\Models\TransaksiEditModel" not found
+in APPPATH\Controllers\TransaksiController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\TransaksiController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-20 08:25:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 08:25:53 --> Class "App\Models\TransaksiEditModel" not found
+in APPPATH\Controllers\TransaksiController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\TransaksiController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-20 08:26:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 08:26:29 --> Class "App\Models\TransaksiEditModel" not found
+in APPPATH\Controllers\TransaksiController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\TransaksiController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\good-year-new\\GoodYear\\public\\index.php')
+INFO - 2023-09-20 08:27:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:27:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:27:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:27:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:27:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:28:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:28:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:28:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:28:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:28:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:28:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-20 08:28:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
