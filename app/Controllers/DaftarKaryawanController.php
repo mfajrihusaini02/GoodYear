@@ -208,7 +208,8 @@ class DaftarKaryawanController extends BaseController
         $data['transaksi'] = $this->transaksiModel->getSertifikatPerID($id_karyawan);
         $data['sertifikat'] = $this->sertifikatModel->getJenisSertifikat();
         $data['jenissertifikat'] = $this->sertifikatModel->getJenisSertifikat();
-        $data['karyawan'] = $this->karyawanModel->find($id_karyawan);
+        $data['karyawan'] = $this->karyawanEditModel->getKaryawanPerID($id_karyawan);
+        $data['karyawan'] = $this->karyawanEditModel->where(['nik' => $id_karyawan])->first();
         $data['jabatan'] = $this->jabatanModel->findAll();
         $data['divisi'] = $this->divisiModel->findAll();
         return view('edit_karyawandisable', $data);
