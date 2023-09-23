@@ -38,7 +38,7 @@
                     <h6><b>Data Baru</b></h6>
                     <div class="mb-3">
                         <label for="kodesertifikat" class="form-label">Kode Sertifikat</label>
-                        <input type="text" class="form-control <?php if (session('validation.kodesertifikat')) : ?> is-invalid <?php endif ?>" id="kodesertifikat" name="kodesertifikat" autofocus placeholder="Silahkan masukan kode sertifikat">
+                        <input type="text" class="form-control <?php if (session('validation.kodesertifikat')) : ?> is-invalid <?php endif ?>" id="kodesertifikat" name="kodesertifikat" autofocus value="<?= $sertifikat['kode_sertifikat']; ?>" placeholder="Silahkan masukan kode sertifikat">
                         <div class="invalid-feedback">
                             <?= session('validation.kodesertifikat'); ?>
                         </div>

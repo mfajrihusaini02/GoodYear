@@ -121,8 +121,8 @@ class DaftarKaryawanController extends BaseController
         }
 
         $writer     = new PngWriter();
-        // $id         = $this->request->getVar('nik');
         $id         = time();
+        $status_karyawan = "1";
 
         $nik        = $this->request->getVar('nik');
         $nama       = $this->request->getVar('nama_karyawan');
@@ -137,7 +137,7 @@ class DaftarKaryawanController extends BaseController
         // pindahkan file ke folder img
         $fileFoto->move('img', $namaFoto);
 
-        $qrCode = QrCode::create(base_url('lihat_karyawan/' . $id))
+        $qrCode = QrCode::create(base_url('view_karyawanQR/' . $id))
             ->setEncoding(new Encoding('UTF-8'))
             ->setErrorCorrectionLevel(new ErrorCorrectionLevelLow())
             ->setSize(300)
@@ -154,6 +154,13 @@ class DaftarKaryawanController extends BaseController
 
         $result = $writer->write($qrCode, $logo, $label);
 
+        // $writer->validateResult($result, 'Life is too short to be generating QR codes');
+
+        header('Content-Type: ' . $result->getMimeType());
+        echo $result->getString();
+
+        $result->saveToFile('barcode/' . $id . '.png');
+
         $dataUri = $result->getDataUri();
 
         $data = [
@@ -164,10 +171,9 @@ class DaftarKaryawanController extends BaseController
             'id_divisi' => $id_divisi,
             'alamat' => $alamat,
             'qr_code' => $dataUri,
-            'foto' => $namaFoto
+            'foto' => $namaFoto,
+            'status_karyawan' => $status_karyawan
         ];
-        // dd($data);
-
         $this->karyawanModel->save($data);
         return redirect()->to(base_url('daftar_karyawan'))->with('status', 'Data Karyawan Berhasil Disimpan');
     }
@@ -183,6 +189,19 @@ class DaftarKaryawanController extends BaseController
         $data['detail_karyawan'] = $this->karyawanModel->where(['id_karyawan' => $id_karyawan])->first();
         // dd($data);
         return view('lihat_karyawan', $data);
+    }
+
+    public function view_karyawanQR($id_karyawan = null)
+    {
+        $data['users'] = $this->penggunaModel->getPengguna();
+        $data['jabatan'] = $this->jabatanModel->findAll();
+        $data['transaksi'] = $this->transaksiModel->getTransaksi();
+        $data['transaksi'] = $this->transaksiModel->getJenisTransaksi();
+        $data['transaksi'] = $this->transaksiModel->getSertifikatPerIDLihat($id_karyawan);
+        $data['detail_karyawan'] = $this->karyawanModel->getKaryawanPerID($id_karyawan);
+        $data['detail_karyawan'] = $this->karyawanModel->where(['id_karyawan' => $id_karyawan])->first();
+        // dd($data);
+        return view('view_karyawan', $data);
     }
 
     public function edit_karyawan($id_karyawan = null)
@@ -248,6 +267,10 @@ class DaftarKaryawanController extends BaseController
                     'max_length' => 'Alamat maksimal 100 karakter',
                 ],
             ],
+            'status_karyawan' => [
+                'rules' => 'permit_empty',
+                'errors' => [],
+            ],
             'foto' => [
                 'rules' => 'max_size[foto, 1024]|is_image[foto]|mime_in[foto,image/jpg,image/jpeg,image/png]',
                 'errors' => [
@@ -264,6 +287,7 @@ class DaftarKaryawanController extends BaseController
         $writer     = new PngWriter();
         $id         = time();
 
+        $idLama = $this->request->getVar('idLama');
         $nik = $this->request->getVar('nik');
         if ($nik == null) {
             $namaNik = $this->request->getVar('nikLama');
@@ -308,7 +332,14 @@ class DaftarKaryawanController extends BaseController
             unlink('img/' . $this->request->getVar('fotoLama'));
         }
 
-        $qrCode = QrCode::create(base_url('lihat_karyawanQR/' . $id))
+        $status_karyawan = $this->request->getVar('status_karyawan');
+        if ($status_karyawan == null) {
+            $namaStatus = $this->request->getVar('status_karyawanLama');
+        } else {
+            $namaStatus = $this->request->getVar('status_karyawan');
+        }
+
+        $qrCode = QrCode::create(base_url('view_karyawanQR/' . $idLama))
             ->setEncoding(new Encoding('UTF-8'))
             ->setErrorCorrectionLevel(new ErrorCorrectionLevelLow())
             ->setSize(300)
@@ -325,6 +356,12 @@ class DaftarKaryawanController extends BaseController
 
         $result = $writer->write($qrCode, $logo, $label);
 
+        header('Content-Type: ' . $result->getMimeType());
+        echo $result->getString();
+
+        // unlink('barcode/' . $idLama . '.png');
+        $result->saveToFile('barcode/' . $idLama . '.png');
+
         $dataUri = $result->getDataUri();
 
         $data = [
@@ -333,19 +370,33 @@ class DaftarKaryawanController extends BaseController
             'id_jabatan' => $namaJabatan,
             'id_divisi' => $namaDivisi,
             'alamat' => $namaAlamat,
+            'status_karyawan' => $namaStatus,
             'foto' => $namaFoto,
             'qr_code' => $dataUri,
         ];
 
+        $data1 = ['nik' => $namaNik];
+
         $this->karyawanEditModel->update($id_karyawan, $data);
-        $this->penggunaEditModel->update($id_karyawan, $data);
+        $this->penggunaEditModel->update($id_karyawan, $data1);
         return redirect()->to(base_url('daftar_karyawan'))->with('status', 'Data Karyawan Berhasil Diubah');
     }
 
     public function delete_karyawan($id_karyawan = null)
     {
-        $this->karyawanEditModel->delete($id_karyawan);
-        $this->penggunaEditModel->delete($id_karyawan);
+        $this->karyawanModel->delete($id_karyawan);
+        $this->penggunaModel->delete($id_karyawan);
+        unlink('barcode/' . $id_karyawan . '.png');
         return redirect()->back()->with('status', 'Data Karyawan Berhasil Dihapus');
     }
+
+    // public function updatestatus($id_karyawan = null)
+    // {
+    //     $status_karyawan = $this->request->getVar('status_karyawan');
+    //     $data = [
+    //         'status_karyawan' => $namaStatus,
+    //     ];
+    //     $this->karyawanEditModel->update($id_karyawan, $data);
+    //     return redirect()->back()->with('status', 'Data Karyawan Berhasil Dinonaktifkan');
+    // }
 }

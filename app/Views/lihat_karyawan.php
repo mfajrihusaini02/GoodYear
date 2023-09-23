@@ -7,7 +7,7 @@ include 'atas_edit.php' ?>
 <div class="card shadow">
     <div class="row card-header bg-primary p-2 m-0">
         <div class="col-lg-6 col-xl-6 col-md-6 col-xs-6 col-sm-6 col-6">
-            <h4 class="text-white mt-2">Kartu Karyawan</h4>
+            <h4 class="text-white mt-2">Detail Karyawan</h4>
         </div>
 
         <div class="col-lg-6 col-xl-6 col-md-6 col-xs-6 col-sm-6 col-6" align="right">
@@ -25,7 +25,7 @@ include 'atas_edit.php' ?>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-3" align="center">
-                                <img src="../img/<?= $detail_karyawan['foto']; ?>" class="img-fluid rounded-start" alt="" width="150px;" height="200px;">
+                                <img src="../img/<?= $detail_karyawan['foto']; ?>" class="img-fluid rounded-start" width="150px;" height="200px;">
                             </div>
 
                             <div class="col-md-9" style="text-align: justify;">
@@ -36,7 +36,7 @@ include 'atas_edit.php' ?>
                                             <th style="text-align: justify; vertical-align: middle; margin: 5px; padding: 7px; width: 100%;">: <?= $detail_karyawan['nik']; ?></th>
                                         </tr>
                                         <tr>
-                                            <th style="text-align: justify; vertical-align: middle; margin: 5px; padding: 7px;"><b>Nama Lengkap</b></th>
+                                            <th style="text-align: justify; vertical-align: top; margin: 5px; padding: 7px; width: 45%;"><b>Nama Lengkap</b></th>
                                             <th style="text-align: justify; vertical-align: middle; margin: 5px; padding: 7px; width: 100%;">: <?= $detail_karyawan['nama_karyawan']; ?></th>
                                         </tr>
                                         <tr>
@@ -61,7 +61,7 @@ include 'atas_edit.php' ?>
                         </div>
                     </div>
 
-                    <div class="table-responsive container mt-0">
+                    <div class="table-responsive container mt-0 mb-3">
                         <table class="table table-hover display nowrap table-bordered w-100" cellspacing="0">
                             <thead>
                                 <tr class="first even" style="text-shadow: none; cursor: pointer;">
@@ -84,11 +84,11 @@ include 'atas_edit.php' ?>
                             </tbody>
                         </table>
                     </div>
-
-                    <div class="container mt-2" align="center">
-                        <img src="<?= $detail_karyawan["qr_code"]; ?>" height="100px;" width="100px;">
-                    </div>
                 </div>
+            </div>
+
+            <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12" align="center">
+                <img src="<?= $detail_karyawan["qr_code"]; ?>" height="80%;" width="70%;">
             </div>
         </div>
     </div>
