@@ -17,6 +17,7 @@ class DaftarKaryawanModel extends Model
         'id_divisi',
         'alamat',
         'qr_code',
+        'status_karyawan',
         'foto'
     ];
 

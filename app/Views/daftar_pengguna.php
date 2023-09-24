@@ -32,7 +32,6 @@
                         <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">NAMA PENGGUNA</th>
                         <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">USERNAME</th>
                         <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">ROLE</th>
-                        <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">PASSWORD</th>
                         <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">STATUS</th>
                         <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">AKSI</th>
                     </tr>
@@ -46,7 +45,6 @@
                             <td style="margin: 5px; padding: 3px; text-align: justify;"><?= $value["nama_karyawan"]; ?></td>
                             <td style="margin: 5px; padding: 3px; text-align: justify;"><?= $value["username"]; ?></td>
                             <td style="margin: 5px; padding: 3px; text-align: center;"><?= $value["nama_role"]; ?></td>
-                            <td style="margin: 5px; padding: 3px; text-align: center;"><?= $value["password"]; ?></td>
                             <td style="margin: 5px; padding: 3px; text-align: center;">
                                 <?= ($value['active'] == 1) ? 'Aktif' : 'Tidak Aktif' ?>
                             </td>

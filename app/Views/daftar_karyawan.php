@@ -33,6 +33,7 @@
                         <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">NAMA KARYAWAN</th>
                         <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">JABATAN</th>
                         <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">DEVISI</th>
+                        <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">STATUS</th>
                         <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">AKSI</th>
                     </tr>
                 </thead>
@@ -47,14 +48,20 @@
                             <td style="margin: 5px; padding: 3px; text-align: center;"><?= $value["nama_jabatan"]; ?></td>
                             <td style="margin: 5px; padding: 3px; text-align: center;"><?= $value["nama_divisi"]; ?></td>
                             <td style="margin: 5px; padding: 3px; text-align: center;">
+                                <?= ($value['status_karyawan'] == 1) ? 'Aktif' : 'Tidak Aktif' ?>
+                            </td>
+                            <td style="margin: 5px; padding: 3px; text-align: center;">
                                 <a href="<?= base_url('edit_karyawan/' . $value['nik']) ?>" class="btn btn-outline-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit">
                                     <span class='icon'><i class='fas fa-edit'></i></span>
                                 </a>
-                                <a href="#" data-href="<?= base_url('delete_karyawan/' . $value['nik']) ?>" onclick="confirmToDelete(this)" class="btn btn-outline-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Delete">
+                                <a href="#" data-href="<?= base_url('delete_karyawan/' . $value['id_karyawan']) ?>" onclick="confirmToDelete(this)" class="btn btn-outline-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Delete">
                                     <span class='icon'><i class='fas fa-trash'></i></span>
                                 </a>
                                 <a href="<?= base_url('lihat_karyawan/' . $value['id_karyawan']) ?>" class="btn btn-outline-info" data-bs-toggle="tooltip" data-bs-placement="bottom" title="View">
                                     <span class='icon'><i class='fas fa-eye'></i></span>
+                                </a>
+                                <a href="<?= base_url('barcode/' . $value['id_karyawan']) ?>.png" class="btn btn-outline-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Print QR" download>
+                                    <span class='icon'><i class='fas fa-print'></i></span>
                                 </a>
                             </td>
                         </tr>

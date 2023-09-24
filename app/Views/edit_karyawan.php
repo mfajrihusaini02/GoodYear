@@ -27,12 +27,14 @@
         <form method="POST" enctype="multipart/form-data" action="<?= base_url('update_karyawan/' . $karyawan['nik']); ?>">
             <?= csrf_field(); ?>
             <input type="hidden" name="_method" value="PUT">
+            <input type="hidden" name="idLama" value="<?= $karyawan['id_karyawan']; ?>">
             <input type="hidden" name="nikLama" value="<?= $karyawan['nik']; ?>">
             <input type="hidden" name="nama_karyawanLama" value="<?= $karyawan['nama_karyawan']; ?>">
             <input type="hidden" name="jabatanLama" value="<?= $karyawan['id_jabatan']; ?>">
             <input type="hidden" name="divisiLama" value="<?= $karyawan['id_divisi']; ?>">
             <input type="hidden" name="alamatLama" value="<?= $karyawan['alamat']; ?>">
             <input type="hidden" name="fotoLama" value="<?= $karyawan['foto']; ?>">
+            <input type="hidden" name="status_karyawanLama" value="<?= $karyawan['status_karyawan']; ?>">
 
             <div class="row">
                 <div class="col-lg-2 col-xl-2 col-md-2 col-xs-12 col-sm-12 col-12" align="center">
@@ -74,6 +76,13 @@
                     <div class="mb-3">
                         <label class="form-label">Alamat</label>
                         <textarea name="alamatdisable" id="alamatdisable" cols="20" rows="3" class="form-control" value="<?= $karyawan['alamat']; ?>" disabled><?= $karyawan['alamat']; ?></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Status</label>
+                        <select name="status_karyawandisable" id="status_karyawandisable" class="form-select" disabled>
+                            <option value="" disabled>-Pilih-</option>
+                            <option value="<?= $karyawan['status_karyawan'] == 1 ?>"><?= ($karyawan['status_karyawan'] == 1) ? 'Aktif' : 'Tidak Aktif' ?></option>
+                        </select>
                     </div>
                 </div>
 
@@ -125,6 +134,17 @@
                         </div>
                     </div>
                     <div class="mb-3">
+                        <label class="form-label">Status</label>
+                        <select name="status_karyawan" id="status_karyawan" class="form-select <?php if (session('validation.status_karyawan')) : ?> is-invalid <?php endif ?>">
+                            <option value="" disabled selected>-Pilih-</option>
+                            <option value="1">Aktif</option>
+                            <option value="0">Tidak Aktif</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            <?= session('validation.status_karyawan'); ?>
+                        </div>
+                    </div>
+                    <div class="mb-3">
                         <label for="Foto" class="form-label">Foto</label>
                         <input type="file" class="form-control <?php if (session('validation.foto')) : ?> is-invalid <?php endif ?>" id="foto" name="foto">
                         <div class="invalid-feedback">
@@ -163,7 +183,7 @@
                                 <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">NO</th>
                                 <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">NAMA SERTIFIKAT</th>
                                 <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">TANGGAL AMBIL</th>
-                                <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">TANGGAL EKSPIRE</th>
+                                <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">TANGGAL EXPIRED</th>
                                 <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">AKSI</th>
                             </tr>
                         </thead>
@@ -226,7 +246,7 @@
                                             </div>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="tanggal_ekspire">Tanggal Ekspired</label>
+                                            <label for="tanggal_ekspire">Tanggal Expired</label>
                                             <input type="date" id="tanggal_ekspire" name="tanggal_ekspire" class="form-control <?php if (session('validation.tanggal_ekspire')) : ?> is-invalid <?php endif ?>" value="<?= old('tanggal_ekspire'); ?>">
                                             <div class="invalid-feedback">
                                                 <?= session('validation.tanggal_ekspire'); ?>
@@ -265,5 +285,7 @@
         $('#divisi').select2();
         $('#divisidisable').select2();
         $('#id_sertifikat2').select2();
+        $('#status_karyawan').select2();
+        $('#status_karyawandisable').select2();
     });
 </script>

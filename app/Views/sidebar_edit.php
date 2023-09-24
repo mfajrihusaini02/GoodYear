@@ -69,7 +69,7 @@
     <li class="menu-item">
       <a href="../karyawan" class="menu-link">
         <i class="menu-icon tf-icons ti ti-user"></i>
-        <div data-i18n="Karyawan">Karyawan</div>
+        <div data-i18n="View Karyawan">View Karyawan</div>
       </a>
     </li>
     <!-- Pengguna menu start -->
