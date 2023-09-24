@@ -68,7 +68,7 @@ include 'atas_edit.php' ?>
                                     <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;"><b>No</b></th>
                                     <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;"><b>Nama Sertifikat</b></th>
                                     <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;"><b>Tanggal Ambil</b></th>
-                                    <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;"><b>Tanggal Ekspired</b></th>
+                                    <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;"><b>Tanggal Expired</b></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -94,7 +94,7 @@ include 'atas_edit.php' ?>
             </div>
 
             <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12" align="center">
-                <img src="<?= $detail_karyawan["qr_code"]; ?>" height="80%;" width="70%;">
+                <img src="<?= $detail_karyawan["qr_code"]; ?>">
             </div>
         </div>
     </div>

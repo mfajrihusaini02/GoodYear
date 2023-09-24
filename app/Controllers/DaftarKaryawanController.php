@@ -152,7 +152,7 @@ class DaftarKaryawanController extends BaseController
         $label = Label::create($nama)
             ->setTextColor(new Color(255, 0, 0));
 
-        $result = $writer->write($qrCode, $logo, $label);
+        $result = $writer->write($qrCode, null, $label);
 
         header('Content-Type: ' . $result->getMimeType());
 
@@ -373,7 +373,7 @@ class DaftarKaryawanController extends BaseController
         $label = Label::create($namaKaryawan)
             ->setTextColor(new Color(255, 0, 0));
 
-        $result = $writer->write($qrCode, $logo, $label);
+        $result = $writer->write($qrCode, null, $label);
 
         header('Content-Type: ' . $result->getMimeType());
 
