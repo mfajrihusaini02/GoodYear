@@ -198,7 +198,8 @@ class DaftarKaryawanController extends BaseController
             ->setTextColor(new Color(255, 0, 0));
 
         $result = $writer->write($qrCode, null, $label);
-        header('Content-Type: ' . $result->getMimeType());
+        // header('Content-Type: ' . $result->getMimeType());
+        // die($result->getString());
 
         $data['users'] = $this->penggunaModel->getPengguna();
         $data['jabatan'] = $this->jabatanModel->findAll();
@@ -207,7 +208,6 @@ class DaftarKaryawanController extends BaseController
         $data['transaksi'] = $this->transaksiModel->getSertifikatPerIDLihat($id_karyawan);
         $data['detail_karyawan'] = $this->karyawanModel->getKaryawanPerID($id_karyawan);
         $data['detail_karyawan'] = $this->karyawanModel->where(['id_karyawan' => $id_karyawan])->first();
-        // dd($data);
         return view('lihat_karyawan', $data);
     }
 
