@@ -65,14 +65,20 @@ include 'atas_edit.php' ?>
                         <table class="table table-hover display nowrap table-bordered w-100" cellspacing="0">
                             <thead>
                                 <tr class="first even" style="text-shadow: none; cursor: pointer;">
-                                    <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">No</th>
-                                    <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">Nama Sertifikat</th>
-                                    <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">Tanggal Ambil</th>
-                                    <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">Tanggal Ekspired</th>
+                                    <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;"><b>No</b></th>
+                                    <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;"><b>Nama Sertifikat</b></th>
+                                    <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;"><b>Tanggal Ambil</b></th>
+                                    <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;"><b>Tanggal Expired</b></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php $nomor = 1; ?>
+                                <?php if ($transaksi == false || count($transaksi) < 1) : ?>
+                                    <tr style="vertical-align: middle; text-align: center; text-shadow: none;">
+                                        <td style="margin: 5px; padding: 3px; text-align: center; width: 5%;" colspan="4"><b>Data Sertifikat Belum Ada</b></td>
+                                    </tr>
+                                <?php endif ?>
+
                                 <?php foreach ($transaksi as $value) : ?>
                                     <tr style="vertical-align: middle; text-align: center; text-shadow: none;">
                                         <td style="margin: 5px; padding: 3px; text-align: center; width: 5%;"><?= $nomor++; ?></td>
@@ -88,7 +94,7 @@ include 'atas_edit.php' ?>
             </div>
 
             <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12" align="center">
-                <img src="<?= $detail_karyawan["qr_code"]; ?>" height="80%;" width="70%;">
+                <img src="<?= $detail_karyawan["qr_code"]; ?>">
             </div>
         </div>
     </div>

@@ -25,7 +25,7 @@
                         <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">NIK</th>
                         <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">NAMA KARYAWAN</th>
                         <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">JABATAN</th>
-                        <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">DEVISI</th>
+                        <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">DIVISI</th>
                         <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">AKSI</th>
                     </tr>
                 </thead>
