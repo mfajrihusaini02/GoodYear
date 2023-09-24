@@ -154,10 +154,7 @@ class DaftarKaryawanController extends BaseController
 
         $result = $writer->write($qrCode, $logo, $label);
 
-        // $writer->validateResult($result, 'Life is too short to be generating QR codes');
-
         header('Content-Type: ' . $result->getMimeType());
-        echo $result->getString();
 
         $result->saveToFile('barcode/' . $id . '.png');
 
@@ -180,6 +177,29 @@ class DaftarKaryawanController extends BaseController
 
     public function lihat_karyawan($id_karyawan = null)
     {
+        $data = $this->karyawanModel->where(['id_karyawan' => $id_karyawan])->findAll();
+        if ($data == false || count($data) < 1) {
+            return "";
+        }
+        $qrCode = QrCode::create(base_url('view_karyawanQR/' . $id_karyawan))
+            ->setEncoding(new Encoding('UTF-8'))
+            ->setErrorCorrectionLevel(new ErrorCorrectionLevelLow())
+            ->setSize(300)
+            ->setMargin(10)
+            ->setRoundBlockSizeMode(new RoundBlockSizeModeMargin())
+            ->setForegroundColor(new Color(0, 0, 0))
+            ->setBackgroundColor(new Color(255, 255, 255));
+        $writer     = new PngWriter();
+
+        $logo = Logo::create('logo.png')
+            ->setResizeToWidth(150);
+
+        $label = Label::create($data[0]['nama_karyawan'])
+            ->setTextColor(new Color(255, 0, 0));
+
+        $result = $writer->write($qrCode, null, $label);
+        header('Content-Type: ' . $result->getMimeType());
+
         $data['users'] = $this->penggunaModel->getPengguna();
         $data['jabatan'] = $this->jabatanModel->findAll();
         $data['transaksi'] = $this->transaksiModel->getTransaksi();
@@ -200,7 +220,6 @@ class DaftarKaryawanController extends BaseController
         $data['transaksi'] = $this->transaksiModel->getSertifikatPerIDLihat($id_karyawan);
         $data['detail_karyawan'] = $this->karyawanModel->getKaryawanPerID($id_karyawan);
         $data['detail_karyawan'] = $this->karyawanModel->where(['id_karyawan' => $id_karyawan])->first();
-        // dd($data);
         return view('view_karyawan', $data);
     }
 
@@ -357,9 +376,7 @@ class DaftarKaryawanController extends BaseController
         $result = $writer->write($qrCode, $logo, $label);
 
         header('Content-Type: ' . $result->getMimeType());
-        echo $result->getString();
 
-        // unlink('barcode/' . $idLama . '.png');
         $result->saveToFile('barcode/' . $idLama . '.png');
 
         $dataUri = $result->getDataUri();
