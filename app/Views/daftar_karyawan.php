@@ -54,9 +54,9 @@
                                 <a href="<?= base_url('edit_karyawan/' . $value['nik']) ?>" class="btn btn-outline-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit">
                                     <span class='icon'><i class='fas fa-edit'></i></span>
                                 </a>
-                                <a href="#" data-href="<?= base_url('delete_karyawan/' . $value['id_karyawan']) ?>" onclick="confirmToDelete(this)" class="btn btn-outline-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Delete">
+                                <!-- <a href="#" data-href="<?= base_url('delete_karyawan/' . $value['id_karyawan']) ?>" onclick="confirmToDelete(this)" class="btn btn-outline-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Delete">
                                     <span class='icon'><i class='fas fa-trash'></i></span>
-                                </a>
+                                </a> -->
                                 <a href="<?= base_url('lihat_karyawan/' . $value['id_karyawan']) ?>" class="btn btn-outline-info" data-bs-toggle="tooltip" data-bs-placement="bottom" title="View">
                                     <span class='icon'><i class='fas fa-eye'></i></span>
                                 </a>
