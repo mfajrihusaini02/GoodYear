@@ -26,7 +26,7 @@
             <!-- Layout container -->
             <div class="layout-page">
                 <!-- Navbar -->
-                <?php include 'navbar.php' ?>
+                <?php include 'navbar_edit.php' ?>
                 <!-- / Navbar -->
 
                 <!-- Content wrapper -->

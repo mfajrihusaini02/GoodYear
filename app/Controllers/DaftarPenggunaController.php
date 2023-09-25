@@ -6,28 +6,33 @@ use App\Models\DaftarGroupsRoleModel;
 use App\Models\DaftarPenggunaModel;
 use App\Models\DaftarPenggunaEditModel;
 use Myth\Auth\Password;
+use App\Models\DaftarKaryawanModel;
 
 class DaftarPenggunaController extends BaseController
 {
     protected $penggunaModel;
     protected $penggunaEditModel;
     protected $groupsroleModel;
+    protected $karyawanModel;
 
     public function __construct()
     {
         $this->penggunaModel = new DaftarPenggunaModel();
         $this->penggunaEditModel = new DaftarPenggunaEditModel();
         $this->groupsroleModel = new DaftarGroupsRoleModel();
+        $this->karyawanModel = new DaftarKaryawanModel();
     }
 
     public function index()
     {
+        $data['datauser'] = $this->karyawanModel->where(['nik' => user()->nik])->first();
         $data['users'] = $this->penggunaModel->getPengguna();
         return view('daftar_pengguna', $data);
     }
 
     public function tambah_pengguna()
     {
+        $data['datauser'] = $this->karyawanModel->where(['nik' => user()->nik])->first();
         $data['users'] = $this->penggunaModel->getPengguna();
         $data['id_user'] = $this->penggunaModel->getUsers();
         $data['level'] = $this->penggunaModel->getLevel();
@@ -119,6 +124,7 @@ class DaftarPenggunaController extends BaseController
 
     public function edit_pengguna($id = null)
     {
+        $data['datauser'] = $this->karyawanModel->where(['nik' => user()->nik])->first();
         $data['users'] = $this->penggunaModel->getPengguna();
         $data['user'] = $this->penggunaModel->getPenggunaPerID($id);
         $data['user'] = $this->penggunaEditModel->where(['nik' => $id])->first();
@@ -191,7 +197,7 @@ class DaftarPenggunaController extends BaseController
             $namaPassword = $this->request->getVar('password_hash');
         }
 
-        $password_hash      = Password::hash($this->request->getVar('password_hash'));
+        $password_hash      = $this->request->getVar('password_hash');
         if ($password_hash == null) {
             $namaPasswordHash = $this->request->getVar('password_hashLama');
         } else {

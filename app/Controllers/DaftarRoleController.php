@@ -5,20 +5,24 @@ namespace App\Controllers;
 use App\Models\DaftarPenggunaModel;
 use App\Models\DaftarRoleModel;
 use CodeIgniter\Validation\Validation;
+use App\Models\DaftarKaryawanModel;
 
 class DaftarRoleController extends BaseController
 {
     protected $roleModel;
     protected $penggunaModel;
+    protected $karyawanModel;
 
     public function __construct()
     {
         $this->roleModel = new DaftarRoleModel();
         $this->penggunaModel = new DaftarPenggunaModel();
+        $this->karyawanModel = new DaftarKaryawanModel();
     }
 
     public function index()
     {
+        $data['datauser'] = $this->karyawanModel->where(['nik' => user()->nik])->first();
         $data['users'] = $this->penggunaModel->getPengguna();
         $data['role'] = $this->roleModel->getRole();
         return view('daftar_role', $data);
@@ -26,6 +30,7 @@ class DaftarRoleController extends BaseController
 
     public function tambah_role()
     {
+        $data['datauser'] = $this->karyawanModel->where(['nik' => user()->nik])->first();
         $data['users'] = $this->penggunaModel->getPengguna();
         return view('tambah_role', $data);
     }
@@ -68,6 +73,7 @@ class DaftarRoleController extends BaseController
 
     public function edit_role($id_role = null)
     {
+        $data['datauser'] = $this->karyawanModel->where(['nik' => user()->nik])->first();
         $data['users'] = $this->penggunaModel->getPengguna();
         $data['role'] = $this->roleModel->find($id_role);
         return view('edit_role', $data);

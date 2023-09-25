@@ -4,20 +4,24 @@ namespace App\Controllers;
 
 use App\Models\DaftarJabatanModel;
 use App\Models\DaftarPenggunaModel;
+use App\Models\DaftarKaryawanModel;
 
 class DaftarJabatanController extends BaseController
 {
     protected $jabatanModel;
     protected $penggunaModel;
+    protected $karyawanModel;
 
     public function __construct()
     {
         $this->jabatanModel = new DaftarJabatanModel();
         $this->penggunaModel = new DaftarPenggunaModel();
+        $this->karyawanModel = new DaftarKaryawanModel();
     }
 
     public function index()
     {
+        $data['datauser'] = $this->karyawanModel->where(['nik' => user()->nik])->first();
         $data['users'] = $this->penggunaModel->getPengguna();
         $data['jabatan'] = $this->jabatanModel->getjabatan();
         return view('daftar_jabatan', $data);
@@ -25,6 +29,7 @@ class DaftarJabatanController extends BaseController
 
     public function tambah_jabatan()
     {
+        $data['datauser'] = $this->karyawanModel->where(['nik' => user()->nik])->first();
         $data['users'] = $this->penggunaModel->getPengguna();
         return view('tambah_jabatan', $data);
     }
@@ -57,6 +62,7 @@ class DaftarJabatanController extends BaseController
 
     public function edit_jabatan($id_jabatan = null)
     {
+        $data['datauser'] = $this->karyawanModel->where(['nik' => user()->nik])->first();
         $data['users'] = $this->penggunaModel->getPengguna();
         $data['jabatan'] = $this->jabatanModel->find($id_jabatan);
         return view('edit_jabatan', $data);

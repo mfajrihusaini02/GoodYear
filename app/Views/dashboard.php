@@ -1,5 +1,14 @@
 <?php include 'atas.php' ?>
 
+<?php if (session()->getFlashdata('status')) {
+?>
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Selamat</strong> <?= session()->getFlashdata('status'); ?>.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<?php
+} ?>
+
 <div class="row">
   <!-- Overview -->
   <div class="col-lg-6 col-sm-6 mb-4">

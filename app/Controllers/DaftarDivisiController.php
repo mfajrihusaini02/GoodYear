@@ -4,20 +4,24 @@ namespace App\Controllers;
 
 use App\Models\DaftarDivisiModel;
 use App\Models\DaftarPenggunaModel;
+use App\Models\DaftarKaryawanModel;
 
 class DaftarDivisiController extends BaseController
 {
     protected $divisiModel;
     protected $penggunaModel;
+    protected $karyawanModel;
 
     public function __construct()
     {
         $this->divisiModel = new DaftarDivisiModel();
         $this->penggunaModel = new DaftarPenggunaModel();
+        $this->karyawanModel = new DaftarKaryawanModel();
     }
 
     public function index()
     {
+        $data['datauser'] = $this->karyawanModel->where(['nik' => user()->nik])->first();
         $data['users'] = $this->penggunaModel->getPengguna();
         $data['divisi'] = $this->divisiModel->getDivisi();
         return view('daftar_divisi', $data);
@@ -25,6 +29,7 @@ class DaftarDivisiController extends BaseController
 
     public function tambah_divisi()
     {
+        $data['datauser'] = $this->karyawanModel->where(['nik' => user()->nik])->first();
         $data['users'] = $this->penggunaModel->getPengguna();
         return view('tambah_divisi', $data);
     }
@@ -57,6 +62,7 @@ class DaftarDivisiController extends BaseController
 
     public function edit_divisi($id_divisi = null)
     {
+        $data['datauser'] = $this->karyawanModel->where(['nik' => user()->nik])->first();
         $data['users'] = $this->penggunaModel->getPengguna();
         $data['divisi'] = $this->divisiModel->find($id_divisi);
         return view('edit_divisi', $data);
