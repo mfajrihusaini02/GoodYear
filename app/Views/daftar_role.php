@@ -30,7 +30,7 @@
                     <tr class="first even" style="text-shadow: none; cursor: pointer;">
                         <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">NO</th>
                         <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">NAMA ROLE</th>
-                        <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">LEVEL</th>
+                        <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">DESKRIPSI</th>
                         <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">AKSI</th>
                     </tr>
                 </thead>
