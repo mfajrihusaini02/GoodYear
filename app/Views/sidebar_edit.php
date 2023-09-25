@@ -16,62 +16,95 @@
   <div class="menu-inner-shadow"></div>
 
   <ul class="menu-inner py-1">
-    <!-- Dashboards -->
-    <li class="menu-item">
-      <a href="../dashboard" class="menu-link">
-        <i class="menu-icon tf-icons ti ti-smart-home"></i>
-        <div data-i18n="Dashboard">Dashboard</div>
-      </a>
-    </li>
-    <!-- Dashboards -->
+    <?php if (in_groups('Admin')) : ?>
+      <!-- Dashboards -->
+      <li class="menu-item">
+        <a href="../dashboard" class="menu-link">
+          <i class="menu-icon tf-icons ti ti-smart-home"></i>
+          <div data-i18n="Dashboard">Dashboard</div>
+        </a>
+      </li>
+      <!-- Dashboards -->
 
-    <!-- Master Data menu start -->
-    <li class="menu-item">
-      <a href="javascript:void(0);" class="menu-link menu-toggle">
-        <i class="menu-icon tf-icons ti ti-server"></i>
-        <div data-i18n="Master Data">Master Data</div>
-      </a>
-      <ul class="menu-sub">
-        <li class="menu-item">
-          <a href="../daftar_karyawan" class="menu-link">
-            <div data-i18n="Karyawan">Karyawan</div>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="../daftar_pengguna" class="menu-link">
-            <div data-i18n="Pengguna">Pengguna</div>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="../daftar_sertifikat" class="menu-link">
-            <div data-i18n="Sertifikat">Sertifikat</div>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="../daftar_divisi" class="menu-link">
-            <div data-i18n="Divisi">Divisi</div>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="../daftar_jabatan" class="menu-link">
-            <div data-i18n="Jabatan">Jabatan</div>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="../daftar_role" class="menu-link">
-            <div data-i18n="Role">Role</div>
-          </a>
-        </li>
-      </ul>
-    </li>
+      <!-- Master Data menu start -->
+      <li class="menu-item">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+          <i class="menu-icon tf-icons ti ti-server"></i>
+          <div data-i18n="Master Data">Master Data</div>
+        </a>
+        <ul class="menu-sub">
+          <li class="menu-item">
+            <a href="../daftar_karyawan" class="menu-link">
+              <div data-i18n="Karyawan">Karyawan</div>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="../daftar_pengguna" class="menu-link">
+              <div data-i18n="Pengguna">Pengguna</div>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="../daftar_sertifikat" class="menu-link">
+              <div data-i18n="Sertifikat">Sertifikat</div>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="../daftar_divisi" class="menu-link">
+              <div data-i18n="Divisi">Divisi</div>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="../daftar_jabatan" class="menu-link">
+              <div data-i18n="Jabatan">Jabatan</div>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="../daftar_role" class="menu-link">
+              <div data-i18n="Role">Role</div>
+            </a>
+          </li>
+        </ul>
+      </li>
 
-    <!-- Pengguna menu start -->
-    <li class="menu-item">
-      <a href="../karyawan" class="menu-link">
-        <i class="menu-icon tf-icons ti ti-user"></i>
-        <div data-i18n="View Karyawan">View Karyawan</div>
-      </a>
-    </li>
-    <!-- Pengguna menu start -->
+      <!-- Pengguna menu start -->
+      <li class="menu-item">
+        <a href="../karyawan" class="menu-link">
+          <i class="menu-icon tf-icons ti ti-user"></i>
+          <div data-i18n="View Karyawan">View Karyawan</div>
+        </a>
+      </li>
+      <!-- Pengguna menu start -->
+    <?php endif ?>
+
+    <?php if (in_groups('Manager')) : ?>
+      <!-- Dashboards -->
+      <li class="menu-item">
+        <a href="../dashboard" class="menu-link">
+          <i class="menu-icon tf-icons ti ti-smart-home"></i>
+          <div data-i18n="Dashboard">Dashboard</div>
+        </a>
+      </li>
+      <!-- Dashboards -->
+
+      <!-- Pengguna menu start -->
+      <li class="menu-item">
+        <a href="../karyawan" class="menu-link">
+          <i class="menu-icon tf-icons ti ti-user"></i>
+          <div data-i18n="View Karyawan">View Karyawan</div>
+        </a>
+      </li>
+      <!-- Pengguna menu start -->
+    <?php endif ?>
+
+    <?php if (in_groups('User')) : ?>
+      <!-- Dashboards -->
+      <li class="menu-item">
+        <a href="../dashboard" class="menu-link">
+          <i class="menu-icon tf-icons ti ti-smart-home"></i>
+          <div data-i18n="Dashboard">Dashboard</div>
+        </a>
+      </li>
+      <!-- Dashboards -->
+    <?php endif ?>
   </ul>
 </aside>
