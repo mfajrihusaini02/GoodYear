@@ -15,39 +15,39 @@
     </div>
 
     <div class="card-body mb-3 mt-3">
-        <form method="POST" action="<?= base_url('update_role/' . $role['id_role']); ?>">
+        <form method="POST" action="<?= base_url('update_role/' . $role['id']); ?>">
             <?= csrf_field(); ?>
             <input type="hidden" name="_method" value="PUT">
-            <input type="hidden" name="nama_roleLama" value="<?= $role['nama_role']; ?>">
-            <input type="hidden" name="levelLama" value="<?= $role['level']; ?>">
+            <input type="hidden" name="nameLama" value="<?= $role['name']; ?>">
+            <input type="hidden" name="descriptionLama" value="<?= $role['description']; ?>">
 
             <div class="row">
                 <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
                     <h6><b>Data Lama</b></h6>
                     <div class="mb-3">
                         <label class="form-label">Nama Role</label>
-                        <input type="text" class="form-control" id="nama_roledisable" name="nama_roledisable" value="<?= $role['nama_role']; ?>" disabled>
+                        <input type="text" class="form-control" id="namedisable" name="namedisable" value="<?= $role['name']; ?>" disabled>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Level</label>
-                        <input type="text" class="form-control" id="leveldisable" name="leveldisable" value="<?= $role['level']; ?>" disabled>
+                        <label class="form-label">Deskripsi</label>
+                        <input type="text" class="form-control" id="descriptiondisable" name="descriptiondisable" value="<?= $role['description']; ?>" disabled>
                     </div>
                 </div>
 
                 <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
                     <h6><b>Data Baru</b></h6>
                     <div class="mb-3">
-                        <label for="nama_role" class="form-label">Nama Role</label>
-                        <input type="text" class="form-control <?php if (session('validation.nama_role')) : ?> is-invalid <?php endif ?>" id="nama_role" name="nama_role" autofocus placeholder="Silahkan masukan nama role">
+                        <label for="name" class="form-label">Nama Role</label>
+                        <input type="text" class="form-control <?php if (session('validation.name')) : ?> is-invalid <?php endif ?>" id="name" name="name" autofocus placeholder="Silahkan masukan nama role">
                         <div class="invalid-feedback">
-                            <?= session('validation.nama_role'); ?>
+                            <?= session('validation.name'); ?>
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="level" class="form-label">Level</label>
-                        <input type="text" class="form-control <?php if (session('validation.level')) : ?> is-invalid <?php endif ?>" id="level" name="level" placeholder="Silahkan masukan level">
+                        <label for="description" class="form-label">Deskripsi</label>
+                        <input type="text" class="form-control <?php if (session('validation.description')) : ?> is-invalid <?php endif ?>" id="description" name="description" placeholder="Silahkan masukan description">
                         <div class="invalid-feedback">
-                            <?= session('validation.level'); ?>
+                            <?= session('validation.description'); ?>
                         </div>
                     </div>
 

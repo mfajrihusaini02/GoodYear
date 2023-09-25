@@ -26,11 +26,17 @@ class DaftarPenggunaModel extends Model
         'updated_at',
         'deleted_at'
     ];
+    public function getUsers()
+    {
+        return $this->db->table('users')
+            ->orderBy('id', 'ASC')
+            ->get()->getResultArray();
+    }
 
     public function getPengguna()
     {
         return $this->db->table('users')
-            ->join('role', 'role.id_role=users.id_role')
+            ->join('auth_groups', 'auth_groups.id=users.id_role')
             ->join('karyawan', 'karyawan.nik=users.nik')
             ->get()->getResultArray();
     }
@@ -38,7 +44,7 @@ class DaftarPenggunaModel extends Model
     public function getPenggunaPerID($id_pengguna)
     {
         return $this->db->table('users')
-            ->join('role', 'role.id_role=users.id_role')
+            ->join('auth_groups', 'auth_groups.id=users.id_role')
             ->join('karyawan', 'karyawan.nik=users.nik')
             ->where('users.nik', $id_pengguna)
             ->get()->getResultArray();
@@ -46,7 +52,7 @@ class DaftarPenggunaModel extends Model
 
     function getLevel()
     {
-        $query = $this->db->query('SELECT * FROM role');
+        $query = $this->db->query('SELECT * FROM auth_groups');
         return $query->getResultArray();
     }
 

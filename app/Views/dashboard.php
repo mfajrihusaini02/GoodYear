@@ -7,11 +7,12 @@
       <div class="card-body">
         <div class="row">
           <div class="col-lg-10 col-sm-10 mb-4">
-            <h5>Selamat Datang</h5>
-            <!-- <?php foreach ($users as $key => $value) : ?>
-              <h5>Selamat Datang, <?= $value['nama_karyawan'] ?>!</h5>
-              <span>Username : <?= $value['email'] ?></span>
-            <?php endforeach ?> -->
+            <h5>Username : <?= user()->email ?></h5>
+            <span>
+              <?php if (in_groups('Admin')) : ?>Admin<?php endif ?>
+              <?php if (in_groups('Manager')) : ?>Manager<?php endif ?>
+              <?php if (in_groups('User')) : ?>User<?php endif ?>
+            </span>
           </div>
           <div class="col-lg-2 col-sm-2 mb-4" align="right">
             <i class="menu-icon tf-icons ti ti-user" style="font-size: 60px;"></i>

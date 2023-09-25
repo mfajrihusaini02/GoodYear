@@ -34,7 +34,7 @@ class DaftarRoleController extends BaseController
     {
         // validation input
         if (!$this->validate([
-            'nama_role' => [
+            'name' => [
                 'rules' => 'required|max_length[50]|alpha_space',
                 'errors' => [
                     'required' => 'Nama role tidak boleh kosong',
@@ -42,11 +42,11 @@ class DaftarRoleController extends BaseController
                     'alpha_space' => 'Isian hanya karakter alfabet dan spasi'
                 ],
             ],
-            'level' => [
+            'description' => [
                 'rules' => 'required|max_length[50]|alpha_space',
                 'errors' => [
-                    'required' => 'Level tidak boleh kosong',
-                    'max_length' => 'Level maksimal 50 karakter',
+                    'required' => 'description tidak boleh kosong',
+                    'max_length' => 'description maksimal 50 karakter',
                     'alpha_space' => 'Isian hanya karakter alfabet dan spasi'
                 ],
             ]
@@ -55,12 +55,12 @@ class DaftarRoleController extends BaseController
             return redirect()->back()->withInput()->with('validation', $this->validator->getErrors());
         }
 
-        $nama_role = $this->request->getVar('nama_role');
-        $level = $this->request->getVar('level');
+        $name = $this->request->getVar('name');
+        $description = $this->request->getVar('description');
 
         $data = [
-            'nama_role' => $nama_role,
-            'level' => $level
+            'name' => $name,
+            'description' => $description
         ];
         $this->roleModel->save($data);
         return redirect()->to(base_url('daftar_role'))->with('status', 'Role Berhasil Disimpan');
@@ -77,17 +77,17 @@ class DaftarRoleController extends BaseController
     {
         // validation input
         if (!$this->validate([
-            'nama_role' => [
+            'name' => [
                 'rules' => 'permit_empty|alpha_space|max_length[50]',
                 'errors' => [
                     'max_length' => 'Nama role maksimal 50 karakter',
                     'alpha_space' => 'Isian hanya karakter alfabet dan spasi'
                 ],
             ],
-            'level' => [
+            'description' => [
                 'rules' => 'permit_empty|alpha_space|max_length[50]',
                 'errors' => [
-                    'max_length' => 'Level maksimal 50 karakter',
+                    'max_length' => 'description maksimal 50 karakter',
                     'alpha_space' => 'Isian hanya karakter alfabet dan spasi'
                 ],
             ]
@@ -96,23 +96,23 @@ class DaftarRoleController extends BaseController
             return redirect()->back()->withInput()->with('validation', $this->validator->getErrors());
         }
 
-        $nama_role = $this->request->getVar('nama_role');
-        if ($nama_role == null) {
-            $namaRole = $this->request->getVar('nama_roleLama');
+        $name = $this->request->getVar('name');
+        if ($name == null) {
+            $namaRole = $this->request->getVar('nameLama');
         } else {
-            $namaRole = $this->request->getVar('nama_role');
+            $namaRole = $this->request->getVar('name');
         }
 
-        $level = $this->request->getVar('level');
-        if ($level == null) {
-            $namaLevel = $this->request->getVar('levelLama');
+        $description = $this->request->getVar('description');
+        if ($description == null) {
+            $namadescription = $this->request->getVar('descriptionLama');
         } else {
-            $namaLevel = $this->request->getVar('level');
+            $namadescription = $this->request->getVar('description');
         }
 
         $data = [
-            'nama_role' => $namaRole,
-            'level' => $namaLevel
+            'name' => $namaRole,
+            'description' => $namadescription
         ];
         $this->roleModel->update($id_role, $data);
         return redirect()->to(base_url('daftar_role'))->with('status', 'Role Berhasil Diubah');

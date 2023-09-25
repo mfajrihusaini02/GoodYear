@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\DaftarGroupsRoleModel;
 use App\Models\DaftarPenggunaModel;
 use App\Models\DaftarPenggunaEditModel;
 use Myth\Auth\Password;
@@ -10,11 +11,13 @@ class DaftarPenggunaController extends BaseController
 {
     protected $penggunaModel;
     protected $penggunaEditModel;
+    protected $groupsroleModel;
 
     public function __construct()
     {
         $this->penggunaModel = new DaftarPenggunaModel();
         $this->penggunaEditModel = new DaftarPenggunaEditModel();
+        $this->groupsroleModel = new DaftarGroupsRoleModel();
     }
 
     public function index()
@@ -26,6 +29,7 @@ class DaftarPenggunaController extends BaseController
     public function tambah_pengguna()
     {
         $data['users'] = $this->penggunaModel->getPengguna();
+        $data['id_user'] = $this->penggunaModel->getUsers();
         $data['level'] = $this->penggunaModel->getLevel();
         $data['karyawan'] = $this->penggunaModel->getKaryawan();
 
@@ -82,6 +86,7 @@ class DaftarPenggunaController extends BaseController
             return redirect()->back()->withInput()->with('validation', $this->validator->getErrors());
         }
 
+        $id_user            = $this->request->getVar('id_user') + 1;
         $nik                = $this->request->getVar('nik');
         $id_role            = $this->request->getVar('id_role');
         $email              = $this->request->getVar('email');
@@ -90,9 +95,6 @@ class DaftarPenggunaController extends BaseController
         $password_hash      = Password::hash($this->request->getVar('password_hash'));
         $active             = $this->request->getVar('active');
         $force_pass_reset   = $this->request->getVar('force_pass_reset');
-        $created_at         = $this->request->getVar('created_at');
-        $updated_at         = $this->request->getVar('updated_at');
-        $deleted_at         = $this->request->getVar('deleted_at');
 
         $data = [
             'nik' => $nik,
@@ -102,12 +104,16 @@ class DaftarPenggunaController extends BaseController
             'password' => $password,
             'password_hash' => $password_hash,
             'active' => $active,
-            'force_pass_reset' => $force_pass_reset,
-            'created_at' => $created_at,
-            'updated_at' => $updated_at,
-            'deleted_at' => $deleted_at
+            'force_pass_reset' => $force_pass_reset
         ];
+
+        $data1 = [
+            'group_id' => $id_role,
+            'user_id' => $id_user
+        ];
+
         $this->penggunaModel->save($data);
+        $this->groupsroleModel->save($data1);
         return redirect()->to(base_url('daftar_pengguna'))->with('status', 'Daftar Pengguna Berhasil Disimpan');
     }
 
@@ -200,9 +206,6 @@ class DaftarPenggunaController extends BaseController
         }
 
         $force_pass_reset   = $this->request->getVar('force_pass_reset');
-        $created_at         = $this->request->getVar('created_at');
-        $updated_at         = $this->request->getVar('updated_at');
-        $deleted_at         = $this->request->getVar('deleted_at');
 
         $data = [
             'email' => $namaEmail,
@@ -212,9 +215,6 @@ class DaftarPenggunaController extends BaseController
             'password_hash' => $namaPasswordHash,
             'active' => $namaActive,
             'force_pass_reset' => $force_pass_reset,
-            'created_at' => $created_at,
-            'updated_at' => $updated_at,
-            'deleted_at' => $deleted_at
         ];
         $this->penggunaEditModel->update($id_pengguna, $data);
         return redirect()->to(base_url('daftar_pengguna'))->with('status', 'Pengguna Berhasil Diubah');

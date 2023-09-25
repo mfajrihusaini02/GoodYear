@@ -19,10 +19,18 @@
             <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
                 <form method="POST" enctype="multipart/form-data" action="<?= base_url('simpan_pengguna') ?>">
                     <?= csrf_field(); ?>
+
                     <input type="hidden" id="force_pass_reset" name="force_pass_reset" value="0">
+                    <select name="id_user" id="id_user" class="form-control <?php if (session('validation.id_user')) : ?> is-invalid <?php endif ?>" hidden>
+                        <option value="" disabled selected>-Pilih-</option>
+                        <?php foreach ($id_user as $value) { ?>
+                            <option value="<?= $value['id']; ?>" selected><?= $value['id']; ?></option>"
+                        <?php } ?>
+                    </select>
+
                     <div class="mb-3">
                         <label for="nik">Nama Karyawan</label>
-                        <select name="nik" id="nik" class="form-select <?php if(session('validation.nik')) : ?> is-invalid <?php endif ?>">
+                        <select name="nik" id="nik" class="form-select <?php if (session('validation.nik')) : ?> is-invalid <?php endif ?>">
                             <option value="" disabled selected>-Pilih-</option>
                             <?php foreach ($karyawan as $value) { ?>
                                 <option value="<?= $value['nik']; ?>" <?= old('nik') == $value['nik'] ? 'selected' : null ?>><?= $value['nama_karyawan']; ?></option>"
@@ -34,24 +42,24 @@
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
-                        <input type="text" class="form-control <?php if(session('validation.email')) : ?> is-invalid <?php endif ?>" id="email" name="email" placeholder="Silahkan masukan email pengguna" value="<?= old('email'); ?>">
+                        <input type="text" class="form-control <?php if (session('validation.email')) : ?> is-invalid <?php endif ?>" id="email" name="email" placeholder="Silahkan masukan email pengguna" value="<?= old('email'); ?>">
                         <div class="invalid-feedback">
                             <?= session('validation.email'); ?>
                         </div>
                     </div>
                     <div class="mb-3">
                         <label for="username" class="form-label">Username</label>
-                        <input type="text" class="form-control <?php if(session('validation.username')) : ?> is-invalid <?php endif ?>" id="username" name="username" aria-describedby="username" placeholder="Silahkan masukan username pengguna" value="<?= old('username'); ?>">
+                        <input type="text" class="form-control <?php if (session('validation.username')) : ?> is-invalid <?php endif ?>" id="username" name="username" aria-describedby="username" placeholder="Silahkan masukan username pengguna" value="<?= old('username'); ?>">
                         <div class="invalid-feedback">
                             <?= session('validation.username'); ?>
                         </div>
                     </div>
                     <div class="mb-3">
                         <label for="id_role">Level</label>
-                        <select name="id_role" class="form-select <?php if(session('validation.id_role')) : ?> is-invalid <?php endif ?>" id="id_role">
+                        <select name="id_role" class="form-select <?php if (session('validation.id_role')) : ?> is-invalid <?php endif ?>" id="id_role">
                             <option value="" disabled selected>-Pilih-</option>
                             <?php foreach ($level as $value) { ?>
-                                <option value="<?= $value['id_role']; ?>" <?= old('id_role') == $value['id_role'] ? 'selected' : null ?>><?= $value['nama_role']; ?></option>"
+                                <option value="<?= $value['id']; ?>" <?= old('id_role') == $value['id'] ? 'selected' : null ?>><?= $value['name']; ?></option>"
                             <?php } ?>
                         </select>
                         <div class="invalid-feedback">
@@ -63,7 +71,7 @@
                             <label class="form-label" for="password">Password</label>
                         </div>
                         <div class="input-group input-group-merge">
-                            <input type="password" id="password_hash" class="form-control <?php if(session('validation.password_hash')) : ?> is-invalid <?php endif ?>" name="password_hash" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" value="<?= old('password_hash'); ?>">
+                            <input type="password" id="password_hash" class="form-control <?php if (session('validation.password_hash')) : ?> is-invalid <?php endif ?>" name="password_hash" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" value="<?= old('password_hash'); ?>">
                             <span class="input-group-text cursor-pointer"><i class="ti ti-eye-off"></i></span>
                         </div>
                         <div class="invalid-feedback">
@@ -72,7 +80,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="active">Status</label>
-                        <select name="active" class="form-select <?php if(session('validation.active')) : ?> is-invalid <?php endif ?>" id="active">
+                        <select name="active" class="form-select <?php if (session('validation.active')) : ?> is-invalid <?php endif ?>" id="active">
                             <option value="" disabled selected>-Pilih-</option>
                             <option value="1">Aktif</option>
                             <option value="0">Tidak Aktif</option>
