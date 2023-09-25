@@ -42,8 +42,8 @@
                         <select name="id_roledisable" id="id_roledisable" class="form-select" disabled>
                             <option value="" disabled>-Pilih-</option>
                             <?php foreach ($level as $value) { ?>
-                                <option value="<?= $value['id_role']; ?>" <?= $user['id_role'] == $value['id_role'] ? 'selected' : null ?>>
-                                    <?= $value['nama_role']; ?>
+                                <option value="<?= $value['id']; ?>" <?= $user['id_role'] == $value['id'] ? 'selected' : null ?>>
+                                    <?= $value['name']; ?>
                                 </option>"
                             <?php } ?>
                         </select>
@@ -82,7 +82,7 @@
                         <select name="id_role" id="id_role" class="form-select <?php if (session('validation.id_role')) : ?> is-invalid <?php endif ?>">
                             <option value="" disabled selected>-Pilih-</option>
                             <?php foreach ($level as $value) { ?>
-                                <option value="<?= $value['id_role']; ?>"><?= $value['nama_role']; ?></option>"
+                                <option value="<?= $value['id']; ?>"><?= $value['name']; ?></option>"
                             <?php } ?>
                         </select>
                         <div class="invalid-feedback">
