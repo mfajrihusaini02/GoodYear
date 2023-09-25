@@ -19,6 +19,7 @@ use Endroid\QrCode\Logo\Logo;
 use Endroid\QrCode\RoundBlockSizeMode\RoundBlockSizeModeMargin;
 use Endroid\QrCode\Writer\PngWriter;
 use Endroid\QrCode\Writer\ValidationException;
+use Myth\Auth\Password;
 
 class DaftarKaryawanController extends BaseController
 {
@@ -45,6 +46,7 @@ class DaftarKaryawanController extends BaseController
 
     public function index()
     {
+        $data['datauser'] = $this->karyawanModel->where(['nik' => user()->nik])->first();
         $data['users'] = $this->penggunaModel->getPengguna();
         $data['karyawan'] = $this->karyawanModel->getKaryawan();
         return view('daftar_karyawan', $data);
@@ -52,6 +54,7 @@ class DaftarKaryawanController extends BaseController
 
     public function index_karyawan()
     {
+        $data['datauser'] = $this->karyawanModel->where(['nik' => user()->nik])->first();
         $data['users'] = $this->penggunaModel->getPengguna();
         $data['karyawan'] = $this->karyawanModel->getKaryawan();
         return view('karyawan', $data);
@@ -59,6 +62,7 @@ class DaftarKaryawanController extends BaseController
 
     public function tambah_karyawan()
     {
+        $data['datauser'] = $this->karyawanModel->where(['nik' => user()->nik])->first();
         $data['users'] = $this->penggunaModel->getPengguna();
         $data['jabatan'] = $this->jabatanModel->findAll();
         $data['divisi'] = $this->divisiModel->findAll();
@@ -201,6 +205,7 @@ class DaftarKaryawanController extends BaseController
         // header('Content-Type: ' . $result->getMimeType());
         // die($result->getString());
 
+        $data['datauser'] = $this->karyawanModel->where(['nik' => user()->nik])->first();
         $data['users'] = $this->penggunaModel->getPengguna();
         $data['jabatan'] = $this->jabatanModel->findAll();
         $data['transaksi'] = $this->transaksiModel->getTransaksi();
@@ -225,6 +230,7 @@ class DaftarKaryawanController extends BaseController
 
     public function edit_karyawan($id_karyawan = null)
     {
+        $data['datauser'] = $this->karyawanModel->where(['nik' => user()->nik])->first();
         $data['users'] = $this->penggunaModel->getPengguna();
         $data['transaksi'] = $this->transaksiModel->getTransaksi();
         $data['transaksi'] = $this->transaksiModel->getJenisTransaksi();
@@ -238,19 +244,117 @@ class DaftarKaryawanController extends BaseController
         return view('edit_karyawan', $data);
     }
 
-    public function edit_karyawandisable($id_karyawan = null)
+    public function my_profile($id_karyawan = null)
     {
-        $data['users'] = $this->penggunaModel->getPengguna();
-        $data['transaksi'] = $this->transaksiModel->getTransaksi();
-        $data['transaksi'] = $this->transaksiModel->getJenisTransaksi();
-        $data['transaksi'] = $this->transaksiModel->getSertifikatPerID($id_karyawan);
-        $data['sertifikat'] = $this->sertifikatModel->getJenisSertifikat();
-        $data['jenissertifikat'] = $this->sertifikatModel->getJenisSertifikat();
-        $data['karyawan'] = $this->karyawanEditModel->getKaryawanPerID($id_karyawan);
+        $data['datauser'] = $this->karyawanModel->where(['nik' => user()->nik])->first();
         $data['karyawan'] = $this->karyawanEditModel->where(['nik' => $id_karyawan])->first();
-        $data['jabatan'] = $this->jabatanModel->findAll();
-        $data['divisi'] = $this->divisiModel->findAll();
+        $data['users'] = $this->penggunaModel->where(['nik' => user()->nik])->first();
+        // dd($data);
         return view('edit_karyawandisable', $data);
+    }
+
+    public function update_profile($id_karyawan = null)
+    {
+        // validation input
+        if (!$this->validate([
+            'nik' => [
+                'rules' => 'permit_empty|numeric|max_length[16]|min_length[16]',
+                'errors' => [
+                    'max_length' => 'NIK harus 16 karakter',
+                    'min_length' => 'NIK harus 16 karakter',
+                    'numeric' => 'Isian harus angka',
+                ],
+            ],
+            'nama_karyawan' => [
+                'rules' => 'permit_empty|alpha_space|max_length[100]',
+                'errors' => [
+                    'max_length' => 'Nama karyawan maximal 100 karakter',
+                    'alpha_space' => 'Isian hanya karakter alfabet dan spasi'
+                ],
+            ],
+            'email' => [
+                'rules' => 'permit_empty|valid_emails|max_length[50]',
+                'errors' => [
+                    'valid_emails' => 'Tidak ada mengandung unsur @',
+                    'max_length' => 'Email maksimal 50 karakter',
+                ],
+            ],
+            'alamat' => [
+                'rules' => 'permit_empty|max_length[100]',
+                'errors' => [
+                    'max_length' => 'Alamat maksimal 100 karakter',
+                ],
+            ],
+            'password_hash' => [
+                'rules' => 'permit_empty|max_length[50]',
+                'errors' => [
+                    'max_length' => 'Password maksimal 50 karakter',
+                ],
+            ],
+            'foto' => [
+                'rules' => 'max_size[foto, 1024]|is_image[foto]|mime_in[foto,image/jpg,image/jpeg,image/png]',
+                'errors' => [
+                    'max_size' => 'Foto tidak boleh besar dari 1 MB',
+                    'is_image' => 'File harus berupa gambar',
+                    'mime_in' => 'File harus berupa gambar',
+                ],
+            ],
+        ])) {
+            $validation = \Config\Services::validation();
+            return redirect()->back()->withInput()->with('validation', $this->validator->getErrors());
+        }
+
+        $fileFoto = $this->request->getFile('foto');
+        if ($fileFoto->getError() == 4) {
+            $namaFoto = $this->request->getVar('fotoLama');
+        } else {
+            $namaFoto = $fileFoto->getRandomName();
+            $fileFoto->move('img', $namaFoto);
+            unlink('img/' . $this->request->getVar('fotoLama'));
+        }
+
+        $alamat         = $this->request->getVar('alamat');
+        if ($alamat == null) {
+            $namaAlamat = $this->request->getVar('alamatLama');
+        } else {
+            $namaAlamat = $this->request->getVar('alamat');
+        }
+
+        $email          = $this->request->getVar('email');
+        if ($email == null) {
+            $namaEmail = $this->request->getVar('emailLama');
+        } else {
+            $namaEmail = $this->request->getVar('email');
+        }
+
+        $password           = $this->request->getVar('password_hash');
+        if ($password == null) {
+            $namaPassword = $this->request->getVar('passwordLama');
+        } else {
+            $namaPassword = $this->request->getVar('password_hash');
+        }
+
+        $password_hash      = $this->request->getVar('password_hash');
+        if ($password_hash == null) {
+            $namaPasswordHash = $this->request->getVar('password_hashLama');
+        } else {
+            $namaPasswordHash = Password::hash($this->request->getVar('password_hash'));
+        }
+
+        $data = [
+            'alamat' => $namaAlamat,
+            'foto' => $namaFoto,
+        ];
+
+        $data1 = [
+            'email' => $namaEmail,
+            'password' => $namaPassword,
+            'password_hash' => $namaPasswordHash,
+        ];
+
+        $this->karyawanEditModel->update($id_karyawan, $data);
+        $this->penggunaEditModel->update($id_karyawan, $data1);
+        return redirect()->to(base_url('dashboard'))->with('status', 'Data Profile Berhasil Diubah');
     }
 
     public function update_karyawan($id_karyawan = null)

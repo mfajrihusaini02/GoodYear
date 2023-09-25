@@ -67,7 +67,7 @@ use PHPUnit\Framework\Constraint\Count; ?>
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label"><b>Alamat</b></label>
-                                            <input type="text" class="form-control" id="alamat" name="alamat" value="<?= $detail_karyawan['alamat']; ?>" disabled>
+                                            <textarea name="alamat" id="alamat" cols="20" rows="3" class="form-control" value="<?= $detail_karyawan['alamat']; ?>" disabled><?= $detail_karyawan['alamat']; ?></textarea>
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label"><b>Jabatan</b></label>

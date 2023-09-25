@@ -62,7 +62,6 @@ $routes->get('/edit_sertifikat/(:num)', 'DaftarSertifikatController::edit_sertif
 $routes->get('/edit_karyawan/(:num)', 'DaftarKaryawanController::edit_karyawan/$1', ['filter' => 'login']);
 $routes->get('/edit_jabatan/(:num)', 'DaftarJabatanController::edit_jabatan/$1', ['filter' => 'login']);
 $routes->get('/edit_divisi/(:num)', 'DaftarDivisiController::edit_divisi/$1', ['filter' => 'login']);
-$routes->get('/edit_karyawandisable/(:num)', 'DaftarKaryawanController::edit_karyawandisable/$1', ['filter' => 'login']);
 // Daftar Update
 $routes->put('/update_role/(:num)', 'DaftarRoleController::update_role/$1', ['filter' => 'login']);
 $routes->put('/update_pengguna/(:num)', 'DaftarPenggunaController::update_pengguna/$1', ['filter' => 'login']);
@@ -70,6 +69,7 @@ $routes->put('/update_sertifikat/(:num)', 'DaftarSertifikatController::update_se
 $routes->put('/update_karyawan/(:num)', 'DaftarKaryawanController::update_karyawan/$1', ['filter' => 'login']);
 $routes->put('/update_jabatan/(:num)', 'DaftarJabatanController::update_jabatan/$1', ['filter' => 'login']);
 $routes->put('/update_divisi/(:num)', 'DaftarDivisiController::update_divisi/$1', ['filter' => 'login']);
+$routes->put('/update_profile/(:num)', 'DaftarKaryawanController::update_profile/$1', ['filter' => 'login']);
 // Daftar Delete
 $routes->get('/delete_role/(:num)', 'DaftarRoleController::delete_role/$1', ['filter' => 'login']);
 $routes->get('/delete_pengguna/(:num)', 'DaftarPenggunaController::delete_pengguna/$1', ['filter' => 'login']);
@@ -79,14 +79,15 @@ $routes->get('/delete_karyawan/(:num)', 'DaftarKaryawanController::delete_karyaw
 $routes->get('/delete_jabatan/(:num)', 'DaftarJabatanController::delete_jabatan/$1', ['filter' => 'login']);
 $routes->get('/delete_divisi/(:num)', 'DaftarDivisiController::delete_divisi/$1', ['filter' => 'login']);
 // Lihat Karyawan
+$routes->get('/my_profile/(:num)', 'DaftarKaryawanController::my_profile/$1', ['filter' => 'login']);
 $routes->get('/lihat_karyawan/(:num)', 'DaftarKaryawanController::lihat_karyawan/$1', ['filter' => 'login']);
 $routes->get('/view_karyawanQR/(:num)', 'DaftarKaryawanController::view_karyawanQR/$1');
 
 /*
- * --------------------------------------------------------------------
- * Additional Routing
- * --------------------------------------------------------------------
- *
+* --------------------------------------------------------------------
+* Additional Routing
+* --------------------------------------------------------------------
+*
  * There will often be times that you need additional routing and you
  * need it to be able to override any defaults in this file. Environment
  * based routes is one such time. require() additional route files here

@@ -23,9 +23,10 @@ class Home extends BaseController
 
     public function dashboard()
     {
+        $data['datauser'] = $this->karyawanModel->where(['nik' => user()->nik])->first();
         $data['karyawan'] = $this->karyawanModel->getKaryawan();
         $data['users'] = $this->penggunaModel->getPengguna();
-        // dd($reservedRoutes);
+        // dd($data);
         return view('dashboard', $data);
     }
 }

@@ -4,20 +4,24 @@ namespace App\Controllers;
 
 use App\Models\DaftarPenggunaModel;
 use App\Models\DaftarSertifikatModel;
+use App\Models\DaftarKaryawanModel;
 
 class DaftarSertifikatController extends BaseController
 {
     protected $sertifikatModel;
     protected $penggunaModel;
+    protected $karyawanModel;
 
     public function __construct()
     {
         $this->sertifikatModel = new DaftarSertifikatModel();
         $this->penggunaModel = new DaftarPenggunaModel();
+        $this->karyawanModel = new DaftarKaryawanModel();
     }
 
     public function index()
     {
+        $data['datauser'] = $this->karyawanModel->where(['nik' => user()->nik])->first();
         $data['users'] = $this->penggunaModel->getPengguna();
         $data['sertifikat'] = $this->sertifikatModel->getJenisSertifikat();
         return view('daftar_sertifikat', $data);
@@ -25,6 +29,7 @@ class DaftarSertifikatController extends BaseController
 
     public function tambah_sertifikat()
     {
+        $data['datauser'] = $this->karyawanModel->where(['nik' => user()->nik])->first();
         $data['users'] = $this->penggunaModel->getPengguna();
         return view('tambah_sertifikat', $data);
     }
@@ -66,6 +71,7 @@ class DaftarSertifikatController extends BaseController
 
     public function edit_sertifikat($id_sertifikat = null)
     {
+        $data['datauser'] = $this->karyawanModel->where(['nik' => user()->nik])->first();
         $data['users'] = $this->penggunaModel->getPengguna();
         $data['sertifikat'] = $this->sertifikatModel->find($id_sertifikat);
         return view('edit_sertifikat', $data);
