@@ -17,6 +17,10 @@
         </div> -->
         <!-- /Search -->
 
+        <div>
+            <span>Selamat datang, <b><?= user()->username ?></b></span>
+        </div>
+
         <ul class="navbar-nav flex-row align-items-center ms-auto">
             <!-- Style Switcher -->
             <li class="nav-item dropdown-style-switcher dropdown me-2 me-xl-0">
@@ -60,10 +64,12 @@
                                     </div>
                                 </div>
                                 <div class="flex-grow-1">
-                                    <?php foreach ($users as $key => $value) : ?>
-                                        <span class="fw-medium d-block"><?= $value['nama_karyawan'] ?></span>
-                                        <small class="text-muted"><?= $value['level'] ?></small>
-                                    <?php endforeach ?>
+                                    <span class="fw-medium d-block"><?= user()->username ?></span>
+                                    <small class="text-muted">
+                                        <?php if (in_groups('Admin')) : ?>Admin<?php endif ?>
+                                        <?php if (in_groups('Manager')) : ?>Manager<?php endif ?>
+                                        <?php if (in_groups('User')) : ?>User<?php endif ?>
+                                    </small>
                                 </div>
                             </div>
                         </a>
@@ -72,7 +78,7 @@
                         <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="<?= base_url('edit_karyawandisable') ?>">
+                        <a class="dropdown-item" href="<?= base_url('edit_karyawandisable/' . user()->nik) ?>">
                             <i class="ti ti-user-check me-2 ti-sm"></i>
                             <span class="align-middle">My Profile</span>
                         </a>

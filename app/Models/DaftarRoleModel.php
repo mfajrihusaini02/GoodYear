@@ -6,23 +6,18 @@ use CodeIgniter\Model;
 
 class DaftarRoleModel extends Model
 {
-    protected $table = 'role';
-    protected $primaryKey = 'id_role';
+    protected $table = 'auth_groups';
+    protected $primaryKey = 'id';
     protected $useAutoIncrement = true;
     protected $allowedFields = [
-        'id_role',
-        'nama_role',
-        'level'
+        'id',
+        'name',
+        'description'
     ];
 
     public function getRole()
     {
-        // return $this->db->table('karyawan')
-        //     ->join('kelas', 'kelas.IDKelas=siswa.IDKelas')
-        //     ->join('jurusan', 'jurusan.IDJurusan=siswa.IDJurusan')
-        //     ->get()->getResultArray();
-
-        return $this->db->table('role')
-        ->get()->getResultArray();
+        return $this->db->table('auth_groups')
+            ->get()->getResultArray();
     }
 }
