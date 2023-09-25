@@ -24,7 +24,7 @@ use PHPUnit\Framework\Constraint\Count; ?>
             <div class="row">
                 <div class="col-lg-12 col-xl-12 col-md-12 col-xs-12 col-sm-12 col-12">
                     <div class="card mb-3">
-                        <div class="card-body">
+                        <div class="card-body m-0">
                             <div class="m-0" align="center">
                                 <img src="../logo.png" class="img-fluid mt-2" width="250px;" height="300px;">
                                 <h3><b>GOODYEAR INDONESIA</b></h3>
@@ -36,66 +36,67 @@ use PHPUnit\Framework\Constraint\Count; ?>
                                 </div>
 
                                 <div class="col-md-9" style="text-align: justify;">
-                                    <table>
-                                        <thead>
-                                            <tr>
-                                                <th style="text-align: justify; vertical-align: middle; margin: 5px; padding: 7px;"><b>NIK</b></th>
-                                                <th style="text-align: justify; vertical-align: middle; margin: 5px; padding: 7px; width: 100%;">: <?= $detail_karyawan['nik']; ?></th>
-                                            </tr>
-                                            <tr>
-                                                <th style="text-align: justify; vertical-align: top; margin: 5px; padding: 7px; width: 45%;"><b>Nama Lengkap</b></th>
-                                                <th style="text-align: justify; vertical-align: middle; margin: 5px; padding: 7px; width: 100%;">: <?= $detail_karyawan['nama_karyawan']; ?></th>
-                                            </tr>
-                                            <tr>
-                                                <th style="text-align: justify; vertical-align: middle; margin: 5px; padding: 7px;"><b>Alamat</b></th>
-                                                <th style="text-align: justify; vertical-align: middle; margin: 5px; padding: 7px; width: 100%;">: <?= $detail_karyawan['alamat']; ?></th>
-                                            </tr>
-                                            <tr>
-                                                <th style="text-align: justify; vertical-align: middle; margin: 5px; padding: 7px;"><b>Jabatan</b></th>
-                                                <th style="text-align: justify; vertical-align: middle; margin: 5px; padding: 7px; width: 100%;">:
-                                                    <?php foreach ($jabatan as $value) : ?>
-                                                        <?= $detail_karyawan['id_jabatan'] == $value['id_jabatan'] ? $value['nama_jabatan'] : null ?>
-                                                    <?php endforeach ?>
-                                                </th>
-                                            </tr>
-                                            <!-- <tr>
-                                                <th style="text-align: justify; vertical-align: middle; margin: 5px; padding: 7px;"><b>Sertifikat</b></th>
-                                                <th style="text-align: justify; vertical-align: middle; margin: 5px; padding: 7px; width: 100%;">: </th>
-                                            </tr> -->
-                                        </thead>
-                                    </table>
+                                    <div class="mb-3">
+                                        <label class="form-label"><b>NIK</b></label>
+                                        <input type="text" class="form-control" id="nik" name="nik" value="<?= $detail_karyawan['nik']; ?>" disabled>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label"><b>Nama Karyawan</b></label>
+                                        <input type="text" class="form-control" id="nama_karyawan" name="nama_karyawan" value="<?= $detail_karyawan['nama_karyawan']; ?>" disabled>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label"><b>Alamat</b></label>
+                                        <input type="text" class="form-control" id="alamat" name="alamat" value="<?= $detail_karyawan['alamat']; ?>" disabled>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label"><b>Jabatan</b></label>
+                                        <select name="jabatan" id="jabatan" class="form-control" disabled>
+                                            <option value="" disabled>-Pilih-</option>
+                                            <?php foreach ($jabatan as $value) { ?>
+                                                <option value="<?= $value['id_jabatan']; ?>" <?= $detail_karyawan['id_jabatan'] == $value['id_jabatan'] ? 'selected' : null ?>>
+                                                    <?= $value['nama_jabatan']; ?>
+                                                </option>"
+                                            <?php } ?>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="table-responsive container mt-0 mb-4">
-                            <label for=""><b>Jenis Sertifikat :</b></label>
-                            <table class="table table-hover display nowrap table-bordered w-100" cellspacing="0">
-                                <thead>
-                                    <tr class="first even" style="text-shadow: none; cursor: pointer;">
-                                        <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;"><b>No</b></th>
-                                        <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;"><b>Nama Sertifikat</b></th>
-                                        <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;"><b>Tanggal Ambil</b></th>
-                                        <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;"><b>Tanggal Expired</b></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php $nomor = 1; ?>
-                                    <?php if ($transaksi == false || count($transaksi) < 1) : ?>
-                                        <tr style="vertical-align: middle; text-align: center; text-shadow: none;">
-                                            <td style="margin: 5px; padding: 3px; text-align: center; width: 5%;" colspan="4"><b>Data Sertifikat Belum Ada</b></td>
-                                        </tr>
-                                    <?php endif ?>
-                                    <?php foreach ($transaksi as $value) : ?>
-                                        <tr style="vertical-align: middle; text-align: center; text-shadow: none;">
-                                            <td style="margin: 5px; padding: 3px; text-align: center; width: 5%;"><?= $nomor++; ?></td>
-                                            <td style="margin: 5px; padding: 3px; text-align: center; width: 30%;"><?= $value['nama_sertifikat']; ?></td>
-                                            <td style="margin: 5px; padding: 3px; text-align: center; width: 15%;"><?= $value['tanggal_ambil']; ?></td>
-                                            <td style="margin: 5px; padding: 3px; text-align: center; width: 15%;"><?= $value['tanggal_ekspire']; ?></td>
-                                        </tr>
-                                    <?php endforeach ?>
-                                </tbody>
-                            </table>
+                        <div class="container mb-3">
+                            <?php if ($transaksi == false || count($transaksi) < 1) : ?>
+                                <div class="card" align="center">
+                                    <div class="card-body">
+                                        <div class="row m-0 p-0">
+                                            <div class="col-lg-2 col-xl-2 col-md-2 col-xs-2 col-sm-2 col-2" align="center">
+                                                <i class="menu-icon tf-icons ti ti-certificate" style="font-size: 45px;"></i>
+                                            </div>
+                                            <div class="col-lg-10 col-xl-10 col-md-10 col-xs-10 col-sm-10 col-10">
+                                                <h6><b>Belum ada data sertifikat</b></h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endif ?>
+
+                            <?php foreach ($transaksi as $value) : ?>
+                                <div class="card mb-2" align="center">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-lg-2 col-xl-2 col-md-2 col-xs-2 col-sm-2 col-2" align="center">
+                                                <i class="menu-icon tf-icons ti ti-certificate" style="font-size: 45px;"></i>
+                                            </div>
+                                            <div class="col-lg-10 col-xl-10 col-md-10 col-xs-10 col-sm-10 col-10">
+                                                <h5><b><?= $value['nama_sertifikat']; ?></b></h5>
+                                                <span><b>Tanggal Ambil</b></span>
+                                                <p><?= $value['tanggal_ambil']; ?></p>
+                                                <span><b>Tanggal Expired</b></span>
+                                                <p><?= $value['tanggal_ekspire']; ?></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endforeach ?>
                         </div>
                     </div>
                 </div>
