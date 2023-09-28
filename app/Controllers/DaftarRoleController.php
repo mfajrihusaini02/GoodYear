@@ -42,17 +42,17 @@ class DaftarRoleController extends BaseController
             'name' => [
                 'rules' => 'required|max_length[50]|alpha_space',
                 'errors' => [
-                    'required' => 'Nama role tidak boleh kosong',
-                    'max_length' => 'Nama role maksimal 50 karakter',
-                    'alpha_space' => 'Isian hanya karakter alfabet dan spasi'
+                    'required' => 'Role name cannot be empty',
+                    'max_length' => 'Role name maximum 50 characters',
+                    'alpha_space' => 'Fill only alphabetic characters and spaces'
                 ],
             ],
             'description' => [
                 'rules' => 'required|max_length[50]|alpha_space',
                 'errors' => [
-                    'required' => 'description tidak boleh kosong',
-                    'max_length' => 'description maksimal 50 karakter',
-                    'alpha_space' => 'Isian hanya karakter alfabet dan spasi'
+                    'required' => 'Description cannot be empty',
+                    'max_length' => 'Description maximum 50 characters',
+                    'alpha_space' => 'Fill only alphabetic characters and spaces'
                 ],
             ]
         ])) {
@@ -68,7 +68,7 @@ class DaftarRoleController extends BaseController
             'description' => $description
         ];
         $this->roleModel->save($data);
-        return redirect()->to(base_url('daftar_role'))->with('status', 'Role Berhasil Disimpan');
+        return redirect()->to(base_url('daftar_role'))->with('status', 'ROLE SAVED SUCCESSFULLY');
     }
 
     public function edit_role($id_role = null)
@@ -86,15 +86,15 @@ class DaftarRoleController extends BaseController
             'name' => [
                 'rules' => 'permit_empty|alpha_space|max_length[50]',
                 'errors' => [
-                    'max_length' => 'Nama role maksimal 50 karakter',
-                    'alpha_space' => 'Isian hanya karakter alfabet dan spasi'
+                    'max_length' => 'Role name maximum 50 characters',
+                    'alpha_space' => 'Fill only alphabetic characters and spaces'
                 ],
             ],
             'description' => [
                 'rules' => 'permit_empty|alpha_space|max_length[50]',
                 'errors' => [
-                    'max_length' => 'description maksimal 50 karakter',
-                    'alpha_space' => 'Isian hanya karakter alfabet dan spasi'
+                    'max_length' => 'Description maximum 50 characters',
+                    'alpha_space' => 'Fill only alphabetic characters and spaces'
                 ],
             ]
         ])) {
@@ -121,12 +121,12 @@ class DaftarRoleController extends BaseController
             'description' => $namadescription
         ];
         $this->roleModel->update($id_role, $data);
-        return redirect()->to(base_url('daftar_role'))->with('status', 'Role Berhasil Diubah');
+        return redirect()->to(base_url('daftar_role'))->with('status', 'ROLE SUCCESSFULLY CHANGED');
     }
 
     public function delete_role($id_role = null)
     {
         $this->roleModel->delete($id_role);
-        return redirect()->back()->with('status', 'Role Berhasil Dihapus');
+        return redirect()->back()->with('status', 'ROLE SUCCESSFULLY DELETED');
     }
 }

@@ -3,7 +3,7 @@
 <div class="card shadow">
     <div class="row card-header bg-primary p-2 m-0">
         <div class="col-lg-6 col-xl-6 col-md-6 col-xs-6 col-sm-6 col-6">
-            <h4 class="text-white mt-2">Edit Pengguna</h4>
+            <h4 class="text-white mt-2">Edit User</h4>
         </div>
 
         <div class="col-lg-6 col-xl-6 col-md-6 col-xs-6 col-sm-6 col-6" align="right">
@@ -28,7 +28,7 @@
 
             <div class="row">
                 <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
-                    <h6><b>Data Lama</b></h6>
+                    <h6><b>Old Data</b></h6>
                     <div class="mb-3">
                         <label class="form-label">Email</label>
                         <input type="text" class="form-control" id="emaildisable" name="emaildisable" value="<?= $user['email']; ?>" disabled>
@@ -38,9 +38,9 @@
                         <input type="text" class="form-control" id="usernamedisable" name="usernamedisable" value="<?= $user['username']; ?>" disabled>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Level</label>
+                        <label class="form-label">Role</label>
                         <select name="id_roledisable" id="id_roledisable" class="form-select" disabled>
-                            <option value="" disabled>-Pilih-</option>
+                            <option value="" disabled>-Option-</option>
                             <?php foreach ($level as $value) { ?>
                                 <option value="<?= $value['id']; ?>" <?= $user['id_role'] == $value['id'] ? 'selected' : null ?>>
                                     <?= $value['name']; ?>
@@ -55,14 +55,14 @@
                     <div class="mb-3">
                         <label class="form-label">Status</label>
                         <select name="activedisable" id="activedisable" class="form-select" disabled>
-                            <option value="" disabled>-Pilih-</option>
-                            <option value="<?= $user['active'] == 1 ?>"><?= ($user['active'] == 1) ? 'Aktif' : 'Tidak Aktif' ?></option>
+                            <option value="" disabled>-Option-</option>
+                            <option value="<?= $user['active'] == 1 ?>"><?= ($user['active'] == 1) ? 'ACTIVE' : 'INACTIVE' ?></option>
                         </select>
                     </div>
                 </div>
 
                 <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
-                    <h6><b>Data Baru</b></h6>
+                    <h6><b>New Data</b></h6>
                     <div class="mb-3">
                         <label class="form-label">Email</label>
                         <input type="email" id="email" name="email" class="form-control <?php if (session('validation.email')) : ?> is-invalid <?php endif ?>" placeholder="Silahkan masukan email pengguna">
@@ -78,9 +78,9 @@
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Level</label>
+                        <label class="form-label">Role</label>
                         <select name="id_role" id="id_role" class="form-select <?php if (session('validation.id_role')) : ?> is-invalid <?php endif ?>">
-                            <option value="" disabled selected>-Pilih-</option>
+                            <option value="" disabled selected>-Option-</option>
                             <?php foreach ($level as $value) { ?>
                                 <option value="<?= $value['id']; ?>"><?= $value['name']; ?></option>"
                             <?php } ?>
@@ -104,9 +104,9 @@
                     <div class="mb-3">
                         <label class="form-label">Status</label>
                         <select name="active" id="active" class="form-select <?php if (session('validation.active')) : ?> is-invalid <?php endif ?>">
-                            <option value="" disabled selected>-Pilih-</option>
-                            <option value="1">Aktif</option>
-                            <option value="0">Tidak Aktif</option>
+                            <option value="" disabled selected>-Option-</option>
+                            <option value="1">ACTIVE</option>
+                            <option value="0">INACTIVE</option>
                         </select>
                         <div class="invalid-feedback">
                             <?= session('validation.active'); ?>

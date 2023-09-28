@@ -3,7 +3,7 @@
 <div class="card shadow">
     <div class="row card-header bg-primary p-2 m-0">
         <div class="col-lg-6 col-xl-6 col-md-6 col-xs-6 col-sm-6 col-6">
-            <h4 class="text-white mt-2">Profile Karyawan</h4>
+            <h4 class="text-white mt-2">Employee Profile</h4>
         </div>
 
         <div class="col-lg-6 col-xl-6 col-md-6 col-xs-6 col-sm-6 col-6" align="right">
@@ -31,14 +31,14 @@
 
                 <div class="col-lg-9 col-xl-9 col-md-9 col-xs-12 col-sm-12 col-12">
                     <div class="mb-3">
-                        <label class="form-label">NIK</label>
+                        <label class="form-label">NOCC</label>
                         <input type="text" class="form-control <?php if (session('validation.nik')) : ?> is-invalid <?php endif ?>" id="nik" name="nik" value="<?= $karyawan['nik']; ?>" disabled>
                         <div class="invalid-feedback">
                             <?= session('validation.nik'); ?>
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Nama Karyawan</label>
+                        <label class="form-label">Employee Name</label>
                         <input type="text" class="form-control <?php if (session('validation.nama_karyawan')) : ?> is-invalid <?php endif ?>" id="nama_karyawan" name="nama_karyawan" value="<?= $karyawan['nama_karyawan']; ?>" disabled>
                         <div class="invalid-feedback">
                             <?= session('validation.nama_karyawan'); ?>
@@ -49,13 +49,6 @@
                         <input type="text" class="form-control <?php if (session('validation.email')) : ?> is-invalid <?php endif ?>" id="email" name="email" value="<?= $users['email']; ?>">
                         <div class="invalid-feedback">
                             <?= session('validation.email'); ?>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Alamat</label>
-                        <textarea name="alamat" id="alamat" cols="20" rows="3" class="form-control <?php if (session('validation.alamat')) : ?> is-invalid <?php endif ?>" value="<?= $karyawan['alamat']; ?>"><?= $karyawan['alamat']; ?></textarea>
-                        <div class="invalid-feedback">
-                            <?= session('validation.alamat'); ?>
                         </div>
                     </div>
                     <div class="mb-3 form-password-toggle">
@@ -71,7 +64,7 @@
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="Foto" class="form-label">Foto</label>
+                        <label for="Foto" class="form-label">Photo Profile</label>
                         <input type="file" class="form-control <?php if (session('validation.foto')) : ?> is-invalid <?php endif ?>" id="foto" name="foto">
                         <div class="invalid-feedback">
                             <?= session('validation.foto'); ?>

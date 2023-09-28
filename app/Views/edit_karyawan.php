@@ -3,7 +3,7 @@
 <?php if (session()->getFlashdata('status')) {
 ?>
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        <strong>Selamat</strong> <?= session()->getFlashdata('status'); ?>.
+        <strong>CONGRATULATIONS </strong> <?= session()->getFlashdata('status'); ?>.
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 <?php
@@ -12,7 +12,7 @@
 <div class="card shadow">
     <div class="row card-header bg-primary p-2 m-0">
         <div class="col-lg-6 col-xl-6 col-md-6 col-xs-6 col-sm-6 col-6">
-            <h4 class="text-white mt-2">Edit Karyawan</h4>
+            <h4 class="text-white mt-2">Edit Employee</h4>
         </div>
 
         <div class="col-lg-6 col-xl-6 col-md-6 col-xs-6 col-sm-6 col-6" align="right">
@@ -42,19 +42,19 @@
                 </div>
 
                 <div class="col-lg-5 col-xl-5 col-md-5 col-xs-12 col-sm-12 col-12">
-                    <h6><b>Data Lama</b></h6>
+                    <h6><b>Old Data</b></h6>
                     <div class="mb-3">
-                        <label class="form-label">NIK</label>
+                        <label class="form-label">NOCC</label>
                         <input type="text" class="form-control" id="nikdisable" name="nikdisable" value="<?= $karyawan['nik']; ?>" disabled>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Nama Karyawan</label>
+                        <label class="form-label">Employee Name</label>
                         <input type="text" class="form-control" id="nama_karyawandisable" name="nama_karyawandisable" value="<?= $karyawan['nama_karyawan']; ?>" disabled>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Jabatan</label>
+                        <label class="form-label">Department</label>
                         <select name="jabatandisable" id="jabatandisable" class="form-select" disabled>
-                            <option value="" disabled>-Pilih-</option>
+                            <option value="" disabled>-Option-</option>
                             <?php foreach ($jabatan as $value) { ?>
                                 <option value="<?= $value['id_jabatan']; ?>" <?= $karyawan['id_jabatan'] == $value['id_jabatan'] ? 'selected' : null ?>>
                                     <?= $value['nama_jabatan']; ?>
@@ -63,9 +63,9 @@
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Divisi</label>
+                        <label class="form-label">Division</label>
                         <select name="divisidisable" id="divisidisable" class="form-select" disabled>
-                            <option value="" disabled>-Pilih-</option>
+                            <option value="" disabled>-Option-</option>
                             <?php foreach ($divisi as $value) { ?>
                                 <option value="<?= $value['id_divisi']; ?>" <?= $karyawan['id_divisi'] == $value['id_divisi'] ? 'selected' : null ?>>
                                     <?= $value['nama_divisi']; ?>
@@ -74,38 +74,34 @@
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Alamat</label>
-                        <textarea name="alamatdisable" id="alamatdisable" cols="20" rows="3" class="form-control" value="<?= $karyawan['alamat']; ?>" disabled><?= $karyawan['alamat']; ?></textarea>
-                    </div>
-                    <div class="mb-3">
                         <label class="form-label">Status</label>
                         <select name="status_karyawandisable" id="status_karyawandisable" class="form-select" disabled>
-                            <option value="" disabled>-Pilih-</option>
+                            <option value="" disabled>-Option-</option>
                             <option value="<?= $karyawan['status_karyawan'] == 1 ?>"><?= ($karyawan['status_karyawan'] == 1) ? 'Aktif' : 'Tidak Aktif' ?></option>
                         </select>
                     </div>
                 </div>
 
                 <div class="col-lg-5 col-xl-5 col-md-5 col-xs-12 col-sm-12 col-12">
-                    <h6><b>Data Baru</b></h6>
+                    <h6><b>New Data</b></h6>
                     <div class="mb-3">
-                        <label for="NikKaryawan" class="form-label">NIK</label>
+                        <label for="NikKaryawan" class="form-label">NOCC</label>
                         <input type="text" class="form-control <?php if (session('validation.nik')) : ?> is-invalid <?php endif ?>" id="nik" name="nik" autofocus placeholder="Silahkan masukan NIK karyawan">
                         <div class="invalid-feedback">
                             <?= session('validation.nik'); ?>
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="NamaKaryawan" class="form-label">Nama Karyawan</label>
+                        <label for="NamaKaryawan" class="form-label">Employee Name</label>
                         <input type="text" class="form-control <?php if (session('validation.nama_karyawan')) : ?> is-invalid <?php endif ?>" id="nama_karyawan" name="nama_karyawan" placeholder="Silahkan masukan nama karyawan">
                         <div class="invalid-feedback">
                             <?= session('validation.nama_karyawan'); ?>
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="Jabatan" class="form-label">Jabatan</label>
+                        <label for="Jabatan" class="form-label">Department</label>
                         <select name="jabatan" id="jabatan" class="form-select <?php if (session('validation.jabatan')) : ?> is-invalid <?php endif ?>">
-                            <option value="" disabled selected>-Pilih-</option>
+                            <option value="" disabled selected>-Option-</option>
                             <?php foreach ($jabatan as $value) { ?>
                                 <option value="<?= $value['id_jabatan']; ?>"><?= $value['nama_jabatan']; ?></option>
                             <?php } ?>
@@ -115,9 +111,9 @@
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="Devisi" class="form-label">Divisi</label>
+                        <label for="Devisi" class="form-label">Division</label>
                         <select name="divisi" id="divisi" class="form-select <?php if (session('validation.divisi')) : ?> is-invalid <?php endif ?>">
-                            <option value="" disabled selected>-Pilih-</option>
+                            <option value="" disabled selected>-Option-</option>
                             <?php foreach ($divisi as $value) { ?>
                                 <option value="<?= $value['id_divisi']; ?>"><?= $value['nama_divisi']; ?></option>
                             <?php } ?>
@@ -127,25 +123,18 @@
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="Alamat" class="form-label">Alamat</label>
-                        <textarea name="alamat" id="alamat" cols="20" rows="3" class="form-control <?php if (session('validation.alamat')) : ?> is-invalid <?php endif ?>" placeholder="Silahkan masukan alamat karyawan"></textarea>
-                        <div class="invalid-feedback">
-                            <?= session('validation.alamat'); ?>
-                        </div>
-                    </div>
-                    <div class="mb-3">
                         <label class="form-label">Status</label>
                         <select name="status_karyawan" id="status_karyawan" class="form-select <?php if (session('validation.status_karyawan')) : ?> is-invalid <?php endif ?>">
-                            <option value="" disabled selected>-Pilih-</option>
-                            <option value="1">Aktif</option>
-                            <option value="0">Tidak Aktif</option>
+                            <option value="" disabled selected>-Option-</option>
+                            <option value="1">ACTIVE</option>
+                            <option value="0">INACTIVE</option>
                         </select>
                         <div class="invalid-feedback">
                             <?= session('validation.status_karyawan'); ?>
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="Foto" class="form-label">Foto</label>
+                        <label for="Foto" class="form-label">Photo Profile</label>
                         <input type="file" class="form-control <?php if (session('validation.foto')) : ?> is-invalid <?php endif ?>" id="foto" name="foto">
                         <div class="invalid-feedback">
                             <?= session('validation.foto'); ?>

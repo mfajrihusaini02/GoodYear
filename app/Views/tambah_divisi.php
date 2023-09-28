@@ -3,7 +3,7 @@
 <div class="card shadow">
     <div class="row card-header bg-primary p-2 m-0">
         <div class="col-lg-6 col-xl-6 col-md-6 col-xs-6 col-sm-6 col-6">
-            <h4 class="text-white mt-2">Tambah Divisi</h4>
+            <h4 class="text-white mt-2">Add Division</h4>
         </div>
 
         <div class="col-lg-6 col-xl-6 col-md-6 col-xs-6 col-sm-6 col-6" align="right">
@@ -20,8 +20,8 @@
                 <form method="POST" action="simpan_divisi">
                     <?= csrf_field(); ?>
                     <div class="mb-3">
-                        <label for="nama_divisi" class="form-label">Nama Divisi</label>
-                        <input type="text" class="form-control <?php if(session('validation.nama_divisi')) : ?> is-invalid <?php endif ?>" id="nama_divisi" name="nama_divisi" autofocus placeholder="Silahkan masukan nama divisi" value="<?= old('nama_divisi'); ?>">
+                        <label for="nama_divisi" class="form-label">Division Name</label>
+                        <input type="text" class="form-control <?php if(session('validation.nama_divisi')) : ?> is-invalid <?php endif ?>" id="nama_divisi" name="nama_divisi" autofocus placeholder="Please enter division name" value="<?= old('nama_divisi'); ?>">
                         <div class="invalid-feedback">
                             <?= session('validation.nama_divisi'); ?>
                         </div>

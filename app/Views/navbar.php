@@ -18,7 +18,7 @@
         <!-- /Search -->
 
         <div>
-            <span>Selamat datang, <b><?= $datauser['nik'] == user()->nik ? $datauser['nama_karyawan'] : null ?></b></span>
+            <span>Welcome, <b><?= $datauser['nik'] == user()->nik ? $datauser['nama_karyawan'] : null ?></b></span>
         </div>
 
         <ul class="navbar-nav flex-row align-items-center ms-auto">
@@ -68,7 +68,7 @@
                                         <?= $datauser['nik'] == user()->nik ? $datauser['nama_karyawan'] : null ?>
                                     </span>
                                     <small class="text-muted">
-                                        <?php if (in_groups('Admin')) : ?>Admin<?php endif ?>
+                                        <?php if (in_groups('Admin')) : ?>Administrator<?php endif ?>
                                         <?php if (in_groups('Manager')) : ?>Manager<?php endif ?>
                                         <?php if (in_groups('User')) : ?>User<?php endif ?>
                                     </small>

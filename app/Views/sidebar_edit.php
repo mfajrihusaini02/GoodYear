@@ -35,27 +35,27 @@
         <ul class="menu-sub">
           <li class="menu-item">
             <a href="../daftar_karyawan" class="menu-link">
-              <div data-i18n="Karyawan">Karyawan</div>
+              <div data-i18n="Employee">Employee</div>
             </a>
           </li>
           <li class="menu-item">
             <a href="../daftar_pengguna" class="menu-link">
-              <div data-i18n="Pengguna">Pengguna</div>
+              <div data-i18n="User">User</div>
             </a>
           </li>
           <li class="menu-item">
             <a href="../daftar_sertifikat" class="menu-link">
-              <div data-i18n="Sertifikat">Sertifikat</div>
+              <div data-i18n="Certificate">Certificate</div>
             </a>
           </li>
           <li class="menu-item">
             <a href="../daftar_divisi" class="menu-link">
-              <div data-i18n="Divisi">Divisi</div>
+              <div data-i18n="Division">Division</div>
             </a>
           </li>
           <li class="menu-item">
             <a href="../daftar_jabatan" class="menu-link">
-              <div data-i18n="Jabatan">Jabatan</div>
+              <div data-i18n="Department">Department</div>
             </a>
           </li>
           <li class="menu-item">
@@ -70,7 +70,7 @@
       <li class="menu-item">
         <a href="../karyawan" class="menu-link">
           <i class="menu-icon tf-icons ti ti-user"></i>
-          <div data-i18n="View Karyawan">View Karyawan</div>
+          <div data-i18n="View Employee">View Employee</div>
         </a>
       </li>
       <!-- Pengguna menu start -->
@@ -90,7 +90,7 @@
       <li class="menu-item">
         <a href="../karyawan" class="menu-link">
           <i class="menu-icon tf-icons ti ti-user"></i>
-          <div data-i18n="View Karyawan">View Karyawan</div>
+          <div data-i18n="View Employee">View Employee</div>
         </a>
       </li>
       <!-- Pengguna menu start -->

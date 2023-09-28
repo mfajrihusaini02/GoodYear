@@ -7,7 +7,7 @@ include 'atas_edit.php' ?>
 <div class="card shadow">
     <div class="row card-header bg-primary p-2 m-0">
         <div class="col-lg-6 col-xl-6 col-md-6 col-xs-6 col-sm-6 col-6">
-            <h4 class="text-white mt-2">Detail Karyawan</h4>
+            <h4 class="text-white mt-2">Employee Details</h4>
         </div>
 
         <div class="col-lg-6 col-xl-6 col-md-6 col-xs-6 col-sm-6 col-6" align="right">
@@ -32,19 +32,15 @@ include 'atas_edit.php' ?>
                                 <table>
                                     <thead>
                                         <tr>
-                                            <th style="text-align: justify; vertical-align: middle; margin: 5px; padding: 7px;"><b>NIK</b></th>
+                                            <th style="text-align: justify; vertical-align: middle; margin: 5px; padding: 7px;"><b>NOCC</b></th>
                                             <th style="text-align: justify; vertical-align: middle; margin: 5px; padding: 7px; width: 100%;">: <?= $detail_karyawan['nik']; ?></th>
                                         </tr>
                                         <tr>
-                                            <th style="text-align: justify; vertical-align: top; margin: 5px; padding: 7px; width: 45%;"><b>Nama Lengkap</b></th>
+                                            <th style="text-align: justify; vertical-align: top; margin: 5px; padding: 7px; width: 45%;"><b>Full Name</b></th>
                                             <th style="text-align: justify; vertical-align: middle; margin: 5px; padding: 7px; width: 100%;">: <?= $detail_karyawan['nama_karyawan']; ?></th>
                                         </tr>
                                         <tr>
-                                            <th style="text-align: justify; vertical-align: middle; margin: 5px; padding: 7px;"><b>Alamat</b></th>
-                                            <th style="text-align: justify; vertical-align: middle; margin: 5px; padding: 7px; width: 100%;">: <?= $detail_karyawan['alamat']; ?></th>
-                                        </tr>
-                                        <tr>
-                                            <th style="text-align: justify; vertical-align: middle; margin: 5px; padding: 7px;"><b>Jabatan</b></th>
+                                            <th style="text-align: justify; vertical-align: middle; margin: 5px; padding: 7px;"><b>Department</b></th>
                                             <th style="text-align: justify; vertical-align: middle; margin: 5px; padding: 7px; width: 100%;">:
                                                 <?php foreach ($jabatan as $value) : ?>
                                                     <?= $detail_karyawan['id_jabatan'] == $value['id_jabatan'] ? $value['nama_jabatan'] : null ?>
@@ -52,7 +48,7 @@ include 'atas_edit.php' ?>
                                             </th>
                                         </tr>
                                         <tr>
-                                            <th style="text-align: justify; vertical-align: middle; margin: 5px; padding: 7px;"><b>Sertifikat</b></th>
+                                            <th style="text-align: justify; vertical-align: middle; margin: 5px; padding: 7px;"><b>Certificate</b></th>
                                             <th style="text-align: justify; vertical-align: middle; margin: 5px; padding: 7px; width: 100%;">: </th>
                                         </tr>
                                     </thead>
@@ -75,7 +71,7 @@ include 'atas_edit.php' ?>
                                 <?php $nomor = 1; ?>
                                 <?php if ($transaksi == false || count($transaksi) < 1) : ?>
                                     <tr style="vertical-align: middle; text-align: center; text-shadow: none;">
-                                        <td style="margin: 5px; padding: 3px; text-align: center; width: 5%;" colspan="4"><b>Data Sertifikat Belum Ada</b></td>
+                                        <td style="margin: 5px; padding: 3px; text-align: center; width: 5%;" colspan="4"><b>No Data Certificate</b></td>
                                     </tr>
                                 <?php endif ?>
 

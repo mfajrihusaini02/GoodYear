@@ -23,28 +23,28 @@
 
             <div class="row">
                 <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
-                    <h6><b>Data Lama</b></h6>
+                    <h6><b>Old Data</b></h6>
                     <div class="mb-3">
-                        <label class="form-label">Nama Role</label>
+                        <label class="form-label">Role Name</label>
                         <input type="text" class="form-control" id="namedisable" name="namedisable" value="<?= $role['name']; ?>" disabled>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Deskripsi</label>
+                        <label class="form-label">Description</label>
                         <input type="text" class="form-control" id="descriptiondisable" name="descriptiondisable" value="<?= $role['description']; ?>" disabled>
                     </div>
                 </div>
 
                 <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
-                    <h6><b>Data Baru</b></h6>
+                    <h6><b>New Data</b></h6>
                     <div class="mb-3">
-                        <label for="name" class="form-label">Nama Role</label>
+                        <label for="name" class="form-label">Role Name</label>
                         <input type="text" class="form-control <?php if (session('validation.name')) : ?> is-invalid <?php endif ?>" id="name" name="name" autofocus placeholder="Silahkan masukan nama role">
                         <div class="invalid-feedback">
                             <?= session('validation.name'); ?>
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="description" class="form-label">Deskripsi</label>
+                        <label for="description" class="form-label">Description</label>
                         <input type="text" class="form-control <?php if (session('validation.description')) : ?> is-invalid <?php endif ?>" id="description" name="description" placeholder="Silahkan masukan description">
                         <div class="invalid-feedback">
                             <?= session('validation.description'); ?>

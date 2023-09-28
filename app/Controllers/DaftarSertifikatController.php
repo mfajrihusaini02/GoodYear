@@ -41,16 +41,16 @@ class DaftarSertifikatController extends BaseController
             'kodesertifikat' => [
                 'rules' => 'required|numeric|max_length[50]',
                 'errors' => [
-                    'required' => 'Kode sertifikat tidak boleh kosong',
-                    'max_length' => 'Kode sertifikat maksimal 50 karakter',
-                    'numeric' => 'Isian harus angka',
+                    'required' => 'Certificate code cannot be empty',
+                    'max_length' => 'Certificate code maximum 50 characters',
+                    'numeric' => 'Fill only numeric',
                 ],
             ],
             'namasertifikat' => [
                 'rules' => 'required|max_length[100]',
                 'errors' => [
-                    'required' => 'Nama sertifikat tidak boleh kosong',
-                    'max_length' => 'Nama sertifikat maksimal 100 karakter',
+                    'required' => 'Certificate name cannot be empty',
+                    'max_length' => 'Certificate name maximum 100 characters',
                 ],
             ]
         ])) {
@@ -66,7 +66,7 @@ class DaftarSertifikatController extends BaseController
             'nama_sertifikat' => $nama_sertifikat
         ];
         $this->sertifikatModel->save($data);
-        return redirect()->to(base_url('daftar_sertifikat'))->with('status', 'Data Sertifikat Berhasil Disimpan');
+        return redirect()->to(base_url('daftar_sertifikat'))->with('status', 'CERTIFICATE DATA SAVED SUCCESSFULLY');
     }
 
     public function edit_sertifikat($id_sertifikat = null)
@@ -84,14 +84,14 @@ class DaftarSertifikatController extends BaseController
             'kodesertifikat' => [
                 'rules' => 'permit_empty|numeric|max_length[50]',
                 'errors' => [
-                    'max_length' => 'Kode sertifikat maksimal 50 karakter',
-                    'numeric' => 'Isian harus angka',
+                    'max_length' => 'Certificate code maximum 50 characters',
+                    'numeric' => 'Fill only numeric',
                 ],
             ],
             'namasertifikat' => [
                 'rules' => 'permit_empty|max_length[100]',
                 'errors' => [
-                    'max_length' => 'Nama sertifikat maksimal 100 karakter',
+                    'max_length' => 'Certificate name maximum 100 characters',
                 ],
             ]
         ])) {
@@ -119,12 +119,12 @@ class DaftarSertifikatController extends BaseController
         ];
 
         $this->sertifikatModel->update($id_sertifikat, $data);
-        return redirect()->to(base_url('daftar_sertifikat'))->with('status', 'Data Sertifikat Berhasil Diubah');
+        return redirect()->to(base_url('daftar_sertifikat'))->with('status', 'CERTIFICATE DATA SUCCESSFULLY CHANGED');
     }
 
     public function delete_sertifikat($id_sertifikat = null)
     {
         $this->sertifikatModel->delete($id_sertifikat);
-        return redirect()->back()->with('status', 'Data Sertifikat Berhasil Dihapus');
+        return redirect()->back()->with('status', 'CERTIFICATE DATA SUCCESSFULLY DELETED');
     }
 }

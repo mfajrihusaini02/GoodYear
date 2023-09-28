@@ -3,7 +3,7 @@
 <?php if (session()->getFlashdata('status')) {
 ?>
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        <strong>Selamat</strong> <?= session()->getFlashdata('status'); ?>.
+        <strong>CONGRATULATIONS </strong> <?= session()->getFlashdata('status'); ?>.
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 <?php
@@ -12,7 +12,7 @@
 <div class="card shadow">
     <div class="row card-header bg-primary p-2 m-0">
         <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
-            <h4 class="text-white mt-2">List Karyawan</h4>
+            <h4 class="text-white mt-2">List Employee</h4>
         </div>
     </div>
 
@@ -22,11 +22,11 @@
                 <thead>
                     <tr class="first even" style="text-shadow: none; cursor: pointer;">
                         <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">NO</th>
-                        <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">NIK</th>
-                        <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">NAMA KARYAWAN</th>
-                        <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">JABATAN</th>
-                        <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">DIVISI</th>
-                        <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">AKSI</th>
+                        <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">NOCC</th>
+                        <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">EMPLOYEE NAME</th>
+                        <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">DEPARTMENT</th>
+                        <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">DIVISION</th>
+                        <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">ACTION</th>
                     </tr>
                 </thead>
 

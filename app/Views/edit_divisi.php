@@ -3,7 +3,7 @@
 <div class="card shadow">
     <div class="row card-header bg-primary p-2 m-0">
         <div class="col-lg-6 col-xl-6 col-md-6 col-xs-6 col-sm-6 col-6">
-            <h4 class="text-white mt-2">Edit Divisi</h4>
+            <h4 class="text-white mt-2">Edit Division</h4>
         </div>
 
         <div class="col-lg-6 col-xl-6 col-md-6 col-xs-6 col-sm-6 col-6" align="right">
@@ -22,17 +22,17 @@
 
             <div class="row">
                 <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
-                    <h6><b>Data Lama</b></h6>
+                    <h6><b>Old Data</b></h6>
                     <div class="mb-3">
-                        <label for="nama_divisidisable" class="form-label">Nama Divisi</label>
+                        <label for="nama_divisidisable" class="form-label">Division Name</label>
                         <input type="text" class="form-control" id="nama_divisidisable" name="nama_divisidisable" value="<?= $divisi['nama_divisi']; ?>" disabled>
                     </div>
                 </div>
 
                 <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
-                    <h6><b>Data Baru</b></h6>
+                    <h6><b>New Data</b></h6>
                     <div class="mb-3">
-                        <label for="nama_divisi" class="form-label">Nama Divisi</label>
+                        <label for="nama_divisi" class="form-label">Division Name</label>
                         <input type="text" class="form-control <?php if (session('validation.nama_divisi')) : ?> is-invalid <?php endif ?>" id="nama_divisi" name="nama_divisi" autofocus placeholder="Silahkan masukan nama Divisi">
                         <div class="invalid-feedback">
                             <?= session('validation.nama_divisi'); ?>

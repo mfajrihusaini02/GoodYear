@@ -3,7 +3,7 @@
 <div class="card shadow">
     <div class="row card-header bg-primary p-2 m-0">
         <div class="col-lg-6 col-xl-6 col-md-6 col-xs-6 col-sm-6 col-6">
-            <h4 class="text-white mt-2">Tambah Role</h4>
+            <h4 class="text-white mt-2">Add Role</h4>
         </div>
 
         <div class="col-lg-6 col-xl-6 col-md-6 col-xs-6 col-sm-6 col-6" align="right">
@@ -20,15 +20,15 @@
                 <form method="POST" action="simpan_role">
                     <?= csrf_field(); ?>
                     <div class="mb-3">
-                        <label for="name" class="form-label">Nama Role</label>
-                        <input type="text" class="form-control <?php if (session('validation.name')) : ?> is-invalid <?php endif ?>" id="name" name="name" autofocus placeholder="Silahkan masukan nama role" value="<?= old('name'); ?>">
+                        <label for="name" class="form-label">Role Name</label>
+                        <input type="text" class="form-control <?php if (session('validation.name')) : ?> is-invalid <?php endif ?>" id="name" name="name" autofocus placeholder="Please enter role name" value="<?= old('name'); ?>">
                         <div class="invalid-feedback">
                             <?= session('validation.name'); ?>
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="description" class="form-label">Deskripsi</label>
-                        <input type="text" class="form-control <?php if (session('validation.description')) : ?> is-invalid <?php endif ?>" id="description" name="description" placeholder="Silahkan masukan description" value="<?= old('description'); ?>">
+                        <label for="description" class="form-label">Description</label>
+                        <input type="text" class="form-control <?php if (session('validation.description')) : ?> is-invalid <?php endif ?>" id="description" name="description" placeholder="Please enter description" value="<?= old('description'); ?>">
                         <div class="invalid-feedback">
                             <?= session('validation.description'); ?>
                         </div>

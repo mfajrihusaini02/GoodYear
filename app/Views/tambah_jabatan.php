@@ -3,7 +3,7 @@
 <div class="card shadow">
     <div class="row card-header bg-primary p-2 m-0">
         <div class="col-lg-6 col-xl-6 col-md-6 col-xs-6 col-sm-6 col-6">
-            <h4 class="text-white mt-2">Tambah Jabatan</h4>
+            <h4 class="text-white mt-2">Add Department</h4>
         </div>
 
         <div class="col-lg-6 col-xl-6 col-md-6 col-xs-6 col-sm-6 col-6" align="right">
@@ -20,8 +20,8 @@
                 <form method="POST" action="simpan_jabatan">
                     <?= csrf_field(); ?>
                     <div class="mb-3">
-                        <label for="nama_jabatan" class="form-label">Nama Jabatan</label>
-                        <input type="text" class="form-control <?php if(session('validation.nama_jabatan')) : ?> is-invalid <?php endif ?>" id="nama_jabatan" name="nama_jabatan" autofocus placeholder="Silahkan masukan nama jabatan" value="<?= old('nama_jabatan'); ?>">
+                        <label for="nama_jabatan" class="form-label">Department Name</label>
+                        <input type="text" class="form-control <?php if(session('validation.nama_jabatan')) : ?> is-invalid <?php endif ?>" id="nama_jabatan" name="nama_jabatan" autofocus placeholder="Please enter department name" value="<?= old('nama_jabatan'); ?>">
                         <div class="invalid-feedback">
                             <?= session('validation.nama_jabatan'); ?>
                         </div>

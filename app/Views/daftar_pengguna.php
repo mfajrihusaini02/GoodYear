@@ -3,7 +3,7 @@
 <?php if (session()->getFlashdata('status')) {
 ?>
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        <strong>Selamat</strong> <?= session()->getFlashdata('status'); ?>.
+        <strong>CONGRATULATIONS </strong> <?= session()->getFlashdata('status'); ?>.
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 <?php
@@ -12,7 +12,7 @@
 <div class="card shadow">
     <div class="row card-header bg-primary p-2 m-0">
         <div class="col-lg-6 col-xl-6 col-md-6 col-xs-6 col-sm-6 col-6">
-            <h4 class="text-white mt-2">List Pengguna</h4>
+            <h4 class="text-white mt-2">List Users</h4>
         </div>
 
         <div class="col-lg-6 col-xl-6 col-md-6 col-xs-6 col-sm-6 col-6" align="right">
@@ -29,11 +29,11 @@
                 <thead>
                     <tr class="first even" style="text-shadow: none; cursor: pointer;">
                         <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">NO</th>
-                        <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">NAMA PENGGUNA</th>
+                        <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">NAME</th>
                         <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">USERNAME</th>
                         <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">ROLE</th>
                         <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">STATUS</th>
-                        <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">AKSI</th>
+                        <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">ACTION</th>
                     </tr>
                 </thead>
 
@@ -46,7 +46,7 @@
                             <td style="margin: 5px; padding: 3px; text-align: justify;"><?= $value["username"]; ?></td>
                             <td style="margin: 5px; padding: 3px; text-align: center;"><?= $value["name"]; ?></td>
                             <td style="margin: 5px; padding: 3px; text-align: center;">
-                                <?= ($value['active'] == 1) ? 'Aktif' : 'Tidak Aktif' ?>
+                                <?= ($value['active'] == 1) ? 'ACTIVE' : 'INACTIVE' ?>
                             </td>
                             <td style="margin: 5px; padding: 3px; text-align: center;">
                                 <a href="<?= base_url('edit_pengguna/' . $value['nik']) ?>" class="btn btn-outline-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit">

@@ -3,7 +3,7 @@
 <div class="card shadow">
     <div class="row card-header bg-primary p-2 m-0">
         <div class="col-lg-6 col-xl-6 col-md-6 col-xs-6 col-sm-6 col-6">
-            <h4 class="text-white mt-2">Edit Master Sertifikat</h4>
+            <h4 class="text-white mt-2">Edit Master Certificate</h4>
         </div>
 
         <div class="col-lg-6 col-xl-6 col-md-6 col-xs-6 col-sm-6 col-6" align="right">
@@ -23,28 +23,28 @@
 
             <div class="row">
                 <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
-                    <h6><b>Data Lama</b></h6>
+                    <h6><b>Old Data</b></h6>
                     <div class="mb-3">
-                        <label class="form-label">Kode Sertifikat</label>
+                        <label class="form-label">Certificate Code</label>
                         <input type="text" class="form-control" id="kodesertifikatdisable" name="kodesertifikatdisable" value="<?= $sertifikat['kode_sertifikat']; ?>" disabled>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Nama Sertifikat</label>
+                        <label class="form-label">Certificate Name</label>
                         <input type="text" class="form-control" id="namasertifikatdisable" name="namasertifikatdisable" value="<?= $sertifikat['nama_sertifikat']; ?>" disabled>
                     </div>
                 </div>
 
                 <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
-                    <h6><b>Data Baru</b></h6>
+                    <h6><b>New Data</b></h6>
                     <div class="mb-3">
-                        <label for="kodesertifikat" class="form-label">Kode Sertifikat</label>
+                        <label for="kodesertifikat" class="form-label">Certificate Code</label>
                         <input type="text" class="form-control <?php if (session('validation.kodesertifikat')) : ?> is-invalid <?php endif ?>" id="kodesertifikat" name="kodesertifikat" autofocus value="<?= $sertifikat['kode_sertifikat']; ?>" placeholder="Silahkan masukan kode sertifikat">
                         <div class="invalid-feedback">
                             <?= session('validation.kodesertifikat'); ?>
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="namasertifikat" class="form-label">Nama Sertifikat</label>
+                        <label for="namasertifikat" class="form-label">Certificate Name</label>
                         <input type="text" class="form-control <?php if (session('validation.namasertifikat')) : ?> is-invalid <?php endif ?>" id="namasertifikat" name="namasertifikat" placeholder="Silahkan masukan nama sertifikat">
                         <div class="invalid-feedback">
                             <?= session('validation.namasertifikat'); ?>

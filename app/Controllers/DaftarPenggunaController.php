@@ -48,42 +48,42 @@ class DaftarPenggunaController extends BaseController
             'nik' => [
                 'rules' => 'required|is_unique[users.nik]',
                 'errors' => [
-                    'required' => 'Karyawan belum dipilih',
-                    'is_unique' => 'Karyawan sudah menjadi pengguna sebelumnya',
+                    'required' => 'Employee not selected',
+                    'is_unique' => 'Employee is a previous user',
                 ],
             ],
             'id_role' => [
                 'rules' => 'required',
                 'errors' => [
-                    'required' => 'Level belum dipilih',
+                    'required' => 'Role not seleted',
                 ],
             ],
             'email' => [
                 'rules' => 'required|valid_emails|max_length[50]',
                 'errors' => [
-                    'required' => 'Email tidak boleh kosong',
-                    'valid_emails' => 'Tidak ada mengandung unsur @',
-                    'max_length' => 'Email maksimal 50 karakter',
+                    'required' => 'Email cannot be empty',
+                    'valid_emails' => 'There is no @ element',
+                    'max_length' => 'Email maximum 50 characters',
                 ],
             ],
             'username' => [
                 'rules' => 'required|max_length[50]',
                 'errors' => [
-                    'required' => 'Username tidak boleh kosong',
-                    'max_length' => 'Username maksimal 50 karakter',
+                    'required' => 'Username cannot be empty',
+                    'max_length' => 'Username maximum 50 characters',
                 ],
             ],
             'password_hash' => [
                 'rules' => 'required|max_length[50]',
                 'errors' => [
-                    'required' => 'Password tidak boleh kosong',
-                    'max_length' => 'Password maksimal 50 karakter',
+                    'required' => 'Username cannot be empty',
+                    'max_length' => 'Username maximum 50 characters',
                 ],
             ],
             'active' => [
                 'rules' => 'required',
                 'errors' => [
-                    'required' => 'Status belum dipilih',
+                    'required' => 'Status not selected',
                 ],
             ]
         ])) {
@@ -119,7 +119,7 @@ class DaftarPenggunaController extends BaseController
 
         $this->penggunaModel->save($data);
         $this->groupsroleModel->save($data1);
-        return redirect()->to(base_url('daftar_pengguna'))->with('status', 'Daftar Pengguna Berhasil Disimpan');
+        return redirect()->to(base_url('daftar_pengguna'))->with('status', 'USER DATA SAVED SUCCESSFULLY');
     }
 
     public function edit_pengguna($id = null)
@@ -144,20 +144,20 @@ class DaftarPenggunaController extends BaseController
             'email' => [
                 'rules' => 'permit_empty|valid_emails|max_length[50]',
                 'errors' => [
-                    'valid_emails' => 'Tidak ada mengandung unsur @',
-                    'max_length' => 'Email maksimal 50 karakter',
+                    'valid_emails' => 'There is no @ element',
+                    'max_length' => 'Email maximum 50 characters',
                 ],
             ],
             'username' => [
                 'rules' => 'permit_empty|max_length[50]',
                 'errors' => [
-                    'max_length' => 'Username maksimal 50 karakter',
+                    'max_length' => 'Username maximum 50 characters',
                 ],
             ],
             'password_hash' => [
                 'rules' => 'permit_empty|max_length[50]',
                 'errors' => [
-                    'max_length' => 'Password maksimal 50 karakter',
+                    'max_length' => 'Password maximum 50 characters',
                 ],
             ],
             'active' => [
@@ -223,12 +223,12 @@ class DaftarPenggunaController extends BaseController
             'force_pass_reset' => $force_pass_reset,
         ];
         $this->penggunaEditModel->update($id_pengguna, $data);
-        return redirect()->to(base_url('daftar_pengguna'))->with('status', 'Pengguna Berhasil Diubah');
+        return redirect()->to(base_url('daftar_pengguna'))->with('status', 'USER DATA RSUCCESSFULLY CHANGED');
     }
 
     public function delete_pengguna($id_pengguna = null)
     {
         $this->penggunaEditModel->delete($id_pengguna);
-        return redirect()->back()->with('status', 'Pengguna Berhasil Dihapus');
+        return redirect()->back()->with('status', 'USER DATA SUCCESSFULLY DELETED');
     }
 }
