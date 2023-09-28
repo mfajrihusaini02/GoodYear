@@ -37,18 +37,54 @@ class TransaksiController extends BaseController
                 'errors' => [
                     'required' => 'Expired date not selected',
                 ],
+            ],
+            'n_safety' => [
+                'rules' => 'required|numeric',
+                'errors' => [
+                    'required' => 'Expired date not selected',
+                    'numeric' => 'Fill only numeric',
+                ],
+            ],
+            'n_quality' => [
+                'rules' => 'required|numeric',
+                'errors' => [
+                    'required' => 'Expired date not selected',
+                    'numeric' => 'Fill only numeric',
+                ],
+            ],
+            'n_operation' => [
+                'rules' => 'required|numeric',
+                'errors' => [
+                    'required' => 'Expired date not selected',
+                    'numeric' => 'Fill only numeric',
+                ],
             ]
         ])) {
             $validation = \Config\Services::validation();
-            // dd($validation);
             return redirect()->back()->withInput()->with('validation', $this->validator->getErrors());
         }
 
+        $id_karyawan = $this->request->getVar('id_karyawan');
+        $id_sertifikat = $this->request->getVar('id_sertifikat');
+        $tanggal_ambil = $this->request->getVar('tanggal_ambil');
+        $tanggal_ekspire = $this->request->getVar('tanggal_ekspire');
+        $n_safety = $this->request->getVar('n_safety');
+        $n_quality = $this->request->getVar('n_quality');
+        $n_operation = $this->request->getVar('n_operation');
+        $n_average = $this->request->getVar('n_average');
+
+        $total = ($n_safety + $n_quality + $n_operation) / 3;
+        $total = (number_format($total, 2));
+
         $data = [
-            'id_karyawan' => $this->request->getVar('id_karyawan'),
-            'id_sertifikat' => $this->request->getVar('id_sertifikat'),
-            'tanggal_ambil' => $this->request->getVar('tanggal_ambil'),
-            'tanggal_ekspire' => $this->request->getVar('tanggal_ekspire'),
+            'id_karyawan' => $id_karyawan,
+            'id_sertifikat' => $id_sertifikat,
+            'tanggal_ambil' => $tanggal_ambil,
+            'tanggal_ekspire' => $tanggal_ekspire,
+            'n_safety' => $n_safety,
+            'n_quality' => $n_quality,
+            'n_operation' => $n_operation,
+            'n_average' => $total,
         ];
 
         // dd($data);

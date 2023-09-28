@@ -20,7 +20,7 @@ include 'atas_edit.php' ?>
 
     <div class="card-body mb-3 mt-3">
         <div class="row">
-            <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12">
+            <div class="col-lg-9 col-xl-9 col-md-9 col-xs-12 col-sm-12 col-12">
                 <div class="card mb-3">
                     <div class="card-body">
                         <div class="row">
@@ -58,13 +58,17 @@ include 'atas_edit.php' ?>
                     </div>
 
                     <div class="table-responsive container mt-0 mb-3">
-                        <table class="table table-hover display nowrap table-bordered w-100" cellspacing="0">
+                        <table class="table table-hover display nowrap table-bordered w-100" id="datatabelSertifikatKaryawan" cellspacing="0">
                             <thead>
                                 <tr class="first even" style="text-shadow: none; cursor: pointer;">
-                                    <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;"><b>No</b></th>
-                                    <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;"><b>Nama Sertifikat</b></th>
-                                    <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;"><b>Tanggal Ambil</b></th>
-                                    <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;"><b>Tanggal Expired</b></th>
+                                    <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">NO</th>
+                                    <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">CERTIFICATE NAME</th>
+                                    <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">PICK UP DATE</th>
+                                    <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">EXPIRED DATE</th>
+                                    <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">SAFETY VALUE</th>
+                                    <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">QUALITY VALUE</th>
+                                    <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">OPERATION VALUE</th>
+                                    <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">AVERAGE VALUE</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -79,8 +83,16 @@ include 'atas_edit.php' ?>
                                     <tr style="vertical-align: middle; text-align: center; text-shadow: none;">
                                         <td style="margin: 5px; padding: 3px; text-align: center; width: 5%;"><?= $nomor++; ?></td>
                                         <td style="margin: 5px; padding: 3px; text-align: center; width: 30%;"><?= $value['nama_sertifikat']; ?></td>
-                                        <td style="margin: 5px; padding: 3px; text-align: center; width: 15%;"><?= $value['tanggal_ambil']; ?></td>
-                                        <td style="margin: 5px; padding: 3px; text-align: center; width: 15%;"><?= $value['tanggal_ekspire']; ?></td>
+                                        <td style="margin: 5px; padding: 3px; text-align: center; width: 15%;">
+                                            <?= date('d M Y', strtotime($value['tanggal_ambil'])); ?>
+                                        </td>
+                                        <td style="margin: 5px; padding: 3px; text-align: center; width: 15%;">
+                                            <?= date('d M Y', strtotime($value['tanggal_ekspire'])); ?>
+                                        </td>
+                                        <td style="margin: 5px; padding: 3px; text-align: center;"><?= $value["n_safety"]; ?></td>
+                                        <td style="margin: 5px; padding: 3px; text-align: center;"><?= $value["n_quality"]; ?></td>
+                                        <td style="margin: 5px; padding: 3px; text-align: center;"><?= $value["n_operation"]; ?></td>
+                                        <td style="margin: 5px; padding: 3px; text-align: center;"><?= $value["n_average"]; ?></td>
                                     </tr>
                                 <?php endforeach ?>
                             </tbody>
@@ -89,7 +101,7 @@ include 'atas_edit.php' ?>
                 </div>
             </div>
 
-            <div class="col-lg-6 col-xl-6 col-md-6 col-xs-12 col-sm-12 col-12" align="center">
+            <div class="col-lg-3 col-xl-3 col-md-3 col-xs-12 col-sm-12 col-12" align="center">
                 <img src="<?= $detail_karyawan["qr_code"]; ?>">
             </div>
         </div>

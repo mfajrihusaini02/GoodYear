@@ -7,14 +7,18 @@ use CodeIgniter\Model;
 class TransaksiEditModel extends Model
 {
     protected $table = 'transaksi_sertifikat';
-    protected $primaryKey = 'nik';
+    protected $primaryKey = 'id_transaksi';
     protected $useAutoIncrement = true;
     protected $allowedFields = [
         'id_transaksi',
         'id_sertifikat',
         'id_karyawan',
         'tanggal_ambil',
-        'tanggal_ekspire'
+        'tanggal_ekspire',
+        'n_safety',
+        'n_quality',
+        'n_operation',
+        'n_average'
     ];
 
     public function getTransaksi()
