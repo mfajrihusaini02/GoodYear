@@ -65,14 +65,14 @@
                     <h6><b>New Data</b></h6>
                     <div class="mb-3">
                         <label class="form-label">Email</label>
-                        <input type="email" id="email" name="email" class="form-control <?php if (session('validation.email')) : ?> is-invalid <?php endif ?>" placeholder="Silahkan masukan email pengguna">
+                        <input type="email" id="email" name="email" class="form-control <?php if (session('validation.email')) : ?> is-invalid <?php endif ?>" placeholder="Please enter email">
                         <div class="invalid-feedback">
                             <?= session('validation.email'); ?>
                         </div>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Username</label>
-                        <input type="text" id="username" name="username" class="form-control <?php if (session('validation.username')) : ?> is-invalid <?php endif ?>" placeholder="Silahkan masukan username pengguna">
+                        <input type="text" id="username" name="username" class="form-control <?php if (session('validation.username')) : ?> is-invalid <?php endif ?>" placeholder="Please enter username">
                         <div class="invalid-feedback">
                             <?= session('validation.username'); ?>
                         </div>
