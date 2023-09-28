@@ -151,13 +151,13 @@
 <div class="card shadow mt-4">
     <div class="row card-header bg-primary p-2 m-0">
         <div class="col-lg-6 col-xl-6 col-md-6 col-xs-6 col-sm-6 col-6">
-            <h4 class="text-white mt-2">Sertifikat Karyawan</h4>
+            <h4 class="text-white mt-2">Employee Certificate</h4>
         </div>
 
         <div class="col-lg-6 col-xl-6 col-md-6 col-xs-6 col-sm-6 col-6" align="right">
             <a href="#" data-href="<?= base_url('add_sertifikatkaryawan') ?>" onclick="confirmToAdd(this)" class="btn btn-sm btn-success mt-2">
                 <span class="icon text-white-50"><i class="fas fa-plus"></i></span>
-                <span class="text p-1">Tambah</span>
+                <span class="text p-1">Add</span>
             </a>
         </div>
     </div>
@@ -170,10 +170,14 @@
                         <thead>
                             <tr class="first even" style="text-shadow: none; cursor: pointer;">
                                 <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">NO</th>
-                                <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">NAMA SERTIFIKAT</th>
-                                <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">TANGGAL AMBIL</th>
-                                <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">TANGGAL EXPIRED</th>
-                                <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">AKSI</th>
+                                <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">CERTIFICATE NAME</th>
+                                <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">PICK UP DATE</th>
+                                <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">EXPIRED DATE</th>
+                                <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">SAFETY VALUE</th>
+                                <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">QUALITY VALUE</th>
+                                <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">OPERATION VALUE</th>
+                                <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">AVERAGE VALUE</th>
+                                <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">ACTION</th>
                             </tr>
                         </thead>
 
@@ -183,8 +187,16 @@
                                 <tr style="vertical-align: middle; text-align: center; text-shadow: none;">
                                     <td style="margin: 5px; padding: 3px; text-align: center;"><?= $nomor++; ?></td>
                                     <td style="margin: 5px; padding: 3px; text-align: justify;"><?= $value["nama_sertifikat"]; ?></td>
-                                    <td style="margin: 5px; padding: 3px; text-align: center;"><?= $value["tanggal_ambil"]; ?></td>
-                                    <td style="margin: 5px; padding: 3px; text-align: center;"><?= $value["tanggal_ekspire"]; ?></td>
+                                    <td style="margin: 5px; padding: 3px; text-align: center;">
+                                        <?= date('d M Y', strtotime($value['tanggal_ambil'])); ?>
+                                    </td>
+                                    <td style="margin: 5px; padding: 3px; text-align: center;">
+                                        <?= date('d M Y', strtotime($value['tanggal_ekspire'])); ?>
+                                    </td>
+                                    <td style="margin: 5px; padding: 3px; text-align: center;"><?= $value["n_safety"]; ?></td>
+                                    <td style="margin: 5px; padding: 3px; text-align: center;"><?= $value["n_quality"]; ?></td>
+                                    <td style="margin: 5px; padding: 3px; text-align: center;"><?= $value["n_operation"]; ?></td>
+                                    <td style="margin: 5px; padding: 3px; text-align: center;"><?= $value["n_average"]; ?></td>
                                     <td style="margin: 5px; padding: 3px; text-align: center;">
                                         <a href="#" data-href="<?= base_url('delete_sertifikatkaryawan/' . $value['id_transaksi']) ?>" onclick="confirmToDelete(this)" class="btn btn-outline-danger">
                                             <span class='icon'><i class='fas fa-trash'></i></span>
@@ -211,12 +223,17 @@
 
                     <div id="add-dialog" class="modal fade" role="dialog" aria-hidden="true">
                         <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <form method="POST" action="<?= base_url('../simpan_sertifikatkaryawan') ?>">
+                            <form method="POST" action="<?= base_url('../simpan_sertifikatkaryawan') ?>">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h3><b>Form Input Certificate</b></h3>
+                                    </div>
+
                                     <div class="modal-body">
                                         <div class="mb-3">
                                             <input type="hidden" value="<?= $karyawan['id_karyawan'] ?>" id="id_karyawan" name="id_karyawan">
-                                            <label for="id_sertifikat">Sertifikat</label>
+
+                                            <label for="id_sertifikat">Certificate</label>
                                             <select name="id_sertifikat" id="id_sertifikat" class="form-select <?php if (session('validation.id_sertifikat')) : ?> is-invalid <?php endif ?>">
                                                 <option value="" disabled selected>-Pilih-</option>
                                                 <?php foreach ($jenissertifikat as $value) { ?>
@@ -228,25 +245,53 @@
                                             </div>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="tanggal_ambil">Tanggal Ambil</label>
+                                            <label for="tanggal_ambil">Pick Up Date</label>
                                             <input type="date" id="tanggal_ambil" name="tanggal_ambil" class="form-control <?php if (session('validation.tanggal_ambil')) : ?> is-invalid <?php endif ?>" value="<?= old('tanggal_ambil'); ?>">
                                             <div class="invalid-feedback">
                                                 <?= session('validation.tanggal_ambil'); ?>
                                             </div>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="tanggal_ekspire">Tanggal Expired</label>
+                                            <label for="tanggal_ekspire">Expiry Date</label>
                                             <input type="date" id="tanggal_ekspire" name="tanggal_ekspire" class="form-control <?php if (session('validation.tanggal_ekspire')) : ?> is-invalid <?php endif ?>" value="<?= old('tanggal_ekspire'); ?>">
                                             <div class="invalid-feedback">
                                                 <?= session('validation.tanggal_ekspire'); ?>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="n_safety">Safety Value</label>
+                                            <input type="number" id="n_safety" name="n_safety" onkeyup="ratarata();" max="100" min="0" class="form-control <?php if (session('validation.n_safety')) : ?> is-invalid <?php endif ?>" value="<?= old('n_safety'); ?>" placeholder="Enter a safety value">
+                                            <div class="invalid-feedback">
+                                                <?= session('validation.n_safety'); ?>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="n_quality">Quality Value</label>
+                                            <input type="number" id="n_quality" name="n_quality" onkeyup="ratarata();" max="100" min="0" class="form-control <?php if (session('validation.n_quality')) : ?> is-invalid <?php endif ?>" value="<?= old('n_quality'); ?>" placeholder="Enter a quality value">
+                                            <div class="invalid-feedback">
+                                                <?= session('validation.n_quality'); ?>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="n_operation">Operation Value</label>
+                                            <input type="number" id="n_operation" name="n_operation" onkeyup="ratarata();" max="100" min="0" class="form-control <?php if (session('validation.n_operation')) : ?> is-invalid <?php endif ?>" value="<?= old('n_operation'); ?>" placeholder="Enter a operation value">
+                                            <div class="invalid-feedback">
+                                                <?= session('validation.n_operation'); ?>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="n_average">Average Value</label>
+                                            <input type="number" id="n_average" name="n_average" disabled class="form-control <?php if (session('validation.n_average')) : ?> is-invalid <?php endif ?>" value="<?= old('n_average'); ?>" placeholder="The average value is auto-filled">
+                                            <div class="invalid-feedback">
+                                                <?= session('validation.n_average'); ?>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="submit" class="btn btn-primary">Save</button>
                                     </div>
-                                </form>
-                            </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -277,4 +322,16 @@
         $('#status_karyawan').select2();
         $('#status_karyawandisable').select2();
     });
+
+    function ratarata() {
+        var safety = document.getElementById('n_safety').value;
+        var quality = document.getElementById('n_quality').value;
+        var operation = document.getElementById('n_operation').value;
+        var average = (parseFloat(safety) + parseFloat(quality) + parseFloat(operation)) / 3;
+        if (!isNaN(average)) {
+            document.getElementById('n_average').value = average;
+        } else {
+            document.getElementById('n_average').value = 0;
+        }
+    }
 </script>

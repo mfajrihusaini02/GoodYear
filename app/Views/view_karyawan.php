@@ -106,24 +106,39 @@ use PHPUnit\Framework\Constraint\Count; ?>
                                                 <div class="col-lg-10 col-xl-10 col-md-10 col-xs-10 col-sm-10 col-10">
                                                     <h5><b><?= $value['nama_sertifikat']; ?></b></h5>
                                                     <span><b>Pick-up Date</b></span>
-                                                    <p><?= $value['tanggal_ambil']; ?></p>
+                                                    <p><?= date('d F Y', strtotime($value['tanggal_ambil'])); ?></p>
                                                     <span><b>Expiry date</b></span>
-                                                    <p><?= $value['tanggal_ekspire']; ?></p>
+                                                    <p><?= date('d F Y', strtotime($value['tanggal_ekspire'])); ?></p>
+
+                                                    <div class="row">
+                                                        <div class="col-lg-6 col-xl-6 col-md-6 col-xs-6 col-sm-6 col-6" align="center">
+                                                            <span><b>Safety Value</b></span>
+                                                            <p><?= $value['n_safety']; ?></p>
+                                                            <span><b>Quality Value</b></span>
+                                                            <p><?= $value['n_quality']; ?></p>
+                                                        </div>
+
+                                                        <div class="col-lg-6 col-xl-6 col-md-6 col-xs-6 col-sm-6 col-6" align="center">
+                                                            <span><b>Operation Value</b></span>
+                                                            <p><?= $value['n_operation']; ?></p>
+                                                            <span><b>Average Value</b></span>
+                                                            <p><?= $value['n_average']; ?></p>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
+                                    <?php endforeach ?>
                                     </div>
-                                <?php endforeach ?>
                             </div>
+                        <?php } ?>
                         </div>
-                    <?php } ?>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Core JS -->
-    <!-- build:js assets/vendor/js/core.js -->
-    <?php include 'kumpulanscript/linkbawah.php' ?>
+        <!-- Core JS -->
+        <!-- build:js assets/vendor/js/core.js -->
+        <?php include 'kumpulanscript/linkbawah.php' ?>
 </body>
 
 </html>
