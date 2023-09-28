@@ -42,14 +42,14 @@
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
-                        <input type="text" class="form-control <?php if (session('validation.email')) : ?> is-invalid <?php endif ?>" id="email" name="email" placeholder="Please enter your email" value="<?= old('email'); ?>">
+                        <input type="text" class="form-control <?php if (session('validation.email')) : ?> is-invalid <?php endif ?>" id="email" name="email" placeholder="Please enter email" value="<?= old('email'); ?>">
                         <div class="invalid-feedback">
                             <?= session('validation.email'); ?>
                         </div>
                     </div>
                     <div class="mb-3">
                         <label for="username" class="form-label">Username</label>
-                        <input type="text" class="form-control <?php if (session('validation.username')) : ?> is-invalid <?php endif ?>" id="username" name="username" aria-describedby="username" placeholder="Please enter your username" value="<?= old('username'); ?>">
+                        <input type="text" class="form-control <?php if (session('validation.username')) : ?> is-invalid <?php endif ?>" id="username" name="username" aria-describedby="username" placeholder="Please enter username" value="<?= old('username'); ?>">
                         <div class="invalid-feedback">
                             <?= session('validation.username'); ?>
                         </div>

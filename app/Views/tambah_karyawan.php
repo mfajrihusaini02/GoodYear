@@ -21,14 +21,14 @@
                     <?= csrf_field(); ?>
                     <div class="mb-3">
                         <label for="NikKaryawan" class="form-label">NOCC</label>
-                        <input type="text" class="form-control <?php if (session('validation.nik')) : ?> is-invalid <?php endif ?>" id="nik" name="nik" autofocus placeholder="Please enter your NOCC" value="<?= old('nik'); ?>">
+                        <input type="text" class="form-control <?php if (session('validation.nik')) : ?> is-invalid <?php endif ?>" id="nik" name="nik" autofocus placeholder="Please enter NOCC" value="<?= old('nik'); ?>">
                         <div class="invalid-feedback">
                             <?= session('validation.nik'); ?>
                         </div>
                     </div>
                     <div class="mb-3">
                         <label for="NamaKaryawan" class="form-label">Employee Name</label>
-                        <input type="text" class="form-control <?php if (session('validation.nama_karyawan')) : ?> is-invalid <?php endif ?>" id="nama_karyawan" name="nama_karyawan" placeholder="Please enter your name" value="<?= old('nama_karyawan'); ?>">
+                        <input type="text" class="form-control <?php if (session('validation.nama_karyawan')) : ?> is-invalid <?php endif ?>" id="nama_karyawan" name="nama_karyawan" placeholder="Please enter employee name" value="<?= old('nama_karyawan'); ?>">
                         <div class="invalid-feedback">
                             <?= session('validation.nama_karyawan'); ?>
                         </div>

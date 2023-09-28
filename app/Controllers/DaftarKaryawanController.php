@@ -125,7 +125,6 @@ class DaftarKaryawanController extends BaseController
         $nama       = $this->request->getVar('nama_karyawan');
         $id_jabatan = $this->request->getVar('jabatan');
         $id_divisi  = $this->request->getVar('divisi');
-        $alamat     = $this->request->getVar('alamat');
 
         // ambil foto
         $fileFoto = $this->request->getFile('foto');
@@ -163,7 +162,6 @@ class DaftarKaryawanController extends BaseController
             'nama_karyawan' => $nama,
             'id_jabatan' => $id_jabatan,
             'id_divisi' => $id_divisi,
-            'alamat' => $alamat,
             'qr_code' => $dataUri,
             'foto' => $namaFoto,
             'status_karyawan' => $status_karyawan
@@ -300,13 +298,6 @@ class DaftarKaryawanController extends BaseController
             unlink('img/' . $this->request->getVar('fotoLama'));
         }
 
-        $alamat         = $this->request->getVar('alamat');
-        if ($alamat == null) {
-            $namaAlamat = $this->request->getVar('alamatLama');
-        } else {
-            $namaAlamat = $this->request->getVar('alamat');
-        }
-
         $email          = $this->request->getVar('email');
         if ($email == null) {
             $namaEmail = $this->request->getVar('emailLama');
@@ -329,7 +320,6 @@ class DaftarKaryawanController extends BaseController
         }
 
         $data = [
-            'alamat' => $namaAlamat,
             'foto' => $namaFoto,
         ];
 
@@ -420,13 +410,6 @@ class DaftarKaryawanController extends BaseController
             $namaDivisi = $this->request->getVar('divisi');
         }
 
-        $alamat = $this->request->getVar('alamat');
-        if ($alamat == null) {
-            $namaAlamat = $this->request->getVar('alamatLama');
-        } else {
-            $namaAlamat = $this->request->getVar('alamat');
-        }
-
         $fileFoto = $this->request->getFile('foto');
         if ($fileFoto->getError() == 4) {
             $namaFoto = $this->request->getVar('fotoLama');
@@ -471,7 +454,6 @@ class DaftarKaryawanController extends BaseController
             'nama_karyawan' => $namaKaryawan,
             'id_jabatan' => $namaJabatan,
             'id_divisi' => $namaDivisi,
-            'alamat' => $namaAlamat,
             'status_karyawan' => $namaStatus,
             'foto' => $namaFoto,
             'qr_code' => $dataUri,

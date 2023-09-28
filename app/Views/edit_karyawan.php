@@ -77,7 +77,7 @@
                         <label class="form-label">Status</label>
                         <select name="status_karyawandisable" id="status_karyawandisable" class="form-select" disabled>
                             <option value="" disabled>-Option-</option>
-                            <option value="<?= $karyawan['status_karyawan'] == 1 ?>"><?= ($karyawan['status_karyawan'] == 1) ? 'Aktif' : 'Tidak Aktif' ?></option>
+                            <option value="<?= $karyawan['status_karyawan'] == 1 ?>"><?= ($karyawan['status_karyawan'] == 1) ? 'ACTIVE' : 'INACTIVE' ?></option>
                         </select>
                     </div>
                 </div>
@@ -86,14 +86,14 @@
                     <h6><b>New Data</b></h6>
                     <div class="mb-3">
                         <label for="NikKaryawan" class="form-label">NOCC</label>
-                        <input type="text" class="form-control <?php if (session('validation.nik')) : ?> is-invalid <?php endif ?>" id="nik" name="nik" autofocus placeholder="Silahkan masukan NIK karyawan">
+                        <input type="text" class="form-control <?php if (session('validation.nik')) : ?> is-invalid <?php endif ?>" id="nik" name="nik" autofocus placeholder="Please enter employee NOCC">
                         <div class="invalid-feedback">
                             <?= session('validation.nik'); ?>
                         </div>
                     </div>
                     <div class="mb-3">
                         <label for="NamaKaryawan" class="form-label">Employee Name</label>
-                        <input type="text" class="form-control <?php if (session('validation.nama_karyawan')) : ?> is-invalid <?php endif ?>" id="nama_karyawan" name="nama_karyawan" placeholder="Silahkan masukan nama karyawan">
+                        <input type="text" class="form-control <?php if (session('validation.nama_karyawan')) : ?> is-invalid <?php endif ?>" id="nama_karyawan" name="nama_karyawan" placeholder="Please enter employee name">
                         <div class="invalid-feedback">
                             <?= session('validation.nama_karyawan'); ?>
                         </div>

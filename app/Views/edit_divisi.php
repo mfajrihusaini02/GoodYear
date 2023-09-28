@@ -33,7 +33,7 @@
                     <h6><b>New Data</b></h6>
                     <div class="mb-3">
                         <label for="nama_divisi" class="form-label">Division Name</label>
-                        <input type="text" class="form-control <?php if (session('validation.nama_divisi')) : ?> is-invalid <?php endif ?>" id="nama_divisi" name="nama_divisi" autofocus placeholder="Silahkan masukan nama Divisi">
+                        <input type="text" class="form-control <?php if (session('validation.nama_divisi')) : ?> is-invalid <?php endif ?>" id="nama_divisi" name="nama_divisi" autofocus placeholder="Please enter division name">
                         <div class="invalid-feedback">
                             <?= session('validation.nama_divisi'); ?>
                         </div>

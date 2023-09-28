@@ -35,7 +35,7 @@ use PHPUnit\Framework\Constraint\Count; ?>
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-lg-12 col-xl-12 col-md-12 col-xs-12 col-sm-12 col-12">
-                                                <h5><b>Karyawan Tidak Aktif</b></h5>
+                                                <h5><b>Inactive Employee</b></h5>
                                             </div>
                                         </div>
                                     </div>
@@ -58,21 +58,17 @@ use PHPUnit\Framework\Constraint\Count; ?>
 
                                     <div class="col-md-9" style="text-align: justify;">
                                         <div class="mb-3">
-                                            <label class="form-label"><b>NIK</b></label>
+                                            <label class="form-label"><b>NOCC</b></label>
                                             <input type="text" class="form-control" id="nik" name="nik" value="<?= $detail_karyawan['nik']; ?>" disabled>
                                         </div>
                                         <div class="mb-3">
-                                            <label class="form-label"><b>Nama Karyawan</b></label>
+                                            <label class="form-label"><b>Employee Name</b></label>
                                             <input type="text" class="form-control" id="nama_karyawan" name="nama_karyawan" value="<?= $detail_karyawan['nama_karyawan']; ?>" disabled>
                                         </div>
                                         <div class="mb-3">
-                                            <label class="form-label"><b>Alamat</b></label>
-                                            <textarea name="alamat" id="alamat" cols="20" rows="3" class="form-control" value="<?= $detail_karyawan['alamat']; ?>" disabled><?= $detail_karyawan['alamat']; ?></textarea>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label class="form-label"><b>Jabatan</b></label>
+                                            <label class="form-label"><b>Department</b></label>
                                             <select name="jabatan" id="jabatan" class="form-control" disabled>
-                                                <option value="" disabled>-Pilih-</option>
+                                                <option value="" disabled>-Option-</option>
                                                 <?php foreach ($jabatan as $value) { ?>
                                                     <option value="<?= $value['id_jabatan']; ?>" <?= $detail_karyawan['id_jabatan'] == $value['id_jabatan'] ? 'selected' : null ?>>
                                                         <?= $value['nama_jabatan']; ?>
@@ -93,7 +89,7 @@ use PHPUnit\Framework\Constraint\Count; ?>
                                                     <i class="menu-icon tf-icons ti ti-certificate" style="font-size: 45px;"></i>
                                                 </div>
                                                 <div class="col-lg-10 col-xl-10 col-md-10 col-xs-10 col-sm-10 col-10">
-                                                    <h6><b>Belum ada data sertifikat</b></h6>
+                                                    <h6><b>No certificate data yet</b></h6>
                                                 </div>
                                             </div>
                                         </div>
@@ -109,9 +105,9 @@ use PHPUnit\Framework\Constraint\Count; ?>
                                                 </div>
                                                 <div class="col-lg-10 col-xl-10 col-md-10 col-xs-10 col-sm-10 col-10">
                                                     <h5><b><?= $value['nama_sertifikat']; ?></b></h5>
-                                                    <span><b>Tanggal Ambil</b></span>
+                                                    <span><b>Pick-up Date</b></span>
                                                     <p><?= $value['tanggal_ambil']; ?></p>
-                                                    <span><b>Tanggal Expired</b></span>
+                                                    <span><b>Expiry date</b></span>
                                                     <p><?= $value['tanggal_ekspire']; ?></p>
                                                 </div>
                                             </div>

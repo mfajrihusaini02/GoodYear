@@ -3,7 +3,7 @@
 <?php if (session()->getFlashdata('status')) {
 ?>
   <div class="alert alert-warning alert-dismissible fade show" role="alert">
-    <strong>Selamat</strong> <?= session()->getFlashdata('status'); ?>.
+    <strong>CONGRATULATIONS </strong> <?= session()->getFlashdata('status'); ?>.
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
 <?php
