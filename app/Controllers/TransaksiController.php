@@ -23,19 +23,19 @@ class TransaksiController extends BaseController
             'id_sertifikat' => [
                 'rules' => 'required',
                 'errors' => [
-                    'required' => 'Sertifikat belum dipilih',
+                    'required' => 'Certificate not selected',
                 ],
             ],
             'tanggal_ambil' => [
                 'rules' => 'required',
                 'errors' => [
-                    'required' => 'Tanggal ambil belum dipilih',
+                    'required' => 'Date of pickup not selected',
                 ],
             ],
             'tanggal_ekspire' => [
                 'rules' => 'required',
                 'errors' => [
-                    'required' => 'Tanggal ekspire belum dipilih',
+                    'required' => 'Expired date not selected',
                 ],
             ]
         ])) {
@@ -54,12 +54,12 @@ class TransaksiController extends BaseController
         // dd($data);
 
         $this->transaksiEditModel->save($data);
-        return redirect()->back()->with('status', 'Data Sertifikat Karyawan Berhasil Disimpan');
+        return redirect()->back()->with('status', 'EMPLOYEE CERTIFICATE DATA SUCCESSFULLY SAVED');
     }
 
     public function delete_sertifikatkaryawan($id_transaksi = null)
     {
         $this->transaksiEditModel->delete($id_transaksi);
-        return redirect()->back()->with('status', 'Data Sertifikat Karyawan Berhasil Dihapus');
+        return redirect()->back()->with('status', 'EMPLOYEE CERTIFICATE DATA SUCCESSFULLY DELETED');
     }
 }

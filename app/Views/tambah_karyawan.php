@@ -3,7 +3,7 @@
 <div class="card shadow">
     <div class="row card-header bg-primary p-2 m-0">
         <div class="col-lg-6 col-xl-6 col-md-6 col-xs-6 col-sm-6 col-6">
-            <h4 class="text-white mt-2">Tambah Karyawan</h4>
+            <h4 class="text-white mt-2">Add Employee</h4>
         </div>
 
         <div class="col-lg-6 col-xl-6 col-md-6 col-xs-6 col-sm-6 col-6" align="right">
@@ -20,23 +20,23 @@
                 <form method="POST" enctype="multipart/form-data" action="<?= base_url('simpan_karyawan') ?>">
                     <?= csrf_field(); ?>
                     <div class="mb-3">
-                        <label for="NikKaryawan" class="form-label">NIK</label>
-                        <input type="text" class="form-control <?php if (session('validation.nik')) : ?> is-invalid <?php endif ?>" id="nik" name="nik" autofocus placeholder="Silahkan masukan NIK karyawan" value="<?= old('nik'); ?>">
+                        <label for="NikKaryawan" class="form-label">NOCC</label>
+                        <input type="text" class="form-control <?php if (session('validation.nik')) : ?> is-invalid <?php endif ?>" id="nik" name="nik" autofocus placeholder="Please enter your NOCC" value="<?= old('nik'); ?>">
                         <div class="invalid-feedback">
                             <?= session('validation.nik'); ?>
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="NamaKaryawan" class="form-label">Nama Karyawan</label>
-                        <input type="text" class="form-control <?php if (session('validation.nama_karyawan')) : ?> is-invalid <?php endif ?>" id="nama_karyawan" name="nama_karyawan" placeholder="Silahkan masukan nama karyawan" value="<?= old('nama_karyawan'); ?>">
+                        <label for="NamaKaryawan" class="form-label">Employee Name</label>
+                        <input type="text" class="form-control <?php if (session('validation.nama_karyawan')) : ?> is-invalid <?php endif ?>" id="nama_karyawan" name="nama_karyawan" placeholder="Please enter your name" value="<?= old('nama_karyawan'); ?>">
                         <div class="invalid-feedback">
                             <?= session('validation.nama_karyawan'); ?>
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="Jabatan" class="form-label">Jabatan</label>
+                        <label for="Jabatan" class="form-label">Department</label>
                         <select name="jabatan" id="jabatan" class="form-select <?php if (session('validation.jabatan')) : ?> is-invalid <?php endif ?>">
-                            <option value="" disabled selected>-Pilih-</option>
+                            <option value="" disabled selected>-Option-</option>
                             <?php foreach ($jabatan as $value) : ?>
                                 <option value="<?= $value['id_jabatan']; ?>" <?= old('jabatan') == $value['id_jabatan'] ? 'selected' : null ?>><?= $value['nama_jabatan']; ?></option>"
                             <?php endforeach ?>
@@ -46,9 +46,9 @@
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="Devisi" class="form-label">Devisi</label>
+                        <label for="Devisi" class="form-label">Division</label>
                         <select name="divisi" id="divisi" class="form-select <?php if (session('validation.divisi')) : ?> is-invalid <?php endif ?>">
-                            <option value="" disabled selected>-Pilih-</option>
+                            <option value="" disabled selected>-Option-</option>
                             <?php foreach ($divisi as $value) : ?>
                                 <option value="<?= $value['id_divisi']; ?>" <?= old('divisi') == $value['id_divisi'] ? 'selected' : null ?>><?= $value['nama_divisi']; ?></option>"
                             <?php endforeach ?>
@@ -58,14 +58,7 @@
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="Alamat" class="form-label">Alamat</label>
-                        <textarea name="alamat" id="alamat" cols="20" rows="3" class="form-control <?php if (session('validation.alamat')) : ?> is-invalid <?php endif ?>" placeholder="Silahkan masukan alamat karyawan" value="<?= old('alamat'); ?>"><?= old('alamat'); ?></textarea>
-                        <div class="invalid-feedback">
-                            <?= session('validation.alamat'); ?>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="Foto" class="form-label">Foto</label>
+                        <label for="Foto" class="form-label">Photo Profile</label>
                         <input type="file" id="foto" name="foto" class="form-control <?php if (session('validation.foto')) : ?> is-invalid <?php endif ?>" value="<?= old('foto'); ?>">
                         <div class="invalid-feedback">
                             <?= session('validation.foto'); ?>

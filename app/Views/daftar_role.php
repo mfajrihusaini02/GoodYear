@@ -3,7 +3,7 @@
 <?php if (session()->getFlashdata('status')) {
 ?>
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        <strong>Selamat</strong> <?= session()->getFlashdata('status'); ?>.
+        <strong>CONGRATULATIONS </strong> <?= session()->getFlashdata('status'); ?>.
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 <?php
@@ -29,9 +29,9 @@
                 <thead>
                     <tr class="first even" style="text-shadow: none; cursor: pointer;">
                         <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">NO</th>
-                        <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">NAMA ROLE</th>
-                        <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">DESKRIPSI</th>
-                        <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">AKSI</th>
+                        <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">ROLE NAME</th>
+                        <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">DESCRIPTION</th>
+                        <th style="text-align: center; vertical-align: middle; margin: 5px; padding: 7px;">ACTION</th>
                     </tr>
                 </thead>
 

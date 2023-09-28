@@ -3,7 +3,7 @@
 <div class="card shadow">
     <div class="row card-header bg-primary p-2 m-0">
         <div class="col-lg-6 col-xl-6 col-md-6 col-xs-6 col-sm-6 col-6">
-            <h4 class="text-white mt-2">Tambah Pengguna</h4>
+            <h4 class="text-white mt-2">Add User</h4>
         </div>
 
         <div class="col-lg-6 col-xl-6 col-md-6 col-xs-6 col-sm-6 col-6" align="right">
@@ -22,16 +22,16 @@
 
                     <input type="hidden" id="force_pass_reset" name="force_pass_reset" value="0">
                     <select name="id_user" id="id_user" class="form-control <?php if (session('validation.id_user')) : ?> is-invalid <?php endif ?>" hidden>
-                        <option value="" disabled selected>-Pilih-</option>
+                        <option value="" disabled selected>-Option-</option>
                         <?php foreach ($id_user as $value) { ?>
                             <option value="<?= $value['id']; ?>" selected><?= $value['id']; ?></option>"
                         <?php } ?>
                     </select>
 
                     <div class="mb-3">
-                        <label for="nik">Nama Karyawan</label>
+                        <label for="nik">Employee Name</label>
                         <select name="nik" id="nik" class="form-select <?php if (session('validation.nik')) : ?> is-invalid <?php endif ?>">
-                            <option value="" disabled selected>-Pilih-</option>
+                            <option value="" disabled selected>-Option-</option>
                             <?php foreach ($karyawan as $value) { ?>
                                 <option value="<?= $value['nik']; ?>" <?= old('nik') == $value['nik'] ? 'selected' : null ?>><?= $value['nama_karyawan']; ?></option>"
                             <?php } ?>
@@ -42,22 +42,22 @@
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
-                        <input type="text" class="form-control <?php if (session('validation.email')) : ?> is-invalid <?php endif ?>" id="email" name="email" placeholder="Silahkan masukan email pengguna" value="<?= old('email'); ?>">
+                        <input type="text" class="form-control <?php if (session('validation.email')) : ?> is-invalid <?php endif ?>" id="email" name="email" placeholder="Please enter your email" value="<?= old('email'); ?>">
                         <div class="invalid-feedback">
                             <?= session('validation.email'); ?>
                         </div>
                     </div>
                     <div class="mb-3">
                         <label for="username" class="form-label">Username</label>
-                        <input type="text" class="form-control <?php if (session('validation.username')) : ?> is-invalid <?php endif ?>" id="username" name="username" aria-describedby="username" placeholder="Silahkan masukan username pengguna" value="<?= old('username'); ?>">
+                        <input type="text" class="form-control <?php if (session('validation.username')) : ?> is-invalid <?php endif ?>" id="username" name="username" aria-describedby="username" placeholder="Please enter your username" value="<?= old('username'); ?>">
                         <div class="invalid-feedback">
                             <?= session('validation.username'); ?>
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="id_role">Level</label>
+                        <label for="id_role">Role</label>
                         <select name="id_role" class="form-select <?php if (session('validation.id_role')) : ?> is-invalid <?php endif ?>" id="id_role">
-                            <option value="" disabled selected>-Pilih-</option>
+                            <option value="" disabled selected>-Option-</option>
                             <?php foreach ($level as $value) { ?>
                                 <option value="<?= $value['id']; ?>" <?= old('id_role') == $value['id'] ? 'selected' : null ?>><?= $value['name']; ?></option>"
                             <?php } ?>
@@ -81,9 +81,9 @@
                     <div class="mb-3">
                         <label for="active">Status</label>
                         <select name="active" class="form-select <?php if (session('validation.active')) : ?> is-invalid <?php endif ?>" id="active">
-                            <option value="" disabled selected>-Pilih-</option>
-                            <option value="1">Aktif</option>
-                            <option value="0">Tidak Aktif</option>
+                            <option value="" disabled selected>-Option-</option>
+                            <option value="1">ACTIVE</option>
+                            <option value="0">INACTIVE</option>
                         </select>
                         <div class="invalid-feedback">
                             <?= session('validation.active'); ?>

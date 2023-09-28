@@ -76,47 +76,40 @@ class DaftarKaryawanController extends BaseController
             'nik' => [
                 'rules' => 'required|is_unique[karyawan.nik]|numeric|max_length[16]|min_length[16]',
                 'errors' => [
-                    'required' => 'NIK tidak boleh kosong',
-                    'is_unique' => 'NIK sudah dipakai',
-                    'max_length' => 'NIK harus 16 karakter',
-                    'min_length' => 'NIK harus 16 karakter',
-                    'numeric' => 'Isian harus angka',
+                    'required' => 'NOCC cannot be empty',
+                    'is_unique' => 'NOCC already used',
+                    'max_length' => 'NOCC must be 16 characters',
+                    'min_length' => 'NOCC must be 16 characters',
+                    'numeric' => 'Fill only numeric',
                 ],
             ],
             'nama_karyawan' => [
                 'rules' => 'required|alpha_space|max_length[100]',
                 'errors' => [
-                    'required' => 'Nama karyawan tidak boleh kosong',
-                    'max_length' => 'Nama karyawan maximal 100 karakter',
-                    'alpha_space' => 'Isian hanya karakter alfabet dan spasi'
+                    'required' => 'Employee name cannot be empty',
+                    'max_length' => 'Employee name maximum 100 characters',
+                    'alpha_space' => 'Fill only alphabetic characters and spaces'
                 ],
             ],
             'jabatan' => [
                 'rules' => 'required',
                 'errors' => [
-                    'required' => 'Jabatan belum dipilih',
+                    'required' => 'Department not selected',
                 ],
             ],
             'divisi' => [
                 'rules' => 'required',
                 'errors' => [
-                    'required' => 'Divisi belum dipilih',
-                ],
-            ],
-            'alamat' => [
-                'rules' => 'required|max_length[100]',
-                'errors' => [
-                    'required' => 'Alamat tidak boleh kosong',
-                    'max_length' => 'Alamat maksimal 100 karakter',
+                    'required' => 'Division not selected',
                 ],
             ],
             'foto' => [
                 'rules' => 'max_size[foto, 1024]|is_image[foto]|mime_in[foto,image/jpg,image/jpeg,image/png]',
                 'errors' => [
-                    'required' => 'Foto tidak boleh kosong',
-                    'max_size' => 'Foto tidak boleh besar dari 1 MB',
-                    'is_image' => 'File harus berupa gambar',
-                    'mime_in' => 'File harus berupa gambar',
+                    'required' => 'Photo profile cannot be mepty',
+                    'max_size' => 'Photo profile cannot be larger than 1 MB',
+                    'is_image' => 'File must be image',
+                    'mime_in' => 'File must be image',
                 ],
             ],
         ])) {
@@ -176,7 +169,7 @@ class DaftarKaryawanController extends BaseController
             'status_karyawan' => $status_karyawan
         ];
         $this->karyawanModel->save($data);
-        return redirect()->to(base_url('daftar_karyawan'))->with('status', 'Data Karyawan Berhasil Disimpan');
+        return redirect()->to(base_url('daftar_karyawan'))->with('status', 'EMPLOYEE DATA SAVED SUCCESSFULLY');
     }
 
     public function lihat_karyawan($id_karyawan = null)
@@ -260,43 +253,37 @@ class DaftarKaryawanController extends BaseController
             'nik' => [
                 'rules' => 'permit_empty|numeric|max_length[16]|min_length[16]',
                 'errors' => [
-                    'max_length' => 'NIK harus 16 karakter',
-                    'min_length' => 'NIK harus 16 karakter',
-                    'numeric' => 'Isian harus angka',
+                    'max_length' => 'NOCC must be 16 characters',
+                    'min_length' => 'NOCC must be 16 characters',
+                    'numeric' => 'Fill only numeric',
                 ],
             ],
             'nama_karyawan' => [
                 'rules' => 'permit_empty|alpha_space|max_length[100]',
                 'errors' => [
-                    'max_length' => 'Nama karyawan maximal 100 karakter',
-                    'alpha_space' => 'Isian hanya karakter alfabet dan spasi'
+                    'max_length' => 'Employee name maximum 100 characters',
+                    'alpha_space' => 'Fill only alphabetic characters and spaces'
                 ],
             ],
             'email' => [
                 'rules' => 'permit_empty|valid_emails|max_length[50]',
                 'errors' => [
-                    'valid_emails' => 'Tidak ada mengandung unsur @',
-                    'max_length' => 'Email maksimal 50 karakter',
-                ],
-            ],
-            'alamat' => [
-                'rules' => 'permit_empty|max_length[100]',
-                'errors' => [
-                    'max_length' => 'Alamat maksimal 100 karakter',
+                    'valid_emails' => 'There is no @ element',
+                    'max_length' => 'Email maximum 50 characters',
                 ],
             ],
             'password_hash' => [
                 'rules' => 'permit_empty|max_length[50]',
                 'errors' => [
-                    'max_length' => 'Password maksimal 50 karakter',
+                    'max_length' => 'Password maximum 50 characters',
                 ],
             ],
             'foto' => [
                 'rules' => 'max_size[foto, 1024]|is_image[foto]|mime_in[foto,image/jpg,image/jpeg,image/png]',
                 'errors' => [
-                    'max_size' => 'Foto tidak boleh besar dari 1 MB',
-                    'is_image' => 'File harus berupa gambar',
-                    'mime_in' => 'File harus berupa gambar',
+                    'max_size' => 'Photo profile cannot be larger than 1 MB',
+                    'is_image' => 'File must be image',
+                    'mime_in' => 'File must be image',
                 ],
             ],
         ])) {
@@ -354,7 +341,7 @@ class DaftarKaryawanController extends BaseController
 
         $this->karyawanEditModel->update($id_karyawan, $data);
         $this->penggunaEditModel->update($id_karyawan, $data1);
-        return redirect()->to(base_url('dashboard'))->with('status', 'Data Profile Berhasil Diubah');
+        return redirect()->to(base_url('dashboard'))->with('status', 'PROFILE SUCCESSFULLY CHANGED');
     }
 
     public function update_karyawan($id_karyawan = null)
@@ -364,16 +351,16 @@ class DaftarKaryawanController extends BaseController
             'nik' => [
                 'rules' => 'permit_empty|numeric|max_length[16]|min_length[16]',
                 'errors' => [
-                    'max_length' => 'NIK harus 16 karakter',
-                    'min_length' => 'NIK harus 16 karakter',
-                    'numeric' => 'Isian harus angka',
+                    'max_length' => 'NOCC must be 16 characters',
+                    'min_length' => 'NOCC must be 16 characters',
+                    'numeric' => 'Fill only numeric',
                 ],
             ],
             'nama_karyawan' => [
                 'rules' => 'permit_empty|alpha_space|max_length[100]',
                 'errors' => [
-                    'max_length' => 'Nama karyawan maximal 100 karakter',
-                    'alpha_space' => 'Isian hanya karakter alfabet dan spasi'
+                    'max_length' => 'Employee name maximum 100 characters',
+                    'alpha_space' => 'Fill only alphabetic characters and spaces'
                 ],
             ],
             'jabatan' => [
@@ -384,12 +371,6 @@ class DaftarKaryawanController extends BaseController
                 'rules' => 'permit_empty',
                 'errors' => [],
             ],
-            'alamat' => [
-                'rules' => 'permit_empty|max_length[100]',
-                'errors' => [
-                    'max_length' => 'Alamat maksimal 100 karakter',
-                ],
-            ],
             'status_karyawan' => [
                 'rules' => 'permit_empty',
                 'errors' => [],
@@ -397,9 +378,9 @@ class DaftarKaryawanController extends BaseController
             'foto' => [
                 'rules' => 'max_size[foto, 1024]|is_image[foto]|mime_in[foto,image/jpg,image/jpeg,image/png]',
                 'errors' => [
-                    'max_size' => 'Foto tidak boleh besar dari 1 MB',
-                    'is_image' => 'File harus berupa gambar',
-                    'mime_in' => 'File harus berupa gambar',
+                    'max_size' => 'Photo profile cannot be larger than 1 MB',
+                    'is_image' => 'File must be image',
+                    'mime_in' => 'File must be image',
                 ],
             ],
         ])) {
@@ -500,7 +481,7 @@ class DaftarKaryawanController extends BaseController
 
         $this->karyawanEditModel->update($id_karyawan, $data);
         $this->penggunaEditModel->update($id_karyawan, $data1);
-        return redirect()->to(base_url('daftar_karyawan'))->with('status', 'Data Karyawan Berhasil Diubah');
+        return redirect()->to(base_url('daftar_karyawan'))->with('status', 'EMPLOYEE DATA SUCCESSFULLY CHANGED');
     }
 
     public function delete_karyawan($id_karyawan = null)
@@ -508,7 +489,7 @@ class DaftarKaryawanController extends BaseController
         $this->karyawanModel->delete($id_karyawan);
         $this->penggunaModel->delete($id_karyawan);
         unlink('barcode/' . $id_karyawan . '.png');
-        return redirect()->back()->with('status', 'Data Karyawan Berhasil Dihapus');
+        return redirect()->back()->with('status', 'EMPLOYEE DATA SUCCESSFULLY DELETED');
     }
 
     // public function updatestatus($id_karyawan = null)
