@@ -73,12 +73,6 @@ include 'atas_edit.php' ?>
                             </thead>
                             <tbody>
                                 <?php $nomor = 1; ?>
-                                <?php if ($transaksi == false || count($transaksi) < 1) : ?>
-                                    <tr style="vertical-align: middle; text-align: center; text-shadow: none;">
-                                        <td style="margin: 5px; padding: 3px; text-align: center; width: 5%;" colspan="4"><b>No Data Certificate</b></td>
-                                    </tr>
-                                <?php endif ?>
-
                                 <?php foreach ($transaksi as $value) : ?>
                                     <tr style="vertical-align: middle; text-align: center; text-shadow: none;">
                                         <td style="margin: 5px; padding: 3px; text-align: center; width: 5%;"><?= $nomor++; ?></td>
