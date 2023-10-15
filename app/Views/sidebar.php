@@ -66,6 +66,13 @@
         </ul>
       </li>
 
+      <li class="menu-item">
+        <a href="laporan" class="menu-link">
+          <i class="menu-icon tf-icons ti ti-file"></i>
+          <div data-i18n="Report">Report</div>
+        </a>
+      </li>
+
       <!-- Pengguna menu start -->
       <li class="menu-item">
         <a href="karyawan" class="menu-link">

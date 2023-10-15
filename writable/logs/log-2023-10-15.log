@@ -1,0 +1,47 @@
+INFO - 2023-10-15 14:03:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-15 14:03:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-15 14:03:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-15 14:04:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-15 14:10:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-15 14:12:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-15 14:14:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-15 14:18:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-15 14:18:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-15 14:19:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-15 14:24:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-10-15 14:24:08 --> Undefined array key "nama_sertifikat"
+in APPPATH\Views\laporan.php on line 55.
+ 1 APPPATH\Views\laporan.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_sertifikat"', 'D:\\SKYWORX\\Project\\goodyear\\app\\Views\\laporan.php', 55)
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\goodyear\\app\\Views\\laporan.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('laporan', [], true)
+ 5 APPPATH\Controllers\DaftarKaryawanController.php(60): view('laporan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->laporan()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\goodyear\\public\\index.php')
+INFO - 2023-10-15 14:26:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-10-15 14:26:56 --> Undefined array key "nama_sertifikat"
+in APPPATH\Views\laporan.php on line 55.
+ 1 APPPATH\Views\laporan.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_sertifikat"', 'D:\\SKYWORX\\Project\\goodyear\\app\\Views\\laporan.php', 55)
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\SKYWORX\\Project\\goodyear\\app\\Views\\laporan.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('laporan', [], true)
+ 5 APPPATH\Controllers\DaftarKaryawanController.php(61): view('laporan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\DaftarKaryawanController->laporan()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaftarKaryawanController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\SKYWORX\\Project\\goodyear\\public\\index.php')
+INFO - 2023-10-15 14:31:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-15 14:32:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-15 14:32:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-15 14:33:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-15 14:34:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-15 14:35:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-15 14:51:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-15 14:52:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-15 14:52:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-15 14:52:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-15 14:52:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
