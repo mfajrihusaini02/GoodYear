@@ -29,6 +29,16 @@ class DaftarKaryawanModel extends Model
             ->get()->getResultArray();
     }
 
+    public function getLaporan()
+    {
+        return $this->db->table('karyawan')
+            ->join('jabatan', 'jabatan.id_jabatan=karyawan.id_jabatan')
+            ->join('divisi', 'divisi.id_divisi=karyawan.id_divisi')
+            ->join('transaksi_sertifikat', 'transaksi_sertifikat.id_karyawan=karyawan.id_karyawan')
+            ->join('sertifikat', 'sertifikat.id_sertifikat=transaksi_sertifikat.id_sertifikat')
+            ->get()->getResultArray();
+    }
+
     public function getKaryawanPerID($id_karyawan)
     {
         return $this->db->table('karyawan')

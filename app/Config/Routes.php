@@ -82,6 +82,9 @@ $routes->get('/delete_divisi/(:num)', 'DaftarDivisiController::delete_divisi/$1'
 $routes->get('/my_profile/(:num)', 'DaftarKaryawanController::my_profile/$1', ['filter' => 'login']);
 $routes->get('/lihat_karyawan/(:num)', 'DaftarKaryawanController::lihat_karyawan/$1', ['filter' => 'login']);
 $routes->get('/view_karyawanQR/(:num)', 'DaftarKaryawanController::view_karyawanQR/$1');
+// Laporan
+$routes->get('/laporan', 'DaftarKaryawanController::laporan', ['filter' => 'login']);
+$routes->get('/cetak_laporan', 'DaftarKaryawanController::cetak_laporan', ['filter' => 'login']);
 
 /*
 * --------------------------------------------------------------------

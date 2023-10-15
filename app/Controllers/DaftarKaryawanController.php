@@ -21,6 +21,10 @@ use Endroid\QrCode\Writer\PngWriter;
 use Endroid\QrCode\Writer\ValidationException;
 use Myth\Auth\Password;
 
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Worksheet\AutoFilter\Column;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+
 class DaftarKaryawanController extends BaseController
 {
     protected $karyawanModel;
@@ -50,6 +54,13 @@ class DaftarKaryawanController extends BaseController
         $data['users'] = $this->penggunaModel->getPengguna();
         $data['karyawan'] = $this->karyawanModel->getKaryawan();
         return view('daftar_karyawan', $data);
+    }
+
+    public function laporan()
+    {
+        $data['datauser'] = $this->karyawanModel->where(['nik' => user()->nik])->first();
+        $data['karyawan'] = $this->karyawanModel->getLaporan();
+        return view('laporan', $data);
     }
 
     public function index_karyawan()
@@ -474,13 +485,78 @@ class DaftarKaryawanController extends BaseController
         return redirect()->back()->with('status', 'EMPLOYEE DATA SUCCESSFULLY DELETED');
     }
 
-    // public function updatestatus($id_karyawan = null)
-    // {
-    //     $status_karyawan = $this->request->getVar('status_karyawan');
-    //     $data = [
-    //         'status_karyawan' => $namaStatus,
-    //     ];
-    //     $this->karyawanEditModel->update($id_karyawan, $data);
-    //     return redirect()->back()->with('status', 'Data Karyawan Berhasil Dinonaktifkan');
-    // }
+    public function cetak_laporan()
+    {
+        $filename = "report_goodyear_" . date('d_M_Y') . ".xlsx";
+        $data = $this->karyawanModel->getLaporan();
+
+        $spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+
+        $sheet->setCellValue('A1', 'NO');
+        $sheet->setCellValue('B1', 'PERSNUMBER');
+        $sheet->setCellValue('C1', 'FULL NAME');
+        $sheet->setCellValue('D1', 'POSITION TITLE');
+        $sheet->setCellValue('E1', 'DEPARTMENT');
+        $sheet->setCellValue('F1', 'CERTIFICATE NAME');
+        $sheet->setCellValue('G1', 'CERTIFICATE DATE');
+        $sheet->setCellValue('H1', 'DATE OF EXPIRED');
+        $sheet->setCellValue('I1', 'CERTIFICATE (SAFETY) SCORE');
+        $sheet->setCellValue('J1', 'CERTIFICATE (QUALITY) SCORE');
+        $sheet->setCellValue('K1', 'CERTIFICATE (OPERATION) SCORE');
+        $sheet->setCellValue('L1', 'CERTIFICATE AVERAGE SCORE');
+
+        $column = 2;
+        foreach ($data as $value) {
+            $sheet->setCellValue('A' . $column, ($column - 1));
+            $sheet->setCellValue('B' . $column, $value['nik']);
+            $sheet->setCellValue('C' . $column, $value['nama_karyawan']);
+            $sheet->setCellValue('D' . $column, $value['nama_jabatan']);
+            $sheet->setCellValue('E' . $column, $value['nama_divisi']);
+            $sheet->setCellValue('F' . $column, $value['nama_sertifikat']);
+            $sheet->setCellValue('G' . $column, date('d M Y', strtotime($value['tanggal_ambil'])));
+            $sheet->setCellValue('H' . $column, date('d M Y', strtotime($value['tanggal_ekspire'])));
+            $sheet->setCellValue('I' . $column, $value['n_safety']);
+            $sheet->setCellValue('J' . $column, $value['n_quality']);
+            $sheet->setCellValue('K' . $column, $value['n_operation']);
+            $sheet->setCellValue('L' . $column, $value['n_average']);
+            $column++;
+        }
+
+        $sheet->getStyle('A1:L1')->getFont()->setBold(true);
+        $sheet->getStyle('A1:L1')->getFill()
+            ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
+            ->getStartColor()->setARGB('FFFFFFFF');
+
+        $styleArray = [
+            'borders' => [
+                'allBorders' => [
+                    'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+                    'color' => ['argb' => 'FF000000']
+                ],
+            ],
+        ];
+
+        $sheet->getStyle('A1:L' . ($column - 1))->applyFromArray($styleArray);
+
+        $sheet->getColumnDimension('A')->setAutoSize(true);
+        $sheet->getColumnDimension('B')->setAutoSize(true);
+        $sheet->getColumnDimension('C')->setAutoSize(true);
+        $sheet->getColumnDimension('D')->setAutoSize(true);
+        $sheet->getColumnDimension('E')->setAutoSize(true);
+        $sheet->getColumnDimension('F')->setAutoSize(true);
+        $sheet->getColumnDimension('G')->setAutoSize(true);
+        $sheet->getColumnDimension('H')->setAutoSize(true);
+        $sheet->getColumnDimension('I')->setAutoSize(true);
+        $sheet->getColumnDimension('J')->setAutoSize(true);
+        $sheet->getColumnDimension('K')->setAutoSize(true);
+        $sheet->getColumnDimension('L')->setAutoSize(true);
+
+        $writer = new Xlsx($spreadsheet);
+        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        header('Content-Disposition: attachment;filename=' . $filename);
+        header('Cache-Control: max-age=0');
+        $writer->save('php://output');
+        exit();
+    }
 }
