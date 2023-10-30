@@ -21,7 +21,7 @@
                     <?= csrf_field(); ?>
                     <div class="mb-3">
                         <label for="nama_jabatan" class="form-label">Department Name</label>
-                        <input type="text" class="form-control <?php if(session('validation.nama_jabatan')) : ?> is-invalid <?php endif ?>" id="nama_jabatan" name="nama_jabatan" autofocus placeholder="Please enter department name" value="<?= old('nama_jabatan'); ?>">
+                        <input type="text" class="form-control <?php if (session('validation.nama_jabatan')) : ?> is-invalid <?php endif ?>" id="nama_jabatan" name="nama_jabatan" maxlength="100" autofocus placeholder="Please enter department name" value="<?= old('nama_jabatan'); ?>">
                         <div class="invalid-feedback">
                             <?= session('validation.nama_jabatan'); ?>
                         </div>

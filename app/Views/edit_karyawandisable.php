@@ -17,7 +17,6 @@
     <form method="POST" enctype="multipart/form-data" action="<?= base_url('update_profile/' . $karyawan['nik']); ?>">
         <?= csrf_field(); ?>
         <input type="hidden" name="_method" value="PUT">
-        <input type="hidden" name="alamatLama" value="<?= $karyawan['alamat']; ?>">
         <input type="hidden" name="fotoLama" value="<?= $karyawan['foto']; ?>">
         <input type="hidden" name="emailLama" value="<?= $users['email']; ?>">
         <input type="hidden" name="passwordLama" value="<?= $users['password']; ?>">

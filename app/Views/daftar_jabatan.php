@@ -1,14 +1,14 @@
 <?php include 'atas.php' ?>
 
-<?php if(session()->getFlashdata('status')){
-    ?>
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <strong>CONGRATULATIONS </strong> <?= session()->getFlashdata('status'); ?>.
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    <?php
+<?php if (session()->getFlashdata('status')) {
+?>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>CONGRATULATIONS </strong> <?= session()->getFlashdata('status'); ?>.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<?php
 } ?>
-    
+
 <div class="card shadow">
     <div class="row card-header bg-primary p-2 m-0">
         <div class="col-lg-6 col-xl-6 col-md-6 col-xs-6 col-sm-6 col-6">
@@ -41,10 +41,10 @@
                             <td style="margin: 5px; padding: 3px; text-align: center;"><?= $nomor++; ?></td>
                             <td style="margin: 5px; padding: 3px; text-align: justify;"><?= $value["nama_jabatan"]; ?></td>
                             <td style="margin: 5px; padding: 3px; text-align: center;">
-                                <a href="<?= base_url('edit_jabatan/'.$value['id_jabatan']) ?>" class="btn btn-outline-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit">
+                                <a href="<?= base_url('edit_jabatan/' . $value['id_jabatan']) ?>" class="btn btn-outline-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit">
                                     <span class='icon'><i class='fas fa-edit'></i></span>
                                 </a>
-                                <a href="#" data-href="<?= base_url('delete_jabatan/'.$value['id_jabatan']) ?>" onclick="confirmToDelete(this)" class="btn btn-outline-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Delete">
+                                <a href="#" data-href="<?= base_url('delete_jabatan/' . $value['id_jabatan']) ?>" onclick="confirmToDelete(this)" class="btn btn-outline-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Delete">
                                     <span class='icon'><i class='fas fa-trash'></i></span>
                                 </a>
                             </td>

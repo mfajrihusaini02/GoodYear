@@ -85,12 +85,12 @@ class DaftarKaryawanController extends BaseController
         // validation input
         if (!$this->validate([
             'nik' => [
-                'rules' => 'required|is_unique[karyawan.nik]|numeric|max_length[16]|min_length[16]',
+                'rules' => 'required|is_unique[karyawan.nik]|numeric|max_length[16]|min_length[5]',
                 'errors' => [
                     'required' => 'NOCC cannot be empty',
                     'is_unique' => 'NOCC already used',
                     'max_length' => 'NOCC must be 16 characters',
-                    'min_length' => 'NOCC must be 16 characters',
+                    'min_length' => 'NOCC must be 5 characters',
                     'numeric' => 'Fill only numeric',
                 ],
             ],
@@ -130,20 +130,10 @@ class DaftarKaryawanController extends BaseController
 
         $writer     = new PngWriter();
         $id         = time();
-        $status_karyawan = "1";
-
         $nik        = $this->request->getVar('nik');
         $nama       = $this->request->getVar('nama_karyawan');
         $id_jabatan = $this->request->getVar('jabatan');
         $id_divisi  = $this->request->getVar('divisi');
-
-        // ambil foto
-        $fileFoto = $this->request->getFile('foto');
-        // ambil nama file foto
-        $namaFoto = $fileFoto->getRandomName();
-        // pindahkan file ke folder img
-        $fileFoto->move('img', $namaFoto);
-
         $qrCode = QrCode::create(base_url('view_karyawanQR/' . $id))
             ->setEncoding(new Encoding('UTF-8'))
             ->setErrorCorrectionLevel(new ErrorCorrectionLevelLow())
@@ -161,11 +151,19 @@ class DaftarKaryawanController extends BaseController
 
         $result = $writer->write($qrCode, null, $label);
 
-        header('Content-Type: ' . $result->getMimeType());
+        // header('Content-Type: ' . $result->getMimeType());
 
         $result->saveToFile('barcode/' . $id . '.png');
 
         $dataUri = $result->getDataUri();
+
+        // ambil foto
+        $fileFoto = $this->request->getFile('foto');
+        // ambil nama file foto
+        $namaFoto = $fileFoto->getRandomName();
+        // pindahkan file ke folder img
+        $fileFoto->move('img', $namaFoto);
+        $status_karyawan = "1";
 
         $data = [
             'id_karyawan' => $id,
@@ -177,6 +175,8 @@ class DaftarKaryawanController extends BaseController
             'foto' => $namaFoto,
             'status_karyawan' => $status_karyawan
         ];
+
+        // dd($data);
         $this->karyawanModel->save($data);
         return redirect()->to(base_url('daftar_karyawan'))->with('status', 'EMPLOYEE DATA SAVED SUCCESSFULLY');
     }

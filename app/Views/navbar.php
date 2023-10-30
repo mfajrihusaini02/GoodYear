@@ -51,7 +51,7 @@
             <li class="nav-item navbar-dropdown dropdown-user dropdown">
                 <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
-                        <img src="img/<?= $datauser['nik'] == user()->nik ? $datauser['foto'] : null ?>" alt class="h-auto rounded-circle" />
+                        <img src="img/<?= $datauser['nik'] == user()->nik ? $datauser['foto'] : null ?>" alt class="h-48 w-48 rounded-circle" />
                     </div>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
@@ -60,7 +60,7 @@
                             <div class="d-flex">
                                 <div class="flex-shrink-0 me-3">
                                     <div class="avatar avatar-online">
-                                        <img src="img/<?= $datauser['nik'] == user()->nik ? $datauser['foto'] : null ?>" alt class="h-auto rounded-circle" />
+                                        <img src="img/<?= $datauser['nik'] == user()->nik ? $datauser['foto'] : null ?>" alt class="h-62 w-62 rounded-circle" />
                                     </div>
                                 </div>
                                 <div class="flex-grow-1">

@@ -38,14 +38,14 @@
                     <h6><b>New Data</b></h6>
                     <div class="mb-3">
                         <label for="name" class="form-label">Role Name</label>
-                        <input type="text" class="form-control <?php if (session('validation.name')) : ?> is-invalid <?php endif ?>" id="name" name="name" autofocus placeholder="Please enter role name">
+                        <input type="text" class="form-control <?php if (session('validation.name')) : ?> is-invalid <?php endif ?>" id="name" name="name" maxlength="100" autofocus placeholder="Please enter role name">
                         <div class="invalid-feedback">
                             <?= session('validation.name'); ?>
                         </div>
                     </div>
                     <div class="mb-3">
                         <label for="description" class="form-label">Description</label>
-                        <input type="text" class="form-control <?php if (session('validation.description')) : ?> is-invalid <?php endif ?>" id="description" name="description" placeholder="Please enter description">
+                        <input type="text" class="form-control <?php if (session('validation.description')) : ?> is-invalid <?php endif ?>" id="description" maxlength="100" name="description" placeholder="Please enter description">
                         <div class="invalid-feedback">
                             <?= session('validation.description'); ?>
                         </div>

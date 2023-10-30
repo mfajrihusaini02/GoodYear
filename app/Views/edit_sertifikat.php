@@ -38,14 +38,14 @@
                     <h6><b>New Data</b></h6>
                     <div class="mb-3">
                         <label for="kodesertifikat" class="form-label">Certificate Code</label>
-                        <input type="text" class="form-control <?php if (session('validation.kodesertifikat')) : ?> is-invalid <?php endif ?>" id="kodesertifikat" name="kodesertifikat" autofocus value="<?= $sertifikat['kode_sertifikat']; ?>" placeholder="Please enter certificate code">
+                        <input type="text" class="form-control <?php if (session('validation.kodesertifikat')) : ?> is-invalid <?php endif ?>" id="kodesertifikat" name="kodesertifikat" maxlength="100" autofocus value="<?= $sertifikat['kode_sertifikat']; ?>" placeholder="Please enter certificate code">
                         <div class="invalid-feedback">
                             <?= session('validation.kodesertifikat'); ?>
                         </div>
                     </div>
                     <div class="mb-3">
                         <label for="namasertifikat" class="form-label">Certificate Name</label>
-                        <input type="text" class="form-control <?php if (session('validation.namasertifikat')) : ?> is-invalid <?php endif ?>" id="namasertifikat" name="namasertifikat" placeholder="Please enter certificate name">
+                        <input type="text" class="form-control <?php if (session('validation.namasertifikat')) : ?> is-invalid <?php endif ?>" id="namasertifikat" name="namasertifikat" maxlength="100" placeholder="Please enter certificate name">
                         <div class="invalid-feedback">
                             <?= session('validation.namasertifikat'); ?>
                         </div>
