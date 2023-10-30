@@ -21,14 +21,14 @@
                     <?= csrf_field(); ?>
                     <div class="mb-3">
                         <label for="kodesertifikat" class="form-label">Kode Sertifikat</label>
-                        <input type="text" class="form-control <?php if(session('validation.kodesertifikat')) : ?> is-invalid <?php endif ?>" id="kodesertifikat" name="kodesertifikat" placeholder="Please enter certificate code" value="<?= old('kodesertifikat'); ?>">
+                        <input type="text" class="form-control <?php if (session('validation.kodesertifikat')) : ?> is-invalid <?php endif ?>" id="kodesertifikat" name="kodesertifikat" maxlength="100" placeholder="Please enter certificate code" value="<?= old('kodesertifikat'); ?>">
                         <div class="invalid-feedback">
                             <?= session('validation.kodesertifikat'); ?>
                         </div>
                     </div>
                     <div class="mb-3">
                         <label for="namasertifikat" class="form-label">Nama Sertifikat</label>
-                        <input type="text" class="form-control <?php if(session('validation.namasertifikat')) : ?> is-invalid <?php endif ?>" id="namasertifikat" name="namasertifikat" placeholder="Please enter certificate name" value="<?= old('namasertifikat'); ?>">
+                        <input type="text" class="form-control <?php if (session('validation.namasertifikat')) : ?> is-invalid <?php endif ?>" id="namasertifikat" name="namasertifikat" maxlength="100" placeholder="Please enter certificate name" value="<?= old('namasertifikat'); ?>">
                         <div class="invalid-feedback">
                             <?= session('validation.namasertifikat'); ?>
                         </div>

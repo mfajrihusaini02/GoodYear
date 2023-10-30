@@ -20,7 +20,7 @@ include 'atas_edit.php' ?>
 
     <div class="card-body mb-3 mt-3">
         <div class="row">
-            <div class="col-lg-9 col-xl-9 col-md-9 col-xs-12 col-sm-12 col-12">
+            <div class="col-lg-8 col-xl-8 col-md-8 col-xs-12 col-sm-12 col-12">
                 <div class="card mb-3">
                     <div class="card-body">
                         <div class="row">

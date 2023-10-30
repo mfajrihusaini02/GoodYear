@@ -86,14 +86,14 @@
                     <h6><b>New Data</b></h6>
                     <div class="mb-3">
                         <label for="NikKaryawan" class="form-label">NOCC</label>
-                        <input type="text" class="form-control <?php if (session('validation.nik')) : ?> is-invalid <?php endif ?>" id="nik" name="nik" autofocus placeholder="Please enter employee NOCC">
+                        <input type="text" class="form-control <?php if (session('validation.nik')) : ?> is-invalid <?php endif ?>" id="nik" name="nik" maxlength="16" autofocus placeholder="Please enter employee NOCC">
                         <div class="invalid-feedback">
                             <?= session('validation.nik'); ?>
                         </div>
                     </div>
                     <div class="mb-3">
                         <label for="NamaKaryawan" class="form-label">Employee Name</label>
-                        <input type="text" class="form-control <?php if (session('validation.nama_karyawan')) : ?> is-invalid <?php endif ?>" id="nama_karyawan" name="nama_karyawan" placeholder="Please enter employee name">
+                        <input type="text" class="form-control <?php if (session('validation.nama_karyawan')) : ?> is-invalid <?php endif ?>" id="nama_karyawan" name="nama_karyawan" maxlength="100" placeholder="Please enter employee name">
                         <div class="invalid-feedback">
                             <?= session('validation.nama_karyawan'); ?>
                         </div>

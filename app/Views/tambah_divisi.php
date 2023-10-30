@@ -21,7 +21,7 @@
                     <?= csrf_field(); ?>
                     <div class="mb-3">
                         <label for="nama_divisi" class="form-label">Division Name</label>
-                        <input type="text" class="form-control <?php if(session('validation.nama_divisi')) : ?> is-invalid <?php endif ?>" id="nama_divisi" name="nama_divisi" autofocus placeholder="Please enter division name" value="<?= old('nama_divisi'); ?>">
+                        <input type="text" class="form-control <?php if (session('validation.nama_divisi')) : ?> is-invalid <?php endif ?>" id="nama_divisi" name="nama_divisi" maxlength="100" autofocus placeholder="Please enter division name" value="<?= old('nama_divisi'); ?>">
                         <div class="invalid-feedback">
                             <?= session('validation.nama_divisi'); ?>
                         </div>

@@ -65,14 +65,14 @@
                     <h6><b>New Data</b></h6>
                     <div class="mb-3">
                         <label class="form-label">Email</label>
-                        <input type="email" id="email" name="email" class="form-control <?php if (session('validation.email')) : ?> is-invalid <?php endif ?>" placeholder="Please enter email">
+                        <input type="email" id="email" name="email" class="form-control <?php if (session('validation.email')) : ?> is-invalid <?php endif ?>" maxlength="100" placeholder="Please enter email">
                         <div class="invalid-feedback">
                             <?= session('validation.email'); ?>
                         </div>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Username</label>
-                        <input type="text" id="username" name="username" class="form-control <?php if (session('validation.username')) : ?> is-invalid <?php endif ?>" placeholder="Please enter username">
+                        <input type="text" id="username" name="username" class="form-control <?php if (session('validation.username')) : ?> is-invalid <?php endif ?>" maxlength="100" placeholder="Please enter username">
                         <div class="invalid-feedback">
                             <?= session('validation.username'); ?>
                         </div>
@@ -94,7 +94,7 @@
                             <label class="form-label" for="password">Password</label>
                         </div>
                         <div class="input-group input-group-merge">
-                            <input type="password" id="password_hash" class="form-control <?php if (session('validation.password_hash')) : ?> is-invalid <?php endif ?>" name="password_hash" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" value="<?= old('password_hash'); ?>">
+                            <input type="password" id="password_hash" class="form-control <?php if (session('validation.password_hash')) : ?> is-invalid <?php endif ?>" name="password_hash" maxlength="100" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" value="<?= old('password_hash'); ?>">
                             <span class="input-group-text cursor-pointer"><i class="ti ti-eye-off"></i></span>
                             <div class="invalid-feedback">
                                 <?= session('validation.password_hash'); ?>
