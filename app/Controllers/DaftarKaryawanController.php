@@ -115,9 +115,9 @@ class DaftarKaryawanController extends BaseController
                 ],
             ],
             'foto' => [
-                'rules' => 'max_size[foto, 1024]|is_image[foto]|mime_in[foto,image/jpg,image/jpeg,image/png]',
+                'rules' => 'required|max_size[foto, 1024]|is_image[foto]|mime_in[foto,image/jpg,image/jpeg,image/png]',
                 'errors' => [
-                    'required' => 'Photo profile cannot be mepty',
+                    'required' => 'Photo profile cannot be empty',
                     'max_size' => 'Photo profile cannot be larger than 1 MB',
                     'is_image' => 'File must be image',
                     'mime_in' => 'File must be image',
