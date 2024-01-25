@@ -169,6 +169,7 @@ class DaftarPenggunaController extends BaseController
             return redirect()->back()->withInput()->with('validation', $this->validator->getErrors());
         }
 
+        $id_user = $this->request->getVar('id_user');
         $email = $this->request->getVar('email');
         if ($email == null) {
             $namaEmail = $this->request->getVar('emailLama');
@@ -222,6 +223,12 @@ class DaftarPenggunaController extends BaseController
             'active' => $namaActive,
             'force_pass_reset' => $force_pass_reset,
         ];
+
+        $data1 = [
+            'group_id' => $namaIDRole,
+            'user_id' => $id_user
+        ];
+
         $this->penggunaEditModel->update($id_pengguna, $data);
         return redirect()->to(base_url('daftar_pengguna'))->with('status', 'USER DATA RSUCCESSFULLY CHANGED');
     }
