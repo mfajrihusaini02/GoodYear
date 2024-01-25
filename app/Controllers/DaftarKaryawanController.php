@@ -454,7 +454,7 @@ class DaftarKaryawanController extends BaseController
 
         $result = $writer->write($qrCode, null, $label);
 
-        header('Content-Type: ' . $result->getMimeType());
+        // header('Content-Type: ' . $result->getMimeType());
 
         $result->saveToFile('barcode/' . $idLama . '.png');
 
